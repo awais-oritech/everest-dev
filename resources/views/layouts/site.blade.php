@@ -25,9 +25,13 @@
         rel="stylesheet">
 
     <!-- BASE CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/vendors.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- Css --}}
     @stack('css')
     {{-- Css --}}
@@ -112,11 +116,26 @@
     <!-- COMMON SCRIPTS -->
     <script src="{{ asset('assets/js/common_scripts.js') }}"></script>
     <script src="{{ asset('assets/js/functions.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
     <script src="{{ asset('assets/validate.js') }}"></script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- SPECIFIC SCRIPTS -->
     <script src="{{ asset('assets/js/animated_canvas_min.js') }}"></script>
+    <script type="text/javascript">
+    jQuery(document).ready(function($){
+        $(function() {  
+                AOS.init({
+                    offset: 320,
+                    duration: 1000,
 
+                }); 
+            });  
+         }); 
+                
+    </script>
     <!-- COLOR SWITCHER  -->
     <script src="{{ asset('assets/js/switcher.js') }}"></script>
 

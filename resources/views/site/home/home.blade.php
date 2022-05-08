@@ -1,6 +1,6 @@
  @extends('layouts.site')
  @section('content')
-     <section class="hero_single version_2">
+     <!-- <section class="hero_single version_2">
          <div class="wrapper">
              <div class="container" style="text-align: left">
                  <h3>International Network <br>Build on Foundation of <br> Safty and Trust</h3>
@@ -37,12 +37,58 @@
                      <!-- /row -->
                  </form> --}}
                  <a href="account.html" class="btn btn-lg btn_add">Become Member</a>
-             </div>
+             <!-- </div>
          </div>
-     </section>
+     </section> --> 
      <!-- /hero_single -->
+     <section class="hero_single version_2">
+         <div class="wrapper">
+         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                      
+                        <div class="carousel-caption ">
+                            <h5 class="animated bounceInRight" style="animation-delay: 1s">INTERNATIONAL NETWORK <br> BUILD ON FOUNDATION OF <br>SAFETY AND TRUST</h5>
+                            <p class="animated bounceInLeft" style="animation-delay: 2s">Find what you need!</p>
+                            <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                      
+                        <div class="carousel-caption">
+                            <h5 class="animated bounceInRight" style="animation-delay: 1s">Beating all other mobile figures previously covered by Oftel.</h5>
+                            <p  class="animated bounceInLeft" style="animation-delay: 2s">Just do it</p>
+                            <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                       
+                        <div class="carousel-caption ">
+                        <h5 class="animated bounceInRight" style="animation-delay: 1s">The people you need are only a touch away.</h5>
+                            <p  class="animated bounceInLeft" style="animation-delay: 2s">Waiting for you </p>
+                            <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>  
+            </div>
+     </section>
 
-     {{-- <div class="main_categories">
+    
+            {{-- <div class="main_categories">
          <div class="container">
              <ul class="clearfix">
                  <li>
@@ -81,14 +127,51 @@
      </div> --}}
      <!-- /main_categories -->
      <!-- About US -->
-     <div class="bg_color_1">
+     <div class="bg_color_1 "  data-aos="fade-up">
          <div class="container margin_80_55">
              <div class="main_title_2">
                  <span><em></em></span>
-                 <h2>Our Origins and Story</h2>
-                 <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                    <h2 >Our Origins and Story</h2>
+                    <p class="animated bounceInLeft" style="animation-delay:1s">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+             </div> 
+             <div class="row" style="justify-content: center;">
+                 <div class="col-lg-6 col-md-6 col-sm-12 " >
+                    <div class="row">
+                            <div class="col-3">
+
+                            </div>
+                            <div class="col-3">
+                                <div class="box">
+                                <div class="content">
+                                    <img src="{{ asset('assets/img/1_carousel.jpg') }}">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                        
+                            </div>
+                        
+                        </div>
+                    </div>
+                 
+                 <div class="col-lg-6 col-md-6 col-sm-12" >
+                 <p>Lorem ipsum dolor sit amet, homero erroribus in cum. Cu eos <strong>scaevola probatus</strong>.
+                         Nam
+                         atqui intellegat ei, sed ex graece essent delectus. Autem consul eum ea. Duo cu fabulas nonumes
+                         contentiones, nihil voluptaria pro id. Has graeci deterruisset ad, est no primis detracto
+                         pertinax,
+                         at cum malis vitae facilisis.</p>
+                     <p>Dicam diceret ut ius, no epicuri dissentiet philosophia vix. Id usu zril tacimates neglegentur.
+                         Eam
+                         id legimus torquatos cotidieque, usu decore <strong>percipitur definitiones</strong> ex, nihil
+                         utinam recusabo mel no. Dolores reprehendunt no sit, quo cu viris theophrastus. Sit unum
+                         efficiendi
+                         cu.</p>
+                     <p><em>CEO Marc Schumaker</em></p>
+                
+                 </div>
              </div>
-             <div class="row justify-content-between">
+             <!-- <div class="row justify-content-between">
                  <div class="col-lg-6 wow" data-wow-offset="150">
                      <figure class="block-reveal">
                          <div class="block-horizzontal"></div>
@@ -110,15 +193,16 @@
                          cu.</p>
                      <p><em>CEO Marc Schumaker</em></p>
                  </div>
-             </div>
+             </div>  -->
              <!--/row-->
+
          </div>
          <!--/container-->
      </div>
      <!--/About US-->
 
      <!-- Sponsors -->
-     <div class="bg_color_1">
+     <div class="bg_color_1"  data-aos="fade-up">
          <div class="container margin_80_55">
              <div class="main_title_2">
                  <span><em></em></span>
@@ -157,7 +241,7 @@
      <!--/ Sponsors -->
 
 
-     <div class="" style="background-color: #f8f8f8">
+     <div class="mt-4" style="background-color: #f8f8f8"  data-aos="fade-up">
          <div class="container" style="padding-top:5%">
 
              <div class="row">
@@ -188,7 +272,7 @@
          </div>
      </div>
      <!-- Project Counter -->
-     {{-- <div class="container margin_60_35">
+     {{-- <div class="container margin_60_35" data-aos="fade-up">
          <div class="row">
              <div class="four col-md-2">
                  <span class="counter colored">2147</span>
@@ -220,7 +304,7 @@
 
 
      <!--/call_section-->
-     <div class="call_section">
+     <!-- <div class="call_section mt-4" data-aos="fade-up">
          <div class="wrapper">
              <div class="container margin_80_55">
                  <div class="main_title_2">
@@ -295,17 +379,62 @@
                      </div> --}}
                  </div>
                  <!-- /row -->
-                 <p class="text-center add_top_30 wow bounceIn" data-wow-delay="0.5s"><a href="account.html"
-                         class="btn_1 rounded">Search</a></p>
+                 <!-- <p class="text-center add_top_30 wow bounceIn" data-wow-delay="0.5s"><a href="account.html"
+                         class="btn_1 rounded">Search</a></p> -->
              </div>
-             <canvas id="hero-canvas" width="1920" height="1080"></canvas>
+            
          </div>
          <!-- /wrapper -->
-     </div>
+     <!-- </div> --> 
      <!--/call_section-->
 
+     <div class="public-listing mt-4" data-aos="fade-up">
+         <video autoplay loop muted>
+             <source src="{{ asset('assets/videos/pricelistingvideo.mp4') }}">
+         </video>
+            <div class="">
+                <div class="container margin_80_55">
+                        <div class="main_title_2">
+                            <span><em></em></span>
+                            <h2 style="color:white">Public Listing</h2>
+                            <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                        </div>
+                    <div class="row ">
+                        <div class="col-12 " >
+                        <form action="">
+                                <div class="form-box">
+                                <form>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
+                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+                                    </div>
+                                    <div class="buttonn">
+                                    <button type="submit" class="submit-button">Search</button>
+                                    </div>
+                                   
+                                    </form>
+                                </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
      <!-- Sponsors -->
-     <div class="bg_color_1">
+     <div class="bg_color_1" data-aos="fade-up">
          <div class="container margin_80_55">
              <div class="main_title_2">
                  <span><em></em></span>
@@ -313,7 +442,7 @@
              </div>
              <div class="row justify-content-between">
                  <div class="diamond-slider">
-                     <div class="slide"><img
+                     <div class="slide" style="color:#219EBC"><img
                              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image1.png">
                      </div>
                      <div class="slide"><img
@@ -344,14 +473,116 @@
      <!--/ Sponsors -->
 
      <!--News and Events-->
-     <div class="container margin_80_55">
+     <div class="container margin_80_55" data-aos="fade-up">
          <div class="main_title_2">
              <span><em></em></span>
              <h2>News and Events</h2>
              <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
          </div>
          <div class="row">
-             <div class="col-lg-6">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+            <section class="cards">
+                    <article class="card card--1">
+                    <div class="card__info-hover">
+                        <svg class="card__like"  viewBox="0 0 24 24">
+                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
+                    </svg>
+                        <div class="card__clock-info">
+                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
+                            </svg><span class="card__time">15 min</span>
+                        </div>
+                        
+                    </div>
+                    <div class="card__img"></div>
+                    <a href="#" class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <span class="card__category"> Recipe</span>
+                        <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
+                        <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
+                    </div>
+                    </article>
+                    
+                    
+                    <article class="card card--2">
+                    <div class="card__info-hover">
+                        <svg class="card__like"  viewBox="0 0 24 24">
+                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
+                    </svg>
+                        <div class="card__clock-info">
+                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
+                            </svg><span class="card__time">5 min</span>
+                        </div>
+                        
+                    </div>
+                    <div class="card__img"></div>
+                    <a href="#" class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <span class="card__category"> Travel</span>
+                        <h3 class="card__title">Discover the sea</h3>
+                        <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
+                    </div>
+                    </article>  
+             </section>
+            </div>
+         <div class="col-lg-6 d-none d-md-block">
+         <section class="cards">
+                    <article class="card card--3">
+                    <div class="card__info-hover">
+                        <svg class="card__like"  viewBox="0 0 24 24">
+                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
+                    </svg>
+                        <div class="card__clock-info">
+                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
+                            </svg><span class="card__time">15 min</span>
+                        </div>
+                        
+                    </div>
+                    <div class="card__img"></div>
+                    <a href="#" class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <span class="card__category"> Recipe</span>
+                        <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
+                        <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
+                    </div>
+                    </article>
+                    
+                    
+                    <article class="card card--4">
+                    <div class="card__info-hover">
+                        <svg class="card__like"  viewBox="0 0 24 24">
+                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
+                    </svg>
+                        <div class="card__clock-info">
+                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
+                            </svg><span class="card__time">5 min</span>
+                        </div>
+                        
+                    </div>
+                    <div class="card__img"></div>
+                    <a href="#" class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <span class="card__category"> Travel</span>
+                        <h3 class="card__title">Discover the sea</h3>
+                        <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
+                    </div>
+                    </article>  
+             </section>
+         </div>
+        <div class="col-12 mt-4 btnnewsdiv">
+            <button class="btn-news">Read More</button>
+        </div>
+
+
+
+             <!-- <div class="col-lg-6">
                  <a class="box_news" href="blog.html">
                      <figure><img src="{{ asset('assets/img/news_home_1.jpg') }}" alt=""></figure>
                      <ul>
@@ -362,9 +593,9 @@
                      <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
                          vidisse....</p>
                  </a>
-             </div>
+             </div> -->
              <!-- /box_news -->
-             <div class="col-lg-6">
+             <!-- <div class="col-lg-6">
                  <a class="box_news" href="blog.html">
                      <figure><img src="{{ asset('assets/img/news_home_2.jpg') }}" alt=""></figure>
                      <ul>
@@ -375,9 +606,9 @@
                      <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
                          vidisse....</p>
                  </a>
-             </div>
+             </div> -->
              <!-- /box_news -->
-             <div class="col-lg-6">
+             <!-- <div class="col-lg-6">
                  <a class="box_news" href="blog.html">
                      <figure><img src="{{ asset('assets/img/news_home_3.jpg') }}" alt=""></figure>
                      <ul>
@@ -388,9 +619,9 @@
                      <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
                          vidisse....</p>
                  </a>
-             </div>
+             </div> -->
              <!-- /box_news -->
-             <div class="col-lg-6">
+             <!-- <div class="col-lg-6">
                  <a class="box_news" href="blog.html">
                      <figure><img src="{{ asset('assets/img/news_home_4.jpg') }}" alt=""></figure>
                      <ul>
@@ -401,11 +632,11 @@
                      <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
                          vidisse....</p>
                  </a>
-             </div>
+             </div> -->
              <!-- /box_news -->
          </div>
          <!-- /row -->
-         <p class="btn_home_align"><a href="blog.html" class="btn_1 rounded">View all news</a></p>
+         <!-- <p class="btn_home_align"><a href="blog.html" class="btn_1 rounded">View all news</a></p> -->
      </div>
      <!--/News and Events-->
  @endsection

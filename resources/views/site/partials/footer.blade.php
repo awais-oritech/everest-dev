@@ -1,6 +1,16 @@
 <footer class="plus_border">
     <div class="container margin_60_35">
-        <div class="row">
+        
+        <div class="row ">
+        
+            <div class="col-lg-12  icons" style="text-align:center">
+              <a href=""><img src="{{ asset('assets/img/twitter.gif') }}" width="40px" height="40px"></a>
+              <a href=""><img src="{{ asset('assets/img/instagram.gif') }}" width="40px" height="40px"></a>
+              <a href=""><img src="{{ asset('assets/img/linkedin.gif') }}" width="40px" height="40px"></a>
+              <a href=""><img src="{{ asset('assets/img/facebook.png') }}" width="40px" height="40px"></a>
+                
+            </div>
+   
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <h3 data-bs-target="#collapse_ft_1">Quick Links</h3>
                 <div class="collapse dont-collapse-sm" id="collapse_ft_1">
@@ -46,7 +56,7 @@
                             <div class="form-group">
                                 <input type="email" name="email_newsletter" id="email_newsletter" class="form-control"
                                     placeholder="Your email">
-                                <input type="submit" value="Submit" id="submit-newsletter">
+                                <input type="submit" value="Submit" class="btn-footer" id="submit-newsletter">
                             </div>
                         </form>
                     </div>
