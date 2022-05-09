@@ -461,11 +461,7 @@
                                 <img src="{{ asset('assets/img/benefitearth.png') }}" width="50px" height="50px"><span>   Global Search</span>
                             </div>
                         </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/networking.png') }}" width="60px" height="40px"><span>Networking and Events</span>
-                            </div>
-                        </div >
+                        
                         <div class="col-lg-3" >
                             <div class="benefit">
                                 <img src="{{ asset('assets/img/finance.png') }}" width="50px" height="50px"><span>Financial Protection</span>
@@ -498,14 +494,15 @@
                         </div >
                         <div class="col-lg-3" >
                             <div class="benefit">
-                                <img src="{{ asset('assets/img/voice.png') }}" width="50px" height="50px"><span>Voice of the Independant</span>
+                                <img src="{{ asset('assets/img/wpsonline.png') }}" width="50px" height="50px"><span>WCA Online</span>
                             </div>
                         </div >
                         <div class="col-lg-3" >
                             <div class="benefit">
-                                <img src="{{ asset('assets/img/wpsonline.png') }}" width="50px" height="50px"><span>WCA Online</span>
+                                <img src="{{ asset('assets/img/voice.png') }}" width="50px" height="50px"><span>Voice of the Independant</span>
                             </div>
                         </div >
+                       
                        
 
                     </div>
