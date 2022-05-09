@@ -254,13 +254,13 @@ color:white;
   text-align: center;
 }
 @media (min-aspect-ratio: 16/9){
- video{
+ .public-listing video{
   width:100%;
   height:auto;
 }
 }
 @media (max-aspect-ratio: 16/9){
- video{
+ .public-listing video{
     width:auto;
     height:100%;
   }
@@ -689,6 +689,7 @@ position: relative;
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px){
+
   .carousel-caption{
     text-align: center;
     bottom:10px;
@@ -718,3 +719,58 @@ position: relative;
   font-weight: bold;
   font-size: 15px;
 }
+nav{
+  position: sticky;
+}
+nav .logo{
+  float:left;
+}
+nav ul{
+  float: right;
+  margin-top:15px
+ 
+}
+nav ul li{
+  display: inline-block;
+ line-height: 30px;
+  
+}
+.header-navbar{
+  padding-top: 20px;
+}
+nav ul li a{
+
+font-size: 17px;
+color: black;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
+}
+nav ul li a:hover{
+  color: #219EBC;
+  border-bottom:2px solid #219EBC;
+  font-size: 15px;
+  
+}
+nav ul li a:active{
+  color: #219EBC;
+  border-bottom:2px solid #219EBC;
+  font-size: 15px;
+}
+.btn-navbar{
+  background-color: #219EBC;
+  border: none;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+}
+.btn-navbar:hover{
+  background-color: #fbb900;
+  color:black;
+  transition: 500ms;
+}
+
