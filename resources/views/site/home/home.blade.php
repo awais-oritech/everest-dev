@@ -43,48 +43,71 @@
      <!-- /hero_single -->
      <section class="hero_single version_2">
          <div class="wrapper">
-         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                      
-                        <div class="carousel-caption ">
-                            <h5 class="animated bounceInRight" style="animation-delay: 1s">INTERNATIONAL NETWORK <br> BUILD ON FOUNDATION OF <br>SAFETY AND TRUST</h5>
-                            <p class="animated bounceInLeft" style="animation-delay: 2s">Find what you need!</p>
-                            <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-6 col-md-12 col-sm-12" >
+                                <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <!-- <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol> -->
+                            <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                
+                                    <div class="carousel-caption ">
+                                        <h5 class="animated bounceInRight" style="animation-delay: 1s">INTERNATIONAL NETWORK <br> BUILD ON FOUNDATION OF <br>SAFETY AND TRUST</h5>
+                                        <p class="animated bounceInLeft" style="animation-delay: 2s">Find what you need!</p>
+                                        <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item ">
+                                
+                                    <div class="carousel-caption">
+                                        <h5 class="animated bounceInRight" style="animation-delay: 1s">Beating all other mobile figures previously covered by Oftel.</h5>
+                                        <p  class="animated bounceInLeft" style="animation-delay: 2s">Just do it</p>
+                                        <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item ">
+                                
+                                    <div class="carousel-caption ">
+                                    <h5 class="animated bounceInRight" style="animation-delay: 1s">The people you need are only a touch away.</h5>
+                                        <p  class="animated bounceInLeft" style="animation-delay: 2s">Waiting for you </p>
+                                        <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                    </div>
+                                </div>
+                            </div>
+                     </div>
+                     <div class="col-lg-6 d-none d-lg-block" >
+                        <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
+                        <form>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
+                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+                                    </div>
+                                    <div class="buttonn">
+                                    <button type="submit" class="submit-button">Search</button>
+                                    </div>
+                                   
+                                    </form>
                         </div>
-                    </div>
-                    <div class="carousel-item ">
-                      
-                        <div class="carousel-caption">
-                            <h5 class="animated bounceInRight" style="animation-delay: 1s">Beating all other mobile figures previously covered by Oftel.</h5>
-                            <p  class="animated bounceInLeft" style="animation-delay: 2s">Just do it</p>
-                            <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item ">
-                       
-                        <div class="carousel-caption ">
-                        <h5 class="animated bounceInRight" style="animation-delay: 1s">The people you need are only a touch away.</h5>
-                            <p  class="animated bounceInLeft" style="animation-delay: 2s">Waiting for you </p>
-                            <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>  
-            </div>
+                     </div>
+                 </div>
+             </div>
+        
      </section>
 
     
@@ -126,6 +149,37 @@
          <!-- /container -->
      </div> --}}
      <!-- /main_categories -->
+     <div class="container public-form">
+         <div class="row">
+         <div class="col-12" >
+                        <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
+                        <form>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
+                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
+                                    </div>
+                                    <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+                                    </div>
+                                    <div class="buttonn">
+                                    <button type="submit" class="submit-button">Search</button>
+                                    </div>
+                                   
+                                    </form>
+                        </div>
+                     </div>
+         </div>
+     </div>
+    
      <!-- About US -->
      <div class="bg_color_1 "  data-aos="fade-up">
          <div class="container margin_80_55">
@@ -211,31 +265,32 @@
              <div class="row justify-content-between">
                  <div class="sponsors-slider">
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image1.png">
+                             src="{{ asset('assets/img/sponsorlogo1.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png">
+                             src="{{ asset('assets/img/sponsorlogo2.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png">
+                             src="{{ asset('assets/img/sponsorlogo3.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png">
+                             src="{{ asset('assets/img/sponsorlogo4.png') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image5.png">
+                             src="{{ asset('assets/img/sponsorlogo5.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png">
+                             src="{{ asset('assets/img/sponsorlogo6.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image7.png">
+                             src="{{ asset('assets/img/sponsorlogo7.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png">
+                             src="{{ asset('assets/img/sponsorlogo8.jpg') }}" height="150px">
                      </div>
                  </div>
              </div>
+            
          </div>
      </div>
      <!--/ Sponsors -->
@@ -267,9 +322,10 @@
                          <p>COUNTRIES</p>
                      </div>
                  </div>
-                 <div id="regions_div" style=" height: 400px;">></div>
+                 <div id="regions_div" style=" height: 400px;">
+                </div>
              </div>
-         </div>
+         </div> 
      </div>
      <!-- Project Counter -->
      {{-- <div class="container margin_60_35" data-aos="fade-up">
@@ -304,7 +360,7 @@
 
 
      <!--/call_section-->
-     <!-- <div class="call_section mt-4" data-aos="fade-up">
+     <!-- <!-- <div class="call_section mt-4" data-aos="fade-up">
          <div class="wrapper">
              <div class="container margin_80_55">
                  <div class="main_title_2">
@@ -348,7 +404,7 @@
                                  </select>
                              </div>
 
-                         </div>
+                         </div> 
                          <!-- /row -->
                      </form>
                      {{-- <div class="col-md-4">
@@ -396,38 +452,62 @@
                 <div class="container margin_80_55">
                         <div class="main_title_2">
                             <span><em></em></span>
-                            <h2 style="color:white">Public Listing</h2>
+                            <h2 style="color:white">Pioneer Benefits</h2>
                             <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
                         </div>
                     <div class="row ">
-                        <div class="col-12 " >
-                        <form action="">
-                                <div class="form-box">
-                                <form>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
-                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
-                                    </div>
-                                    <div class="buttonn">
-                                    <button type="submit" class="submit-button">Search</button>
-                                    </div>
-                                   
-                                    </form>
-                                </div>
-                        </form>
-                        </div>
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/benefitearth.png') }}" width="50px" height="50px"><span>   Global Search</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/networking.png') }}" width="60px" height="40px"><span>Networking and Events</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/finance.png') }}" width="50px" height="50px"><span>Financial Protection</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/pay.png') }}" width="50px" height="50px"><span>Partner Pay</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/partnership.png') }}" width="50px" height="50px"><span>Marketing and Promotion</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/customerservice.png') }}" width="50px" height="50px"><span>Customer Service</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/shipping.png') }}" width="50px" height="50px"><span>All World Shippng</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/box.png') }}" width="50px" height="50px"><span>Courier Program</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/voice.png') }}" width="50px" height="50px"><span>Voice of the Independant</span>
+                            </div>
+                        </div >
+                        <div class="col-lg-3" >
+                            <div class="benefit">
+                                <img src="{{ asset('assets/img/wpsonline.png') }}" width="50px" height="50px"><span>WCA Online</span>
+                            </div>
+                        </div >
+                       
+
                     </div>
                 </div>
             </div>
@@ -442,29 +522,29 @@
              </div>
              <div class="row justify-content-between">
                  <div class="diamond-slider">
-                     <div class="slide" style="color:#219EBC"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image1.png">
+                 <div class="slide"><img
+                             src="{{ asset('assets/img/sponsorlogo1.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png">
+                             src="{{ asset('assets/img/sponsorlogo2.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png">
+                             src="{{ asset('assets/img/sponsorlogo3.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png">
+                             src="{{ asset('assets/img/sponsorlogo4.png') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image5.png">
+                             src="{{ asset('assets/img/sponsorlogo5.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png">
+                             src="{{ asset('assets/img/sponsorlogo6.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image7.png">
+                             src="{{ asset('assets/img/sponsorlogo7.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
-                             src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png">
+                             src="{{ asset('assets/img/sponsorlogo8.jpg') }}" height="150px">
                      </div>
                  </div>
              </div>
@@ -716,7 +796,7 @@
 
              var options = {
                  colorAxis: {
-                     colors: '#3d3187'
+                     colors: '#219EBC'
                  },
                  backgroundColor: '#f8f8f8'
 
