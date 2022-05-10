@@ -3,6 +3,19 @@ $('.carousel').carousel({
   })
 
  $(document).ready(function() {
+  $(function() {
+    var header = $(".header-navbar");
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+    
+        if (scroll >= 200) {
+            header.removeClass('header-navbar').addClass("header-alt");
+        } else {
+            header.removeClass("header-alt").addClass('header-navbar');
+        }
+    });
+});
+
 
   var counters = $(".count");
   var countersQuantity = counters.length;
@@ -27,16 +40,4 @@ $('.carousel').carousel({
   }
 });
 
-  $('.menu-toggle').click(function() {
-
-    /*--------------------------------------------------------------*/
-    /*open-close Navigation menu btn, 500 milliseconds to drop-close*/
-    /*--------------------------------------------------------------*/
-    $('.site-nav').toggleClass('site-nav-open', 500);
-        
-    /*-------------------------------------------------------------*/
-    /* changes hamburger to red X for close button .open CSS       */
-    /*-------------------------------------------------------------*/
-    $(this).toggleClass('open');
-
-  })
+  

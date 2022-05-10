@@ -646,6 +646,7 @@ position: relative;
 }
 @media (min-width: 1025px) and (max-width: 1280px){
   .public-form{
+  
     display: none;
   }
   .carousel-caption{
@@ -667,6 +668,10 @@ position: relative;
 }
  /* Media Query for Mobile Devices */
  @media (max-width: 480px) {
+   .shadow-form{
+    box-shadow: rgba(33, 158, 188, 0.16) 0px 10px 36px 0px, rgba(33, 158, 188, 0.06) 0px 0px 0px 1px;
+  
+   }
   .carousel-caption{
     text-align: center;
     bottom:10px;
@@ -680,6 +685,9 @@ position: relative;
     bottom:10px;
 
   }
+  .shadow-form{
+    box-shadow: rgba(33, 158, 188, 0.16) 0px 10px 36px 0px, rgba(33, 158, 188, 0.06) 0px 0px 0px 1px;
+   }
   .box{
     width: 150px;
     height:150px;
@@ -694,6 +702,9 @@ position: relative;
     text-align: center;
     bottom:10px;
   }
+  .shadow-form{
+    box-shadow: rgba(33, 158, 188, 0.16) 0px 10px 36px 0px, rgba(33, 158, 188, 0.06) 0px 0px 0px 1px;
+   }
   .box{
     width: 250px;
     height:250px;
@@ -719,26 +730,58 @@ position: relative;
   font-weight: bold;
   font-size: 15px;
 }
-nav{
-  position: sticky;
-}
+/* 
 nav .logo{
   float:left;
 }
 nav ul{
   float: right;
-  margin-top:15px
+  margin-top:10px;
+  margin-bottom:10px;
  
 }
 nav ul li{
   display: inline-block;
  line-height: 30px;
   
+} */
+.navbar-nav{
+  float: right;
+  text-align: center;
 }
+.nav-link{
+  
+  margin-right: 20px;
+  font-size: 17px;
+color: #219EBC;
+font-weight: 500;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
+}
+.navbar-nav .nav-item{
+  text-align: center;
+}
+.nav-link:hover{
+  color: #219EBC;
+  border-bottom:2px solid #219EBC;
+  font-size: 15px;
+  transition: 500ms;
+}
+
+.heaader{
+  justify-content: center;
+  margin-bottom:10px;
+}
+
 .header-navbar{
+  margin-bottom:10px;
+  width: 100%;
+  overflow: hidden;
   padding-top: 20px;
 }
-nav ul li a{
+/* nav ul li a{
 
 font-size: 17px;
 color: black;
@@ -757,7 +800,7 @@ nav ul li a:active{
   color: #219EBC;
   border-bottom:2px solid #219EBC;
   font-size: 15px;
-}
+}*/
 .btn-navbar{
   background-color: #219EBC;
   border: none;
@@ -772,5 +815,4 @@ nav ul li a:active{
   background-color: #fbb900;
   color:black;
   transition: 500ms;
-}
-
+} 

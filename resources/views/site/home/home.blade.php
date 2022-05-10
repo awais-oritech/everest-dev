@@ -149,10 +149,10 @@
          <!-- /container -->
      </div> --}}
      <!-- /main_categories -->
-     <div class="container public-form">
+     <div class="container public-form mb-4"  data-aos="fade-up">
          <div class="row">
          <div class="col-12" >
-                        <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
+                        <div class="formbox-header shadow-form animated bounceInUp" style="animation-delay:1s">
                         <form>
                                     <div class="form-group col-xs-3">
                                         <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
