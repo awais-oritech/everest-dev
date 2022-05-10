@@ -1,18 +1,19 @@
-<footer class="plus_border">
+<footer class="plus_border footer">
     <div class="container margin_60_35">
         
         <div class="row ">
         
             <div class="col-lg-12  icons" style="text-align:center">
-              <a href=""><img src="{{ asset('assets/img/twitter.gif') }}" width="40px" height="40px"></a>
-              <a href=""><img src="{{ asset('assets/img/instagram.gif') }}" width="40px" height="40px"></a>
-              <a href=""><img src="{{ asset('assets/img/linkedin.gif') }}" width="40px" height="40px"></a>
-              <a href=""><img src="{{ asset('assets/img/facebook.png') }}" width="40px" height="40px"></a>
+              <a href=""><img src="{{ asset('assets/img/insta.gif') }}" width="50px" height="50px"></a>
+              <a href=""><img src="{{ asset('assets/img/twitter.gif') }}" width="50px" height="50px"></a>
+              <a href=""><img src="{{ asset('assets/img/linkedin.gif') }}" width="50px" height="50px"></a>
+              <a href=""><img src="{{ asset('assets/img/whtsapp.gif') }}" width="50px" height="50px"></a>
+              <a href=""><img src="{{ asset('assets/img/facebook.gif') }}" width="50px" height="50px"></a>
                 
             </div>
    
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <h3 data-bs-target="#collapse_ft_1">Quick Links</h3>
+            <div class="col-lg-3 col-md-6 col-sm-6 quicklinks">
+                <h3 data-bs-target="#collapse_ft_1" >Quick Links</h3>
                 <div class="collapse dont-collapse-sm" id="collapse_ft_1">
                     <ul class="links">
                         <li><a href="#0">About us</a></li>
@@ -54,13 +55,13 @@
                         <div id="message-newsletter"></div>
                         <form method="post" action="#" name="newsletter_form" id="newsletter_form">
                             <div class="form-group">
-                                <input type="email" name="email_newsletter" id="email_newsletter" class="form-control"
+                                <input type="email" name="email_newsletter" style="color:white" id="email_newsletter" class="form-control"
                                     placeholder="Your email">
-                                <input type="submit" value="Submit" class="btn-footer" id="submit-newsletter">
+                               <button type="submit" class=" mt-2 btn-footer">Submit</button>
                             </div>
                         </form>
                     </div>
-                    <div class="follow_us">
+                    <!-- <div class="follow_us">
                         <h5>Follow Us</h5>
                         <ul>
                             <li><a href="#0"><i class="ti-facebook"></i></a></li>
@@ -69,7 +70,7 @@
                             <li><a href="#0"><i class="ti-pinterest"></i></a></li>
                             <li><a href="#0"><i class="ti-instagram"></i></a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
