@@ -174,7 +174,7 @@ filter: blur(2px);">
                     <a class="nav-link "  style="color:#219EBC;"  href="#"><i class="fa-solid fa-info"></i> About Us</a>
                 </li>
                 <li>
-                    <button class="btn-navbar mt-2">Become Member</button>
+                    <button class="hvr-sweep-to-right buttons mt-2">Become Member</button>
                 </li>
                 </ul>
             </div>

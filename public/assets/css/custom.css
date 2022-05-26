@@ -1,6 +1,75 @@
 /*============================================================================================*/
 /* Your custom styles below */
 /*============================================================================================*/
+.hvr-sweep-to-right {
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  border-radius: 10px;
+}
+.buttons{
+  background-color: rgb(246, 243, 243);
+  border: 1px solid #176e84 ;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+  
+}
+.button{
+  background-color: linear-gradient(to right, #27c3eb , #176e84);
+  border: none;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+}
+.hvr-sweep-to-right:before {
+  border-radius: 10px;
+  border: none;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #27c3eb , #176e84);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
 .carousel-item{
   height:70vh;
   min-height:300px;
@@ -219,7 +288,14 @@ to{border-right-color: transparent;}
    }
 }
 .public-listing{
-  background-color: rgba(33, 158, 188,0.9);
+  background:
+    linear-gradient(
+      rgba(33, 158, 188,0.7), 
+      rgba(33, 158, 188,0.7)
+    ),url('/assets/img/ships.jpg'); 
+    background-position: center;
+    background-size: cover;
+  
   height: 100%;
 width: 100%;
 overflow: hidden;
