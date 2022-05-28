@@ -12,7 +12,7 @@
           <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
       </ul>
       <!-- /top_menu -->
-      <!-- <a href="#menu" class="btn_mobile">
+  <!-- <a href="#menu" class="btn_mobile">
           <div class="hamburger hamburger--spin" id="hamburger">
               <div class="hamburger-box">
                   <div class="hamburger-inner"></div>
@@ -142,34 +142,33 @@
 
           </ul>
       </nav>
-  </header> --> 
-<div class="container header-navbar">
-<video autoplay loop muted style="-webkit-filter: blur(2px); 
+  </header> -->
+  <div class="container header-navbar">
+      {{-- <video autoplay loop muted style="-webkit-filter: blur(2px); 
 filter: blur(2px);">
              <source src="{{ asset('assets/videos/headervideo2.mov') }}">
-         </video>
-    <div class="row">
-        
-    <div class="col-12">
-        <nav>
-            <label class="logo">
-            <img src="{{ asset('assets/img/logo_sticky.svg') }}" width="190" height="50" alt=""
-                            class="logo_sticky">
-            </label>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Team</a></li>
-                    <li><button href="" class="btn-navbar">Become Member</button></li>
-                    
+         </video> --}}
+      <div class="row">
 
-                </ul>
-            </nav>
-            
-        </div>
-</div>
+          <div class="col-12">
+              <nav>
+                  <label class="logo">
+                      <img src="{{ asset('assets/img/logo_sticky.svg') }}" width="190" height="50" alt=""
+                          class="logo_sticky">
+                  </label>
+                  <ul>
+                      <li><a href="">Home</a></li>
+                      <li><a href="">About</a></li>
+                      <li><a href="">Services</a></li>
+                      <li><a href="">Contact</a></li>
+                      <li><a href="">Team</a></li>
+                      <li><button href="" class="btn-navbar">Become Member</button></li>
 
-</div>
 
+                  </ul>
+              </nav>
+
+          </div>
+      </div>
+
+  </div>
