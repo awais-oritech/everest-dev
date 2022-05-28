@@ -1,6 +1,75 @@
 /*============================================================================================*/
 /* Your custom styles below */
 /*============================================================================================*/
+.hvr-sweep-to-right {
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  border-radius: 10px;
+}
+.buttons{
+  background-color: rgb(246, 243, 243);
+  border: 1px solid #176e84 ;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+  
+}
+.button{
+  background-color: linear-gradient(to right, #27c3eb , #176e84);
+  border: none;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+}
+.hvr-sweep-to-right:before {
+  border-radius: 10px;
+  border: none;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #27c3eb , #176e84);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
 .carousel-item{
   height:70vh;
   min-height:300px;
@@ -219,7 +288,14 @@ to{border-right-color: transparent;}
    }
 }
 .public-listing{
-  background-color: rgba(33, 158, 188,0.9);
+  background:
+    linear-gradient(
+      rgba(33, 158, 188,0.7), 
+      rgba(33, 158, 188,0.7)
+    ),url('/assets/img/ships.jpg'); 
+    background-position: center;
+    background-size: cover;
+  
   height: 100%;
 width: 100%;
 overflow: hidden;
@@ -646,6 +722,7 @@ position: relative;
 }
 @media (min-width: 1025px) and (max-width: 1280px){
   .public-form{
+  
     display: none;
   }
   .carousel-caption{
@@ -667,6 +744,10 @@ position: relative;
 }
  /* Media Query for Mobile Devices */
  @media (max-width: 480px) {
+   .shadow-form{
+    box-shadow: rgba(33, 158, 188, 0.16) 0px 10px 36px 0px, rgba(33, 158, 188, 0.06) 0px 0px 0px 1px;
+  
+   }
   .carousel-caption{
     text-align: center;
     bottom:10px;
@@ -680,6 +761,9 @@ position: relative;
     bottom:10px;
 
   }
+  .shadow-form{
+    box-shadow: rgba(33, 158, 188, 0.16) 0px 10px 36px 0px, rgba(33, 158, 188, 0.06) 0px 0px 0px 1px;
+   }
   .box{
     width: 150px;
     height:150px;
@@ -694,6 +778,9 @@ position: relative;
     text-align: center;
     bottom:10px;
   }
+  .shadow-form{
+    box-shadow: rgba(33, 158, 188, 0.16) 0px 10px 36px 0px, rgba(33, 158, 188, 0.06) 0px 0px 0px 1px;
+   }
   .box{
     width: 250px;
     height:250px;
@@ -719,26 +806,58 @@ position: relative;
   font-weight: bold;
   font-size: 15px;
 }
-nav{
-  position: sticky;
-}
+/* 
 nav .logo{
   float:left;
 }
 nav ul{
   float: right;
-  margin-top:15px
+  margin-top:10px;
+  margin-bottom:10px;
  
 }
 nav ul li{
   display: inline-block;
  line-height: 30px;
   
+} */
+.navbar-nav{
+  float: right;
+  text-align: center;
 }
+.nav-link{
+  
+  margin-right: 20px;
+  font-size: 17px;
+color: #219EBC;
+font-weight: 500;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
+}
+.navbar-nav .nav-item{
+  text-align: center;
+}
+.nav-link:hover{
+  color: #219EBC;
+  border-bottom:2px solid #219EBC;
+  font-size: 15px;
+  transition: 500ms;
+}
+
+.heaader{
+  justify-content: center;
+  margin-bottom:10px;
+}
+
 .header-navbar{
+  margin-bottom:10px;
+  width: 100%;
+  overflow: hidden;
   padding-top: 20px;
 }
-nav ul li a{
+/* nav ul li a{
 
 font-size: 17px;
 color: black;
@@ -757,7 +876,7 @@ nav ul li a:active{
   color: #219EBC;
   border-bottom:2px solid #219EBC;
   font-size: 15px;
-}
+}*/
 .btn-navbar{
   background-color: #219EBC;
   border: none;
@@ -772,5 +891,4 @@ nav ul li a:active{
   background-color: #fbb900;
   color:black;
   transition: 500ms;
-}
-
+} 

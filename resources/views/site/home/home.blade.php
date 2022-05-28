@@ -58,7 +58,7 @@
                                     <div class="carousel-caption ">
                                         <h5 class="animated bounceInRight" style="animation-delay: 1s">INTERNATIONAL NETWORK <br> BUILD ON FOUNDATION OF <br>SAFETY AND TRUST</h5>
                                         <p class="animated bounceInLeft" style="animation-delay: 2s">Find what you need!</p>
-                                        <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                        <a href="" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
                                     </div>
                                 </div>
                                 <div class="carousel-item ">
@@ -66,7 +66,7 @@
                                     <div class="carousel-caption">
                                         <h5 class="animated bounceInRight" style="animation-delay: 1s">Beating all other mobile figures previously covered by Oftel.</h5>
                                         <p  class="animated bounceInLeft" style="animation-delay: 2s">Just do it</p>
-                                        <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                        <a href="" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
                                     </div>
                                 </div>
                                 <div class="carousel-item ">
@@ -74,7 +74,7 @@
                                     <div class="carousel-caption ">
                                     <h5 class="animated bounceInRight" style="animation-delay: 1s">The people you need are only a touch away.</h5>
                                         <p  class="animated bounceInLeft" style="animation-delay: 2s">Waiting for you </p>
-                                        <a href="" class="btnslider animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                        <a href="" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                         <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
                                     </div>
                                     <div class="buttonn">
-                                    <button type="submit" class="submit-button">Search</button>
+                                    <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
                                     </div>
                                    
                                     </form>
@@ -149,10 +149,10 @@
          <!-- /container -->
      </div> --}}
      <!-- /main_categories -->
-     <div class="container public-form">
+     <div class="container public-form mb-4" >
          <div class="row">
          <div class="col-12" >
-                        <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
+                        <div class="formbox-header shadow-form animated bounceInUp" style="animation-delay:1s">
                         <form>
                                     <div class="form-group col-xs-3">
                                         <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
@@ -171,7 +171,7 @@
                                         <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
                                     </div>
                                     <div class="buttonn">
-                                    <button type="submit" class="submit-button">Search</button>
+                                    <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
                                     </div>
                                    
                                     </form>
@@ -181,7 +181,7 @@
      </div>
     
      <!-- About US -->
-     <div class="bg_color_1 "  data-aos="fade-up">
+     <div class="bg_color_1 "  >
          <div class="container margin_80_55">
              <div class="main_title_2">
                  <span><em></em></span>
@@ -256,7 +256,7 @@
      <!--/About US-->
 
      <!-- Sponsors -->
-     <div class="bg_color_1"  data-aos="fade-up">
+     <div class="bg_color_1"  >
          <div class="container margin_80_55">
              <div class="main_title_2">
                  <span><em></em></span>
@@ -296,7 +296,7 @@
      <!--/ Sponsors -->
 
 
-     <div class="mt-4" style="background-color: #f8f8f8"  data-aos="fade-up">
+     <div class="mt-4" style="background-color: #f8f8f8"  >
          <div class="container" style="padding-top:5%">
 
              <div class="row">
@@ -328,7 +328,7 @@
          </div> 
      </div>
      <!-- Project Counter -->
-     {{-- <div class="container margin_60_35" data-aos="fade-up">
+     {{-- <div class="container margin_60_35" >
          <div class="row">
              <div class="four col-md-2">
                  <span class="counter colored">2147</span>
@@ -444,10 +444,10 @@
      <!-- </div> --> 
      <!--/call_section-->
 
-     <div class="public-listing mt-4" data-aos="fade-up">
-         <video autoplay loop muted>
+     <div class="public-listing mt-4" >
+         <!-- <video autoplay loop muted>
              <source src="{{ asset('assets/videos/pricelistingvideo.mp4') }}">
-         </video>
+         </video> -->
             <div class="">
                 <div class="container margin_80_55">
                         <div class="main_title_2">
@@ -511,7 +511,7 @@
     </div>
 
      <!-- Sponsors -->
-     <div class="bg_color_1" data-aos="fade-up">
+     <div class="bg_color_1" >
          <div class="container margin_80_55">
              <div class="main_title_2">
                  <span><em></em></span>
@@ -550,7 +550,7 @@
      <!--/ Sponsors -->
 
      <!--News and Events-->
-     <div class="container margin_80_55" data-aos="fade-up">
+     <div class="container margin_80_55" >
          <div class="main_title_2">
              <span><em></em></span>
              <h2>News and Events</h2>
@@ -654,7 +654,7 @@
              </section>
          </div>
         <div class="col-12 mt-4 btnnewsdiv">
-            <button class="btn-news">Read More</button>
+            <button class="hvr-sweep-to-right buttons">Read More</button>
         </div>
 
 
