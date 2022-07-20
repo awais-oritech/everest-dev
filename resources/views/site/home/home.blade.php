@@ -39,8 +39,9 @@
                  <a href="account.html" class="btn btn-lg btn_add">Become Member</a>
              <!-- </div>
          </div>
-     </section> --> 
+     </section> -->
      <!-- /hero_single -->
+
      <section class="hero_single version_2">
          <div class="wrapper">
              <div class="container">
@@ -54,7 +55,7 @@
                             </ol> -->
                             <div class="carousel-inner">
                             <div class="carousel-item active">
-                                
+
                                     <div class="carousel-caption ">
                                         <h5 class="animated bounceInRight" style="animation-delay: 1s">INTERNATIONAL NETWORK <br> BUILD ON FOUNDATION OF <br>SAFETY AND TRUST</h5>
                                         <p class="animated bounceInLeft" style="animation-delay: 2s">Find what you need!</p>
@@ -62,7 +63,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item ">
-                                
+
                                     <div class="carousel-caption">
                                         <h5 class="animated bounceInRight" style="animation-delay: 1s">Beating all other mobile figures previously covered by Oftel.</h5>
                                         <p  class="animated bounceInLeft" style="animation-delay: 2s">Just do it</p>
@@ -70,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item ">
-                                
+
                                     <div class="carousel-caption ">
                                     <h5 class="animated bounceInRight" style="animation-delay: 1s">The people you need are only a touch away.</h5>
                                         <p  class="animated bounceInLeft" style="animation-delay: 2s">Waiting for you </p>
@@ -101,16 +102,16 @@
                                     <div class="buttonn">
                                     <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
                                     </div>
-                                   
+
                                     </form>
                         </div>
                      </div>
                  </div>
              </div>
-        
+
      </section>
 
-    
+
             {{-- <div class="main_categories">
          <div class="container">
              <ul class="clearfix">
@@ -173,13 +174,13 @@
                                     <div class="buttonn">
                                     <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
                                     </div>
-                                   
+
                                     </form>
                         </div>
                      </div>
          </div>
      </div>
-    
+
      <!-- About US -->
      <div class="bg_color_1 "  >
          <div class="container margin_80_55">
@@ -187,7 +188,7 @@
                  <span><em></em></span>
                     <h2 >Our Origins and Story</h2>
                     <p class="animated bounceInLeft" style="animation-delay:1s">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-             </div> 
+             </div>
              <div class="row" style="justify-content: center;">
                  <div class="col-lg-6 col-md-6 col-sm-12 " >
                     <div class="row">
@@ -202,12 +203,12 @@
                                 </div>
                             </div>
                             <div class="col-3">
-                        
+
                             </div>
-                        
+
                         </div>
                     </div>
-                 
+
                  <div class="col-lg-6 col-md-6 col-sm-12" >
                  <p>Lorem ipsum dolor sit amet, homero erroribus in cum. Cu eos <strong>scaevola probatus</strong>.
                          Nam
@@ -222,7 +223,7 @@
                          efficiendi
                          cu.</p>
                      <p><em>CEO Marc Schumaker</em></p>
-                
+
                  </div>
              </div>
              <!-- <div class="row justify-content-between">
@@ -290,7 +291,7 @@
                      </div>
                  </div>
              </div>
-            
+
          </div>
      </div>
      <!--/ Sponsors -->
@@ -325,7 +326,7 @@
                  <div id="regions_div" style=" height: 400px;">
                 </div>
              </div>
-         </div> 
+         </div>
      </div>
      <!-- Project Counter -->
      {{-- <div class="container margin_60_35" >
@@ -404,7 +405,7 @@
                                  </select>
                              </div>
 
-                         </div> 
+                         </div>
                          <!-- /row -->
                      </form>
                      {{-- <div class="col-md-4">
@@ -438,10 +439,10 @@
                  <!-- <p class="text-center add_top_30 wow bounceIn" data-wow-delay="0.5s"><a href="account.html"
                          class="btn_1 rounded">Search</a></p> -->
              </div>
-            
+
          </div>
          <!-- /wrapper -->
-     <!-- </div> --> 
+     <!-- </div> -->
      <!--/call_section-->
 
      <div class="public-listing mt-4" >
@@ -461,7 +462,7 @@
                                 <img src="{{ asset('assets/img/benefitearth.png') }}" width="50px" height="50px"><span>   Global Search</span>
                             </div>
                         </div >
-                        
+
                         <div class="col-lg-3" >
                             <div class="benefit">
                                 <img src="{{ asset('assets/img/finance.png') }}" width="50px" height="50px"><span>Financial Protection</span>
@@ -502,8 +503,8 @@
                                 <img src="{{ asset('assets/img/voice.png') }}" width="50px" height="50px"><span>Voice of the Independant</span>
                             </div>
                         </div >
-                       
-                       
+
+
 
                     </div>
                 </div>
@@ -568,7 +569,7 @@
                             <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
                             </svg><span class="card__time">15 min</span>
                         </div>
-                        
+
                     </div>
                     <div class="card__img"></div>
                     <a href="#" class="card_link">
@@ -580,8 +581,8 @@
                         <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
                     </div>
                     </article>
-                    
-                    
+
+
                     <article class="card card--2">
                     <div class="card__info-hover">
                         <svg class="card__like"  viewBox="0 0 24 24">
@@ -591,7 +592,7 @@
                             <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
                             </svg><span class="card__time">5 min</span>
                         </div>
-                        
+
                     </div>
                     <div class="card__img"></div>
                     <a href="#" class="card_link">
@@ -602,7 +603,7 @@
                         <h3 class="card__title">Discover the sea</h3>
                         <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
                     </div>
-                    </article>  
+                    </article>
              </section>
             </div>
          <div class="col-lg-6 d-none d-md-block">
@@ -616,7 +617,7 @@
                             <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
                             </svg><span class="card__time">15 min</span>
                         </div>
-                        
+
                     </div>
                     <div class="card__img"></div>
                     <a href="#" class="card_link">
@@ -628,8 +629,8 @@
                         <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
                     </div>
                     </article>
-                    
-                    
+
+
                     <article class="card card--4">
                     <div class="card__info-hover">
                         <svg class="card__like"  viewBox="0 0 24 24">
@@ -639,7 +640,7 @@
                             <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
                             </svg><span class="card__time">5 min</span>
                         </div>
-                        
+
                     </div>
                     <div class="card__img"></div>
                     <a href="#" class="card_link">
@@ -650,7 +651,7 @@
                         <h3 class="card__title">Discover the sea</h3>
                         <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
                     </div>
-                    </article>  
+                    </article>
              </section>
          </div>
         <div class="col-12 mt-4 btnnewsdiv">

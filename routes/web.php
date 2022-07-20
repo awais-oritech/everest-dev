@@ -19,3 +19,15 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('site.home');
 });
+Route::get('/events', function(){
+    return view('site.home.events');
+});
+Route::get('/news', function(){
+    return view('site.home.news');
+});
+Route::get('/about', function(){
+    return view('site.home.about');
+});
+Route::get('/member', function(){
+    return view('site.home.member');
+});
