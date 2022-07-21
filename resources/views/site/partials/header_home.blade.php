@@ -166,20 +166,24 @@ filter: blur(2px);">
                                       class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
+                            <a class="nav-link " style="color:#219EBC;" href="/about"><i class="fa-solid fa-info"></i>
+                                About Us</a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" style="color:#219EBC;" href="#"><i class="fa-solid fa-book"></i>
+                                Benefit</a>
+                        </li> --}}
+                          <li class="nav-item">
                               <a class="nav-link" style="color:#219EBC;" href="#"><i class="fa-solid fa-book"></i>
                                   Directory</a>
                           </li>
                           <li class="nav-item">
+                            <a class="nav-link " style="color:#219EBC;" href="/news"><i class="fas fa-newspaper"></i>
+                                News</a>
+                        </li>
+                          <li class="nav-item">
                               <a class="nav-link" style="color:#219EBC;" href="/events"><i class="fas fa-flag"></i>
                                   Events</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link " style="color:#219EBC;" href="/news"><i class="fas fa-newspaper"></i>
-                                  News</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link " style="color:#219EBC;" href="/about"><i class="fa-solid fa-info"></i>
-                                  About Us</a>
                           </li>
                           <li>
                               <a href="/member"><button type="button"  class="hvr-sweep-to-right buttons mt-2 ">Become Member</button></a>

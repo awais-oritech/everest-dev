@@ -31,7 +31,7 @@
                         </div>
                         <div class="float-end"><a id="forgot" href="javascript:void(0);">Lost Password?</a></div>
                     </div>
-                    <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
+                    <div class="text-center"><a href="/pricing"><input type="button" value="Log In" class="btn_1 full-width"></a></div>
                     <div id="forgot_pw">
                         <div class="form-group">
                             <input type="email" class="form-control" name="email_forgot" id="email_forgot" placeholder="Type your email">
@@ -78,23 +78,12 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <label class="container_radio" style="display: inline-block; margin-right: 15px;">Private
-                            <input type="radio" name="client_type" checked value="private">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container_radio" style="display: inline-block;">Company
-                            <input type="radio" name="client_type" value="company">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <hr>
-                    <div class="form-group">
                         <label class="container_check">Accept <a href="#0">Terms and conditions</a>
                             <input type="checkbox">
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
+                    <div class="text-center"><a href="/pricing"><input type="button" value="Register" class="btn_1 full-width"></a></div>
                 </div>
                 <!-- /form_container -->
             </div>

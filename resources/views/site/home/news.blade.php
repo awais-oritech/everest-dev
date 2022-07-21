@@ -1,289 +1,237 @@
 @extends('layouts.site')
 @section('content')
 <main>
-    <div id="results">
-       <div class="container">
-           <div class="row">
-               <div class="col-lg-3 col-md-4 col-10">
-                   <h4><strong>145</strong> result for All listing</h4>
-               </div>
-               <div class="col-lg-9 col-md-8 col-2">
-                   <a href="#0" class="side_panel btn_search_mobile"></a> <!-- /open search panel -->
-                    <div class="row g-0 custom-search-input-2 inner">
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <input class="form-control" type="text" placeholder="What are you looking for...">
-                                <i class="icon_search"></i>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Where">
-                                <i class="icon_pin_alt"></i>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <select class="wide">
-                                <option>All Categories</option>
-                                <option>Shops</option>
-                                <option>Hotels</option>
-                                <option>Restaurants</option>
-                                <option>Bars</option>
-                                <option>Events</option>
-                                <option>Fitness</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-1">
-                            <input type="submit">
-                        </div>
-                    </div>
-               </div>
-           </div>
-           <!-- /row -->
-       </div>
-       <!-- /container -->
-   </div>
-
-       <!-- /results -->
-    <div class="filters_listing sticky_horizontal">
-        <div class="container">
-            <ul class="clearfix">
-                <li>
-                    <div class="switch-field">
-                        <input type="radio" id="all" name="listing_filter" value="all" checked>
-                        <label for="all">All</label>
-                        <input type="radio" id="popular" name="listing_filter" value="popular">
-                        <label for="popular">Popular</label>
-                        <input type="radio" id="latest" name="listing_filter" value="latest">
-                        <label for="latest">Latest</label>
-                    </div>
-                </li>
-                <li><a class="btn_filt" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" data-text-swap="Less filters" data-text-original="More filters">More filters</a></li>
-                <li>
-                    <div class="layout_view">
-                        <a href="#0" class="active"><i class="icon-th"></i></a>
-                        <a href="#0"><i class="icon-th-list"></i></a>
-                        <a href="#0"><i class="icon-map"></i></a>
-                    </div>
-                </li>
-                <li>
-                    <a class="btn_map" data-bs-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /filters -->
-
-    <div class="collapse" id="collapseMap">
-        <div id="map" class="map"></div>
-    </div>
-    <!-- /Map -->
-
-    <div class="collapse" id="filters">
-        <div class="container margin_30_5">
-            <div class="row">
-                <div class="col-md-4">
-                    <h6>Rating</h6>
-                    <ul>
-                        <li>
-                            <label class="container_check">Superb 9+ <small>25</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="container_check">Very Good 8+ <small>133</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="container_check">Good 7+ <small>32</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="container_check">Pleasant 6+ <small>12</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h6>Tags</h6>
-                    <ul>
-                        <li>
-                            <label class="container_check">Wireless Internet <small>12</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="container_check">Smoking Allowed <small>11</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="container_check">Wheelchair Accesible <small>23</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="container_check">Parking <small>56</small>
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <div class="add_bottom_30">
-                    <h6>Distance</h6>
-                        <div class="distance"> Radius around selected destination <span></span> km</div>
-                        <input type="range" min="10" max="100" step="10" value="30" data-orientation="horizontal">
-                    </div>
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-    </div>
-    <!-- /Filters -->
-
     <div class="container margin_60_35">
-
         <div class="row">
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="strip grid">
-                    <figure>
-                        <a href="#0" class="wish_bt"></a>
-                        <a href="detail-restaurant.html"><img src="assets/spark-img/location_1.jpg" class="img-fluid" alt=""><div class="read_more"><span>Read more</span></div></a>
-                        <small>Restaurant</small>
-                    </figure>
-                    <div class="wrapper">
-                        <h3><a href="detail-restaurant.html">Da Alfredo</a></h3>
-                        <small>27 Old Gloucester St</small>
-                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                        <a class="address" href="https://www.google.com/maps/dir//Assistance+–+Hôpitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+Hôpitaux+de+Paris+(AP-HP)+-+Siège!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Get directions</a>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a href="blog-post.html"><img src="assets/spark-img/blog-1.jpg" alt="">
+                                    <div class="preview"><span>Read more</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Category - 20 Nov. 2017</small>
+                                <h2><a href="blog-post.html">Ea exerci option hendrerit</a></h2>
+                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
                     </div>
-                    <ul>
-                        <li><span class="loc_open">Now Open</span></li>
-                        <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li>
+                    <!-- /col -->
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a href="blog-post.html"><img src="assets/spark-img/blog-2.jpg" alt="">
+                                    <div class="preview"><span>Read more</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Category - 20 Nov. 2017</small>
+                                <h2><a href="blog-post.html">At usu sale dolorum offendit</a></h2>
+                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!-- /col -->
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a href="blog-post.html"><img src="assets/spark-img/blog-3.jpg" alt="">
+                                    <div class="preview"><span>Read more</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Category - 20 Nov. 2017</small>
+                                <h2><a href="blog-post.html">Iusto nominavi petentium in</a></h2>
+                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!-- /col -->
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a href="blog-post.html"><img src="assets/spark-img/blog-4.jpg" alt="">
+                                    <div class="preview"><span>Read more</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Category - 20 Nov. 2017</small>
+                                <h2><a href="blog-post.html">Assueverit concludaturque quo</a></h2>
+                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!-- /col -->
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a href="blog-post.html"><img src="assets/spark-img/blog-5.jpg" alt="">
+                                    <div class="preview"><span>Read more</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Category - 20 Nov. 2017</small>
+                                <h2><a href="blog-post.html">Nec nihil menandri appellantur</a></h2>
+                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!-- /col -->
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a href="blog-post.html"><img src="assets/spark-img/blog-6.jpg" alt="">
+                                    <div class="preview"><span>Read more</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Category - 20 Nov. 2017</small>
+                                <h2><a href="blog-post.html">Te congue everti his salutandi</a></h2>
+                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!-- /col -->
+                </div>
+                <!-- /row -->
+
+                <div class="pagination__wrapper add_bottom_30">
+                    <ul class="pagination">
+                        <li><a href="#0" class="prev" title="previous page">&#10094;</a></li>
+                        <li>
+                            <a href="#0" class="active">1</a>
+                        </li>
+                        <li>
+                            <a href="#0">2</a>
+                        </li>
+                        <li>
+                            <a href="#0">3</a>
+                        </li>
+                        <li>
+                            <a href="#0">4</a>
+                        </li>
+                        <li><a href="#0" class="next" title="next page">&#10095;</a></li>
                     </ul>
                 </div>
+                <!-- /pagination -->
+
             </div>
-            <!-- /strip grid -->
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="strip grid">
-                    <figure>
-                        <a href="#0" class="wish_bt"></a>
-                        <a href="detail-restaurant.html"><img src="assets/spark-img/location_2.jpg" class="img-fluid" alt=""><div class="read_more"><span>Read more</span></div></a>
-                        <small>Bar</small>
-                    </figure>
-                    <div class="wrapper">
-                        <h3><a href="detail-restaurant.html">Limon Bar</a></h3>
-                        <small>438 Rush Green Road, Romford</small>
-                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                        <a class="address" href="https://www.google.com/maps/dir//Assistance+–+Hôpitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+Hôpitaux+de+Paris+(AP-HP)+-+Siège!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Get directions</a>
+            <!-- /col -->
+
+            <aside class="col-lg-3">
+                <div class="widget search_blog">
+                    <div class="form-group">
+                        <input type="text" name="search" id="search" class="form-control" placeholder="Search..">
+                        <span><input type="submit" value="Search"></span>
                     </div>
-                    <ul>
-                        <li><span class="loc_open">Now Open</span></li>
-                        <li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div></li>
+                </div>
+                <!-- /widget -->
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Latest Post</h4>
+                    </div>
+                    <ul class="comments-list">
+                        <li>
+                            <div class="alignleft">
+                                <a href="#0"><img src="assets/spark-img/blog-5.jpg" alt=""></a>
+                            </div>
+                            <small>Category - 11.08.2016</small>
+                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                        </li>
+                        <li>
+                            <div class="alignleft">
+                                <a href="#0"><img src="assets/spark-img/blog-6.jpg" alt=""></a>
+                            </div>
+                            <small>Category - 11.08.2016</small>
+                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                        </li>
+                        <li>
+                            <div class="alignleft">
+                                <a href="#0"><img src="assets/spark-img/blog-4.jpg" alt=""></a>
+                            </div>
+                            <small>Category - 11.08.2016</small>
+                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                        </li>
                     </ul>
                 </div>
-            </div>
-            <!-- /strip grid -->
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="strip grid">
-                    <figure>
-                        <a href="#0" class="wish_bt"></a>
-                        <a href="detail-shop.html"><img src="assets/spark-img/location_3.jpg" class="img-fluid" alt=""><div class="read_more"><span>Read more</span></div></a>
-                        <small>Shop</small>
-                    </figure>
-                    <div class="wrapper">
-                        <h3><a href="detail-shop.html">Mary Boutique</a></h3>
-                        <small>43 Stephen Road, Bexleyheath</small>
-                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                        <a class="address" href="https://www.google.com/maps/dir//Assistance+–+Hôpitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+Hôpitaux+de+Paris+(AP-HP)+-+Siège!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Get directions</a>
+                <!-- /widget -->
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Categories</h4>
                     </div>
-                    <ul>
-                        <li><span class="loc_closed">Now Closed</span></li>
-                        <li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div></li>
+                    <ul class="cats">
+                        <li><a href="#">Food <span>(12)</span></a></li>
+                        <li><a href="#">Places to visit <span>(21)</span></a></li>
+                        <li><a href="#">New Places <span>(44)</span></a></li>
+                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li>
                     </ul>
                 </div>
-            </div>
-            <!-- /strip grid -->
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="strip grid">
-                    <figure>
-                        <a href="#0" class="wish_bt"></a>
-                        <a href="detail-restaurant.html"><img src="assets/spark-img/location_4.jpg" class="img-fluid" alt=""><div class="read_more"><span>Read more</span></div></a>
-                        <small>Bar</small>
-                    </figure>
-                    <div class="wrapper">
-                        <h3><a href="detail-restaurant.html">Garden Bar</a></h3>
-                        <small>40 Beechwood Road, Sanderstead</small>
-                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                        <a class="address" href="https://www.google.com/maps/dir//Assistance+–+Hôpitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+Hôpitaux+de+Paris+(AP-HP)+-+Siège!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Get directions</a>
+                <!-- /widget -->
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Popular Tags</h4>
                     </div>
-                    <ul>
-                        <li><span class="loc_closed">Now Closed</span></li>
-                        <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.0</strong></div></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /strip grid -->
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="strip grid">
-                    <figure>
-                        <a href="#0" class="wish_bt"></a>
-                        <a href="detail-hotel.html"><img src="assets/spark-img/location_5.jpg" class="img-fluid" alt=""><div class="read_more"><span>Read more</span></div></a>
-                        <small>Hotel</small>
-                    </figure>
-                    <div class="wrapper">
-                        <h3><a href="detail-hotel.html">Mariott Hotel</a></h3>
-                        <small>213 Malden Road, New Malden</small>
-                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                        <a class="address" href="https://www.google.com/maps/dir//Assistance+–+Hôpitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+Hôpitaux+de+Paris+(AP-HP)+-+Siège!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Get directions</a>
+                    <div class="tags">
+                        <a href="#">Food</a>
+                        <a href="#">Bars</a>
+                        <a href="#">Cooktails</a>
+                        <a href="#">Shops</a>
+                        <a href="#">Best Offers</a>
+                        <a href="#">Transports</a>
+                        <a href="#">Restaurants</a>
                     </div>
-                    <ul>
-                        <li><span class="loc_open">Now Open</span></li>
-                        <li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.5</strong></div></li>
-                    </ul>
                 </div>
-            </div>
-            <!-- /strip grid -->
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="strip grid">
-                    <figure>
-                        <a href="#0" class="wish_bt"></a>
-                        <a href="detail-restaurant.html"><img src="assets/spark-img/location_6.jpg" class="img-fluid" alt=""><div class="read_more"><span>Read more</span></div></a>
-                        <small>Event</small>
-                    </figure>
-                    <div class="wrapper">
-                        <h3><a href="detail-restaurant.html">Six Pistols</a></h3>
-                        <small>Coverdale Road, Willesden</small>
-                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                        <a class="address" href="https://www.google.com/maps/dir//Assistance+–+Hôpitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+Hôpitaux+de+Paris+(AP-HP)+-+Siège!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Get directions</a>
-                    </div>
-                    <ul>
-                        <li><span class="loc_open">Now Open</span></li>
-                        <li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.8</strong></div></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /strip grid -->
+                <!-- /widget -->
+            </aside>
+            <!-- /aside -->
         </div>
         <!-- /row -->
-
-        <p class="text-center"><a href="#0" class="btn_1 rounded add_top_30">Load more</a></p>
-
     </div>
     <!-- /container -->
-
 </main>
 @endsection

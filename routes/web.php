@@ -31,3 +31,12 @@ Route::get('/about', function(){
 Route::get('/member', function(){
     return view('site.home.member');
 });
+Route::get('/addlisting', function(){
+    return view('site.home.addlisting');
+});
+Route::get('/pricing', function(){
+    return view('site.home.pricing');
+});
+Route::get('/profile-registration', function(){
+    return view('site.home.profile-registration');
+});

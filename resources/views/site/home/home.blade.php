@@ -100,7 +100,7 @@
                                         <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
                                     </div>
                                     <div class="buttonn">
-                                    <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
+                                    <a href="/addlisting"><button type="button" class="hvr-sweep-to-right buttons">Search</button></a>
                                     </div>
 
                                     </form>
