@@ -19,3 +19,24 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('site.home');
 });
+Route::get('/events', function(){
+    return view('site.home.events');
+});
+Route::get('/news', function(){
+    return view('site.home.news');
+});
+Route::get('/about', function(){
+    return view('site.home.about');
+});
+Route::get('/member', function(){
+    return view('site.home.member');
+});
+Route::get('/addlisting', function(){
+    return view('site.home.addlisting');
+});
+Route::get('/pricing', function(){
+    return view('site.home.pricing');
+});
+Route::get('/profile-registration', function(){
+    return view('site.home.profile-registration');
+});

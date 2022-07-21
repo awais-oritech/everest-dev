@@ -1,4 +1,4 @@
-  <header class="header menu_fixed">
+  <!-- <header class="header menu_fixed">
       <div id="logo">
           <a href="index-2.html" title="Sparker - Directory and listings template">
               <img src="{{ asset('assets/img/logo.svg') }}" width="165" height="35" alt="" class="logo_normal">
@@ -12,7 +12,7 @@
           <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
       </ul>
       <!-- /top_menu -->
-      <a href="#menu" class="btn_mobile">
+  <!-- <a href="#menu" class="btn_mobile">
           <div class="hamburger hamburger--spin" id="hamburger">
               <div class="hamburger-box">
                   <div class="hamburger-inner"></div>
@@ -142,4 +142,61 @@
 
           </ul>
       </nav>
-  </header>
+  </header> -->
+  <div class="container header-navbar">
+      <!-- <video autoplay loop muted style="-webkit-filter: blur(2px);
+filter: blur(2px);">
+             <source src="{{ asset('assets/videos/headervideo2.mov') }}">
+         </video> -->
+      <div class="row">
+
+          <div class="col-12">
+              <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand" href="#"> <img src="{{ asset('assets/img/logo_sticky.svg') }}" width="165"
+                          height="35" alt="" class="logo_normal"></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse  navbar-right  navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item active">
+                              <a class="nav-link" style="color:#219EBC;" href="/"><i
+                                      class="fa-solid fa-house"></i> Home <span
+                                      class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " style="color:#219EBC;" href="/about"><i class="fa-solid fa-info"></i>
+                                About Us</a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" style="color:#219EBC;" href="#"><i class="fa-solid fa-book"></i>
+                                Benefit</a>
+                        </li> --}}
+                          <li class="nav-item">
+                              <a class="nav-link" style="color:#219EBC;" href="#"><i class="fa-solid fa-book"></i>
+                                  Directory</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " style="color:#219EBC;" href="/news"><i class="fas fa-newspaper"></i>
+                                News</a>
+                        </li>
+                          <li class="nav-item">
+                              <a class="nav-link" style="color:#219EBC;" href="/events"><i class="fas fa-flag"></i>
+                                  Events</a>
+                          </li>
+                          <li>
+                              <a href="/member"><button type="button"  class="hvr-sweep-to-right buttons mt-2 ">Become Member</button></a>
+                          </li>
+
+                      </ul>
+                  </div>
+              </nav>
+
+          </div>
+      </div>
+
+  </div>
+  </div>
+
+  </div>
