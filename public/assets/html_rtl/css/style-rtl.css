@@ -4,7 +4,7 @@ Theme URI: http://www.ansonika.com/sparker/
 Author: Ansonika
 Author URI: http://themeforest.net/user/Ansonika/
 
-[Table of contents] 
+[Table of contents]
 
 1. SITE STRUCTURE and TYPOGRAPHY
 - 1.1 Typography
@@ -530,11 +530,11 @@ a.box_cat_home ul li strong {
 }
 .distance span {
   font-weight: 600;
-  color: #004dda;
+  color: #1c75BA;
 }
 
 .rangeslider__fill {
-  background: #004dda !important;
+  background: #1c75BA !important;
 }
 
 .filters_listing ul {
@@ -1035,7 +1035,7 @@ ul#cat_nav li a span {
   color: #999;
 }
 ul#cat_nav li a:hover, ul#cat_nav li a#active, ul#cat_nav li a.active {
-  color: #004dda;
+  color: #1c75BA;
 }
 
 .list_articles ul li {

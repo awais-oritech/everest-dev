@@ -1,0 +1,80 @@
+[01-Jul-2022 20:01:05 Asia/Karachi] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 24
+[01-Jul-2022 20:01:05 Asia/Karachi] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, bool given in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 25
+[01-Jul-2022 20:02:03 Asia/Karachi] PHP Fatal error:  DB:Select() failed, err no 1146
+Message: Table 'pionerln_db.categories' doesn't exist
+SQL: SELECT
+            services.*,
+            GROUP_CONCAT(category.name) AS category
+                FROM
+                    `services`
+                LEFT JOIN categories AS category
+                ON find_in_set(category.id,services.category_id)
+                GROUP BY services.id
+                ORDER BY
+                    services.id
+                DESC
+ in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 141
+[01-Jul-2022 20:04:50 Asia/Karachi] PHP Fatal error:  DB:Select() failed, err no 1146
+Message: Table 'pionerln_db.categories' doesn't exist
+SQL: SELECT
+            services.*,
+            GROUP_CONCAT(category.name) AS category
+                FROM
+                    `services`
+                LEFT JOIN categories AS category
+                ON find_in_set(category.id,services.category_id)
+                GROUP BY services.id
+                ORDER BY
+                    services.id
+                DESC
+ in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 141
+[02-Jul-2022 04:50:24 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to undefined method Content::blogs() in /home3/pionerln/public_html/dev/admin/classes/Gateway.class.php:333
+Stack trace:
+#0 /home3/pionerln/public_html/dev/admin/index.php(42): Gateway::Process(Array)
+#1 {main}
+  thrown in /home3/pionerln/public_html/dev/admin/classes/Gateway.class.php on line 333
+[02-Jul-2022 14:43:57 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to undefined method Content::blogs() in /home3/pionerln/public_html/dev/admin/classes/Gateway.class.php:333
+Stack trace:
+#0 /home3/pionerln/public_html/dev/admin/index.php(42): Gateway::Process(Array)
+#1 {main}
+  thrown in /home3/pionerln/public_html/dev/admin/classes/Gateway.class.php on line 333
+[02-Jul-2022 15:12:23 Asia/Karachi] PHP Fatal error:  DB:Select() failed, err no 1054
+Message: Unknown column 'posts.category_id' in 'on clause'
+SQL: SELECT  
+                    	blogs.*,
+                    	blogcategories.name AS category
+                    	
+                    FROM `blogs` 
+                    LEFT JOIN blogcategories ON posts.category_id=blogcategories.id 
+                    ORDER BY posts.level DESC
+ in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 141
+[02-Jul-2022 15:12:51 Asia/Karachi] PHP Fatal error:  DB:Select() failed, err no 1054
+Message: Unknown column 'posts.category_id' in 'on clause'
+SQL: SELECT  
+                    	blogs.*,
+                    	blogcategories.name AS category
+                    	
+                    FROM `blogs` 
+                    LEFT JOIN blogcategories ON posts.category_id=blogcategories.id 
+                    ORDER BY blogs.level DESC
+ in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 141
+[02-Jul-2022 15:12:56 Asia/Karachi] PHP Fatal error:  DB:Select() failed, err no 1054
+Message: Unknown column 'posts.category_id' in 'on clause'
+SQL: SELECT  
+                    	blogs.*,
+                    	blogcategories.name AS category
+                    	
+                    FROM `blogs` 
+                    LEFT JOIN blogcategories ON posts.category_id=blogcategories.id 
+                    ORDER BY blogs.level DESC
+ in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 141
+[02-Jul-2022 15:13:21 Asia/Karachi] PHP Fatal error:  DB:Select() failed, err no 1054
+Message: Unknown column 'posts.category_id' in 'on clause'
+SQL: SELECT  
+                    	blogs.*,
+                    	blogcategories.name AS category
+                    	
+                    FROM `blogs` 
+                    LEFT JOIN blogcategories ON posts.category_id=blogcategories.id 
+                    ORDER BY blogs.level DESC
+ in /home3/pionerln/public_html/dev/admin/classes/DB.class.php on line 141

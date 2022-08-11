@@ -5,138 +5,30 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="row">
+                    @foreach($news as $new)
                     <div class="col-md-6">
                         <article class="blog">
                             <figure>
-                                <a href="blog-post.html"><img src="assets/spark-img/blog-1.jpg" alt="">
+                                {{-- <a href="#"><img src="assets/spark-img/blog-1.jpg" alt=""> --}}
+                                <a href="{{route('news-info',[$new->id])}}"><img src="http://localhost:8080/everest-dev/admin/{{$new->image}}" alt="">
                                     <div class="preview"><span>Read more</span></div>
                                 </a>
                             </figure>
                             <div class="post_info">
-                                <small>Category - 20 Nov. 2017</small>
-                                <h2><a href="blog-post.html">Ea exerci option hendrerit</a></h2>
-                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
-                                <ul>
+                                <small>{{ \Carbon\Carbon::parse($new->created)->format('d/m/Y')}}</small>
+                                <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
+                                <p>{{$new->description}}</p>
+                                {{-- <ul>
                                     <li>
                                         <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
                                     </li>
                                     <li><i class="ti-comment"></i>20</li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </article>
                         <!-- /article -->
                     </div>
-                    <!-- /col -->
-                    <div class="col-md-6">
-                        <article class="blog">
-                            <figure>
-                                <a href="blog-post.html"><img src="assets/spark-img/blog-2.jpg" alt="">
-                                    <div class="preview"><span>Read more</span></div>
-                                </a>
-                            </figure>
-                            <div class="post_info">
-                                <small>Category - 20 Nov. 2017</small>
-                                <h2><a href="blog-post.html">At usu sale dolorum offendit</a></h2>
-                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
-                                <ul>
-                                    <li>
-                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
-                                    </li>
-                                    <li><i class="ti-comment"></i>20</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <!-- /article -->
-                    </div>
-                    <!-- /col -->
-                    <div class="col-md-6">
-                        <article class="blog">
-                            <figure>
-                                <a href="blog-post.html"><img src="assets/spark-img/blog-3.jpg" alt="">
-                                    <div class="preview"><span>Read more</span></div>
-                                </a>
-                            </figure>
-                            <div class="post_info">
-                                <small>Category - 20 Nov. 2017</small>
-                                <h2><a href="blog-post.html">Iusto nominavi petentium in</a></h2>
-                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
-                                <ul>
-                                    <li>
-                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
-                                    </li>
-                                    <li><i class="ti-comment"></i>20</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <!-- /article -->
-                    </div>
-                    <!-- /col -->
-                    <div class="col-md-6">
-                        <article class="blog">
-                            <figure>
-                                <a href="blog-post.html"><img src="assets/spark-img/blog-4.jpg" alt="">
-                                    <div class="preview"><span>Read more</span></div>
-                                </a>
-                            </figure>
-                            <div class="post_info">
-                                <small>Category - 20 Nov. 2017</small>
-                                <h2><a href="blog-post.html">Assueverit concludaturque quo</a></h2>
-                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
-                                <ul>
-                                    <li>
-                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
-                                    </li>
-                                    <li><i class="ti-comment"></i>20</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <!-- /article -->
-                    </div>
-                    <!-- /col -->
-                    <div class="col-md-6">
-                        <article class="blog">
-                            <figure>
-                                <a href="blog-post.html"><img src="assets/spark-img/blog-5.jpg" alt="">
-                                    <div class="preview"><span>Read more</span></div>
-                                </a>
-                            </figure>
-                            <div class="post_info">
-                                <small>Category - 20 Nov. 2017</small>
-                                <h2><a href="blog-post.html">Nec nihil menandri appellantur</a></h2>
-                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
-                                <ul>
-                                    <li>
-                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
-                                    </li>
-                                    <li><i class="ti-comment"></i>20</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <!-- /article -->
-                    </div>
-                    <!-- /col -->
-                    <div class="col-md-6">
-                        <article class="blog">
-                            <figure>
-                                <a href="blog-post.html"><img src="assets/spark-img/blog-6.jpg" alt="">
-                                    <div class="preview"><span>Read more</span></div>
-                                </a>
-                            </figure>
-                            <div class="post_info">
-                                <small>Category - 20 Nov. 2017</small>
-                                <h2><a href="blog-post.html">Te congue everti his salutandi</a></h2>
-                                <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
-                                <ul>
-                                    <li>
-                                        <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
-                                    </li>
-                                    <li><i class="ti-comment"></i>20</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <!-- /article -->
-                    </div>
-                    <!-- /col -->
+                    @endforeach
                 </div>
                 <!-- /row -->
 
@@ -164,39 +56,27 @@
             <!-- /col -->
 
             <aside class="col-lg-3">
-                <div class="widget search_blog">
+                {{-- <div class="widget search_blog">
                     <div class="form-group">
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search..">
                         <span><input type="submit" value="Search"></span>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /widget -->
                 <div class="widget">
                     <div class="widget-title">
                         <h4>Latest Post</h4>
                     </div>
                     <ul class="comments-list">
+                        @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
-                                <a href="#0"><img src="assets/spark-img/blog-5.jpg" alt=""></a>
+                                <a href="#0"><img src="http://localhost:8080/everest-dev/admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
-                            <small>Category - 11.08.2016</small>
+                            <small>{{$latest_blog->name}} - {{$latest_blog->created}}</small>
                             <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
                         </li>
-                        <li>
-                            <div class="alignleft">
-                                <a href="#0"><img src="assets/spark-img/blog-6.jpg" alt=""></a>
-                            </div>
-                            <small>Category - 11.08.2016</small>
-                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
-                        </li>
-                        <li>
-                            <div class="alignleft">
-                                <a href="#0"><img src="assets/spark-img/blog-4.jpg" alt=""></a>
-                            </div>
-                            <small>Category - 11.08.2016</small>
-                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- /widget -->
@@ -205,28 +85,15 @@
                         <h4>Categories</h4>
                     </div>
                     <ul class="cats">
-                        <li><a href="#">Food <span>(12)</span></a></li>
+                        @foreach($categories as $category)
+                        <li><a href="#">{{$category->name}}<span>({{$category->level}})</span></a></li>
+                        @endforeach
+                        {{-- <li><a href="#">Food <span>(12)</span></a></li>
                         <li><a href="#">Places to visit <span>(21)</span></a></li>
                         <li><a href="#">New Places <span>(44)</span></a></li>
-                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li>
+                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li> --}}
                     </ul>
                 </div>
-                <!-- /widget -->
-                <div class="widget">
-                    <div class="widget-title">
-                        <h4>Popular Tags</h4>
-                    </div>
-                    <div class="tags">
-                        <a href="#">Food</a>
-                        <a href="#">Bars</a>
-                        <a href="#">Cooktails</a>
-                        <a href="#">Shops</a>
-                        <a href="#">Best Offers</a>
-                        <a href="#">Transports</a>
-                        <a href="#">Restaurants</a>
-                    </div>
-                </div>
-                <!-- /widget -->
             </aside>
             <!-- /aside -->
         </div>

@@ -152,7 +152,7 @@ filter: blur(2px);">
 
           <div class="col-12">
               <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                  <a class="navbar-brand" href="#"> <img src="{{ asset('assets/img/logo_sticky.svg') }}" width="165"
+                  <a class="navbar-brand" href="#"> <img src="{{ asset('assets/img/pioneer-01.png') }}" width="auto"
                           height="35" alt="" class="logo_normal"></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -161,35 +161,41 @@ filter: blur(2px);">
                   <div class="collapse  navbar-right  navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav ml-auto">
                           <li class="nav-item active">
-                              <a class="nav-link" style="color:#219EBC;" href="/"><i
+                              <a class="nav-link" style="color:#1c75BA;" href="/"><i
                                       class="fa-solid fa-house"></i> Home <span
                                       class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link " style="color:#219EBC;" href="/about"><i class="fa-solid fa-info"></i>
+                            <a class="nav-link " style="color:#1c75BA;" href="/about"><i class="fa-solid fa-info"></i>
                                 About Us</a>
                         </li>
                         {{-- <li class="nav-item">
-                            <a class="nav-link" style="color:#219EBC;" href="#"><i class="fa-solid fa-book"></i>
+                            <a class="nav-link" style="color:#1c75BA;" href="#"><i class="fa-solid fa-book"></i>
                                 Benefit</a>
                         </li> --}}
                           <li class="nav-item">
-                              <a class="nav-link" style="color:#219EBC;" href="#"><i class="fa-solid fa-book"></i>
+                              <a class="nav-link" style="color:#1c75BA;" href="#"><i class="fa-solid fa-book"></i>
                                   Directory</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link " style="color:#219EBC;" href="/news"><i class="fas fa-newspaper"></i>
+                            <a class="nav-link " style="color:#1c75BA;" href="/news"><i class="fas fa-newspaper"></i>
                                 News</a>
                         </li>
                           <li class="nav-item">
-                              <a class="nav-link" style="color:#219EBC;" href="/events"><i class="fas fa-flag"></i>
+                              <a class="nav-link" style="color:#1c75BA;" href="/events"><i class="fas fa-flag"></i>
                                   Events</a>
                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link" style="color:#1c75BA;" href="/contact-us"><i class="fas fa-phone"></i>
+                                Contact</a>
+                        </li>
                           <li>
                               <a href="/member"><button type="button"  class="hvr-sweep-to-right buttons mt-2 ">Become Member</button></a>
                           </li>
-
                       </ul>
+                      @if(Auth::user())
+                      <a class="nav-link" href="{{route('logout')}}"><i class="fas fa-sign-out"></i></a>
+                      @endif
                   </div>
               </nav>
 

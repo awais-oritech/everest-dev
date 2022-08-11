@@ -1,7 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PricingController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\NewsInfoController;
+use App\Http\Controllers\CompanyProfileController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,31 +22,37 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('site.home.home');
 });
 Route::get('/home', function () {
     return view('site.home');
 });
-Route::get('/events', function(){
-    return view('site.home.events');
-});
-Route::get('/news', function(){
-    return view('site.home.news');
-});
+
 Route::get('/about', function(){
     return view('site.home.about');
 });
-Route::get('/member', function(){
-    return view('site.home.member');
+
+Route::get('/faq', function(){
+    return view('site.home.faq');
 });
-Route::get('/addlisting', function(){
-    return view('site.home.addlisting');
+Route::get('/privacy-policy', function(){
+    return view('site.home.privacy-policy');
 });
-Route::get('/pricing', function(){
-    return view('site.home.pricing');
-});
-Route::get('/profile-registration', function(){
-    return view('site.home.profile-registration');
+
+Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact-us');
+Route::post('/contact-us',[ContactUsController::class, 'store']);
+Route::get('/news',[NewsController::class, 'index'])->name('news');
+Route::get('/events',[EventsController::class, 'index'])->name('events');
+Route::get('/member',[MemberController::class,'index'])->name('member');
+Route::post('/login',[LoginController::class,'customLogin']);
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::post('/register',[RegisterController::class,'customRegistration']);
+Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
+Route::group(['middleware'=>'prevent-back-history'],function(){
+Auth::routes();
+Route::get('/pricing',[PricingController::class,'index'])->name('pricing');
+Route::get('/profile-registration/{id}',[CompanyProfileController::class,'index'])->name('profile-registration');
+Route::post('/profile-registration/{id}', [CompanyProfileController::class, 'store']);
+Route::get('/search',[SearchController::class, 'index'])->name('search');
 });

@@ -82,28 +82,46 @@
                      </div>
                      <div class="col-lg-6 d-none d-lg-block" >
                         <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
-                        <form>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
-                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
-                                    </div>
-                                    <div class="buttonn">
-                                    <a href="/addlisting"><button type="button" class="hvr-sweep-to-right buttons">Search</button></a>
-                                    </div>
-
-                                    </form>
+                            <form>
+                                {{-- <div class="form-group col-xs-3">
+                                    <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
+                                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                                </div>
+                                <div class="form-group col-xs-3">
+                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                                </div> --}}
+                                <div class="form-group col-xs-3">
+                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
+                                    <select id="country" class="continentname js-data-example-ajax form-control"></select>
+                                    {{-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country"> --}}
+                                    {{-- <select id="select-state" placeholder="Pick a state...">
+                                        <option value="">Select a state...</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                      </select> --}}
+                                </div>
+                                <div class="form-group col-xs-3">
+                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+                                </div>
+                                <div class="buttonn">
+                                <a href="/addlisting"><button type="button" class="hvr-sweep-to-right buttons">Search</button></a>
+                                </div>
+                            </form>
                         </div>
                      </div>
                  </div>
@@ -152,33 +170,32 @@
      <!-- /main_categories -->
      <div class="container public-form mb-4" >
          <div class="row">
-         <div class="col-12" >
-                        <div class="formbox-header shadow-form animated bounceInUp" style="animation-delay:1s">
-                        <form>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
-                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
-                                    </div>
-                                    <div class="form-group col-xs-3">
-                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
-                                    </div>
-                                    <div class="buttonn">
-                                    <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
-                                    </div>
-
-                                    </form>
-                        </div>
-                     </div>
-         </div>
+            <div class="col-12" >
+                    <div class="formbox-header shadow-form animated bounceInUp" style="animation-delay:1s">
+                        <form method="GET">
+                            <div class="form-group col-xs-3">
+                                <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
+                                <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+                            </div>
+                            <div class="buttonn">
+                            <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
      </div>
 
      <!-- About US -->
@@ -724,7 +741,7 @@
      <style>
          .counter-box {
              display: block;
-             background: #ffc107;
+             background: #00a8df;
              color: #222;
              text-align: center;
              padding: 19px 30px 5px;
@@ -758,7 +775,7 @@
          }
 
          .counter-box.colored:hover {
-             background-color: #ffc107;
+             background-color: #00a8df;
              color: #222 !important;
          }
 
@@ -794,7 +811,7 @@
 
              var options = {
                  colorAxis: {
-                     colors: '#219EBC'
+                     colors: '#1c75BA'
                  },
                  backgroundColor: '#f8f8f8'
 
@@ -822,6 +839,25 @@
 
          });
      </script>
+      <script type="text/javascript">
+      $(document).ready(function() {
+            $('#select-state').select2();
+        });
+       $('#select-state').select2({
+            ajax: {
+                url: 'https://api.github.com/orgs/select2/repos',
+                data: function (params) {
+                var query = {
+                    search: params.term,
+                    type: 'public'
+                }
+
+                // Query parameters will be ?search=[term]&type=public
+                return query;
+                }
+            }
+            });
+    </script>
      <script type="text/javascript">
          $(document).ready(function() {
 
@@ -838,5 +874,57 @@
                  autoplaySpeed: 2000,
              });
          });
+     </script>
+     <script>
+    //      new TomSelect("#select-state",{
+    //     create: false,
+    //     sortField: {
+    //         field: "text",
+    //         direction: "asc"
+    //     }
+    // });
+    $('.continentname').change(function () {
+    var id = $(this).find(':selected')[0].id;
+    //alert(id);
+    $.ajax({
+        type: 'POST',
+        url: '../include/continent.php',
+        data: {
+            'id': id
+        },
+        success: function (data) {
+            // the next thing you want to do
+            var $country = $('#country');
+            $country.empty();
+            $('#city').empty();
+            for (var i = 0; i < data.length; i++) {
+                $country.append('<option id=' + data[i].sysid + ' value=' + data[i].name + '>' + data[i].name + '</option>');
+            }
+
+            //manually trigger a change event for the contry so that the change handler will get triggered
+            $country.change();
+        }
+    });
+
+});
+
+$('.countryname').change(function () {
+    var id = $(this).find(':selected')[0].id;
+    $.ajax({
+        type: 'POST',
+        url: '../include/country.php',
+        data: {
+            'id': id
+        },
+        success: function (data) {
+            // the next thing you want to do
+            var $city = $('#city');
+            $city.empty();
+            for (var i = 0; i < data.length; i++) {
+                $city.append('<option id=' + data[i].sysid + ' value=' + data[i].name + '>' + data[i].name + '</option>');
+            }
+        }
+    });
+});
      </script>
  @endpush

@@ -7,241 +7,224 @@
                 <div class="box_account">
                     <h3 class="new_client">Company Profile</h3> <small class="float-end pt-2">* Required Fields</small>
                     <div class="form_container">
-                        <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="companyname" placeholder="Company Name*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="lastname"  placeholder="Owner Name*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Head office address*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="password_in_2" placeholder="Postal Code Country*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="email"  placeholder="Telephone*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="email"  placeholder="Website*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="skype" id="email" placeholder="Skype*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="facebook" placeholder="Facebook*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="instagram" placeholder="Instagram*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="youtube" placeholder="YouTube*">
-                            </div>
+                        @if(session('status'))
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{session('status')}}
                         </div>
-                        <br>
-                        <hr>
-                        <h6 class="mt-4 mb-4"><b>2) </b>Company Information</h6>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" class="form-control" name="companyname" placeholder="Company Profile*">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12form-group">
-                                <input type="text" class="form-control" name="lastname"  placeholder="Company Date Started*">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Branch Office Address*">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" class="form-control" name="password_in_2" placeholder="Last Licenses Company*">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" class="form-control" name="email"  placeholder="Vat Number*">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Bank Details*">
-                            </div>
-                        </div>
-                        <br>
-                        <hr>
-                        <h6 class="mt-4 mb-4"><b>3) </b>Company Service</h6>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
-                                <b>i)</b> Please inform us of services your company can provide (Please select all services)<br>
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                        <input type="checkbox" class="mt-2" name="airfreight">
-                                        <label for="airfreight">Air Freight</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="seafreight">
-                                        <label for="seafreight">Sea Freight</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="projectcargo">
-                                        <label for="projectcargo">Project Cargo</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="perishablecargo">
-                                        <label for="perishablecargo">Perishable Cargo</label>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                        <input type="checkbox" class="mt-2" name="insurance">
-                                        <label for="insurance">Insurance</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="customs">
-                                        <label for="customs">Customs</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="timesensitive">
-                                        <label for="timesensitive">Time Sensitive</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="roadferight">
-                                        <label for="roadferight">Road Feright</label>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                        <input type="checkbox" class="mt-2" name="personaleffects">
-                                        <label for="personaleffects">Personal Effects</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="animalclearance">
-                                        <label for="animalclearance">Live Animal Clearance</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="hazardouscargo">
-                                        <label for="hazardouscargo">Hazardous Cargo</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="Warehouse">
-                                        <label for="warehouse">Warehouse</label>
-                                    </div>
+                        @endif
+                        <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
+                            @csrf
+                            <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="hidden" name="package_id" value="{{$packs_id->id}}">
+                                    <input type="text" class="form-control" name="companyname" placeholder="Company Name*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="ownername"  placeholder="Owner Name*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyaddress"  placeholder="Head office address*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companypostal" placeholder="Postal Code Country*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companytelephone"  placeholder="Telephone*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="email" class="form-control" name="companyemail" placeholder="Email Address*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companywebsite"  placeholder="Website*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyskype" id="email" placeholder="Skype*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyfacebook" placeholder="Facebook*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyinstagram" placeholder="Instagram*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyyoutube" placeholder="YouTube*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="file" class="form-control" name="companylogo" required>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                <b>ii)</b> Is your company covered by professional liability insurance?<br>
-                                <input type="radio" class="mt-4" name="yes">
-                                <label> Yes</label>
-                                <input type="radio" class="ml-4" name="no">
-                                <label> No</label>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                <b>iii)</b> Is your company a licensed customs broker? <br>
-                                <input type="radio" class="mt-4" name="yes">
-                                <label> Yes</label>
-                                <input type="radio" class="ml-4" name="no">
-                                <label> No</label>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                <label for="operatinglicense"><b>iv) </b> What operating licenses or certifications do you hold?</label>
-                                <textarea id="operatinglicense" name="operatinglicense" rows="4" cols="50"></textarea>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                <label for="operatinglicense"><b>v) </b> What is Your Bank Details?</label>
-                                <textarea id="bankdetails2" name="bankdetails2" rows="4" cols="50"></textarea>
-                            </div>
-                        </div>
-                        <br>
-                        <hr>
-                        <h6 class="mt-4 mb-4"><b>4) </b>Company Certification/Membership</h6>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
-                                <b>i)</b> Please tick all relevant certification<br>
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                        <input type="checkbox" class="mt-2" name="fiata">
-                                        <label for="fiata">FIATA</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="fmc">
-                                        <label for="fmc">FMC</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="chamber">
-                                        <label for="chamber">Chamber of Commerce</label>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                        <input type="checkbox" class="mt-2" name="nvocc">
-                                        <label for="nvocc">NVOCC</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="iata">
-                                        <label for="iata">IATA</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="ferightnetwork">
-                                        <label for="ferightnetwork">Freight Network</label>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                        <input type="checkbox" class="mt-2" name="customsbroker">
-                                        <label for="customsbroker">Customs Broker</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="iso">
-                                        <label for="iso">ISO 9001/9002</label>
-                                        <br>
-                                        <input type="checkbox" class="mt-2" name="others">
-                                        <label for="other">Others</label>
-                                    </div>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>2) </b>Company Information</h6>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="companyprofile" placeholder="Company Profile*" required>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12form-group">
+                                    <input type="date" class="form-control" name="startdate"  placeholder="Company Date Started*" required>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="branchaddress"  placeholder="Branch Office Address*" required>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="companylicense" placeholder="Last Licenses Company*" required>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="vatnumber"  placeholder="Vat Number*" required>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="bankdetails" id="email" placeholder="Bank Details*" required>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                <label for="operatinglicense"><b>ii) </b> What Local or National Freight Associations (different to Freight Networks) do you belong to?</label>
-                                <textarea id="operatinglicense" name="operatinglicense" rows="4" cols="50"></textarea>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>3) </b>Company Service</h6>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <b>i)</b> Please inform us of services your company can provide (Please select all services)<br>
+                                    <div class="row">
+                                        @if(isset($services) && !empty($services))
+                                        @foreach ($services as  $service)
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="services[]" value="{{ $service->name }}" >
+                                            <label for="airfreight">{{ $service->name }}</label>
+
+                                        </div>
+                                        @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>ii)</b> Is your company covered by professional liability insurance?<br>
+                                    <input type="radio" class="mt-4" name="insurance" value="yes" required>
+                                    <label> Yes</label>
+                                    <input type="radio" class="ml-4" name="insurance" value="no">
+                                    <label> No</label>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>iii)</b> Is your company a licensed customs broker? <br>
+                                    <input type="radio" class="mt-4" name="licensed" value="yes" required>
+                                    <label> Yes</label>
+                                    <input type="radio" class="ml-4" name="licensed" value="no">
+                                    <label> No</label>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="operatinglicense"><b>iv) </b> What operating licenses or certifications do you hold?</label>
+                                    <textarea id="operatinglicense" name="operatinglicense" rows="4" cols="50" required></textarea>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="operatinglicense"><b>v) </b> What is Your Bank Details?</label>
+                                    <textarea id="bankdetails2" name="bankdetails2" rows="4" cols="50" required></textarea>
+                                </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                <label for="companystrength"><b>iii) </b> Please list your company strengths (e.g. air, sea, road freight etc.)</label>
-                                <textarea id="companystrength" name="companystrength" rows="4" cols="50"></textarea>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>4) </b>Company Certification/Membership</h6>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <b>i)</b> Please tick all relevant certification<br>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="fiata" required>
+                                            <label for="fiata">FIATA</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="fmc">
+                                            <label for="fmc">FMC</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="chamber">
+                                            <label for="chamber">Chamber of Commerce</label>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="nvocc">
+                                            <label for="nvocc">NVOCC</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="iata">
+                                            <label for="iata">IATA</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="ferightnetwork">
+                                            <label for="ferightnetwork">Freight Network</label>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="customsbroker">
+                                            <label for="customsbroker">Customs Broker</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="iso">
+                                            <label for="iso">ISO 9001/9002</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification[]" value="others">
+                                            <label for="other">Others</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="associations"><b>ii) </b> What Local or National Freight Associations (different to Freight Networks) do you belong to?</label>
+                                    <textarea id="associations" name="associations" rows="4" cols="50" required></textarea>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="companystrength"><b>iii) </b> Please list your company strengths (e.g. air, sea, road freight etc.)</label>
+                                    <textarea id="companystrength" name="companystrength" rows="4" cols="50" required></textarea>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>iv)</b> Are you member of others net work ?<br>
+                                    <input type="radio" class="mt-4" name="member" value="yes" required>
+                                    <label> Yes</label>
+                                    <input type="radio" class="ml-4" name="member" value="no">
+                                    <label> No</label>
+                                </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                <b>iv)</b> Are you member of others net work ?<br>
-                                <input type="radio" class="mt-4" name="yes">
-                                <label> Yes</label>
-                                <input type="radio" class="ml-4" name="no">
-                                <label> No</label>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>5) </b>Your Company Key Contact Information</h6>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientname" placeholder="Your Name*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="email" class="form-control" name="clientemail"  placeholder="Your Email*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientmobile" placeholder="Your Mobile*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientskype" placeholder="Your Skype*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientwhatsapp"  placeholder="Your Whatsapp*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientposition" placeholder="Your Position*">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="date" class="form-control" name="doa"  placeholder="Date of Application (dd/mm/yy)*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientmanager"  placeholder="Manager*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="gmceo" placeholder="GM-CEO*" required>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <hr>
-                        <h6 class="mt-4 mb-4"><b>5) </b>Your Company Key Contact Information</h6>
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="clientname" placeholder="Your Name*">
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <label class="container_check">I agree to International Freight Network storing and using the information to contact me.
+                                        <input type="checkbox" required>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <label class="container_check">I confirm that our company does not have any outstanding payments or ongoing disputes with any other forwarders. I confirm that we are not listed on any industry blacklists, e.g. FDRS (Forwarders Debt Recovery Service), FDB (Freight Dead Beats) or any local association, as any findings can be published and will affect the outcome of our application.
+                                        <input type="checkbox" required>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="email" class="form-control" name="clientemail"  placeholder="Your Email*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="clientmobile" placeholder="Your Mobile*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="clientskype" placeholder="Your Skype*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="clientwhatsapp"  placeholder="Your Whatsapp*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="email" class="form-control" name="clientposition" placeholder="Your Position*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="doa"  placeholder="Date of Application (dd/mm/yy)*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="clientmanager"  placeholder="Manager*">
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                <input type="text" class="form-control" name="gmceo" placeholder="GM-CEO*">
-                            </div>
-                        </div>
-                        <br>
-                        <hr>
-                        <br>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
-                                <label class="container_check">I agree to International Freight Network storing and using the information to contact me.
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
-                                <label class="container_check">I confirm that our company does not have any outstanding payments or ongoing disputes with any other forwarders. I confirm that we are not listed on any industry blacklists, e.g. FDRS (Forwarders Debt Recovery Service), FDB (Freight Dead Beats) or any local association, as any findings can be published and will affect the outcome of our application.
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="text-right"><a href="/pricing"><input type="button" value="Submit Application" class="btn_1 "></a></div>
+                            <div class="text-right"><input type="submit" value="Submit Application" class="btn_1 "></div>
+                        </form>
                     </div>
                 </div>
             </div>
