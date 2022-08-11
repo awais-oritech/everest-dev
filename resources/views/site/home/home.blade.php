@@ -42,43 +42,34 @@
                         <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
                             <form>
                                 {{-- <div class="form-group col-xs-3">
-                                    <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Region</label>
+                                    <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
                                     <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                                </div>
+                                <div class="form-group col-xs-3">
+                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
                                 </div> --}}
                                 <div class="form-group col-xs-3">
-<<<<<<< HEAD
-                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Continents</label>
-=======
                                     <label for="continents"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Continents</label>
->>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
                                     <select id="continents" class="form-control">
                                         <option value="0" selected disabled>Continents</option>
                                         @foreach ($continents as $continent)
                                             <option value="{{$continent->code}}">{{$continent->name}}</option>
                                         @endforeach
                                     </select>
+                                    
                                 </div>
                                 <div class="form-group col-xs-3">
-<<<<<<< HEAD
-                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Countries</label>
-                                    <select id="continents" class="form-control">
-
-=======
                                     <label for="country"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> Country</label>
                                     <select id="country" class="form-control">
                                         <option value="0" selected disabled>Country</option>
->>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
                                     </select>
                                 </div>
                                 <div class="form-group col-xs-3">
                                     <label for="city"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
-<<<<<<< HEAD
-                                    <input type="text" class="form-control" id="city" placeholder="City">
-=======
                                     <select id="city" class="form-control">
                                         <option value="0" selected disabled>City</option>
                                     </select>
->>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
                                 </div>
                                 <div class="buttonn">
                                 <a href="/addlisting"><button type="button" class="hvr-sweep-to-right buttons">Search</button></a>
@@ -800,10 +791,7 @@
          });
      </script>
      <script>
-<<<<<<< HEAD
-=======
     
->>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
     $('#continents').change(function () {
     var id = $(this).find(':selected').val()
 
@@ -853,5 +841,4 @@ $('#country').change(function () {
     });
 });
      </script>
-
  @endpush
