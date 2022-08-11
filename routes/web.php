@@ -11,6 +11,7 @@ use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,11 @@ use App\Http\Controllers\SearchController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('site.home.home');
-});
-Route::get('/home', function () {
-    return view('site.home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
+Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
 
 Route::get('/about', function(){
     return view('site.home.about');

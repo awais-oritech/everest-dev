@@ -93,26 +93,12 @@
                                 </div> --}}
                                 <div class="form-group col-xs-3">
                                     <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
-                                    <select id="country" class="continentname js-data-example-ajax form-control"></select>
-                                    {{-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country"> --}}
-                                    {{-- <select id="select-state" placeholder="Pick a state...">
-                                        <option value="">Select a state...</option>
-                                        <option value="AL">Alabama</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="AZ">Arizona</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="CA">California</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="DC">District of Columbia</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IN">Indiana</option>
-                                      </select> --}}
+                                    <select id="continents" class="form-control">
+                                        @foreach ($continents as $continent)
+                                            <option value="{{$continent->code}}">{{$continent->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    
                                 </div>
                                 <div class="form-group col-xs-3">
                                     <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
@@ -883,12 +869,12 @@
     //         direction: "asc"
     //     }
     // });
-    $('.continentname').change(function () {
+    $('#continents').change(function () {
     var id = $(this).find(':selected')[0].id;
     //alert(id);
     $.ajax({
         type: 'POST',
-        url: '../include/continent.php',
+        url: "{{route('countries-list')}}",
         data: {
             'id': id
         },
@@ -898,7 +884,7 @@
             $country.empty();
             $('#city').empty();
             for (var i = 0; i < data.length; i++) {
-                $country.append('<option id=' + data[i].sysid + ' value=' + data[i].name + '>' + data[i].name + '</option>');
+                $country.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
             }
 
             //manually trigger a change event for the contry so that the change handler will get triggered
@@ -908,11 +894,11 @@
 
 });
 
-$('.countryname').change(function () {
+$('#country').change(function () {
     var id = $(this).find(':selected')[0].id;
     $.ajax({
         type: 'POST',
-        url: '../include/country.php',
+        url: "{{route('cities-list')}}",
         data: {
             'id': id
         },
@@ -921,7 +907,7 @@ $('.countryname').change(function () {
             var $city = $('#city');
             $city.empty();
             for (var i = 0; i < data.length; i++) {
-                $city.append('<option id=' + data[i].sysid + ' value=' + data[i].name + '>' + data[i].name + '</option>');
+                $city.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
             }
         }
     });
