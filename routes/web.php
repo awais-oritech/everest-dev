@@ -12,6 +12,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,11 @@ use App\Http\Controllers\SearchController;
 */
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
-Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
+Route::prefix('/common')->group(function () {
+    Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
+    Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
+    
+});
 
 Route::get('/about', function(){
     return view('site.home.about');

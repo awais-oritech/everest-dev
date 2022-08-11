@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
        
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $continents=World::Continents();
-        return view('site.home',compact('continents'));
+        return view('site.home.home',compact('continents'));
     }
 
 }
