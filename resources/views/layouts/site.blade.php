@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Pioneer Network</title>
 
     <!-- Favicons-->
@@ -46,8 +47,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
         {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
-        <link href="https://cdn.jsdelivr.net/npm/tom-select@2.0.0-rc.4/dist/css/tom-select.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.0.0-rc.4/dist/js/tom-select.complete.min.js"></script>
+        {{-- <link href="https://cdn.jsdelivr.net/npm/tom-select@2.0.0-rc.4/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.0.0-rc.4/dist/js/tom-select.complete.min.js"></script> --}}
 
     {{-- Css --}}
     @stack('css')
@@ -131,11 +132,6 @@
     <div id="toTop"></div><!-- Back to top button -->
 
     <!-- COMMON SCRIPTS -->
-    <script src="{{ asset('assets/js/common_scripts.js') }}"></script>
-    <script src="{{ asset('assets/js/functions.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/validate.js') }}"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
@@ -145,47 +141,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+    <script src="{{ asset('assets/js/common_scripts.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/validate.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
 
-      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+      {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
     <!-- SPECIFIC SCRIPTS -->
-    <script src="{{ asset('assets/js/animated_canvas_min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/animated_canvas_min.js') }}"></script> --}}
     <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(function() {
-                AOS.init({
-                    offset: 320,
-                    duration: 1000,
+        // jQuery(document).ready(function($) {
+        //     $(function() {
+        //         AOS.init({
+        //             offset: 320,
+        //             duration: 1000,
 
-                });
-            });
-        });
+        //         });
+        //     });
+        // });
     </script>
     <!-- COLOR SWITCHER  -->
-    <script src="{{ asset('assets/js/switcher.js') }}"></script>
-
-
+  
     <!-- Scripts --->
     @stack('script')
     <!-- Scripts --->
-    {{-- <div id="style-switcher">
-        <h6>Color Switcher <a href="#"><i class="ti-settings"></i></a></h6>
-        <div>
-            <ul class="colors" id="color1">
-                <li><a href="#" class="default" title="Default"></a></li>
-                <li><a href="#" class="aqua" title="Aqua"></a></li>
-                <li><a href="#" class="green_switcher" title="Green"></a></li>
-                <li><a href="#" class="orange" title="Orange"></a></li>
-                <li><a href="#" class="beige" title="Beige"></a></li>
-                <li><a href="#" class="gray" title="Gray"></a></li>
-                <li><a href="#" class="green-2" title="Green"></a></li>
-                <li><a href="#" class="navy" title="Navy"></a></li>
-                <li><a href="#" class="peach" title="Peach"></a></li>
-                <li><a href="#" class="purple" title="Purple"></a></li>
-                <li><a href="#" class="red" title="Red"></a></li>
-                <li><a href="#" class="violet" title="Violet"></a></li>
-            </ul>
-        </div>
-    </div> --}}
+   
 
 </body>
 

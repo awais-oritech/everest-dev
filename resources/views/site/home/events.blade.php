@@ -28,7 +28,14 @@
             </div>
         </div>
         @endforeach
-        <p class="text-center add_top_60"><a href="#0" class="btn_1 rounded">Load more</a></p>
+        {{-- <p class="text-center add_top_60"><a href="#0" class="btn_1 rounded">Load more</a></p> --}}
+        {<div class="pagination__wrapper add_bottom_30">
+            <ul class="pagination">
+                <div class="d-flex justify-content-center">
+                    {!! $events->links() !!}
+                </div>
+            </ul>
+        </div>
 
     </div>
     <!-- /container -->

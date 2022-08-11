@@ -1,54 +1,12 @@
  @extends('layouts.site')
  @section('content')
-     <!-- <section class="hero_single version_2">
-         <div class="wrapper">
-             <div class="container" style="text-align: left">
-                 <h3>International Network <br>Build on Foundation of <br> Safty and Trust</h3>
-                 <p>Find what you need!</p>
-                 {{-- <form method="post" action="http://www.ansonika.com/sparker/grid-listings-filterscol.html">
-                     <div class="row g-0 custom-search-input-2">
-                         <div class="col-lg-4">
-                             <div class="form-group">
-                                 <input class="form-control" type="text" placeholder="What are you looking for...">
-                                 <i class="icon_search"></i>
-                             </div>
-                         </div>
-                         <div class="col-lg-3">
-                             <div class="form-group">
-                                 <input class="form-control" type="text" placeholder="Where">
-                                 <i class="icon_pin_alt"></i>
-                             </div>
-                         </div>
-                         <div class="col-lg-3">
-                             <select class="wide">
-                                 <option>All Categories</option>
-                                 <option>Shops</option>
-                                 <option>Hotels</option>
-                                 <option>Restaurants</option>
-                                 <option>Bars</option>
-                                 <option>Events</option>
-                                 <option>Fitness</option>
-                             </select>
-                         </div>
-                         <div class="col-lg-2">
-                             <input type="submit" value="Search">
-                         </div>
-                     </div>
-                     <!-- /row -->
-                 </form> --}}
-                 <a href="account.html" class="btn btn-lg btn_add">Become Member</a>
-             <!-- </div>
-         </div>
-     </section> -->
-     <!-- /hero_single -->
-
      <section class="hero_single version_2">
          <div class="wrapper">
              <div class="container">
                  <div class="row">
                      <div class="col-lg-6 col-md-12 col-sm-12" >
                                 <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <!-- <ol class="carousel-indicators">
+                            <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -84,25 +42,43 @@
                         <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
                             <form>
                                 {{-- <div class="form-group col-xs-3">
-                                    <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
+                                    <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Region</label>
                                     <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
-                                </div>
-                                <div class="form-group col-xs-3">
-                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
                                 </div> --}}
                                 <div class="form-group col-xs-3">
-                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
+<<<<<<< HEAD
+                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Continents</label>
+=======
+                                    <label for="continents"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Continents</label>
+>>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
                                     <select id="continents" class="form-control">
+                                        <option value="0" selected disabled>Continents</option>
                                         @foreach ($continents as $continent)
                                             <option value="{{$continent->code}}">{{$continent->name}}</option>
                                         @endforeach
                                     </select>
-                                    
                                 </div>
                                 <div class="form-group col-xs-3">
-                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+<<<<<<< HEAD
+                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Countries</label>
+                                    <select id="continents" class="form-control">
+
+=======
+                                    <label for="country"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> Country</label>
+                                    <select id="country" class="form-control">
+                                        <option value="0" selected disabled>Country</option>
+>>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-3">
+                                    <label for="city"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+<<<<<<< HEAD
+                                    <input type="text" class="form-control" id="city" placeholder="City">
+=======
+                                    <select id="city" class="form-control">
+                                        <option value="0" selected disabled>City</option>
+                                    </select>
+>>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
                                 </div>
                                 <div class="buttonn">
                                 <a href="/addlisting"><button type="button" class="hvr-sweep-to-right buttons">Search</button></a>
@@ -164,16 +140,16 @@
                                 <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
                             </div>
                             <div class="form-group col-xs-3">
-                                <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                                <label for="exampleInputPassword11"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                <input type="text" class="form-control" id="exampleInputPassword11" placeholder="Address">
                             </div>
                             <div class="form-group col-xs-3">
-                                <label for="exampleInputPassword1"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
+                                <label for="exampleInputPassword1121"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Country</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1121" placeholder="Country">
                             </div>
                             <div class="form-group col-xs-3">
-                                <label for="exampleInputPassword1"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+                                <label for="exampleInputPassword12"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+                                <input type="text" class="form-control" id="exampleInputPassword12" placeholder="City">
                             </div>
                             <div class="buttonn">
                             <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
@@ -229,29 +205,7 @@
 
                  </div>
              </div>
-             <!-- <div class="row justify-content-between">
-                 <div class="col-lg-6 wow" data-wow-offset="150">
-                     <figure class="block-reveal">
-                         <div class="block-horizzontal"></div>
-                         <img src="{{ asset('assets/img/about_1.jpg') }}" class="img-fluid" alt="">
-                     </figure>
-                 </div>
-                 <div class="col-lg-5">
-                     <p>Lorem ipsum dolor sit amet, homero erroribus in cum. Cu eos <strong>scaevola probatus</strong>.
-                         Nam
-                         atqui intellegat ei, sed ex graece essent delectus. Autem consul eum ea. Duo cu fabulas nonumes
-                         contentiones, nihil voluptaria pro id. Has graeci deterruisset ad, est no primis detracto
-                         pertinax,
-                         at cum malis vitae facilisis.</p>
-                     <p>Dicam diceret ut ius, no epicuri dissentiet philosophia vix. Id usu zril tacimates neglegentur.
-                         Eam
-                         id legimus torquatos cotidieque, usu decore <strong>percipitur definitiones</strong> ex, nihil
-                         utinam recusabo mel no. Dolores reprehendunt no sit, quo cu viris theophrastus. Sit unum
-                         efficiendi
-                         cu.</p>
-                     <p><em>CEO Marc Schumaker</em></p>
-                 </div>
-             </div>  -->
+            
              <!--/row-->
 
          </div>
@@ -826,23 +780,7 @@
          });
      </script>
       <script type="text/javascript">
-      $(document).ready(function() {
-            $('#select-state').select2();
-        });
-       $('#select-state').select2({
-            ajax: {
-                url: 'https://api.github.com/orgs/select2/repos',
-                data: function (params) {
-                var query = {
-                    search: params.term,
-                    type: 'public'
-                }
-
-                // Query parameters will be ?search=[term]&type=public
-                return query;
-                }
-            }
-            });
+      
     </script>
      <script type="text/javascript">
          $(document).ready(function() {
@@ -862,20 +800,20 @@
          });
      </script>
      <script>
-    //      new TomSelect("#select-state",{
-    //     create: false,
-    //     sortField: {
-    //         field: "text",
-    //         direction: "asc"
-    //     }
-    // });
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 2bb84d5b281de3ff92c861d05b2d1007ddb33225
     $('#continents').change(function () {
-    var id = $(this).find(':selected')[0].id;
-    //alert(id);
+    var id = $(this).find(':selected').val()
+
+    
     $.ajax({
+      
         type: 'POST',
         url: "{{route('countries-list')}}",
         data: {
+            "_token": "{{ csrf_token() }}",
             'id': id
         },
         success: function (data) {
@@ -895,11 +833,13 @@
 });
 
 $('#country').change(function () {
-    var id = $(this).find(':selected')[0].id;
+    //var id = $(this).find(':selected')[0].id;
+    var id = $(this).find(':selected').val()
     $.ajax({
         type: 'POST',
         url: "{{route('cities-list')}}",
         data: {
+            "_token": "{{ csrf_token() }}",
             'id': id
         },
         success: function (data) {
@@ -913,4 +853,5 @@ $('#country').change(function () {
     });
 });
      </script>
+
  @endpush

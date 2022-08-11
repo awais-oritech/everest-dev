@@ -1,6 +1,6 @@
-$('.carousel').carousel({
-    interval: 500
-  })
+// $('.carousel').carousel({
+//   interval: 500
+// })
 
  $(document).ready(function() {
   $(function() {
