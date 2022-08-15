@@ -17,7 +17,7 @@
                                     <div class="carousel-caption ">
                                         <h5 class="animated bounceInRight" style="animation-delay: 1s">INTERNATIONAL NETWORK <br> BUILD ON FOUNDATION OF <br>SAFETY AND TRUST</h5>
                                         <p class="animated bounceInLeft" style="animation-delay: 2s">Find what you need!</p>
-                                        <a href="" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                        <a href="{{route('member')}}" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
                                     </div>
                                 </div>
                                 <div class="carousel-item ">
@@ -40,39 +40,39 @@
                      </div>
                      <div class="col-lg-6 d-none d-lg-block" >
                         <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
-                            <form>
-                                {{-- <div class="form-group col-xs-3">
-                                    <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Keyword</label>
-                                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
-                                </div>
-                                <div class="form-group col-xs-3">
-                                    <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
-                                </div> --}}
+                            <form method="GET" action="{{route('search')}}">
+                                    {{-- <div class="form-group col-xs-3">
+                                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Service</label>
+                                        <input type="text" class="form-control input-sm" name="service_name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                                    </div> --}}
+                                    {{-- <div class="form-group col-xs-3">
+                                        <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                                    </div> --}}
                                 <div class="form-group col-xs-3">
                                     <label for="continents"><img src="{{ asset('assets/img/country.gif') }}" width="30px" height="30px"> Continents</label>
-                                    <select id="continents" class="form-control">
+                                    <select id="continents" name="continent" class="form-control" style="border:none; border-bottom:1px solid #ccc">
                                         <option value="0" selected disabled>Continents</option>
                                         @foreach ($continents as $continent)
                                             <option value="{{$continent->code}}">{{$continent->name}}</option>
                                         @endforeach
                                     </select>
-                                    
+
                                 </div>
                                 <div class="form-group col-xs-3">
                                     <label for="country"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> Country</label>
-                                    <select id="country" class="form-control">
+                                    <select id="country" name="country" class="form-control" style="border:none; border-bottom:1px solid #ccc">
                                         <option value="0" selected disabled>Country</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-xs-3">
                                     <label for="city"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
-                                    <select id="city" class="form-control">
+                                    <select id="city" name="city" class="form-control" style="border:none; border-bottom:1px solid #ccc">
                                         <option value="0" selected disabled>City</option>
                                     </select>
                                 </div>
                                 <div class="buttonn">
-                                <a href="/addlisting"><button type="button" class="hvr-sweep-to-right buttons">Search</button></a>
+                                <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
                                 </div>
                             </form>
                         </div>
@@ -196,7 +196,7 @@
 
                  </div>
              </div>
-            
+
              <!--/row-->
 
          </div>
@@ -771,7 +771,7 @@
          });
      </script>
       <script type="text/javascript">
-      
+
     </script>
      <script type="text/javascript">
          $(document).ready(function() {
@@ -791,13 +791,13 @@
          });
      </script>
      <script>
-    
+
     $('#continents').change(function () {
     var id = $(this).find(':selected').val()
 
-    
+
     $.ajax({
-      
+
         type: 'POST',
         url: "{{route('countries-list')}}",
         data: {

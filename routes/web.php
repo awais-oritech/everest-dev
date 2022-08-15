@@ -14,6 +14,8 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CompanyProfileViewController;
+use App\Http\Controllers\ProfileProcessController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,11 +27,13 @@ use App\Http\Controllers\SearchController;
 |
 */
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::prefix('/common')->group(function () {
     Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
     Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
-    
+
 });
 
 Route::get('/about', function(){
@@ -52,10 +56,14 @@ Route::post('/login',[LoginController::class,'customLogin']);
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::post('/register',[RegisterController::class,'customRegistration']);
 Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
-Route::group(['middleware'=>'prevent-back-history'],function(){
 Auth::routes();
-Route::get('/pricing',[PricingController::class,'index'])->name('pricing');
-Route::get('/profile-registration/{id}',[CompanyProfileController::class,'index'])->name('profile-registration');
-Route::post('/profile-registration/{id}', [CompanyProfileController::class, 'store']);
-Route::get('/search',[SearchController::class, 'index'])->name('search');
+Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(function () {
+    Route::get('/profile-process', [ProfileProcessController::class, 'index'])->name('profile-process');
+    Route::get('/pricing',[PricingController::class,'index'])->name('pricing')->middleware('auth');
+    Route::get('/profile-registration/{id}',[CompanyProfileController::class,'index'])->name('profile-registration');
+    Route::post('/profile-registration/{id}', [CompanyProfileController::class, 'store']);
+    Route::get('/search',[SearchController::class, 'index'])->name('search');
+    Route::get('/company-profile/{id}',[CompanyProfileViewController::class, 'index'])->name('company-profile');
 });
+
+

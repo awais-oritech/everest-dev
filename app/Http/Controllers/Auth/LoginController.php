@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Models\Company;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -28,7 +29,27 @@ class LoginController extends Controller
      *
     //  * @var string
      */
-    protected $redirectTo = "/pricing";
+    // protected $redirectTo = "/pricing";
+    protected function redirectTo()
+    {
+        $company=Company::where('user_id',Auth::user()->id)->first();
+        if(isset($company->id))
+        {
+            if($company->status==0)
+            {
+
+                return '/pricing';
+            }
+            if($company->status==1)
+            {
+                return '/profile-process';
+            }
+        }
+        else
+        {
+            return '/pricing';
+        }
+    }
 
     /**
      * Create a new controller instance.

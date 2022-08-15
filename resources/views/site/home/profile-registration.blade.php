@@ -18,7 +18,9 @@
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                     <input type="hidden" name="package_id" value="{{$packs_id->id}}">
+                                    <input type="hidden" name="company_id" value="{{$company_id->id}}">
                                     <input type="text" class="form-control" name="companyname" placeholder="Company Name*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
@@ -77,6 +79,24 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
                                     <input type="text" class="form-control" name="bankdetails" id="email" placeholder="Bank Details*" required>
                                 </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                    <select id="continents" name="continent" class="form-control" required>
+                                        <option  selected disabled>Continents</option>
+                                        @foreach ($continents as $continent)
+                                            <option value="{{$continent->code}}">{{$continent->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                    <select id="country" name="country" class="form-control" required>
+                                        <option  selected disabled>Country</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                    <select id="city" name="city" class="form-control" required>
+                                        <option  selected disabled>City</option>
+                                    </select>
+                                </div>
                             </div>
                             <br>
                             <hr>
@@ -88,7 +108,7 @@
                                         @if(isset($services) && !empty($services))
                                         @foreach ($services as  $service)
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="services[]" value="{{ $service->name }}" >
+                                            <input type="checkbox" class="mt-2" name="service_name[]" value="{{ $service->name }}" >
                                             <label for="airfreight">{{ $service->name }}</label>
 
                                         </div>
@@ -127,33 +147,33 @@
                                     <b>i)</b> Please tick all relevant certification<br>
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="fiata" required>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fiata" required>
                                             <label for="fiata">FIATA</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="fmc">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fmc">
                                             <label for="fmc">FMC</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="chamber">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="chamber">
                                             <label for="chamber">Chamber of Commerce</label>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="nvocc">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="nvocc">
                                             <label for="nvocc">NVOCC</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="iata">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="iata">
                                             <label for="iata">IATA</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="ferightnetwork">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="ferightnetwork">
                                             <label for="ferightnetwork">Freight Network</label>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="customsbroker">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="customsbroker">
                                             <label for="customsbroker">Customs Broker</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="iso">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="iso">
                                             <label for="iso">ISO 9001/9002</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification[]" value="others">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="others">
                                             <label for="other">Others</label>
                                         </div>
                                     </div>
@@ -194,7 +214,7 @@
                                     <input type="text" class="form-control" name="clientwhatsapp"  placeholder="Your Whatsapp*">
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientposition" placeholder="Your Position*">
+                                    <input type="text" class="form-control" name="clientposition" placeholder="Your Position*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="date" class="form-control" name="doa"  placeholder="Date of Application (dd/mm/yy)*" required>
@@ -232,3 +252,52 @@
     </div>
 </main>
 @endsection
+@push('script')
+<script>
+    $('#continents').change(function () {
+    var id = $(this).find(':selected').val()
+    $.ajax({
+        type: 'POST',
+        url: "{{route('countries-list')}}",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            'id': id
+        },
+        success: function (data) {
+            // the next thing you want to do
+            var $country = $('#country');
+            $country.empty();
+            $('#city').empty();
+            for (var i = 0; i < data.length; i++) {
+                $country.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
+            }
+
+            //manually trigger a change event for the contry so that the change handler will get triggered
+            $country.change();
+        }
+    });
+
+});
+
+$('#country').change(function () {
+    //var id = $(this).find(':selected')[0].id;
+    var id = $(this).find(':selected').val()
+    $.ajax({
+        type: 'POST',
+        url: "{{route('cities-list')}}",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            'id': id
+        },
+        success: function (data) {
+            // the next thing you want to do
+            var $city = $('#city');
+            $city.empty();
+            for (var i = 0; i < data.length; i++) {
+                $city.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
+            }
+        }
+    });
+});
+</script>
+@endpush

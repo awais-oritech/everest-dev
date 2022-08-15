@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
-    public $table = "company";
+    public $table = "companies";
     protected $fillable  = [
+        'user_id',
         'package_id',
         'companyname',
         'ownername',
@@ -24,17 +25,18 @@ class Company extends Model
         'companyyoutube',
         'companylogo',
         'companyprofile',
+        'continent',
+        'country',
+        'city',
         'startdate',
         'branchaddress',
         'companylicense',
         'vatnumber',
         'bankdetails',
-        'services',
         'insurance',
         'licensed',
         'operatinglicense',
         'bankdetails2',
-        'certification',
         'associations',
         'companystrength',
         'member',

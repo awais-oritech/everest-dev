@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompanyTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateCompanyTable extends Migration
      */
     public function up()
     {
-        Schema::create('company', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
             $table->string('package_id');
+            $table->tinyInteger('status')->default(1);
             $table->string('companyname');
             $table->string('ownername');
             $table->string('companyaddress');
@@ -29,17 +31,18 @@ class CreateCompanyTable extends Migration
             $table->string('companyyoutube')->nullable();
             $table->string('companylogo');
             $table->text('companyprofile');
+            $table->string('continent');
+            $table->string('country');
+            $table->string('city');
             $table->string('startdate');
             $table->string('branchaddress');
             $table->string('companylicense');
             $table->string('vatnumber');
             $table->string('bankdetails');
-            $table->string('services');
             $table->string('insurance');
             $table->string('licensed');
             $table->text('operatinglicense');
             $table->text('bankdetails2');
-            $table->string('certification');
             $table->string('associations');
             $table->string('companystrength');
             $table->string('member');
@@ -63,6 +66,6 @@ class CreateCompanyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company');
+        Schema::dropIfExists('companies');
     }
 }
