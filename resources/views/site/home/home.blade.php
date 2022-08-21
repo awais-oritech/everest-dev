@@ -41,7 +41,7 @@
                      <div class="col-lg-6 d-none d-lg-block" >
                         <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
                             <form method="GET" action="{{route('search')}}">
-                                    {{-- <div class="form-group col-xs-3">
+                                    <div class="form-group col-xs-3">
                                         <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Service</label>
                                         <select id="" name="name" class="form-control" style="border:none; border-bottom:1px solid #ccc">
                                             <option value="0" selected disabled>Services</option>
@@ -49,7 +49,7 @@
                                                 <option value="{{$service->name}}">{{$service->name}}</option>
                                             @endforeach
                                         </select>
-                                    </div> --}}
+                                    </div>
                                     {{-- <div class="form-group col-xs-3">
                                         <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
                                         <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
