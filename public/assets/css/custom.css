@@ -798,7 +798,7 @@ position: relative;
 .benefit:hover{
   background-color: rgba(251, 185, 0, 0.8);
 
-  padding:40px;
+  /* padding:40px; */
   transition:500ms;
 }
 .benefit span{

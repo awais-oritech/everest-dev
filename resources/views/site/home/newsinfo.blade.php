@@ -15,9 +15,9 @@
                     <h1>{{$new_info->name}}</h1>
                     <div class="postmeta">
                         <ul>
-                            <li><a href="#"><i class="ti-folder"></i> Category</a></li>
-                            <li><a href="#"><i class="ti-calendar"></i>{{ \Carbon\Carbon::parse($new_info->created)->format('d/m/Y')}}</a></li>
-                            <li><a href="#"><i class="ti-user"></i> Admin</a></li>
+                            {{-- <li><a href="#"><i class="ti-folder"></i> Category</a></li> --}}
+                            <li><a href="#"><i class="ti-calendar"></i>{{ \Carbon\Carbon::parse($new_info->created)->format('d-m-Y')}}</a></li>
+                            {{-- <li><a href="#"><i class="ti-user"></i> Admin</a></li> --}}
                             {{-- <li><a href="#"><i class="ti-comment"></i> (14) Comments</a></li> --}}
                         </ul>
                     </div>
@@ -38,13 +38,14 @@
                         <h4>Latest Post</h4>
                     </div>
                     <ul class="comments-list">
+                       
                         @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
-                                <a href="{{route('news-info',[$latest_blog->id])}}"><img src="http://localhost:8080/everest-dev/admin/{{$latest_blog->image}}" alt=""></a>
+                                <a href="#0"><img src="admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
-                            <small>{{$latest_blog->name}} - {{$latest_blog->created}}</small>
-                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                            <small>{{\Carbon\Carbon::parse($latest_blog->created)->format('d-m-Y')}}</small>
+                            <h3><a href="news-info/{{$latest_blog->id}}" title="">{{$latest_blog->name}}</a></h3>
                         </li>
                         @endforeach
                     </ul>

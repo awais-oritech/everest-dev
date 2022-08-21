@@ -130,6 +130,9 @@ class CompanyProfileController extends Controller
             ];
         }
         CompanyCertifications::insert($certification_name);
+
+        CompanyServices::insert($certification_name);
+
         return back()->with('status','Company Registered Please Wait For Admin Approval');
     }
 }
