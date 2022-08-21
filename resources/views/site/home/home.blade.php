@@ -43,7 +43,12 @@
                             <form method="GET" action="{{route('search')}}">
                                     {{-- <div class="form-group col-xs-3">
                                         <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Service</label>
-                                        <input type="text" class="form-control input-sm" name="service_name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="keyword">
+                                        <select id="" name="name" class="form-control" style="border:none; border-bottom:1px solid #ccc">
+                                            <option value="0" selected disabled>Services</option>
+                                            @foreach ($services as $service)
+                                                <option value="{{$service->name}}">{{$service->name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div> --}}
                                     {{-- <div class="form-group col-xs-3">
                                         <label for="exampleInputPassword1"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> Address</label>
@@ -57,7 +62,6 @@
                                             <option value="{{$continent->code}}">{{$continent->name}}</option>
                                         @endforeach
                                     </select>
-
                                 </div>
                                 <div class="form-group col-xs-3">
                                     <label for="country"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> Country</label>
@@ -66,7 +70,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-xs-3">
-                                    <label for="city"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> City</label>
+                                    <label for="city"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> City</label>
                                     <select id="city" name="city" class="form-control" style="border:none; border-bottom:1px solid #ccc">
                                         <option value="0" selected disabled>City</option>
                                     </select>

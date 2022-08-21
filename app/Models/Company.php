@@ -50,4 +50,9 @@ class Company extends Model
         'clientmanager',
         'gmceo',
     ];
+
+    public function companyservices()
+    {
+        return $this->hasMany(Company_Services::class, 'company_id');
+    }
 }

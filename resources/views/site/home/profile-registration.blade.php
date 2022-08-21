@@ -13,8 +13,9 @@
                         {{session('status')}}
                         </div>
                         @endif
-                        @if(isset($profile->id) && !empty($profile->id))
-                        <form>
+                        @if(isset($profile->id) && !empty($profile->id) && ($profile->can_edit==0))
+                        <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
+                            @csrf
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
@@ -109,7 +110,7 @@
                                         @if(isset($services) && !empty($services))
                                         @foreach ($services as  $service)
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="service_name[]" {{$service->service_name=='service_name'?'checked':''}} value="{{ $service->service_name }}" disabled>
+                                            <input type="checkbox" class="mt-2" name="service_name[]" {{$service->name=='name'?'checked':''}} value="{{ $service->name }}" disabled>
                                             <label for="airfreight">{{ $service->name }}</label>
                                         </div>
                                         @endforeach
@@ -145,38 +146,40 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
                                     <b>i)</b> Please tick all relevant certification<br>
+                                    @if(isset($company_certifications))
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fiata" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='fiata'?'checked':''}} value="fiata" disabled>
                                             <label for="fiata">FIATA</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fmc" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='fmc'?'checked':''}} value="fmc" disabled>
                                             <label for="fmc">FMC</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="chamber" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='chamber'?'checked':''}} value="chamber" disabled>
                                             <label for="chamber">Chamber of Commerce</label>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="nvocc" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='nvocc'?'checked':''}} value="nvocc" disabled>
                                             <label for="nvocc">NVOCC</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="iata" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='iata'?'checked':''}} value="iata" disabled>
                                             <label for="iata">IATA</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="ferightnetwork" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='ferightnetwork'?'checked':''}} value="ferightnetwork" disabled>
                                             <label for="ferightnetwork">Freight Network</label>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="customsbroker" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='customsbroker'?'checked':''}} value="customsbroker" disabled>
                                             <label for="customsbroker">Customs Broker</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="iso" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='iso'?'checked':''}} value="iso" disabled>
                                             <label for="iso">ISO 9001/9002</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="others" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='others'?'checked':''}} value="others" disabled>
                                             <label for="other">Others</label>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="associations"><b>ii) </b> What Local or National Freight Associations (different to Freight Networks) do you belong to?</label>
@@ -432,7 +435,7 @@
                             <h6 class="mt-4 mb-4"><b>5) </b>Your Company Key Contact Information</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientname"  placeholder="Your Name*" disabled required>
+                                    <input type="text" class="form-control" name="clientname"  placeholder="Your Name*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="email" class="form-control" name="clientemail"  placeholder="Your Email*" required>

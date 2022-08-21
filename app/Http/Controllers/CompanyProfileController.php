@@ -13,6 +13,7 @@ use App\Models\User;
 use Khsing\World\World;
 use Khsing\World\Models\Continent;
 use Khsing\World\Models\Country;
+use Illuminate\Support\Facades\DB;
 class CompanyProfileController extends Controller
 {
     public function __construct()
@@ -22,6 +23,8 @@ class CompanyProfileController extends Controller
     public function index($id)
     {
         $services = Services::all();
+        $company_certifications = DB::table('companies')
+        ->leftjoin('company_certifications','companies.id', '=', 'company_certifications.company_id')->first();
         $continents=World::Continents();
         $profile = Company::where('user_id', Auth::user()->id)->first();
         $packs_id = Packages::where('id','=',$id)->first();
@@ -41,6 +44,7 @@ class CompanyProfileController extends Controller
              'profile'=>$profile,
              'cities'=>$cities,
              'countries'=>$countries,
+             'company_certifications'=>$company_certifications,
             ];
 
         return view('site.home.profile-registration', $compact);

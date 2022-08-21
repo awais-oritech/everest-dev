@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Khsing\World\World;
 use Khsing\World\Models\Continent;
+use App\Models\Services;
 class HomeController extends Controller
 {
     /**
@@ -26,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $continents=World::Continents();
-        return view('site.home.home',compact('continents'));
+        $services = Services::all();
+        return view('site.home.home',compact('continents','services'));
     }
 
 }
