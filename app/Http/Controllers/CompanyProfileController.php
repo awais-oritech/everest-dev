@@ -11,6 +11,8 @@ use App\Models\Company_Services;
 use App\Models\Packages;
 use App\Models\User;
 use Khsing\World\World;
+use Khsing\World\Models\Continent;
+use Khsing\World\Models\Country;
 class CompanyProfileController extends Controller
 {
     public function __construct()
@@ -21,20 +23,24 @@ class CompanyProfileController extends Controller
     {
         $services = Services::all();
         $continents=World::Continents();
+        $profile = Company::where('user_id', Auth::user()->id)->first();
         $packs_id = Packages::where('id','=',$id)->first();
-        $company_id = Company::first();
+        $country = Country::getByCode($profile->country);
+        $cities = $country->children();
+        if(isset($profile))
         $compact =[
             'services'=>$services ,
              'packs_id'=> $packs_id,
              'continents'=>$continents,
-             'company_id'=>$company_id,
+             'profile'=>$profile,
+            //  'company_id'=>$company_id,
             ];
         return view('site.home.profile-registration', $compact);
     }
 
     public function store(Request $request)
     {
-        // dd($request);
+       // dd($request);
         if($file=$request->hasfile('companylogo'))
         {
             $file=$request->file('companylogo');
@@ -44,8 +50,8 @@ class CompanyProfileController extends Controller
             $request->companylogo=$fileName;
         }
         $company = new Company();
-        $company-> create([
-        'user_id'=>$request->user_id,
+        $company=Company::create([
+        'user_id'=>request()->user()->id,
         'package_id' =>$request->package_id,
         'companyname'=> $request ->companyname,
         'ownername'=> $request->ownername,
@@ -85,11 +91,18 @@ class CompanyProfileController extends Controller
         'clientmanager'=> $request->clientmanager,
         'gmceo'=> $request->gmceo,
         ]);
+        //dd($company->id);
         for($i=0; $i < count($request->service_name); $i++)
         {
             $service_name[]=[
-                'company_id' => $request->company_id,
-                'service_name' => $request->service_name[$i],
+                'company_id' => $company->id,
+                'service_id' => $request->service_name[$i],
+            ];
+        }
+        foreach($request->service_name as $service){
+            $service_name[]=[
+                'company_id' => $company->id,
+                'service_id' => $service,
             ];
         }
         Company_Services::insert($service_name);
@@ -97,7 +110,7 @@ class CompanyProfileController extends Controller
         for($i=0; $i < count($request->certification_name); $i++)
         {
             $certification_name[]=[
-                'company_id' => $request->company_id,
+                'company_id' => $company->id,
                 'certification_name' => $request->certification_name[$i],
             ];
         }

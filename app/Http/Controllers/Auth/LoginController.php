@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
 use App\Models\Company;
 use Illuminate\Support\Facades\Auth;
-
 class LoginController extends Controller
 {
     /*
@@ -27,9 +25,9 @@ class LoginController extends Controller
     /**
      * Where to redirect users after login.
      *
-    //  * @var string
+     * @var string
      */
-    // protected $redirectTo = "/pricing";
+    // protected $redirectTo = RouteServiceProvider::HOME;
     protected function redirectTo()
     {
         $company=Company::where('user_id',Auth::user()->id)->first();
@@ -54,32 +52,10 @@ class LoginController extends Controller
     /**
      * Create a new controller instance.
      *
-    //  * @return void
+     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-    public function customLogin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect('/pricing');
-        }
-
-        return back()->with('message','Login details are not valid');
-    }
-
-    public function logout()
-    {
-        session()->flush();
-        Auth::logout();
-        return redirect('/member');
     }
 }

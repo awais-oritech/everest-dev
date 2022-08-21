@@ -57,6 +57,14 @@
         <div class="col-xl-6 col-lg-6 col-md-8">
             <div class="box_account">
                 <h3 class="new_client">New Member</h3> <small class="float-end pt-2">* Required Fields</small>
+                @if(session()->has('signupmessage'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session()->get('signupmessage') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                @endif
                 <form method="POST" action="{{route('register')}}">
                     @csrf
                     <div class="form_container">

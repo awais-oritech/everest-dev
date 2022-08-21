@@ -13,6 +13,230 @@
                         {{session('status')}}
                         </div>
                         @endif
+                        @if(isset($profile->id) && !empty($profile->id))
+                        <form>
+                            <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyname" value="{{$profile->companyname}}" placeholder="Company Name*" required disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="ownername"  value="{{$profile->ownername}}" placeholder="Owner Name*" required disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyaddress" value="{{$profile->companyaddress}}" placeholder="Head office address*" required disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companypostal" value="{{$profile->companypostal}}" placeholder="Postal Code Country*" required disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companytelephone" value="{{$profile->companytelephone}}" placeholder="Telephone*" required disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="email" class="form-control" name="companyemail" value="{{$profile->companyemail}}" placeholder="Email Address*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companywebsite" value="{{$profile->companywebsite}}"  placeholder="Website*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyskype" value="{{$profile->companyskype}}" id="email" placeholder="Skype*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyfacebook" value="{{$profile->companyfacebook}}" placeholder="Facebook*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyinstagram" value="{{$profile->companyname}}" placeholder="Instagram*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="companyyoutube" value="{{$profile->companyyoutube}}" placeholder="YouTube*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="file" class="form-control" name="companylogo" value="{{$profile->companylogo}}" disabled>
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>2) </b>Company Information</h6>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="companyprofile"  value="{{$profile->companyprofile}}"  placeholder="Company Profile*" disabled>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12form-group">
+                                    <input type="date" class="form-control" name="startdate"  value="{{$profile->startdate}}" placeholder="Company Date Started*" disabled>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="branchaddress"  value="{{$profile->branchaddress}}" placeholder="Branch Office Address*" disabled>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="companylicense"  value="{{$profile->companylicense}}" placeholder="Last Licenses Company*" disabled>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="vatnumber"  value="{{$profile->vatnumber}}"  placeholder="Vat Number*" disabled>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="bankdetails"  value="{{$profile->bankdetails}}" id="email" placeholder="Bank Details*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                    <select id="continents" name="continent" class="form-control"  value="{{$profile->continent}}" disabled>
+                                        @foreach ($continents as $continent)
+                                        <option value="{{$continent->code}}">{{$continent->name}}</option>
+                                    @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                    <select id="country" name="country" class="form-control" value="" disabled>
+                                        <option value="{{$profile->country}}">{{$profile->country}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                    <select id="city" name="city" class="form-control"  value="{{$profile->companylogo}}" disabled>
+                                        <option value="" disabled>City</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>3) </b>Company Service</h6>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <b>i)</b> Please inform us of services your company can provide (Please select all services)<br>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="service_name[]" value="" disabled>
+                                            <label for="airfreight"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>ii)</b> Is your company covered by professional liability insurance?<br>
+                                    <input type="radio" class="mt-4" name="insurance" value="yes" disabled>
+                                    <label> Yes</label>
+                                    <input type="radio" class="ml-4" name="insurance" value="no">
+                                    <label> No</label>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>iii)</b> Is your company a licensed customs broker? <br>
+                                    <input type="radio" class="mt-4" name="licensed" value="yes" disabled>
+                                    <label> Yes</label>
+                                    <input type="radio" class="ml-4" name="licensed" value="no">
+                                    <label> No</label>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="operatinglicense"><b>iv) </b> What operating licenses or certifications do you hold?</label>
+                                    <textarea id="operatinglicense" name="operatinglicense" rows="4" cols="50" disabled></textarea>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="operatinglicense"><b>v) </b> What is Your Bank Details?</label>
+                                    <textarea id="bankdetails2" name="bankdetails2" rows="4" cols="50" disabled></textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>4) </b>Company Certification/Membership</h6>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <b>i)</b> Please tick all relevant certification<br>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fiata" disabled>
+                                            <label for="fiata">FIATA</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fmc" disabled>
+                                            <label for="fmc">FMC</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="chamber" disabled>
+                                            <label for="chamber">Chamber of Commerce</label>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="nvocc" disabled>
+                                            <label for="nvocc">NVOCC</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="iata" disabled>
+                                            <label for="iata">IATA</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="ferightnetwork" disabled>
+                                            <label for="ferightnetwork">Freight Network</label>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="customsbroker" disabled>
+                                            <label for="customsbroker">Customs Broker</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="iso" disabled>
+                                            <label for="iso">ISO 9001/9002</label>
+                                            <br>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="others" disabled>
+                                            <label for="other">Others</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="associations"><b>ii) </b> What Local or National Freight Associations (different to Freight Networks) do you belong to?</label>
+                                    <textarea id="associations" name="associations" rows="4" cols="50" disabled></textarea>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label for="companystrength"><b>iii) </b> Please list your company strengths (e.g. air, sea, road freight etc.)</label>
+                                    <textarea id="companystrength" name="companystrength" rows="4" cols="50" disabled></textarea>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>iv)</b> Are you member of others net work ?<br>
+                                    <input type="radio" class="mt-4" name="member" value="yes" disabled>
+                                    <label> Yes</label>
+                                    <input type="radio" class="ml-4" name="member" value="no" disabled>
+                                    <label> No</label>
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+                            <h6 class="mt-4 mb-4"><b>5) </b>Your Company Key Contact Information</h6>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientname" placeholder="Your Name*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="email" class="form-control" name="clientemail"  placeholder="Your Email*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientmobile" placeholder="Your Mobile*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientskype" placeholder="Your Skype*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientwhatsapp"  placeholder="Your Whatsapp*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientposition" placeholder="Your Position*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="date" class="form-control" name="doa"  placeholder="Date of Application (dd/mm/yy)*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="clientmanager"  placeholder="Manager*" disabled>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" name="gmceo" placeholder="GM-CEO*" disabled>
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <label class="container_check">I agree to International Freight Network storing and using the information to contact me.
+                                        <input type="checkbox" disabled>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <label class="container_check">I confirm that our company does not have any outstanding payments or ongoing disputes with any other forwarders. I confirm that we are not listed on any industry blacklists, e.g. FDRS (Forwarders Debt Recovery Service), FDB (Freight Dead Beats) or any local association, as any findings can be published and will affect the outcome of our application.
+                                        <input type="checkbox" disabled>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="text-right"><input type="submit" value="Submit Application" class="btn_1 "></div>
+                        </form>
+                        @else
                         <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
                             @csrf
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
@@ -20,7 +244,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                     <input type="hidden" name="package_id" value="{{$packs_id->id}}">
-                                    <input type="hidden" name="company_id" value="{{$company_id->id}}">
+                                    {{-- <input type="hidden" name="company_id" value="{{$company_id->id}}"> --}}
                                     <input type="text" class="form-control" name="companyname" placeholder="Company Name*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
@@ -108,7 +332,7 @@
                                         @if(isset($services) && !empty($services))
                                         @foreach ($services as  $service)
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="service_name[]" value="{{ $service->name }}" >
+                                            <input type="checkbox" class="mt-2" name="service_name[]" value="{{ $service->id }}" >
                                             <label for="airfreight">{{ $service->name }}</label>
 
                                         </div>
@@ -147,7 +371,7 @@
                                     <b>i)</b> Please tick all relevant certification<br>
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fiata" required>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" value="fiata">
                                             <label for="fiata">FIATA</label>
                                             <br>
                                             <input type="checkbox" class="mt-2" name="certification_name[]" value="fmc">
@@ -245,6 +469,7 @@
                             </div>
                             <div class="text-right"><input type="submit" value="Submit Application" class="btn_1 "></div>
                         </form>
+                        @endif
                     </div>
                 </div>
             </div>

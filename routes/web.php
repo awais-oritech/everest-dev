@@ -52,9 +52,9 @@ Route::post('/contact-us',[ContactUsController::class, 'store']);
 Route::get('/news',[NewsController::class, 'index'])->name('news');
 Route::get('/events',[EventsController::class, 'index'])->name('events');
 Route::get('/member',[MemberController::class,'index'])->name('member');
-Route::post('/login',[LoginController::class,'customLogin']);
+// Route::post('/login',[LoginController::class,'customLogin']);
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
-Route::post('/register',[RegisterController::class,'customRegistration']);
+// Route::post('/register-member',[RegisterController::class,'customRegistration'])->name('register-member');
 Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
 Auth::routes();
 Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(function () {
@@ -66,4 +66,5 @@ Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(fun
     Route::get('/company-profile/{id}',[CompanyProfileViewController::class, 'index'])->name('company-profile');
 });
 
+Auth::routes();
 
