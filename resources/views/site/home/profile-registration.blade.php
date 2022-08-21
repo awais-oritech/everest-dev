@@ -33,7 +33,7 @@
                                     <input type="text" class="form-control" name="companytelephone" value="{{$profile->companytelephone}}" placeholder="Telephone*" required disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="email" class="form-control" name="companyemail" value="{{$profile->companyemail}}" placeholder="Email Address*" disabled>
+                                    <input type="email" class="form-control" name="companyemail" value="{{$profile->companyemail}}" placeholder="Email Address*" required disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companywebsite" value="{{$profile->companywebsite}}"  placeholder="Website*" disabled>
@@ -51,7 +51,7 @@
                                     <input type="text" class="form-control" name="companyyoutube" value="{{$profile->companyyoutube}}" placeholder="YouTube*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="file" class="form-control" name="companylogo" value="{{$profile->companylogo}}" disabled>
+                                    <input type="file" class="form-control" name="companylogo" value="{{$profile->companylogo}}" required disabled>
                                 </div>
                             </div>
                             <br>
@@ -79,18 +79,23 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
                                     <select id="continents" name="continent" class="form-control"  value="{{$profile->continent}}" disabled>
                                         @foreach ($continents as $continent)
-                                        <option value="{{$continent->code}}">{{$continent->name}}</option>
+                                        <option value="{{$continent->code}}" {{ $profile->continent==$continent->code?'selected':'' }}>{{$continent->name}}</option>
                                     @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="country" name="country" class="form-control" value="" disabled>
-                                        <option value="{{$profile->country}}">{{$profile->country}}</option>
+                                    <select id="country" name="country" class="form-control" value="{{$profile->country}}" disabled>
+
+                                        @foreach($countries as $country)
+                                            <option value="{{$country->code}}" {{ $profile->country==$country->code?'selected':'' }}>{{$country->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="city" name="city" class="form-control"  value="{{$profile->companylogo}}" disabled>
-                                        <option value="" disabled>City</option>
+                                    <select id="city" name="city" class="form-control"  value="{{$profile->city}}" disabled>
+                                        @foreach($cities as $city)
+                                        <option value="{{$city->code}}" {{ $profile->city==$city->code?'selected':'' }}>{{$city->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -101,29 +106,33 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
                                     <b>i)</b> Please inform us of services your company can provide (Please select all services)<br>
                                     <div class="row">
+                                        @if(isset($services) && !empty($services))
+                                        @foreach ($services as  $service)
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="service_name[]" value="" disabled>
-                                            <label for="airfreight"></label>
+                                            <input type="checkbox" class="mt-2" name="service_name[]" {{$service->service_name=='service_name'?'checked':''}} value="{{ $service->service_name }}" disabled>
+                                            <label for="airfreight">{{ $service->name }}</label>
                                         </div>
+                                        @endforeach
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <b>ii)</b> Is your company covered by professional liability insurance?<br>
-                                    <input type="radio" class="mt-4" name="insurance" value="yes" disabled>
+                                    <input type="radio" class="mt-4" name="insurance" {{$profile->insurance=='yes'?'checked':''}} value="yes"  disabled>
                                     <label> Yes</label>
-                                    <input type="radio" class="ml-4" name="insurance" value="no">
+                                    <input type="radio" class="ml-4" name="insurance" {{$profile->insurance=='no'?'checked':''}} value="no" disabled>
                                     <label> No</label>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <b>iii)</b> Is your company a licensed customs broker? <br>
-                                    <input type="radio" class="mt-4" name="licensed" value="yes" disabled>
+                                    <input type="radio" class="mt-4" name="licensed" {{$profile->licensed=='yes'?'checked':''}} value="yes" disabled>
                                     <label> Yes</label>
-                                    <input type="radio" class="ml-4" name="licensed" value="no">
+                                    <input type="radio" class="ml-4" name="licensed" {{$profile->licensed=='no'?'checked':''}} value="no" disabled>
                                     <label> No</label>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="operatinglicense"><b>iv) </b> What operating licenses or certifications do you hold?</label>
-                                    <textarea id="operatinglicense" name="operatinglicense" rows="4" cols="50" disabled></textarea>
+                                    <div id="operatinglicense" name="operatinglicense" rows="4" cols="50" disabled></div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="operatinglicense"><b>v) </b> What is Your Bank Details?</label>
@@ -190,31 +199,31 @@
                             <h6 class="mt-4 mb-4"><b>5) </b>Your Company Key Contact Information</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientname" placeholder="Your Name*" disabled>
+                                    <input type="text" class="form-control" name="clientname" value="{{$profile->clientname}}" placeholder="Your Name*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="email" class="form-control" name="clientemail"  placeholder="Your Email*" disabled>
+                                    <input type="email" class="form-control" name="clientemail" value="{{$profile->clientemail}}"  placeholder="Your Email*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientmobile" placeholder="Your Mobile*" disabled>
+                                    <input type="text" class="form-control" name="clientmobile" value="{{$profile->clientmobile}}" placeholder="Your Mobile*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientskype" placeholder="Your Skype*" disabled>
+                                    <input type="text" class="form-control" name="clientskype" value="{{$profile->clientskype}}" placeholder="Your Skype*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientwhatsapp"  placeholder="Your Whatsapp*" disabled>
+                                    <input type="text" class="form-control" name="clientwhatsapp"  value="{{$profile->clientwhatsapp}}" placeholder="Your Whatsapp*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientposition" placeholder="Your Position*" disabled>
+                                    <input type="text" class="form-control" name="clientposition" value="{{$profile->clientposition}}" placeholder="Your Position*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="date" class="form-control" name="doa"  placeholder="Date of Application (dd/mm/yy)*" disabled>
+                                    <input type="date" class="form-control" name="doa"  value="{{$profile->doa}}" placeholder="Date of Application (dd/mm/yy)*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientmanager"  placeholder="Manager*" disabled>
+                                    <input type="text" class="form-control" name="clientmanager"  value="{{$profile->clientmanager}}" placeholder="Manager*" disabled>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="gmceo" placeholder="GM-CEO*" disabled>
+                                    <input type="text" class="form-control" name="gmceo" value="{{$profile->gmceo}}" placeholder="GM-CEO*" disabled>
                                 </div>
                             </div>
                             <br>
@@ -423,7 +432,7 @@
                             <h6 class="mt-4 mb-4"><b>5) </b>Your Company Key Contact Information</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientname" placeholder="Your Name*" required>
+                                    <input type="text" class="form-control" name="clientname"  placeholder="Your Name*" disabled required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="email" class="form-control" name="clientemail"  placeholder="Your Email*" required>

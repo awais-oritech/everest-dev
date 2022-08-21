@@ -25,16 +25,24 @@ class CompanyProfileController extends Controller
         $continents=World::Continents();
         $profile = Company::where('user_id', Auth::user()->id)->first();
         $packs_id = Packages::where('id','=',$id)->first();
-        $country = Country::getByCode($profile->country);
-        $cities = $country->children();
-        if(isset($profile))
+        $countries = '';
+        $countries = World::Countries();
+        $cities = '';
+        if(isset($profile->id))
+        {
+            $country = Country::getByCode($profile->country);
+            $cities = $country->children();
+        }
+        // dd($countries);
         $compact =[
             'services'=>$services ,
              'packs_id'=> $packs_id,
              'continents'=>$continents,
              'profile'=>$profile,
-            //  'company_id'=>$company_id,
+             'cities'=>$cities,
+             'countries'=>$countries,
             ];
+
         return view('site.home.profile-registration', $compact);
     }
 
