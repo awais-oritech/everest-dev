@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
-use App\Models\Company_Services;
+use App\Models\CompanyServices;
 use Illuminate\Support\Facades\DB;
 class CompanyProfileViewController extends Controller
 {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
-use App\Models\Company_Services;
+use App\Models\CompanyServices;
 use App\Models\Services;
 use Illuminate\Support\Facades\DB;
 
@@ -33,9 +33,8 @@ class SearchController extends Controller
         {
             $results= $results->where('city', 'LIKE', '%'.$request->city.'%')->get();
         }
-       
+
         $results= $results->get();
-        // dd($results);
         return view('site.home.search',['results'=>$results]);
     }
 }
