@@ -79,18 +79,23 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
                                     <select id="continents" name="continent" class="form-control"  value="{{$profile->continent}}" disabled>
                                         @foreach ($continents as $continent)
-                                        <option value="{{$continent->code}}">{{$continent->name}}</option>
+                                        <option value="{{$continent->code}}" {{ $profile->continent==$continent->code?'selected':'' }}>{{$continent->name}}</option>
                                     @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="country" name="country" class="form-control" value="{{$profile->code}}" disabled>
-                                        <option value="{{$profile->code}}">{{$profile->country}}</option>
+                                    <select id="country" name="country" class="form-control" value="{{$profile->country}}" disabled>
+
+                                        @foreach($countries as $country)
+                                            <option value="{{$country->code}}" {{ $profile->country==$country->code?'selected':'' }}>{{$country->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="city" name="city" class="form-control"  value="{{$profile->companylogo}}" disabled>
-                                        <option value="" disabled>City</option>
+                                    <select id="city" name="city" class="form-control"  value="{{$profile->city}}" disabled>
+                                        @foreach($cities as $city)
+                                        <option value="{{$city->code}}" {{ $profile->city==$city->code?'selected':'' }}>{{$city->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
