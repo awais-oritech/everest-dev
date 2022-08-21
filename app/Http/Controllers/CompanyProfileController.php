@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Services;
 use App\Models\Company;
-use App\Models\Company_Certifications;
-use App\Models\Company_Services;
+use App\Models\CompanyCertifications;
+use App\Models\CompanyServices;
 use App\Models\Packages;
 use App\Models\User;
 use Khsing\World\World;
@@ -120,7 +120,7 @@ class CompanyProfileController extends Controller
                 'service_id' => $service,
             ];
         }
-        Company_Services::insert($service_name);
+        CompanyServices::insert($service_name);
 
         for($i=0; $i < count($request->certification_name); $i++)
         {
@@ -129,7 +129,7 @@ class CompanyProfileController extends Controller
                 'certification_name' => $request->certification_name[$i],
             ];
         }
-        Company_Certifications::insert($certification_name);
+        CompanyServices::insert($certification_name);
         return back()->with('status','Company Registered Please Wait For Admin Approval');
     }
 }

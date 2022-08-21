@@ -20,7 +20,7 @@
                       <div class="item"><img src="img/carousel_detail_3.jpg" alt=""></div>
                       <div class="item"><img src="img/carousel_detail_4.jpg" alt=""></div>
                     </div> --}}
-                    @foreach($profile_data as $profile)
+                    @if(isset($profile->id))
                     <section id="description" style="border: none!important;">
                         <div class="detail_title_1">
                             <div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
@@ -35,9 +35,11 @@
                                 <div class="row add_bottom_30">
                                     <div class="col-lg-6">
                                         <ul class="bullets">
-                                            @foreach($profile_services as $service)
-                                            <li>{{$service->service_name}}</li>
+                                            @if(isset($profile->services) && !empty($profile->services))
+                                            @foreach($profile->services as $service)
+                                            <li>{{$service->name}}</li>
                                             @endforeach
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>
@@ -47,9 +49,12 @@
                                 <div class="row add_bottom_30">
                                     <div class="col-lg-6">
                                         <ul class="bullets">
-                                            @foreach($profile_certification as $certification)
-                                            <li>{{$certification->certification_name}}</li>
+                                           
+                                            @if(isset($profile->certificates) && !empty($profile->certificates))
+                                            @foreach($profile->certificates as $certificate)
+                                            <li>{{$certificate->certification_name}}</li>
                                             @endforeach
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>
@@ -81,7 +86,7 @@
                             </tbody>
                         </table>
                     </section>
-                    @endforeach
+                    @endif
                     <!-- /section -->
                 </div>
                 <!-- /col -->

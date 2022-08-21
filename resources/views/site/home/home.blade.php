@@ -161,7 +161,7 @@
              <div class="main_title_2">
                  <span><em></em></span>
                     <h2 >Our Origins and Story</h2>
-                    <p class="animated bounceInLeft" style="animation-delay:1s">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                    {{-- <p class="animated bounceInLeft" style="animation-delay:1s">Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
              </div>
              <div class="row" style="justify-content: center;">
                  <div class="col-lg-6 col-md-6 col-sm-12 " >
@@ -406,7 +406,7 @@
                         <div class="main_title_2">
                             <span><em></em></span>
                             <h2 style="color:white">Pioneer Benefits</h2>
-                            <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                            {{-- <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
                         </div>
                     <div class="row ">
                         <div class="col-lg-3" >
@@ -506,8 +506,8 @@
      <div class="container margin_80_55" >
          <div class="main_title_2">
              <span><em></em></span>
-             <h2>News and Events</h2>
-             <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+             <h2>News </h2>
+             {{-- <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
          </div>
          <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12">

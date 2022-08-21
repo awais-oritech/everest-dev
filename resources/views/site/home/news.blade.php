@@ -15,7 +15,7 @@
                                 </a>
                             </figure>
                             <div class="post_info">
-                                <small>{{ \Carbon\Carbon::parse($new->created)->format('d/m/Y')}}</small>
+                                <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
                                 <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
                                 <p>{{$new->description}}</p>
                                 {{-- <ul>
@@ -60,16 +60,16 @@
                         @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
-                                <a href="#0"><img src="http://localhost:8080/everest-dev/admin/{{$latest_blog->image}}" alt=""></a>
+                                <a href="#0"><img src="admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
-                            <small>{{$latest_blog->name}} - {{$latest_blog->created}}</small>
-                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                            <small>{{\Carbon\Carbon::parse($latest_blog->created)->format('d-m-Y')}}</small>
+                            <h3><a href="news-info/{{$latest_blog->id}}" title="">{{$latest_blog->name}}</a></h3>
                         </li>
                         @endforeach
                     </ul>
                 </div>
                 <!-- /widget -->
-                <div class="widget">
+                {{-- <div class="widget">
                     <div class="widget-title">
                         <h4>Categories</h4>
                     </div>
@@ -77,12 +77,12 @@
                         @foreach($categories as $category)
                         <li><a href="#">{{$category->name}}<span>({{$category->level}})</span></a></li>
                         @endforeach
-                        {{-- <li><a href="#">Food <span>(12)</span></a></li>
+                        <li><a href="#">Food <span>(12)</span></a></li>
                         <li><a href="#">Places to visit <span>(21)</span></a></li>
                         <li><a href="#">New Places <span>(44)</span></a></li>
-                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li> --}}
+                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li> 
                     </ul>
-                </div>
+                </div> --}}
             </aside>
             <!-- /aside -->
         </div>
