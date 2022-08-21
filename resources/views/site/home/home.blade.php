@@ -43,10 +43,10 @@
                             <form method="GET" action="{{route('search')}}">
                                     <div class="form-group col-xs-3">
                                         <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}" width="30px" height="30px"> Service</label>
-                                        <select id="" name="name" class="form-control" style="border:none; border-bottom:1px solid #ccc">
-                                            <option value="0" selected disabled>Services</option>
+                                        <select id="" name="service_id" class="form-control" style="border:none; border-bottom:1px solid #ccc">
+                                            {{-- <option value="0" selected disabled>Services</option> --}}
                                             @foreach ($services as $service)
-                                                <option value="{{$service->name}}">{{$service->name}}</option>
+                                                <option value="{{$service->id}}">{{$service->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>

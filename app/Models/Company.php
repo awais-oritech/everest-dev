@@ -53,6 +53,17 @@ class Company extends Model
 
     public function companyservices()
     {
-        return $this->hasMany(Company_Services::class, 'company_id');
+        return $this->hasMany(CompanyServices::class, 'company_id');
+    }
+    public function services()
+    {
+        return $this->hasManyThrough(
+            Services::class,
+            CompanyServices::class,
+            'company_id', 
+            'id', 
+            'id', 
+            'service_id', 
+    );
     }
 }

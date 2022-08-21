@@ -12,32 +12,29 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $results = Company::query();
+        //$results = Company::query();
         // if($request->name)
         // {
         //     $results= DB::table('company_services')
         //     ->join('services', 'company_services.service_id')
         // }
-        $results=Company::with(['companyservices'=> function($qr) uses($request){
+        $results=Company::with(['services'=> function($qr) use ($request){
             return $qr->where('service_id',$request->service_id);
-        }])->get();
-        // if($request->continent)
-        // {
-        //     $results= Company::where('continent', 'LIKE', '%'.$request->continent.'%')->get();
-        // }
-        // if($request->country)
-        // {
-        //     $results= Company::where('country', 'LIKE', '%'.$request->country.'%')->get();
-        // }
-        // if($request->city)
-        // {
-        //     $results= Company::where('city', 'LIKE', '%'.$request->city.'%')->get();
-        // }
-        // else
-        // {
-        //     $results= Company::all();
-        // }
-
+        }]);
+        if($request->continent)
+        {
+            $results= $results->where('continent', 'LIKE', '%'.$request->continent.'%')->get();
+        }
+        if($request->country)
+        {
+            $results= $results->where('country', 'LIKE', '%'.$request->country.'%')->get();
+        }
+        if($request->city)
+        {
+            $results= $results->where('city', 'LIKE', '%'.$request->city.'%')->get();
+        }
+       
+        $results= $results->get();
         // dd($results);
         return view('site.home.search',['results'=>$results]);
     }
