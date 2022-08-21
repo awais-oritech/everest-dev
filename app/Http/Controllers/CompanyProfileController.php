@@ -23,18 +23,20 @@ class CompanyProfileController extends Controller
     public function index($id)
     {
         $services = Services::all();
-        $company_certifications = DB::table('companies')
-        ->leftjoin('company_certifications','companies.id', '=', 'company_certifications.company_id')->first();
+
         $continents=World::Continents();
         $profile = Company::where('user_id', Auth::user()->id)->first();
         $packs_id = Packages::where('id','=',$id)->first();
         $countries = '';
         $countries = World::Countries();
         $cities = '';
+        $certifications='';
         if(isset($profile->id))
         {
             $country = Country::getByCode($profile->country);
             $cities = $country->children();
+            $certifications= DB::table('company_certifications')->where('company_id',$profile->id)->pluck('certification_name')->toArray();
+           // dd($certifications);
         }
         // dd($countries);
         $compact =[
@@ -44,7 +46,7 @@ class CompanyProfileController extends Controller
              'profile'=>$profile,
              'cities'=>$cities,
              'countries'=>$countries,
-             'company_certifications'=>$company_certifications,
+             'certifications'=>$certifications,
             ];
 
         return view('site.home.profile-registration', $compact);

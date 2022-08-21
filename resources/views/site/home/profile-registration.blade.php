@@ -13,7 +13,7 @@
                         {{session('status')}}
                         </div>
                         @endif
-                        @if(isset($profile->id) && !empty($profile->id) && ($profile->can_edit==0))
+                        @if(isset($profile->id) && !empty($profile->id) )
                         <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
                             @csrf
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
@@ -146,54 +146,55 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
                                     <b>i)</b> Please tick all relevant certification<br>
-                                    @if(isset($company_certifications))
+                                    {{-- {{dd($company_certifications)}} --}}
+
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='fiata'?'checked':''}} value="fiata" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('fiata',$certifications)?'checked':'')}} value="fiata"  {{($profile->can_edit==1)?'':'disabled'}} >
                                             <label for="fiata">FIATA</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='fmc'?'checked':''}} value="fmc" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]"  {{(is_array($certifications) && in_array('fmc',$certifications)?'checked':'')}} value="fmc" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="fmc">FMC</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='chamber'?'checked':''}} value="chamber" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('chamber',$certifications)?'checked':'')}} value="chamber" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="chamber">Chamber of Commerce</label>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='nvocc'?'checked':''}} value="nvocc" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('nvocc',$certifications)?'checked':'')}} value="nvocc" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="nvocc">NVOCC</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='iata'?'checked':''}} value="iata" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('iata',$certifications)?'checked':'')}}  value="iata" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="iata">IATA</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='ferightnetwork'?'checked':''}} value="ferightnetwork" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('ferightnetwork',$certifications)?'checked':'')}} value="ferightnetwork" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="ferightnetwork">Freight Network</label>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='customsbroker'?'checked':''}} value="customsbroker" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('customsbroker',$certifications)?'checked':'')}}  value="customsbroker" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="customsbroker">Customs Broker</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='iso'?'checked':''}} value="iso" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('iso',$certifications)?'checked':'')}} {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="iso">ISO 9001/9002</label>
                                             <br>
-                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{$company_certifications->certification_name=='others'?'checked':''}} value="others" disabled>
+                                            <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('others',$certifications)?'checked':'')}}  value="others" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="other">Others</label>
                                         </div>
                                     </div>
-                                    @endif
+
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="associations"><b>ii) </b> What Local or National Freight Associations (different to Freight Networks) do you belong to?</label>
-                                    <textarea id="associations" name="associations" rows="4" cols="50" disabled></textarea>
+                                    <textarea id="associations" name="associations" rows="4" cols="50" {{($profile->can_edit==1)?'':'disabled'}}></textarea>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="companystrength"><b>iii) </b> Please list your company strengths (e.g. air, sea, road freight etc.)</label>
-                                    <textarea id="companystrength" name="companystrength" rows="4" cols="50" disabled></textarea>
+                                    <textarea id="companystrength" name="companystrength" rows="4" cols="50" {{($profile->can_edit==1)?'':'disabled'}}></textarea>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <b>iv)</b> Are you member of others net work ?<br>
-                                    <input type="radio" class="mt-4" name="member" value="yes" disabled>
+                                    <input type="radio" class="mt-4" name="member" value="yes" {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> Yes</label>
-                                    <input type="radio" class="ml-4" name="member" value="no" disabled>
+                                    <input type="radio" class="ml-4" name="member" value="no" {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> No</label>
                                 </div>
                             </div>
@@ -202,31 +203,31 @@
                             <h6 class="mt-4 mb-4"><b>5) </b>Your Company Key Contact Information</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientname" value="{{$profile->clientname}}" placeholder="Your Name*" disabled>
+                                    <input type="text" class="form-control" name="clientname" value="{{$profile->clientname}}" placeholder="Your Name*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="email" class="form-control" name="clientemail" value="{{$profile->clientemail}}"  placeholder="Your Email*" disabled>
+                                    <input type="email" class="form-control" name="clientemail" value="{{$profile->clientemail}}"  placeholder="Your Email*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientmobile" value="{{$profile->clientmobile}}" placeholder="Your Mobile*" disabled>
+                                    <input type="text" class="form-control" name="clientmobile" value="{{$profile->clientmobile}}" placeholder="Your Mobile*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientskype" value="{{$profile->clientskype}}" placeholder="Your Skype*" disabled>
+                                    <input type="text" class="form-control" name="clientskype" value="{{$profile->clientskype}}" placeholder="Your Skype*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientwhatsapp"  value="{{$profile->clientwhatsapp}}" placeholder="Your Whatsapp*" disabled>
+                                    <input type="text" class="form-control" name="clientwhatsapp"  value="{{$profile->clientwhatsapp}}" placeholder="Your Whatsapp*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientposition" value="{{$profile->clientposition}}" placeholder="Your Position*" disabled>
+                                    <input type="text" class="form-control" name="clientposition" value="{{$profile->clientposition}}" placeholder="Your Position*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="date" class="form-control" name="doa"  value="{{$profile->doa}}" placeholder="Date of Application (dd/mm/yy)*" disabled>
+                                    <input type="date" class="form-control" name="doa"  value="{{$profile->doa}}" placeholder="Date of Application (dd/mm/yy)*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="clientmanager"  value="{{$profile->clientmanager}}" placeholder="Manager*" disabled>
+                                    <input type="text" class="form-control" name="clientmanager"  value="{{$profile->clientmanager}}" placeholder="Manager*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="gmceo" value="{{$profile->gmceo}}" placeholder="GM-CEO*" disabled>
+                                    <input type="text" class="form-control" name="gmceo" value="{{$profile->gmceo}}" placeholder="GM-CEO*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                             </div>
                             <br>
@@ -235,13 +236,13 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
                                     <label class="container_check">I agree to International Freight Network storing and using the information to contact me.
-                                        <input type="checkbox" disabled>
+                                        <input type="checkbox" {{($profile->can_edit==1)?'':'disabled'}}>
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
                                     <label class="container_check">I confirm that our company does not have any outstanding payments or ongoing disputes with any other forwarders. I confirm that we are not listed on any industry blacklists, e.g. FDRS (Forwarders Debt Recovery Service), FDB (Freight Dead Beats) or any local association, as any findings can be published and will affect the outcome of our application.
-                                        <input type="checkbox" disabled>
+                                        <input type="checkbox" {{($profile->can_edit==1)?'':'disabled'}}>
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
