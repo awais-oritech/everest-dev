@@ -19,40 +19,40 @@
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyname" value="{{$profile->companyname}}" placeholder="Company Name*" required disabled>
+                                    <input type="text" class="form-control" name="companyname" value="{{$profile->companyname}}" placeholder="Company Name*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="ownername"  value="{{$profile->ownername}}" placeholder="Owner Name*" required disabled>
+                                    <input type="text" class="form-control" name="ownername"  value="{{$profile->ownername}}" placeholder="Owner Name*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyaddress" value="{{$profile->companyaddress}}" placeholder="Head office address*" required disabled>
+                                    <input type="text" class="form-control" name="companyaddress" value="{{$profile->companyaddress}}" placeholder="Head office address*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companypostal" value="{{$profile->companypostal}}" placeholder="Postal Code Country*" required disabled>
+                                    <input type="text" class="form-control" name="companypostal" value="{{$profile->companypostal}}" placeholder="Postal Code Country*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companytelephone" value="{{$profile->companytelephone}}" placeholder="Telephone*" required disabled>
+                                    <input type="text" class="form-control" name="companytelephone" value="{{$profile->companytelephone}}" placeholder="Telephone*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="email" class="form-control" name="companyemail" value="{{$profile->companyemail}}" placeholder="Email Address*" required disabled>
+                                    <input type="email" class="form-control" name="companyemail" value="{{$profile->companyemail}}" placeholder="Email Address*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companywebsite" value="{{$profile->companywebsite}}"  placeholder="Website*" disabled>
+                                    <input type="text" class="form-control" name="companywebsite" value="{{$profile->companywebsite}}"  placeholder="Website*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyskype" value="{{$profile->companyskype}}" id="email" placeholder="Skype*" disabled>
+                                    <input type="text" class="form-control" name="companyskype" value="{{$profile->companyskype}}" id="email" placeholder="Skype*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyfacebook" value="{{$profile->companyfacebook}}" placeholder="Facebook*" disabled>
+                                    <input type="text" class="form-control" name="companyfacebook" value="{{$profile->companyfacebook}}" placeholder="Facebook*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyinstagram" value="{{$profile->companyname}}" placeholder="Instagram*" disabled>
+                                    <input type="text" class="form-control" name="companyinstagram" value="{{$profile->companyname}}" placeholder="Instagram*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyyoutube" value="{{$profile->companyyoutube}}" placeholder="YouTube*" disabled>
+                                    <input type="text" class="form-control" name="companyyoutube" value="{{$profile->companyyoutube}}" placeholder="YouTube*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="file" class="form-control" name="companylogo" value="{{$profile->companylogo}}" required disabled>
+                                    <input type="file" class="form-control" name="companylogo" value="{{$profile->companylogo}}" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                             </div>
                             <br>
@@ -60,32 +60,32 @@
                             <h6 class="mt-4 mb-4"><b>2) </b>Company Information</h6>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="companyprofile"  value="{{$profile->companyprofile}}"  placeholder="Company Profile*" disabled>
+                                    <input type="text" class="form-control" name="companyprofile"  value="{{$profile->companyprofile}}"  placeholder="Company Profile*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12form-group">
-                                    <input type="date" class="form-control" name="startdate"  value="{{$profile->startdate}}" placeholder="Company Date Started*" disabled>
+                                    <input type="date" class="form-control" name="startdate"  value="{{$profile->startdate}}" placeholder="Company Date Started*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="branchaddress"  value="{{$profile->branchaddress}}" placeholder="Branch Office Address*" disabled>
+                                    <input type="text" class="form-control" name="branchaddress"  value="{{$profile->branchaddress}}" placeholder="Branch Office Address*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="companylicense"  value="{{$profile->companylicense}}" placeholder="Last Licenses Company*" disabled>
+                                    <input type="text" class="form-control" name="companylicense"  value="{{$profile->companylicense}}" placeholder="Last Licenses Company*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="vatnumber"  value="{{$profile->vatnumber}}"  placeholder="Vat Number*" disabled>
+                                    <input type="text" class="form-control" name="vatnumber"  value="{{$profile->vatnumber}}"  placeholder="Vat Number*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="bankdetails"  value="{{$profile->bankdetails}}" id="email" placeholder="Bank Details*" disabled>
+                                    <input type="text" class="form-control" name="bankdetails"  value="{{$profile->bankdetails}}" id="email" placeholder="Bank Details*" {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="continents" name="continent" class="form-control"  value="{{$profile->continent}}" disabled>
+                                    <select id="continents" name="continent" class="form-control"  value="{{$profile->continent}}" {{($profile->can_edit==1)?'':'disabled'}}>
                                         @foreach ($continents as $continent)
                                         <option value="{{$continent->code}}" {{ $profile->continent==$continent->code?'selected':'' }}>{{$continent->name}}</option>
                                     @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="country" name="country" class="form-control" value="{{$profile->country}}" disabled>
+                                    <select id="country" name="country" class="form-control" value="{{$profile->country}}" {{($profile->can_edit==1)?'':'disabled'}}>
 
                                         @foreach($countries as $country)
                                             <option value="{{$country->code}}" {{ $profile->country==$country->code?'selected':'' }}>{{$country->name}}</option>
@@ -93,7 +93,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="city" name="city" class="form-control"  value="{{$profile->city}}" disabled>
+                                    <select id="city" name="city" class="form-control"  value="{{$profile->city}}" {{($profile->can_edit==1)?'':'disabled'}}>
                                         @foreach($cities as $city)
                                         <option value="{{$city->code}}" {{ $profile->city==$city->code?'selected':'' }}>{{$city->name}}</option>
                                         @endforeach
@@ -110,7 +110,7 @@
                                         @if(isset($services) && !empty($services))
                                         @foreach ($services as  $service)
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                            <input type="checkbox" class="mt-2" name="service_name[]" {{$service->name=='name'?'checked':''}} value="{{ $service->name }}" disabled>
+                                            <input type="checkbox" class="mt-2" name="service_name[]" {{(is_array($company_services) && in_array($service->id,$company_services)?'checked':'')}} value="{{ $service->id }}" {{($profile->can_edit==1)?'':'disabled'}}>
                                             <label for="airfreight">{{ $service->name }}</label>
                                         </div>
                                         @endforeach
@@ -119,25 +119,33 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <b>ii)</b> Is your company covered by professional liability insurance?<br>
-                                    <input type="radio" class="mt-4" name="insurance" {{$profile->insurance=='yes'?'checked':''}} value="yes"  disabled>
+                                    <input type="radio" class="mt-4" name="insurance" {{$profile->insurance=='yes'?'checked':''}} value="yes"  {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> Yes</label>
-                                    <input type="radio" class="ml-4" name="insurance" {{$profile->insurance=='no'?'checked':''}} value="no" disabled>
+                                    <input type="radio" class="ml-4" name="insurance" {{$profile->insurance=='no'?'checked':''}} value="no" {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> No</label>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <b>iii)</b> Is your company a licensed customs broker? <br>
-                                    <input type="radio" class="mt-4" name="licensed" {{$profile->licensed=='yes'?'checked':''}} value="yes" disabled>
+                                    <input type="radio" class="mt-4" name="licensed" {{$profile->licensed=='yes'?'checked':''}} value="yes" {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> Yes</label>
-                                    <input type="radio" class="ml-4" name="licensed" {{$profile->licensed=='no'?'checked':''}} value="no" disabled>
+                                    <input type="radio" class="ml-4" name="licensed" {{$profile->licensed=='no'?'checked':''}} value="no" {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> No</label>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="operatinglicense"><b>iv) </b> What operating licenses or certifications do you hold?</label>
-                                    <div id="operatinglicense" name="operatinglicense" rows="4" cols="50" disabled></div>
+                                    @if($profile->ca_edit == 0)
+                                    <div style="border: 1px solid #ccc; padding:30px; width:75%;">{{$profile->operatinglicense}}</div>
+                                    @else
+                                    <textarea id="operatinglicense" name="operatinglicense" rows="4" cols="50"></textarea>
+                                    @endif
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                    <label for="operatinglicense"><b>v) </b> What is Your Bank Details?</label>
-                                    <textarea id="bankdetails2" name="bankdetails2" rows="4" cols="50" disabled></textarea>
+                                    <label for="bankdetails2"><b>v) </b> What is Your Bank Details?</label>
+                                    @if($profile->ca_edit == 0)
+                                    <div style="border: 1px solid #ccc; padding:30px; width:75%;">{{$profile->operatinglicense}}</div>
+                                    @else
+                                    <textarea id="bankdetails2" name="bankdetails2" rows="4" cols="50"></textarea>
+                                    @endif
                                 </div>
                             </div>
                             <br>
@@ -146,8 +154,6 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
                                     <b>i)</b> Please tick all relevant certification<br>
-                                    {{-- {{dd($company_certifications)}} --}}
-
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                                             <input type="checkbox" class="mt-2" name="certification_name[]" {{(is_array($certifications) && in_array('fiata',$certifications)?'checked':'')}} value="fiata"  {{($profile->can_edit==1)?'':'disabled'}} >
@@ -184,17 +190,25 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="associations"><b>ii) </b> What Local or National Freight Associations (different to Freight Networks) do you belong to?</label>
+                                    @if($profile->ca_edit == 0)
+                                    <div style="border: 1px solid #ccc; padding:30px; width:75%;">{{$profile->associations}}</div>
+                                    @else
                                     <textarea id="associations" name="associations" rows="4" cols="50" {{($profile->can_edit==1)?'':'disabled'}}></textarea>
+                                    @endif
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <label for="companystrength"><b>iii) </b> Please list your company strengths (e.g. air, sea, road freight etc.)</label>
+                                    @if($profile->ca_edit == 0)
+                                    <div style="border: 1px solid #ccc; padding:30px; width:75%;">{{$profile->companystrength}}</div>
+                                    @else
                                     <textarea id="companystrength" name="companystrength" rows="4" cols="50" {{($profile->can_edit==1)?'':'disabled'}}></textarea>
+                                    @endif
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
                                     <b>iv)</b> Are you member of others net work ?<br>
-                                    <input type="radio" class="mt-4" name="member" value="yes" {{($profile->can_edit==1)?'':'disabled'}}>
+                                    <input type="radio" class="mt-4" name="member" value="yes" {{$profile->member=='yes'?'checked':''}} {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> Yes</label>
-                                    <input type="radio" class="ml-4" name="member" value="no" {{($profile->can_edit==1)?'':'disabled'}}>
+                                    <input type="radio" class="ml-4" name="member" value="no" {{$profile->member=='no'?'checked':''}} {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> No</label>
                                 </div>
                             </div>
@@ -247,7 +261,9 @@
                                     </label>
                                 </div>
                             </div>
+                            @if($profile->can_edit==1)
                             <div class="text-right"><input type="submit" value="Submit Application" class="btn_1 "></div>
+                            @endif
                         </form>
                         @else
                         <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">

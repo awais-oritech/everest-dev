@@ -9,4 +9,6 @@ class Services extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
 }
+
