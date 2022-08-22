@@ -64,10 +64,10 @@ class Company extends Model
         return $this->hasManyThrough(
             Services::class,
             CompanyServices::class,
-            'company_id', 
-            'id', 
-            'id', 
-            'service_id', 
+            'company_id', // Foreign key on the CompanyServices table
+            'id', // Foreign key on the Services table
+            'id', // Local key on the Company table
+            'service_id', // Local key on the CompanyServices table
     );
     }
 }
