@@ -8,7 +8,7 @@ use App\Models\packages;
 use Illuminate\Support\Facades\DB;
 class ProfileProcessController extends Controller
 {
-    public function index($id)
+    public function index()
     {
         $profiles = DB::table('companies')
         ->leftjoin('packages','packages.id','=','companies.package_id')->value('package_id');

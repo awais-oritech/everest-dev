@@ -58,7 +58,7 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
 Auth::routes();
 Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(function () {
-    Route::get('/profile-process/{id}', [ProfileProcessController::class, 'index'])->name('profile-process');
+    Route::get('/profile-process', [ProfileProcessController::class, 'index'])->name('profile-process');
     Route::get('/pricing',[PricingController::class,'index'])->name('pricing')->middleware('auth');
     Route::get('/profile-registration/{id}',[CompanyProfileController::class,'index'])->name('profile-registration');
     Route::post('/profile-registration/{id}', [CompanyProfileController::class, 'store']);
