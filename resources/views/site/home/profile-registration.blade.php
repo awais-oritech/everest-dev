@@ -12,6 +12,11 @@
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         {{session('status')}}
                         </div>
+                        @elseif(session('errormessage'))
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{session('errormessage')}}
+                        </div>
                         @endif
                         @if(isset($profile->id) && !empty($profile->id) )
                         <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">

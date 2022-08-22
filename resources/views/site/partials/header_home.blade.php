@@ -1,5 +1,5 @@
   <div class="container header-navbar">
-      
+
       <div class="row">
 
           <div class="col-12">
@@ -12,38 +12,35 @@
                   </button>
                   <div class="collapse  navbar-right  navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav ml-auto">
-                          <li class="nav-item active">
+                            <li class="nav-item active">
                               <a class="nav-link" style="color:#1c75BA;" href="/"><i
                                       class="fa-solid fa-house"></i> Home <span
                                       class="sr-only">(current)</span></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link " style="color:#1c75BA;" href="/about"><i class="fa-solid fa-info"></i>
-                                About Us</a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" style="color:#1c75BA;" href="#"><i class="fa-solid fa-book"></i>
-                                Benefit</a>
-                        </li> --}}
-                          <li class="nav-item">
-                              <a class="nav-link" style="color:#1c75BA;" href="#"><i class="fa-solid fa-book"></i>
-                                  Directory</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link " style="color:#1c75BA;" href="/news"><i class="fas fa-newspaper"></i>
-                                News</a>
-                        </li>
-                          <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " style="color:#1c75BA;" href="/about"><i class="fa-solid fa-info"></i>About Us</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" style="color:#1c75BA;" href="#"><i class="fa-solid fa-book"></i>Directory</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " style="color:#1c75BA;" href="/news"><i class="fas fa-newspaper"></i>News</a>
+                            </li>
+                            <li class="nav-item">
                               <a class="nav-link" style="color:#1c75BA;" href="/events"><i class="fas fa-flag"></i>
                                   Events</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" style="color:#1c75BA;" href="/contact-us"><i class="fas fa-phone"></i>
-                                Contact</a>
-                        </li>
-                          <li>
-                              <a href="/member"><button type="button"  class="hvr-sweep-to-right buttons mt-2 ">Become Member</button></a>
-                          </li>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color:#1c75BA;" href="/contact-us"><i class="fas fa-phone"></i>Contact</a>
+                            </li>
+                            @if(!Auth::user())
+                            {{-- <li class="nav-item">
+                                <a class="nav-link" style="color:#1c75BA;" href="/packages"><i class="fas fa-phone"></i>Packages</a>
+                            </li> --}}
+                            <li>
+                                <a href="/member"><button type="button"  class="hvr-sweep-to-right buttons mt-2 ">Become Member</button></a>
+                            </li>
+                            @endif
                       </ul>
                       @if(Auth::user())
                       <a class="nav-link" href="{{route('logout')}}"><i class="fas fa-sign-out"></i></a>

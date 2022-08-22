@@ -49,7 +49,6 @@
                                 <div class="row add_bottom_30">
                                     <div class="col-lg-6">
                                         <ul class="bullets">
-                                           
                                             @if(isset($profile->certificates) && !empty($profile->certificates))
                                             @foreach($profile->certificates as $certificate)
                                             <li>{{$certificate->certification_name}}</li>
@@ -70,7 +69,7 @@
                                         <th scope="col">Email</th>
                                         <th scope="col">Number</th>
                                         <th scope="col">License</th>
-                                        <th scope="col">Vat Number</th>
+                                        <th scope="col">Vat</th>
                                         <th scope="col">Strength</th>
                                     </tr>
                                 </thead>
@@ -85,6 +84,30 @@
                                 </tbody>
                             </tbody>
                         </table>
+                        {{-- <hr> --}}
+                        <h3>Concernd Person Info</h3>
+                        <table class="table table-striped add_bottom_45">
+                            <tbody>
+                                <thead style="background-color:#1c75ba!important; color:white;">
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Position</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Mobile</th>
+                                        <th scope="col">Skype</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{$profile->clientmanager}}</td>
+                                        <td>{{$profile->clientposition}}</td>
+                                        <td>{{$profile->companylicense}}</td>
+                                        <td>{{$profile->clientemail}}</td>
+                                        <td>{{$profile->clientmobile}}</td>
+                                    </tr>
+                                </tbody>
+                            </tbody>
+                        </table>
                     </section>
                     @endif
                     <!-- /section -->
@@ -95,9 +118,12 @@
                         <img src="{{asset('uploads/'.$profile->companylogo)}}" alt="profile">
                     </div>
                     <ul class="share-buttons">
-                        <li><a class="fb-share" href="#0"><i class="social_facebook"></i> Share</a></li>
-                        <li><a class="twitter-share" href="#0"><i class="social_twitter"></i> Share</a></li>
-                        <li><a class="gplus-share" href="#0"><i class="social_googleplus"></i> Share</a></li>
+                        <li><a class="fb-share" href="#"><i class="social_facebook"></i> {{$profile->companyfacebook}}</a></li>
+                        <li><a class="instagram-share" href="#"><i class="social_instagram"></i> {{$profile->companyinstagram}}</a></li>
+                        <li><a class="skype-share" href="#"><i class="social_skype"></i> {{$profile->companyskype}}</a></li>
+                        <li><a class="youtube-share" href="#"><i class="social_youtube"></i> {{$profile->companyyoutube}}</a></li>
+                        <li><a class="gplus-share" href="#"><i class="social_googleplus"></i> {{$profile->companyemail}}</a></li>
+                        <li><a class="web-share" href="#"><i class="fa fa-earth"></i>{{$profile->companywebsite}}</a></li>
                     </ul>
                 </aside>
             </div>

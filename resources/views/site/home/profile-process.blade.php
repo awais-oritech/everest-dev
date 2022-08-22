@@ -4,6 +4,12 @@
     <div class="container margin_60">
          <div class="row justify-content-center">
             <div class="col-md-10">
+                @if(session('errormessage'))
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{session('errormessage')}}
+                </div>
+                @endif
                 <div id="confirm">
                     <div class="icon icon--order-success svg add_bottom_15">
                         <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">
@@ -17,6 +23,7 @@
                         <h4 class="alert-heading">Profile Processing!</h4>
                         <p class="mt-4">Your Profile has been Registered Successfully, please wait for profile verification this may takes few moment for approval.</p>
                         <p class="mb-0">Please Submit your Payment for approval Thank You!</p>
+                        <a href="{{url('profile-registration',$profiles)}}">Click here to view your profile</a>
                     </div>
                 </div>
             </div>

@@ -35,23 +35,22 @@
             <aside class="col-lg-3">
                 <div class="widget">
                     <div class="widget-title">
-                        <h4>Latest Post</h4>
+                        <h4>Latest Posts</h4>
                     </div>
                     <ul class="comments-list">
-                       
                         @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
                                 <a href="#0"><img src="admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
                             <small>{{\Carbon\Carbon::parse($latest_blog->created)->format('d-m-Y')}}</small>
-                            <h3><a href="news-info/{{$latest_blog->id}}" title="">{{$latest_blog->name}}</a></h3>
+                            <h3><a href="{{url('news-info',$latest_blog->id)}}" title="">{{$latest_blog->name}}</a></h3>
                         </li>
                         @endforeach
                     </ul>
                 </div>
                 <!-- /widget -->
-                <div class="widget">
+                {{-- <div class="widget">
                     <div class="widget-title">
                         <h4>Categories</h4>
                     </div>
@@ -59,12 +58,8 @@
                         @foreach($categories as $category)
                         <li><a href="#">{{$category->name}}<span>({{$category->level}})</span></a></li>
                         @endforeach
-                        {{-- <li><a href="#">Food <span>(12)</span></a></li>
-                        <li><a href="#">Places to visit <span>(21)</span></a></li>
-                        <li><a href="#">New Places <span>(44)</span></a></li>
-                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li> --}}
                     </ul>
-                </div>
+                </div> --}}
             </aside>
             <!-- /aside -->
         </div>

@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class MemberController extends Controller
 {
     public function index()
     {
-        return view('auth.member');
+        if(Auth::check())
+        {
+            return back()->with('errormessage','You are already logged in your Account');
+        }
+        else
+        {
+            return view('auth.member');
+        }
     }
 }

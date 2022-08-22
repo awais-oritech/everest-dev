@@ -892,3 +892,64 @@ nav ul li a:active{
   color:black;
   transition: 500ms;
 }
+
+ul.share-buttons li a.instagram-share
+{
+    color:#FCAF45;
+}
+ul.share-buttons li a.instagram-share:hover
+{
+    color:white;
+    background-color: #FCAF45;
+}
+ul.share-buttons li a.skype-share
+{
+    color:#00AFF0;
+}
+ul.share-buttons li a.skype-share:hover
+{
+    color:white;
+    background-color:#00AFF0;
+}
+ul.share-buttons li a.youtube-share
+{
+    color:#FF0000;
+}
+ul.share-buttons li a.youtube-share:hover
+{
+    color:white;
+    background-color:#FF0000;
+}
+
+ul.share-buttons li a.web-share
+{
+    color:#088ab9;
+}
+ul.share-buttons li a.web-share:hover
+{
+    color:white;
+    background-color:#088ab9;
+}
+
+ul.share-buttons{
+    padding: 0;
+    list-style: none;
+    margin: 0 0 25px 0;
+}
+
+/* ul.share-button-custom li a{
+    background: #fff;
+    border: 1px solid #ededed;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 13px;
+    font-size: .8125rem;
+    padding: 7px 20px;
+    transition: .3s;
+    display: inline-block;
+    line-height: 17px;
+    font-weight: 500;
+} */

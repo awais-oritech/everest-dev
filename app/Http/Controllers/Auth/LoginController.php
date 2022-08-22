@@ -35,12 +35,15 @@ class LoginController extends Controller
         {
             if($company->status==0)
             {
-
                 return '/pricing';
             }
             if($company->status==1)
             {
                 return '/profile-process';
+            }
+            if($company->status==2)
+            {
+                return '/home';
             }
         }
         else
