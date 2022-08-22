@@ -46,7 +46,8 @@
 		
 		static function Parameters () {
 			self::$ABSOLUTE_PATH = $_SERVER['DOCUMENT_ROOT'].'/';
-			self::$BASE_PATH = 'http://'.$_SERVER['SERVER_NAME'].':8080/';
+			self::$BASE_PATH = 'http://'.$_SERVER['SERVER_NAME'].'/';
+			//self::$BASE_PATH = 'http://'.$_SERVER['SERVER_NAME'].':8080/';
 			$parameters = explode("/", $_SERVER['REQUEST_URI']);
 			
 			$returnObject = array();
