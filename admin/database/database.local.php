@@ -8,7 +8,7 @@ class DATABASE_CONFIG {
 		'login' => 'root',
 		'password' => '',
 		//'password' => 'aPS-+B@0WhdE',
-		'database' => 'pionerln_db',
+		'database' => 'poineers_db',
 	);
 }
 ?>

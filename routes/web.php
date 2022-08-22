@@ -46,6 +46,7 @@ Route::get('/faq', function(){
 Route::get('/privacy-policy', function(){
     return view('site.home.privacy-policy');
 });
+Route::get('/page/{slug}', 'HomeController@page');
 
 Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact-us');
 Route::post('/contact-us',[ContactUsController::class, 'store']);
@@ -56,10 +57,11 @@ Route::get('/member',[MemberController::class,'index'])->name('member');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 // Route::post('/register-member',[RegisterController::class,'customRegistration'])->name('register-member');
 Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
+Route::get('/packages',[PricingController::class,'index'])->name('packages');
 Auth::routes();
 Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(function () {
     Route::get('/profile-process', [ProfileProcessController::class, 'index'])->name('profile-process');
-    Route::get('/pricing',[PricingController::class,'index'])->name('pricing')->middleware('auth');
+   
     Route::get('/profile-registration/{id}',[CompanyProfileController::class,'index'])->name('profile-registration');
     Route::post('/profile-registration/{id}', [CompanyProfileController::class, 'store']);
     Route::get('/search',[SearchController::class, 'index'])->name('search');

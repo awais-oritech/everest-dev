@@ -4,7 +4,7 @@
 
           <div class="col-12">
               <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                  <a class="navbar-brand" href="#"> <img src="{{ asset('assets/img/pioneer-01.png') }}" width="auto"
+                  <a class="navbar-brand" href="/"> <img src="{{ asset('assets/img/pioneer-01.png') }}" width="auto"
                           height="35" alt="" class="logo_normal"></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,21 +18,25 @@
                                       class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " style="color:#1c75BA;" href="/about"><i class="fa-solid fa-info"></i>About Us</a>
+                                <a class="nav-link " style="color:#1c75BA;" href="/about"><i class="icon-info-circled"></i> About Us</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" style="color:#1c75BA;" href="#"><i class="fa-solid fa-book"></i>Directory</a>
+                              <a class="nav-link" style="color:#1c75BA;" href="#"><i class="fa-solid fa-book"></i> Directory</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " style="color:#1c75BA;" href="/news"><i class="fas fa-newspaper"></i>News</a>
+                                <a class="nav-link" style="color:#1c75BA;" href="/packages"><i class="fas fa-shopping-basket"></i> Packages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " style="color:#1c75BA;" href="/news"><i class="fas fa-newspaper"></i> News</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" style="color:#1c75BA;" href="/events"><i class="fas fa-flag"></i>
                                   Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color:#1c75BA;" href="/contact-us"><i class="fas fa-phone"></i>Contact</a>
+                                <a class="nav-link" style="color:#1c75BA;" href="/contact-us"><i class="fas fa-phone"></i> Contact</a>
                             </li>
+                            
                             @if(!Auth::user())
                             {{-- <li class="nav-item">
                                 <a class="nav-link" style="color:#1c75BA;" href="/packages"><i class="fas fa-phone"></i>Packages</a>

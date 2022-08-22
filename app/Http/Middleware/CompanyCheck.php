@@ -23,7 +23,7 @@ class CompanyCheck
             if($company->status==0)
             {
 
-                return redirect('/pricing');
+                return redirect('/packages');
             }
             if($company->status==1)
             {
@@ -32,7 +32,7 @@ class CompanyCheck
         }
         else
         {
-            return redirect('/pricing');
+            return redirect('/packages');
         }
             return $next($request);
     }

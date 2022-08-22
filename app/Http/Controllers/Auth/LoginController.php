@@ -35,7 +35,7 @@ class LoginController extends Controller
         {
             if($company->status==0)
             {
-                return '/pricing';
+                return '/packages';
             }
             if($company->status==1)
             {
@@ -48,7 +48,7 @@ class LoginController extends Controller
         }
         else
         {
-            return '/pricing';
+            return '/packages';
         }
     }
 

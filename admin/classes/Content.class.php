@@ -592,7 +592,7 @@
     
  //======================================================== CUSTOMS ============================================
 
-    //======================================================== Section ============================================
+    //======================================================== Services ============================================
         static function services(){
             global $DB;
             
@@ -614,6 +614,7 @@
                 return false;
             }
         }
+        //======================================================== Sponsors ============================================
         static function sponsors(){
             global $DB;
             
@@ -632,6 +633,27 @@
                 return false;
             }
         }
+//======================================================== Companies ============================================
+static function companies(){
+    global $DB;
+    
+    $sql="SELECT
+    companies.*,
+    package.package_name As package_name
+        FROM
+            `companies`
+        LEFT JOIN packages AS package
+        ON companies.package_id=package.id
+        ORDER BY
+        companies.id
+        DESC";
+    $objData=$DB->Select($sql);
+    if($objData){
+        return $objData;
+    }else{
+        return false;
+    }
+}
     //======================================================== Section ============================================
         static function quranaudiosByCat($cat_id){
             global $DB;

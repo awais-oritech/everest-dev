@@ -323,12 +323,16 @@
                         @endif
                     </div>
                 </div>
+                @if(Auth::user())
                 <div class="membership__table-row membership__table-price">
                     <div class="membership__table-text"><span></span></div>
-                    <div><span><a href="{{route('profile-registration',[$packages[0]->id])}}"><button class="select_button">SELECT</button></a></span></div>
-                    <div><span><a href="{{route('profile-registration',[$packages[1]->id])}}"><button class="select_button">SELECT</button></a></span></div>
-                    <div><span><a href="{{route('profile-registration',[$packages[2]->id])}}"><button class="select_button">SELECT</button></a></span></div>
+                    <div><span><a href="{{route('profile-registration',[$packages[0]->id])}}"><button class="btn_1 full-width">SELECT</button></a></span></div>
+                    <div><span><a href="{{route('profile-registration',[$packages[1]->id])}}"><button class="btn_1 full-width">SELECT</button></a></span></div>
+                    <div><span><a href="{{route('profile-registration',[$packages[2]->id])}}"><button class="btn_1 full-width">SELECT</button></a></span></div>
                 </div>
+                @else
+                <div class="d-flex-center"> <a href="/member"><button type="button"  class="btn_1 full-width mt-2 ">Become Member</button></a></div>
+                @endif
                 <div class="membership__table-row membership__table-footer">
                     <div></div>
                     <div></div>
