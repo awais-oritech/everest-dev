@@ -19,6 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('package_id');
             $table->tinyInteger('status')->default(1);
             $table->tinyInteger('can_edit')->default(0);
+            $table->tinyInteger('is_public')->default(0);
             $table->string('companyname');
             $table->string('ownername');
             $table->string('companyaddress');

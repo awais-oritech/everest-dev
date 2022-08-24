@@ -217,30 +217,11 @@
              </div>
              <div class="row justify-content-between">
                  <div class="sponsors-slider">
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo1.jpg') }}" height="150px">
+                    @foreach($sponsers as $sponser)
+                     <div class="slide">
+                        <img src="http://localhost:8080/everest-dev/admin/{{$sponser->image}}" height="150px">
                      </div>
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo2.jpg') }}" height="150px">
-                     </div>
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo3.jpg') }}" height="150px">
-                     </div>
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo4.png') }}" height="150px">
-                     </div>
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo5.jpg') }}" height="150px">
-                     </div>
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo6.jpg') }}" height="150px">
-                     </div>
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo7.jpg') }}" height="150px">
-                     </div>
-                     <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo8.jpg') }}" height="150px">
-                     </div>
+                     @endforeach
                  </div>
              </div>
 
@@ -406,58 +387,55 @@
                         <div class="main_title_2">
                             <span><em></em></span>
                             <h2 style="color:white">Pioneer Benefits</h2>
-                            {{-- <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
                         </div>
                     <div class="row ">
+                        {{-- @foreach($benefits as $benefit)
                         <div class="col-lg-3" >
                             <div class="benefit">
-                                <img src="{{ asset('assets/img/benefitearth.png') }}" width="50px" height="50px"><span>   Global Search</span>
+                                <img src="{{asset('uploads')}}/{{$benefit->image}}" width="50px" height="50px"><span>{{$benefit->name}}</span>
                             </div>
                         </div >
-
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/finance.png') }}" width="50px" height="50px"><span>Financial Protection</span>
-                            </div>
-                        </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/pay.png') }}" width="50px" height="50px"><span>Partner Pay</span>
-                            </div>
-                        </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/partnership.png') }}" width="50px" height="50px"><span>Marketing and Promotion</span>
-                            </div>
-                        </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/customerservice.png') }}" width="50px" height="50px"><span>Customer Service</span>
-                            </div>
-                        </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/shipping.png') }}" width="50px" height="50px"><span>All World Shippng</span>
-                            </div>
-                        </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/box.png') }}" width="50px" height="50px"><span>Courier Program</span>
-                            </div>
-                        </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/wpsonline.png') }}" width="50px" height="50px"><span>WCA Online</span>
-                            </div>
-                        </div >
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{ asset('assets/img/voice.png') }}" width="50px" height="50px"><span>Voice of the Independant</span>
-                            </div>
-                        </div >
-
-
-
+                        @endforeach --}}
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/finance.png') }}" width="50px" height="50px"><span>Financial Protection</span>
+                                </div>
+                            </div >
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/pay.png') }}" width="50px" height="50px"><span>Partner Pay</span>
+                                </div>
+                            </div >
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/partnership.png') }}" width="50px" height="50px"><span>Marketing and Promotion</span>
+                                </div>
+                            </div >
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/customerservice.png') }}" width="50px" height="50px"><span>Customer Service</span>
+                                </div>
+                            </div >
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/shipping.png') }}" width="50px" height="50px"><span>All World Shippng</span>
+                                </div>
+                            </div >
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/box.png') }}" width="50px" height="50px"><span>Courier Program</span>
+                                </div>
+                            </div >
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/wpsonline.png') }}" width="50px" height="50px"><span>WCA Online</span>
+                                </div>
+                            </div >
+                            <div class="col-lg-3" >
+                                <div class="benefit">
+                                    <img src="{{ asset('assets/img/voice.png') }}" width="50px" height="50px"><span>Voice of the Independant</span>
+                                </div>
+                            </div >
                     </div>
                 </div>
             </div>

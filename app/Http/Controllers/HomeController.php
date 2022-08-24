@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Khsing\World\World;
 use Khsing\World\Models\Continent;
 use App\Models\Services;
+use App\Models\Sponser;
+use App\Models\Benefit;
 class HomeController extends Controller
 {
     /**
@@ -28,7 +30,9 @@ class HomeController extends Controller
     {
         $continents=World::Continents();
         $services = Services::all();
-        return view('site.home.home',compact('continents','services'));
+        $sponsers = Sponser::all();
+        $benefits = Benefit::all();
+        return view('site.home.home',compact('continents','services','sponsers','benefits'));
     }
 
 }

@@ -1,13 +1,18 @@
 @extends('layouts.site')
 @section('content')
 <main>
-    <div class="container margin_60">
+    <div class="container ">
          <div class="row justify-content-center">
             <div class="col-md-10">
                 @if(session('errormessage'))
                 <div class="alert alert-danger alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 {{session('errormessage')}}
+                </div>
+                @elseif(session('status'))
+                <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{session('status')}}
                 </div>
                 @endif
                 <div id="confirm">
@@ -26,6 +31,52 @@
                         <a href="{{url('profile-registration',$profiles)}}">Click here to view your profile</a>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-10">
+                <div id="comments">
+                    <h5>Comments</h5>
+                    <ul>
+                        @foreach($comments as $comment)
+                        <li>
+                            <div class="avatar">
+                                <a href="#"><img src="{{asset('assets/img/avatar2.jpg')}}" alt="">
+                                </a>
+                            </div>
+                            <div class="comment_right clearfix">
+                                <div class="comment_info">
+                                    By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#"><i class="icon-reply"></i></a>
+                                </div>
+                                <p>{{$comment->comment}}</p>
+                            </div>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <hr>
+                <h5>Leave a comment</h5>
+                <form method="POST" action="{{route('profile-process')}}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="hidden" name="user_id" value="user_id">
+                                <input type="hidden" name="company_id" value="user_id">
+                                <input type="text" name="name" id="name2" class="form-control" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="email" id="email2" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="comment" id="comments2"   placeholder="Comment"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="submit2" class="btn_1 add_bottom_15">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
         <!-- /row -->
