@@ -15,6 +15,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CompanyProfileViewController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\BenefitsController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileProcessController;
 /*
 |--------------------------------------------------------------------------
@@ -40,13 +43,13 @@ Route::get('/about', function(){
     return view('site.home.about');
 });
 
-Route::get('/faq', function(){
-    return view('site.home.faq');
-});
 Route::get('/privacy-policy', function(){
     return view('site.home.privacy-policy');
 });
 
+Route::get('/page/{name}',[PageController::class, 'index'])->name('page');
+Route::get('/benefits',[BenefitsController::class, 'index'])->name('benefits');
+Route::get('/faq',[FaqController::class, 'index'])->name('faq');
 Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact-us');
 Route::post('/contact-us',[ContactUsController::class, 'store']);
 Route::get('/news',[NewsController::class, 'index'])->name('news');

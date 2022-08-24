@@ -14,7 +14,9 @@
                         </ul>
                     </div>
             </aside> --}}
-
+            @foreach($faqs as $faq)
+            {{$faq->question}}
+            @endforeach
             <div class="col-lg-12 " id="faq">
                 <h4 class="nomargin_top">Faq</h4>
                 <div role="tablist" class="add_bottom_45 accordion_2" id="payment">

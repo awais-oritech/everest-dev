@@ -40,7 +40,12 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="float-end"><a id="forgot" href="javascript:void(0);">Lost Password?</a></div>
+                            @if (Route::has('password.request'))
+                                    <a class="" href="{{ route('password.request') }}">
+                                        <div class="float-end"><p  id="forgot">{{ __('Forgot Your Password?') }}</p></div>
+                                    </a>
+                                @endif
+                            {{-- <div class="float-end"><a id="forgot" href="javascript:void(0);">Lost Password?</a></div> --}}
                         </div>
                         <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
                         <div id="forgot_pw">
