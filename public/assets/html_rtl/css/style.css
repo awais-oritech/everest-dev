@@ -554,7 +554,7 @@ a.btn_1,
 a.btn_1:hover,
 .btn_1:hover {
   background-color: #00a8df;
-  color: #222 !important;
+  color: #fff !important;
 }
 a.btn_1.full-width,
 .btn_1.full-width {

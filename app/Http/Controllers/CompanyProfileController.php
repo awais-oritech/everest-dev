@@ -107,13 +107,14 @@ class CompanyProfileController extends Controller
         'gmceo'=> $request->gmceo,
         ]);
         //dd($company->id);
-        for($i=0; $i < count($request->service_name); $i++)
-        {
-            $service_name[]=[
-                'company_id' => $company->id,
-                'service_id' => $request->service_name[$i],
-            ];
-        }
+        // for($i=0; $i < count($request->service_name); $i++)
+        // {
+        //     $service_name[]=[
+        //         'company_id' => $company->id,
+        //         'service_id' => $request->service_name[$i],
+        //     ];
+        // }
+        $service_name=[];
         foreach($request->service_name as $service){
             $service_name[]=[
                 'company_id' => $company->id,
@@ -121,7 +122,7 @@ class CompanyProfileController extends Controller
             ];
         }
         CompanyServices::insert($service_name);
-
+        $certification_name=[];
         for($i=0; $i < count($request->certification_name); $i++)
         {
             $certification_name[]=[
@@ -131,7 +132,7 @@ class CompanyProfileController extends Controller
         }
         CompanyCertifications::insert($certification_name);
 
-        CompanyServices::insert($certification_name);
+        
 
         return back()->with('status','Company Registered Please Wait For Admin Approval');
     }

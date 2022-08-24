@@ -953,3 +953,18 @@ ul.share-buttons{
     line-height: 17px;
     font-weight: 500;
 } */
+.d-flex-center{
+  align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.fz24{
+  font-size:24;
+}
+.btn_1:hover, a.btn_1:hover {
+  background-color: #00a8df;
+  color: #fff!important;
+}
+/* h1, h2, h3, h4, h5, h6 {
+  color: #1c75BA!important;
+} */
