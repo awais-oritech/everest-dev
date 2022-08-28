@@ -16,7 +16,7 @@
                     <p>For any Query you can freely contact us.</p>
                 </div>
                 <div id="message-contact"></div>
-                    <form method="post" action="{{route('contact-us')}}" id="contactform" autocomplete="off">
+                    <form method="post" action="{{route('contact-us')}}" autocomplete="off">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -52,7 +52,7 @@
                             <label>Message</label>
                             <textarea class="form-control" id="message_contact" name="message" style="height:150px;" required></textarea>
                         </div>
-                        <p class="add_top_30"><input type="submit" value="Submit" class="btn_1 rounded" id="submit-contact"></p>
+                        <button type="submit" class="btn_1 rounded">Submit</button>
                     </form>
             </div>
             <div class="col-xl-5 col-lg-6 pl-xl-5">

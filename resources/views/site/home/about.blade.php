@@ -54,7 +54,7 @@
     </div> --}}
     <!-- /container -->
 
-    <div class="">
+    {{-- <div>
         <div class="container margin_80_55">
             <div class="main_title_2">
                 <span><em></em></span>
@@ -62,10 +62,10 @@
                 <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
             </div>
             <div class="row justify-content-between">
-                <div class="col-lg-6 wow" data-wow-offset="150">
-                    <figure class="block-reveal">
+                <div class="col-lg-6" data-wow-offset="150">
+                    <figure>
                         <div class="block-horizzontal"></div>
-                        <img src="{{asset('assets/spark-img/about_1.jpg')}}" class="img-fluid">
+                        <img src="{{ asset('assets/img/about_1.jpg') }}" class="img-fluid">
                     </figure>
                 </div>
                 <div class="col-lg-5">
@@ -74,13 +74,47 @@
                     <p><em>CEO Marc Schumaker</em></p>
                 </div>
             </div>
+        </div>
+    </div> --}}
+    <div class="bg_color_1 "  >
+        <div class="container margin_80_55">
+            <div class="main_title_2">
+                <span><em></em></span>
+                   <h2>{{$abouts->title}}</h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-lg-6 col-md-6 col-sm-12 " >
+                   <div class="row">
+                           <div class="col-3">
+
+                           </div>
+                           <div class="col-3">
+                               <div class="box">
+                               <div class="content">
+                                   <img src="{{url('assets/img/',$abouts->image)}}">
+                               </div>
+                               </div>
+                           </div>
+                           <div class="col-3">
+
+                           </div>
+
+                       </div>
+                   </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" >
+                <p>{{$abouts->description}}</p>
+                    {{-- <p><em>CEO Marc Schumaker</em></p> --}}
+                </div>
+            </div>
+
             <!--/row-->
+
         </div>
         <!--/container-->
     </div>
     <!--/bg_color_1-->
 
-    <div class="container margin_80_55">
+    {{-- <div class="container margin_80_55">
         <div class="main_title_2">
             <span><em></em></span>
             <h2>Our founders</h2>
@@ -124,7 +158,7 @@
             </div>
         </div>
         <!-- /carousel -->
-    </div>
+    </div> --}}
     <!--/container-->
 </main>
 @endsection

@@ -18,7 +18,6 @@ class SearchController extends Controller
         //     $results= DB::table('company_services')
         //     ->join('services', 'company_services.service_id')
         // }
-
         $results=Company::with(['services'=> function($qr) use ($request){
             return $qr->where('service_id',$request->service_id);
         }]);
@@ -36,6 +35,7 @@ class SearchController extends Controller
 
         }
         $results= $results->get();
+        // dd($results);
         return view('site.home.search',['results'=>$results]);
     }
 }

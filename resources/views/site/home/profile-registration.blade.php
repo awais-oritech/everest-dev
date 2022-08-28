@@ -320,7 +320,7 @@
                             <h6 class="mt-4 mb-4"><b>2) </b>Company Information</h6>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="companyprofile" placeholder="Company Profile*" required>
+                                    <textarea type="text" class="form-control" name="companyprofile" placeholder="Description*" required></textarea>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12form-group">
                                     <input type="date" class="form-control" name="startdate"  placeholder="Company Date Started*" required>
