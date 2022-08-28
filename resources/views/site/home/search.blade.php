@@ -4,7 +4,7 @@
     <div class="container ">
         <div class="row" style="margin-top: 130px;">
             <div class="col-lg-12 min-vh-100">
-                @if(is_array($results) && !empty($result))
+                @if(!empty($results))
                 <table class="table table-bordered">
                     <thead style="background-color:#1c75BA; color:white;">
                       <tr>

@@ -16,7 +16,7 @@
                 <h3 data-bs-target="#collapse_ft_1" >Quick Links</h3>
                 <div class="collapse dont-collapse-sm" id="collapse_ft_1">
                     <ul class="links">
-                        <li><a href="/about">About us</a></li>
+                        <li><a href="{{route('about-us')}}">About us</a></li>
                         <li><a href="{{route('faq')}}">Faq</a></li>
                         <li><a href="{{route('directory')}}">Directory</a></li>
                         <li><a href="{{route('member')}}">My account</a></li>
@@ -61,54 +61,14 @@
                             </div>
                         </form>
                     </div>
-                    <!-- <div class="follow_us">
-                        <h5>Follow Us</h5>
-                        <ul>
-                            <li><a href="#0"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
-                            <li><a href="#0"><i class="ti-google"></i></a></li>
-                            <li><a href="#0"><i class="ti-pinterest"></i></a></li>
-                            <li><a href="#0"><i class="ti-instagram"></i></a></li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
         </div>
         <!-- /row-->
         <hr>
         <div class="row justify-content-center">
-            {{-- <div class="col-lg-6">
-                <ul id="footer-selector">
-                    <li>
-                        <div class="styled-select" id="lang-selector">
-                            <select>
-                                <option value="English" selected>English</option>
-                                <option value="French">French</option>
-                                <option value="Spanish">Spanish</option>
-                                <option value="Russian">Russian</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="styled-select" id="currency-selector">
-                            <select>
-                                <option value="US Dollars" selected>US Dollars</option>
-                                <option value="Euro">Euro</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li><img src="{{ asset('assets/img/cards_all.svg') }}" alt=""></li>
-                </ul>
-            </div>
-            <div class="col-lg-6">
-                <ul id="additional_links">
-                    <li><a href="#0">Terms and conditions</a></li>
-                    <li><a href="#0">Privacy</a></li>
-                    <li><span>© 2021 Sparker</span></li>
-                </ul>
-            </div> --}}
             <div class="col-lg-2">
-                <a href="account.html" class="btn btn-sm btn_add">Become Member</a>
+                <a href="{{route('member')}}" class="btn btn-sm btn_add">Become Member</a>
             </div>
         </div>
     </div>

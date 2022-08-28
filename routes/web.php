@@ -12,6 +12,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CompanyProfileViewController;
@@ -40,10 +41,7 @@ Route::prefix('/common')->group(function () {
 
 });
 
-Route::get('/about', function(){
-    return view('site.home.about');
-});
-
+Route::get('about-us',[AboutController::class, 'index'])->name('about-us');
 Route::get('/page/{slug}',[PageController::class, 'index'])->name('page');
 Route::get('/directory',[DirectoryController::class, 'index'])->name('directory');
 Route::get('/benefits',[BenefitsController::class, 'index'])->name('benefits');

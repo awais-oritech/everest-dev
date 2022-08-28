@@ -157,55 +157,41 @@
 
      <!-- About US -->
      <div class="bg_color_1 "  >
-         <div class="container margin_80_55">
-             <div class="main_title_2">
-                 <span><em></em></span>
-                    <h2 >Our Origins and Story</h2>
-                    {{-- <p class="animated bounceInLeft" style="animation-delay:1s">Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
-             </div>
-             <div class="row" style="justify-content: center;">
-                 <div class="col-lg-6 col-md-6 col-sm-12 " >
-                    <div class="row">
-                            <div class="col-3">
+        <div class="container margin_80_55">
+            <div class="main_title_2">
+                <span><em></em></span>
+                   <h2>{{$abouts->title}}</h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-lg-6 col-md-6 col-sm-12 " >
+                   <div class="row">
+                           <div class="col-3">
 
-                            </div>
-                            <div class="col-3">
-                                <div class="box">
-                                <div class="content">
-                                    <img src="{{ asset('assets/img/1_carousel.jpg') }}">
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-3">
+                           </div>
+                           <div class="col-3">
+                               <div class="box">
+                               <div class="content">
+                                   <img src="{{url('assets/img/',$abouts->image)}}">
+                               </div>
+                               </div>
+                           </div>
+                           <div class="col-3">
 
-                            </div>
+                           </div>
 
-                        </div>
-                    </div>
+                       </div>
+                   </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" >
+                <p>{{$abouts->description}}</p>
+                    {{-- <p><em>CEO Marc Schumaker</em></p> --}}
+                </div>
+            </div>
 
-                 <div class="col-lg-6 col-md-6 col-sm-12" >
-                 <p>Lorem ipsum dolor sit amet, homero erroribus in cum. Cu eos <strong>scaevola probatus</strong>.
-                         Nam
-                         atqui intellegat ei, sed ex graece essent delectus. Autem consul eum ea. Duo cu fabulas nonumes
-                         contentiones, nihil voluptaria pro id. Has graeci deterruisset ad, est no primis detracto
-                         pertinax,
-                         at cum malis vitae facilisis.</p>
-                     <p>Dicam diceret ut ius, no epicuri dissentiet philosophia vix. Id usu zril tacimates neglegentur.
-                         Eam
-                         id legimus torquatos cotidieque, usu decore <strong>percipitur definitiones</strong> ex, nihil
-                         utinam recusabo mel no. Dolores reprehendunt no sit, quo cu viris theophrastus. Sit unum
-                         efficiendi
-                         cu.</p>
-                     <p><em>CEO Marc Schumaker</em></p>
+            <!--/row-->
 
-                 </div>
-             </div>
-
-             <!--/row-->
-
-         </div>
-         <!--/container-->
-     </div>
+        </div>
+        <!--/container-->
+    </div>
      <!--/About US-->
 
      <!-- Sponsors -->
@@ -238,24 +224,14 @@
                      <span><em></em></span>
                      <h2>GLOBAL <br> COVERAGE</h2>
                  </div>
+                 @foreach($globals as $global)
                  <div class="four col-md-2" style="text-align: center">
-                     <span class="counter ">323</span>
+                     <span class="counter ">{{$global->value}}</span>
                      <div class="counter-box colored">
-                         <p>OFFICES</p>
+                         <p>{{$global->name}}</p>
                      </div>
                  </div>
-                 <div class="four col-md-2" style="text-align: center">
-                     <span class="counter ">220</span>
-                     <div class="counter-box colored">
-                         <p>MEMBERS</p>
-                     </div>
-                 </div>
-                 <div class="four col-md-2" style="text-align: center">
-                     <span class="counter ">89</span>
-                     <div class="counter-box colored">
-                         <p>COUNTRIES</p>
-                     </div>
-                 </div>
+                 @endforeach
                  <div id="regions_div" style=" height: 400px;">
                 </div>
              </div>
