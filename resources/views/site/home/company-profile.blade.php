@@ -1,7 +1,7 @@
 @extends('layouts.site')
 @section('content')
 <main>
-    <nav class="secondary_nav sticky_horizontal_2">
+    {{-- <nav class="secondary_nav sticky_horizontal_2">
         <div class="container">
             <ul class="clearfix">
                 <li><a href="#" class="active">Description</a></li>
@@ -9,7 +9,7 @@
                 <li><a href="#">Booking</a></li>
             </ul>
         </div>
-    </nav>
+    </nav> --}}
 
     <div class="container margin_60_35">
             <div class="row">
@@ -23,7 +23,7 @@
                     @if(isset($profile->id))
                     <section id="description" style="border: none!important;">
                         <div class="detail_title_1">
-                            <div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
+                            {{-- <div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div> --}}
                             <h1>{{$profile->companyname}}</h1>
                             <a class="address" href="#">{{$profile->companyaddress}}</a>
                         </div>

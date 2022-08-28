@@ -665,7 +665,7 @@ class Gateway
 
                                         if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
 
-                                            $file = 'filapp-' . uniqid();
+                                            $file = 'poineers-' . uniqid();
                                             $file_ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
                                             if ($file_ext == 'png' || $file_ext == 'jpg' || $file_ext == 'jpeg') {
                                                 $target_path = 'uploads/' . $md['con'] . '/';
@@ -697,7 +697,7 @@ class Gateway
                                             }
 
                                             if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
-                                                $file = 'filapp-' . uniqid();
+                                                $file = 'poineers-' . uniqid();
                                                 $file_ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
                                                 if ($file_ext == 'png' || $file_ext == 'jpg' || $file_ext == 'jpeg') {
                                                     $target_path = 'uploads/' . $md['con'] . '/';
@@ -734,6 +734,104 @@ class Gateway
                     header("Location: " . Request::$BASE_PATH);
                 }
                 break;
+             // ======================================= SLIDERS ================================
+             case 'abouts':
+                if (Session::isUserOnline()) {
+                    $md['table'] = $parameters[0];
+                    $md['con'] = $parameters[0];
+                    $md['text'] = 'About';
+                    $md['stext'] = 'About';
+                    $objPresenter->AddParameter('md', $md);
+                    if (!isset($parameters[1]) || empty($parameters[1])) {
+                        if (Content::validate($md['con'], 'view')) {
+                            $Data = Content::all('abouts');
+                            $objPresenter->AddParameter('Data', $Data);
+                            $objPresenter->AddTemplate($md['con'] . '/all');
+                        } else {
+                            header("Location: " . Request::$BASE_PATH);
+                        }
+                    } else {
+                        switch ($parameters[1]) {
+                            case 'new':
+                                if (Content::validate($md['con'], 'add')) {
+                                    if (Request::hasPostVariables()) {
+                                        $objData = Request::getPostVariables();
+
+                                        $objData->created = date('Y-m-d H:i:s');
+                                       
+                                        if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
+
+                                            $file = 'about-' . uniqid();
+                                            $file_ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                                            if ($file_ext == 'png' || $file_ext == 'jpg' || $file_ext == 'gif' || $file_ext == 'jpeg') {
+                                                $target_path = 'uploads/';
+                                                $target_path = $target_path . $file . '.' . $file_ext;
+
+                                                if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
+                                                    $objData->image = $target_path;
+                                                }
+                                            }
+                                        }
+                                        global $DB;
+                                        $DB->Save($md['table'], $objData);
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                $categories = Content::AllActive('blogcategories');
+                                $objPresenter->AddParameter('categories', $categories);
+                                $objPresenter->AddTemplate($md['con'] . '/new');
+                                break;
+                            case 'edit':
+                                if (Content::validate($md['con'], 'edit')) {
+                                    if ($parameters[2] != '' && isset($parameters[2])) {
+                                        if (Request::hasPostVariables()) {
+                                            $objData = Request::getPostVariables();
+                                            if (isset($objData->active) && $objData->active == 'on') {
+                                                $objData->is_active = '1';
+                                            } else {
+                                                $objData->is_active = '0';
+                                            }
+
+                                            if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
+                                                $file = 'about-' . uniqid();
+                                                $file_ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                                                if ($file_ext == 'png' || $file_ext == 'jpg' || $file_ext == 'gif' || $file_ext == 'jpeg') {
+                                                    $target_path = 'uploads/';
+                                                    $target_path = $target_path . $file . '.' . $file_ext;
+                                                    if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
+                                                        if (!empty($objData->file_name)) {
+                                                            @unlink($objData->file_name);
+                                                        }
+                                                        $objData->file_name = $target_path;
+                                                    }
+                                                }
+                                            }
+                                            $objData->image = $objData->file_name;
+                                            global $DB;
+                                            $DB->Save($md['table'], $objData);
+                                            header("Location: " . Request::$BASE_PATH . $md['con']);
+                                        } else {
+                                            $id = intval($parameters[2]);
+                                            $Data = Content::find_by_id($id, $md['table']);
+                                            $objPresenter->AddParameter('Data', $Data);
+                                            
+                                        }
+                                        $objPresenter->AddTemplate($md['con'] . '/edit');
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                break;
+                        }
+                    }
+                } else {
+                    header("Location: " . Request::$BASE_PATH);
+                }
+                break;  
                 // ======================================= VIDEOS ================================
             case 'videos':
                 if (Session::isUserOnline()) {
