@@ -1,9 +1,10 @@
 @extends('layouts.site')
 @section('content')
 <main>
-    <div class="container">
-        <div class="row mt-4 mb-4">
-            <div class="col-lg-12">
+    <div class="container ">
+        <div class="row" style="margin-top: 130px;">
+            <div class="col-lg-12 min-vh-100">
+                @if(is_array($results) && !empty($result))
                 <table class="table table-bordered">
                     <thead style="background-color:#1c75BA; color:white;">
                       <tr>
@@ -17,12 +18,6 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @if(session('status'))
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{session('status')}}
-                        </div>
-                        @endif
                         @foreach($results as $result)
                       <tr>
                         <td>{{$result->companyname}}</td>
@@ -38,6 +33,11 @@
                       @endforeach
                     </tbody>
                   </table>
+                  @else
+                  <div class="alert alert-danger text-center" role="alert">
+                    <strong>No result found !</strong>
+                  </div>
+                  @endif
                   {{-- {!! $profiles->links() !!} --}}
             </div>
         </div>

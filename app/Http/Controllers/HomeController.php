@@ -8,6 +8,9 @@ use Khsing\World\Models\Continent;
 use App\Models\Services;
 use App\Models\Sponser;
 use App\Models\Benefit;
+use App\Models\Page;
+use App\Models\Blogs;
+
 class HomeController extends Controller
 {
     /**
@@ -30,9 +33,11 @@ class HomeController extends Controller
     {
         $continents=World::Continents();
         $services = Services::all();
-        $sponsers = Sponser::all();
+        $sponsers = Sponser::where('category_id', 1)->get();
         $benefits = Benefit::all();
-        return view('site.home.home',compact('continents','services','sponsers','benefits'));
+        $news = Blogs::orderBy('id','desc')->limit(3)->get();
+        $diamonds = Sponser::where('category_id',2)->get();
+        return view('site.home.home',compact('continents','services','sponsers','benefits','news','diamonds'));
     }
 
 }

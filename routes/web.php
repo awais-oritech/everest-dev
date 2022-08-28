@@ -44,12 +44,7 @@ Route::get('/about', function(){
     return view('site.home.about');
 });
 
-Route::get('/privacy-policy', function(){
-    return view('site.home.privacy-policy');
-});
-Route::get('/page/{slug}', 'HomeController@page');
-
-Route::get('/page/{name}',[PageController::class, 'index'])->name('page');
+Route::get('/page/{slug}',[PageController::class, 'index'])->name('page');
 Route::get('/directory',[DirectoryController::class, 'index'])->name('directory');
 Route::get('/benefits',[BenefitsController::class, 'index'])->name('benefits');
 Route::get('/faq',[FaqController::class, 'index'])->name('faq');

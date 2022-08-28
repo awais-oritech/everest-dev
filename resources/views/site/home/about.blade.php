@@ -1,7 +1,7 @@
 @extends('layouts.site')
 @section('content')
 <main>
-    <div class="container margin_80_55">
+    {{-- <div class="container margin_80_55">
         <div class="main_title_2">
             <span><em></em></span>
             <h2>Why Choose PIONEER</h2>
@@ -51,11 +51,10 @@
                 </a>
             </div>
         </div>
-        <!--/row-->
-    </div>
+    </div> --}}
     <!-- /container -->
 
-    <div class="bg_color_1">
+    <div class="">
         <div class="container margin_80_55">
             <div class="main_title_2">
                 <span><em></em></span>
@@ -66,7 +65,7 @@
                 <div class="col-lg-6 wow" data-wow-offset="150">
                     <figure class="block-reveal">
                         <div class="block-horizzontal"></div>
-                        <img src="assets/spark-img/about_1.jpg" class="img-fluid">
+                        <img src="{{asset('assets/spark-img/about_1.jpg')}}" class="img-fluid">
                     </figure>
                 </div>
                 <div class="col-lg-5">

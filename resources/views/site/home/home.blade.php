@@ -389,53 +389,14 @@
                             <h2 style="color:white">Pioneer Benefits</h2>
                         </div>
                     <div class="row ">
-                        {{-- @foreach($benefits as $benefit)
-                        <div class="col-lg-3" >
-                            <div class="benefit">
-                                <img src="{{asset('uploads')}}/{{$benefit->image}}" width="50px" height="50px"><span>{{$benefit->name}}</span>
+                        @foreach($benefits as $benefit)
+                        <div class="col-lg-3">
+                            <div class="benefit text-center ">
+                                {{-- <img src="{{asset('uploads')}}/{{$benefit->image}}" width="50px" height="50px"> --}}
+                                <span>{{$benefit->name}}</span>
                             </div>
                         </div >
-                        @endforeach --}}
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/finance.png') }}" width="50px" height="50px"><span>Financial Protection</span>
-                                </div>
-                            </div >
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/pay.png') }}" width="50px" height="50px"><span>Partner Pay</span>
-                                </div>
-                            </div >
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/partnership.png') }}" width="50px" height="50px"><span>Marketing and Promotion</span>
-                                </div>
-                            </div >
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/customerservice.png') }}" width="50px" height="50px"><span>Customer Service</span>
-                                </div>
-                            </div >
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/shipping.png') }}" width="50px" height="50px"><span>All World Shippng</span>
-                                </div>
-                            </div >
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/box.png') }}" width="50px" height="50px"><span>Courier Program</span>
-                                </div>
-                            </div >
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/wpsonline.png') }}" width="50px" height="50px"><span>WCA Online</span>
-                                </div>
-                            </div >
-                            <div class="col-lg-3" >
-                                <div class="benefit">
-                                    <img src="{{ asset('assets/img/voice.png') }}" width="50px" height="50px"><span>Voice of the Independant</span>
-                                </div>
-                            </div >
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -450,10 +411,12 @@
              </div>
              <div class="row justify-content-between">
                  <div class="diamond-slider">
-                 <div class="slide"><img
-                             src="{{ asset('assets/img/sponsorlogo1.jpg') }}" height="150px">
-                     </div>
-                     <div class="slide"><img
+                    @foreach($diamonds as $diamond)
+                    <div class="slide">
+                        <img src="http://localhost:8080/everest-dev/admin/{{$diamond->image}}" height="150px">
+                    </div>
+                    @endforeach
+                     {{-- <div class="slide"><img
                              src="{{ asset('assets/img/sponsorlogo2.jpg') }}" height="150px">
                      </div>
                      <div class="slide"><img
@@ -473,7 +436,7 @@
                      </div>
                      <div class="slide"><img
                              src="{{ asset('assets/img/sponsorlogo8.jpg') }}" height="150px">
-                     </div>
+                     </div> --}}
                  </div>
              </div>
          </div>
@@ -481,171 +444,34 @@
      <!--/ Sponsors -->
 
      <!--News and Events-->
-     <div class="container margin_80_55" >
-         <div class="main_title_2">
-             <span><em></em></span>
-             <h2>News </h2>
-             {{-- <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
-         </div>
-         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-            <section class="cards">
-                    <article class="card card--1">
-                    <div class="card__info-hover">
-                        <svg class="card__like"  viewBox="0 0 24 24">
-                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
-                    </svg>
-                        <div class="card__clock-info">
-                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-                            </svg><span class="card__time">15 min</span>
-                        </div>
-
+    <div class="container margin_60_35">
+        <div class="row">
+            @foreach($news as $new)
+            <div class="col-md-4">
+                <article class="blog">
+                    <figure>
+                        <a href="{{route('news-info',[$new->id])}}"><img src="http://localhost:8080/everest-dev/admin/{{$new->image}}" alt="">
+                            <div class="preview"><span>Read more</span></div>
+                        </a>
+                    </figure>
+                    <div class="post_info">
+                        <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
+                        <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
+                        <p>{{$new->description}}</p>
+                        {{-- <ul>
+                            <li>
+                                <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
+                            </li>
+                            <li><i class="ti-comment"></i>20</li>
+                        </ul> --}}
                     </div>
-                    <div class="card__img"></div>
-                    <a href="#" class="card_link">
-                        <div class="card__img--hover"></div>
-                    </a>
-                    <div class="card__info">
-                        <span class="card__category"> Recipe</span>
-                        <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                        <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-                    </div>
-                    </article>
-
-
-                    <article class="card card--2">
-                    <div class="card__info-hover">
-                        <svg class="card__like"  viewBox="0 0 24 24">
-                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
-                    </svg>
-                        <div class="card__clock-info">
-                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-                            </svg><span class="card__time">5 min</span>
-                        </div>
-
-                    </div>
-                    <div class="card__img"></div>
-                    <a href="#" class="card_link">
-                        <div class="card__img--hover"></div>
-                    </a>
-                    <div class="card__info">
-                        <span class="card__category"> Travel</span>
-                        <h3 class="card__title">Discover the sea</h3>
-                        <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
-                    </div>
-                    </article>
-             </section>
+                </article>
+                <!-- /article -->
             </div>
-         <div class="col-lg-6 d-none d-md-block">
-         <section class="cards">
-                    <article class="card card--3">
-                    <div class="card__info-hover">
-                        <svg class="card__like"  viewBox="0 0 24 24">
-                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
-                    </svg>
-                        <div class="card__clock-info">
-                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-                            </svg><span class="card__time">15 min</span>
-                        </div>
-
-                    </div>
-                    <div class="card__img"></div>
-                    <a href="#" class="card_link">
-                        <div class="card__img--hover"></div>
-                    </a>
-                    <div class="card__info">
-                        <span class="card__category"> Recipe</span>
-                        <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-                        <span class="card__by">by <a href="#" class="card__author" title="author">Celeste Mills</a></span>
-                    </div>
-                    </article>
-
-
-                    <article class="card card--4">
-                    <div class="card__info-hover">
-                        <svg class="card__like"  viewBox="0 0 24 24">
-                        <path fill="#000000" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
-                    </svg>
-                        <div class="card__clock-info">
-                            <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-                            </svg><span class="card__time">5 min</span>
-                        </div>
-
-                    </div>
-                    <div class="card__img"></div>
-                    <a href="#" class="card_link">
-                        <div class="card__img--hover"></div>
-                    </a>
-                    <div class="card__info">
-                        <span class="card__category"> Travel</span>
-                        <h3 class="card__title">Discover the sea</h3>
-                        <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
-                    </div>
-                    </article>
-             </section>
-         </div>
-        <div class="col-12 mt-4 btnnewsdiv">
-            <button class="hvr-sweep-to-right buttons">Read More</button>
+            @endforeach
         </div>
+    </div>
 
-
-
-             <!-- <div class="col-lg-6">
-                 <a class="box_news" href="blog.html">
-                     <figure><img src="{{ asset('assets/img/news_home_1.jpg') }}" alt=""></figure>
-                     <ul>
-                         <li>Restaurants</li>
-                         <li>20.11.2017</li>
-                     </ul>
-                     <h4>Pri oportere scribentur eu</h4>
-                     <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
-                         vidisse....</p>
-                 </a>
-             </div> -->
-             <!-- /box_news -->
-             <!-- <div class="col-lg-6">
-                 <a class="box_news" href="blog.html">
-                     <figure><img src="{{ asset('assets/img/news_home_2.jpg') }}" alt=""></figure>
-                     <ul>
-                         <li>Shops</li>
-                         <li>20.11.2017</li>
-                     </ul>
-                     <h4>Duo eius postea suscipit ad</h4>
-                     <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
-                         vidisse....</p>
-                 </a>
-             </div> -->
-             <!-- /box_news -->
-             <!-- <div class="col-lg-6">
-                 <a class="box_news" href="blog.html">
-                     <figure><img src="{{ asset('assets/img/news_home_3.jpg') }}" alt=""></figure>
-                     <ul>
-                         <li>Shops</li>
-                         <li>20.11.2017</li>
-                     </ul>
-                     <h4>Elitr mandamus cu has</h4>
-                     <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
-                         vidisse....</p>
-                 </a>
-             </div> -->
-             <!-- /box_news -->
-             <!-- <div class="col-lg-6">
-                 <a class="box_news" href="blog.html">
-                     <figure><img src="{{ asset('assets/img/news_home_4.jpg') }}" alt=""></figure>
-                     <ul>
-                         <li>Bars</li>
-                         <li>20.11.2017</li>
-                     </ul>
-                     <h4>Id est adhuc ignota delenit</h4>
-                     <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum
-                         vidisse....</p>
-                 </a>
-             </div> -->
-             <!-- /box_news -->
-         </div>
-         <!-- /row -->
-         <!-- <p class="btn_home_align"><a href="blog.html" class="btn_1 rounded">View all news</a></p> -->
-     </div>
      <!--/News and Events-->
  @endsection
  @push('css')

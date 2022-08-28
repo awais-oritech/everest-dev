@@ -345,7 +345,7 @@
     </div>
     <!-- /container -->
 
-    <div class="bg_color_1">
+    {{-- <div class="bg_color_1">
         <div class="container margin_60_35">
             <div class="row">
                 <div class="col-md-6">
@@ -391,7 +391,7 @@
             <!-- /row  -->
         </div>
         <!--/container-->
-    </div>
+    </div> --}}
     <!--/bg_color_1-->
 </main>
 @endsection

@@ -14,28 +14,26 @@
                         </ul>
                     </div>
             </aside> --}}
-            @foreach($faqs as $faq)
-            {{$faq->question}}
-            @endforeach
             <div class="col-lg-12 " id="faq">
                 <h4 class="nomargin_top">Faq</h4>
                 <div role="tablist" class="add_bottom_45 accordion_2" id="payment">
+                    @foreach($faqs as $faq)
                     <div class="card">
                         <div class="card-header" role="tab">
                             <h5 class="mb-0">
-                                <a data-bs-toggle="collapse" href="#collapseOne_payment" aria-expanded="true"><i class="indicator ti-minus"></i>Introdocution</a>
+                                <a data-bs-toggle="collapse" href="#collapseOne_payment" aria-expanded="true"><i class="indicator ti-minus"></i>{{$faq->question}}</a>
                             </h5>
                         </div>
 
                         <div id="collapseOne_payment" class="collapse show" role="tabpanel" data-bs-parent="#payment">
                             <div class="card-body">
-                                <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>{{$faq->answer}}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <!-- /card -->
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="card-header" role="tab">
                             <h5 class="mb-0">
                                 <a class="collapsed" data-bs-toggle="collapse" href="#collapseTwo_payment" aria-expanded="false">
@@ -50,7 +48,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /card -->
                     <div class="card">
                         <div class="card-header" role="tab">
                             <h5 class="mb-0">
@@ -65,8 +62,7 @@
                                 <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
                             </div>
                         </div>
-                    </div>
-                    <!-- /card -->
+                    </div> --}}
                 </div>
                 <!-- /accordion payment -->
             </div>

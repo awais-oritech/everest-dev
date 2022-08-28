@@ -1,40 +1,40 @@
 <footer class="plus_border footer">
     <div class="container margin_60_35">
-        
+
         <div class="row ">
-        
+
             <div class="col-lg-12  icons" style="text-align:center">
               <a href=""><img src="{{ asset('assets/img/insta.gif') }}" width="50px" height="50px"></a>
               <a href=""><img src="{{ asset('assets/img/twitter.gif') }}" width="50px" height="50px"></a>
               <a href=""><img src="{{ asset('assets/img/linkedin.gif') }}" width="50px" height="50px"></a>
               <a href=""><img src="{{ asset('assets/img/whtsapp.gif') }}" width="50px" height="50px"></a>
               <a href=""><img src="{{ asset('assets/img/facebook.gif') }}" width="50px" height="50px"></a>
-                
+
             </div>
-   
+
             <div class="col-lg-3 col-md-6 col-sm-6 quicklinks">
                 <h3 data-bs-target="#collapse_ft_1" >Quick Links</h3>
                 <div class="collapse dont-collapse-sm" id="collapse_ft_1">
                     <ul class="links">
-                        <li><a href="#0">About us</a></li>
-                        <li><a href="#0">Faq</a></li>
-                        <li><a href="#0">Help</a></li>
-                        <li><a href="#0">My account</a></li>
-                        <li><a href="#0">Create account</a></li>
-                        <li><a href="#0">Contacts</a></li>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="{{route('faq')}}">Faq</a></li>
+                        <li><a href="{{route('directory')}}">Directory</a></li>
+                        <li><a href="{{route('member')}}">My account</a></li>
+                        <li><a href="{{route('packages')}}">Create account</a></li>
+                        <li><a href="{{route('contact-us')}}">Contacts</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
-                <h3 data-bs-target="#collapse_ft_2">Explore Coop</h3>
+                <h3 data-bs-target="#collapse_ft_2">Explore More</h3>
                 <div class="collapse dont-collapse-sm" id="collapse_ft_2">
                     <ul class="links">
-                        <li><a href="#0">Our Benifts</a></li>
-                        <li><a href="#0">Network Directory</a></li>
-                        <li><a href="#0">The Cooperative News</a></li>
-                        <li><a href="#0">Tools</a></li>
-                        <li><a href="#0">References</a></li>
-                        <li><a href="#0">Fitness</a></li>
+                        @php
+                            $pages=App\Models\Page::all();
+                        @endphp
+                        @foreach($pages as $page)
+                        <li><a href="{{route('page',$page->slug)}}">{{$page->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

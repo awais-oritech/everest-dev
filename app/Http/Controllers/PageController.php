@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Page;
 class PageController extends Controller
 {
-    public function index($name)
+    public function index($slug)
     {
-        $pages = Page::where('name','=',$name);
+        $pages = Page::where('slug',$slug)->first();
         return view('site.home.page',compact('pages'));
     }
 }

@@ -15,7 +15,7 @@ class ProfileProcessController extends Controller
         $profiles = DB::table('companies')
         ->leftjoin('packages','packages.id','=','companies.package_id')->value('package_id');
         $user_id = Auth::user()->id;
-        $comments = Comment::where('company_id','=',$user_id)->get();
+        $comments = Comment::where('company_id','=',$user_id,)->get();
         return view('site.home.profile-process',compact('profiles','comments','user_id'));
     }
 
@@ -23,8 +23,8 @@ class ProfileProcessController extends Controller
     {
         $comment = new Comment();
         $comment->create([
-            'name'=>$request->name,
-            'email'=>$request->email,
+            'user_id'=>$request->user_id,
+            'company_id'=>$request->company_id,
             'comment'=>$request->comment,
         ]);
         return back()->with('status','Commented Successfuly');

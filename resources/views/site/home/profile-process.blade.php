@@ -38,14 +38,14 @@
                     <ul>
                         @foreach($comments as $comment)
                         <li>
-                            <div class="avatar">
+                            {{-- <div class="avatar">
                                 <a href="#"><img src="{{asset('assets/img/avatar2.jpg')}}" alt="">
                                 </a>
-                            </div>
+                            </div> --}}
                             <div class="comment_right clearfix">
-                                <div class="comment_info">
-                                    By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#"><i class="icon-reply"></i></a>
-                                </div>
+                                {{-- <div class="comment_info">
+                                    {{$comment->created_at}}
+                                </div> --}}
                                 <p>{{$comment->comment}}</p>
                             </div>
                         </li>
@@ -57,24 +57,14 @@
                 <form method="POST" action="{{route('profile-process')}}">
                     @csrf
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input type="hidden" name="user_id" value="user_id">
-                                <input type="hidden" name="company_id" value="user_id">
-                                <input type="text" name="name" id="name2" class="form-control" placeholder="Name">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input type="text" name="email" id="email2" class="form-control" placeholder="Email">
-                            </div>
-                        </div>
+                        <input type="hidden" name="user_id" value="{{$user_id}}">
+                        <input type="hidden" name="company_id" value="{{$user_id}}">
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" name="comment" id="comments2"   placeholder="Comment"></textarea>
                     </div>
                     <div class="form-group">
-                        <button type="button" id="submit2" class="btn_1 add_bottom_15">Submit</button>
+                        <button type="submit" id="submit2" class="btn_1 add_bottom_15">Submit</button>
                     </div>
                 </form>
             </div>

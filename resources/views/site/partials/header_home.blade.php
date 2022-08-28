@@ -1,7 +1,5 @@
   <div class="container header-navbar">
-
       <div class="row">
-
           <div class="col-12">
               <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
                   <a class="navbar-brand" href="/"> <img src="{{ asset('assets/img/pioneer-01.png') }}" width="auto"
@@ -47,6 +45,7 @@
                             @endif
                       </ul>
                       @if(Auth::user())
+                      <a class="nav-link" href="{{route('profile-process')}}"><i class="fas fa-user"></i></a>
                       <a class="nav-link" href="{{route('logout')}}"><i class="fas fa-sign-out"></i></a>
                       @endif
                   </div>
