@@ -694,17 +694,54 @@ static function companies(){
             }
         }     
     //======================================================== Section ============================================
-        static function PDF(){
+        static function totalUsers(){
             global $DB;
             
             $sql="SELECT  
-                    	*
-                    FROM `pdf` 
-                    ORDER BY pdf.level DESC";
+                    	count(companies.id) AS total
+                    FROM `companies`
+                    ";
             
             $objData=$DB->Select($sql);
             if($objData){
-                return $objData;
+                return $objData[0]->total;
+            }else{
+                return false;
+            }
+        }   
+    //======================================================== Section ============================================
+
+        static function totalNewUsers($start,$end){
+            global $DB;
+            
+            $sql="SELECT  
+                    	count(companies.id) AS total
+                    FROM `companies`
+                    where created_at Between '".$start."' AND '".$end."'
+                 
+                    ";
+            
+            $objData=$DB->Select($sql);
+            if($objData){
+                return $objData[0]->total;
+            }else{
+                return false;
+            }
+        }   
+        //======================================================== Section ============================================
+        static function totalUsersBystatus($start,$end,$status){
+            global $DB;
+            
+            $sql="SELECT  
+                    	count(companies.id) AS total
+                    FROM `companies`
+                    where created_at Between '".$start."' AND '".$end."'
+                    And status='".$status."'
+                    ";
+            
+            $objData=$DB->Select($sql);
+            if($objData){
+                return $objData[0]->total;
             }else{
                 return false;
             }

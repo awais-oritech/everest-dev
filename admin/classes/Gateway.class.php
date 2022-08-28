@@ -8,7 +8,11 @@ class Gateway
             $parameters[0] = 'Home';
         $objPresenter = new Presenter();
         $objPresenter->AddParameter('parameters', $parameters);
-
+       
+       // $d=Content::totalPaidUsers($start,$end,3);
+    //     echo '<pre>';
+    //     print_r($d);
+        //exit;
         if (Session::isUserOnline()) {
             $user = Content::get_user(Session::GetUser()->id);
             $objPresenter->AddParameter('user', $user);
@@ -871,7 +875,254 @@ class Gateway
                     header("Location: " . Request::$BASE_PATH);
                 }
                 break;
+             // ======================================= Faqs ================================
+             case 'faqs':
+                if (Session::isUserOnline()) {
+                    $md['table'] = $parameters[0];
+                    $md['con'] = $parameters[0];
+                    $md['text'] = 'Faqs';
+                    $md['stext'] = 'Faq';
+                    $objPresenter->AddParameter('md', $md);
+                    if (!isset($parameters[1]) || empty($parameters[1])) {
+                        if (Content::validate($md['con'], 'view')) {
+                            $Data = Content::All($md['table']);
+                            $objPresenter->AddParameter('Data', $Data);
+                            $objPresenter->AddTemplate($md['con'] . '/all');
+                        } else {
+                            header("Location: " . Request::$BASE_PATH);
+                        }
+                    } else {
+                        switch ($parameters[1]) {
+                            case 'new':
+                                if (Content::validate($md['con'], 'add')) {
+                                    if (Request::hasPostVariables()) {
+                                        $objData = Request::getPostVariables();
 
+                                        $objData->created_at = date('Y-m-d H:i:s');
+                                        
+                                        global $DB;
+                                        $DB->Save($md['table'], $objData);
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                $objPresenter->AddTemplate($md['con'] . '/new');
+                                break;
+                            case 'edit':
+                                if (Content::validate($md['con'], 'edit')) {
+                                    if ($parameters[2] != '' && isset($parameters[2])) {
+                                        if (Request::hasPostVariables()) {
+                                            $objData = Request::getPostVariables();
+                                            $objData->updated_at = date('Y-m-d H:i:s');
+                                            global $DB;
+                                            $DB->Save($md['table'], $objData);
+                                            header("Location: " . Request::$BASE_PATH . $md['con']);
+                                        } else {
+                                            $id = intval($parameters[2]);
+                                            $Data = Content::find_by_id($id, $md['table']);
+                                            $objPresenter->AddParameter('Data', $Data);
+                                        }
+                                        $objPresenter->AddTemplate($md['con'] . '/edit');
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                break;
+                        }
+                    }
+                } else {
+                    header("Location: " . Request::$BASE_PATH);
+                }
+                break;
+            // ======================================= Benefits ================================
+            case 'benefits':
+                if (Session::isUserOnline()) {
+                    $md['table'] = $parameters[0];
+                    $md['con'] = $parameters[0];
+                    $md['text'] = 'Benefits';
+                    $md['stext'] = 'Benefits';
+                    $objPresenter->AddParameter('md', $md);
+                    if (!isset($parameters[1]) || empty($parameters[1])) {
+                        if (Content::validate($md['con'], 'view')) {
+                            $Data = Content::All($md['table']);
+                            $objPresenter->AddParameter('Data', $Data);
+                            $objPresenter->AddTemplate($md['con'] . '/all');
+                        } else {
+                            header("Location: " . Request::$BASE_PATH);
+                        }
+                    } else {
+                        switch ($parameters[1]) {
+                            case 'new':
+                                if (Content::validate($md['con'], 'add')) {
+                                    if (Request::hasPostVariables()) {
+                                        $objData = Request::getPostVariables();
+
+                                        $objData->created_at = date('Y-m-d H:i:s');
+                                        
+                                        global $DB;
+                                        $DB->Save($md['table'], $objData);
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                $objPresenter->AddTemplate($md['con'] . '/new');
+                                break;
+                            case 'edit':
+                                if (Content::validate($md['con'], 'edit')) {
+                                    if ($parameters[2] != '' && isset($parameters[2])) {
+                                        if (Request::hasPostVariables()) {
+                                            $objData = Request::getPostVariables();
+                                            $objData->updated_at = date('Y-m-d H:i:s');
+                                            global $DB;
+                                            $DB->Save($md['table'], $objData);
+                                            header("Location: " . Request::$BASE_PATH . $md['con']);
+                                        } else {
+                                            $id = intval($parameters[2]);
+                                            $Data = Content::find_by_id($id, $md['table']);
+                                            $objPresenter->AddParameter('Data', $Data);
+                                        }
+                                        $objPresenter->AddTemplate($md['con'] . '/edit');
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                break;
+                        }
+                    }
+                } else {
+                    header("Location: " . Request::$BASE_PATH);
+                }
+                break;    
+            // ======================================= Pages ================================
+            case 'pages':
+                if (Session::isUserOnline()) {
+                    $md['table'] = $parameters[0];
+                    $md['con'] = $parameters[0];
+                    $md['text'] = 'Pages';
+                    $md['stext'] = 'Page';
+                    $objPresenter->AddParameter('md', $md);
+                    if (!isset($parameters[1]) || empty($parameters[1])) {
+                        if (Content::validate($md['con'], 'view')) {
+                            $Data = Content::All($md['table']);
+                            $objPresenter->AddParameter('Data', $Data);
+                            $objPresenter->AddTemplate($md['con'] . '/all');
+                        } else {
+                            header("Location: " . Request::$BASE_PATH);
+                        }
+                    } else {
+                        switch ($parameters[1]) {
+                            case 'new':
+                                if (Content::validate($md['con'], 'add')) {
+                                    if (Request::hasPostVariables()) {
+                                        $objData = Request::getPostVariables();
+                                        $objData->slug=Content::clean($objData->name);
+                                        $objData->created_at = date('Y-m-d H:i:s');
+                                        
+                                        global $DB;
+                                        $DB->Save($md['table'], $objData);
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                $objPresenter->AddTemplate($md['con'] . '/new');
+                                break;
+                            case 'edit':
+                                if (Content::validate($md['con'], 'edit')) {
+                                    if ($parameters[2] != '' && isset($parameters[2])) {
+                                        if (Request::hasPostVariables()) {
+                                            $objData = Request::getPostVariables();
+                                            $objData->slug=Content::clean($objData->name);
+                                            $objData->updated_at = date('Y-m-d H:i:s');
+                                            global $DB;
+                                            $DB->Save($md['table'], $objData);
+                                            header("Location: " . Request::$BASE_PATH . $md['con']);
+                                        } else {
+                                            $id = intval($parameters[2]);
+                                            $Data = Content::find_by_id($id, $md['table']);
+                                            $objPresenter->AddParameter('Data', $Data);
+                                        }
+                                        $objPresenter->AddTemplate($md['con'] . '/edit');
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                break;
+                        }
+                    }
+                } else {
+                    header("Location: " . Request::$BASE_PATH);
+                }
+                break;   
+             // ======================================= Contacts ================================
+             case 'contacts':
+                if (Session::isUserOnline()) {
+                    $md['table'] = $parameters[0];
+                    $md['con'] = $parameters[0];
+                    $md['text'] = 'Contacts';
+                    $md['stext'] = 'Contact';
+                    $objPresenter->AddParameter('md', $md);
+                    if (!isset($parameters[1]) || empty($parameters[1])) {
+                        if (Content::validate($md['con'], 'view')) {
+                            $Data = Content::All($md['table']);
+                            $objPresenter->AddParameter('Data', $Data);
+                            $objPresenter->AddTemplate($md['con'] . '/all');
+                        } else {
+                            header("Location: " . Request::$BASE_PATH);
+                        }
+                    } else {
+                        switch ($parameters[1]) {
+                            case 'new':
+                                if (Content::validate($md['con'], 'add')) {
+                                    if (Request::hasPostVariables()) {
+                                        $objData = Request::getPostVariables();
+                                        $objData->created_at = date('Y-m-d H:i:s');
+                                        
+                                        global $DB;
+                                        $DB->Save($md['table'], $objData);
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                $objPresenter->AddTemplate($md['con'] . '/new');
+                                break;
+                            case 'edit':
+                                if (Content::validate($md['con'], 'edit')) {
+                                    if ($parameters[2] != '' && isset($parameters[2])) {
+                                        if (Request::hasPostVariables()) {
+                                            $objData = Request::getPostVariables();
+                                            $objData->updated_at = date('Y-m-d H:i:s');
+                                            global $DB;
+                                            $DB->Save($md['table'], $objData);
+                                            header("Location: " . Request::$BASE_PATH . $md['con']);
+                                        } else {
+                                            $id = intval($parameters[2]);
+                                            $Data = Content::find_by_id($id, $md['table']);
+                                            $objPresenter->AddParameter('Data', $Data);
+                                        }
+                                        $objPresenter->AddTemplate($md['con'] . '/edit');
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                break;
+                        }
+                    }
+                } else {
+                    header("Location: " . Request::$BASE_PATH);
+                }
+                break;        
                 // ======================================= VIDEOS ================================
             case 'quranaudiocat':
                 if (Session::isUserOnline()) {
@@ -1734,6 +1985,14 @@ class Gateway
             default:
                 if (Session::isUserOnline()) {
                     // header("Location: " . Request::$BASE_PATH.$user->link);
+                    $start=date('Y-m-01');
+                    $end=date('Y-m-t');
+                    $data=[];
+                    $data['totalNewUsers']=Content::totalNewUsers($start,$end);
+                    $data['totalUsers']=Content::totalUsers();
+                    $data['totalPaidusers']=Content::totalUsersBystatus($start,$end,3);
+                    $data['totalUnPaidusers']=Content::totalUsersBystatus($start,$end,2);
+                    $objPresenter->AddParameter('data', $data);
                     $objPresenter->AddTemplate('default/dashboard');
                 } else {
                     header("Location: " . Request::$BASE_PATH . 'login');

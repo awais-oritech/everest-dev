@@ -30,7 +30,7 @@
                             <div class="card-body">
                                 <!-- Row -->
                                 <div class="row">
-                                    <div class="col-8"><span class="display-6">8659 <i class="ti-angle-down font-14 text-danger"></i></span>
+                                    <div class="col-8"><span class="display-6"><?php echo $data['totalUsers'];?> </span>
                                         <h6>Total Users</h6></div>
                                     <div class="col-4 align-self-center text-right  p-l-0">
                                         <div id="sparklinedash3"></div>
@@ -45,7 +45,7 @@
                             <div class="card-body">
                                 <!-- Row -->
                                 <div class="row">
-                                    <div class="col-8"><span class="display-6">7469 <i class="ti-angle-up font-14 text-success"></i></span>
+                                    <div class="col-8"><span class="display-6"><?php echo $data['totalNewUsers'];?> </span>
                                         <h6>New users</h6></div>
                                     <div class="col-4 align-self-center text-right p-l-0">
                                         <div id="sparklinedash"></div>
@@ -60,7 +60,7 @@
                             <div class="card-body">
                                 <!-- Row -->
                                 <div class="row">
-                                    <div class="col-8"><span class="display-6">6011 <i class="ti-angle-up font-14 text-success"></i></span>
+                                    <div class="col-8"><span class="display-6"><?php echo $data['totalPaidusers'];?> </span>
                                         <h6>Paid Users</h6></div>
                                     <div class="col-4 align-self-center text-right p-l-0">
                                         <div id="sparklinedash2"></div>
@@ -75,7 +75,7 @@
                             <div class="card-body">
                                 <!-- Row -->
                                 <div class="row">
-                                    <div class="col-8"><span class="display-6">18 <i class="ti-angle-down font-14 text-danger"></i></span>
+                                    <div class="col-8"><span class="display-6"><?php echo $data['totalUnPaidusers'];?></span>
                                         <h6>UnPaid User</h6></div>
                                     <div class="col-4 align-self-center text-right p-l-0">
                                         <div id="sparklinedash4"></div>
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="col-md-6 col-sm-12 col-xs-12">
+                    <!-- <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">Bar Chart</h5>
@@ -119,7 +119,7 @@
                                 <div id="sparkline11" class="text-center"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="card">
                             <div class="card-body">
