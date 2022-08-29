@@ -60,8 +60,8 @@ Auth::routes();
 Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(function () {
     Route::get('/profile-process', [ProfileProcessController::class, 'index'])->name('profile-process');
     Route::post('/profile-process', [ProfileProcessController::class, 'store']);
-    Route::get('/profile-registration/{id}',[CompanyProfileController::class,'index'])->name('profile-registration');
-    Route::post('/profile-registration/{id}', [CompanyProfileController::class, 'store']);
+    Route::get('/profile-registration/{id?}',[CompanyProfileController::class,'index'])->name('profile-registration');
+    Route::post('/profile-registration', [CompanyProfileController::class, 'store']);
     Route::get('/search',[SearchController::class, 'index'])->name('search');
     Route::get('/company-profile/{id}',[CompanyProfileViewController::class, 'index'])->name('company-profile');
 });

@@ -19,7 +19,7 @@
                         </div>
                         @endif
                         @if(isset($profile->id) && !empty($profile->id) )
-                        <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{url('profile-registration')}}" enctype="multipart/form-data">
                             @csrf
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
                             <div class="row">
@@ -271,13 +271,15 @@
                             @endif
                         </form>
                         @else
-                        <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{url('profile-registration')}}" enctype="multipart/form-data">
                             @csrf
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                                   @if(isset($packs_id->id))
                                     <input type="hidden" name="package_id" value="{{$packs_id->id}}">
+                                    @endif
                                     {{-- <input type="hidden" name="company_id" value="{{$company_id->id}}"> --}}
                                     <input type="text" class="form-control" name="companyname" placeholder="Company Name*" required>
                                 </div>

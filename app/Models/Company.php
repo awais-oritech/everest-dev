@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Khsing\World\Models\City;
 use Khsing\World\Models\Continent;
 use Khsing\World\Models\Country;
+use App\Models\Packages;
 
 class Company extends Model
 {
@@ -66,6 +68,11 @@ class Company extends Model
     {
         return $this->hasOne(City::class,'id','city')->select('id','name','code');
     }
+    public function package()
+    {
+        return $this->hasOne(Packages::class,'id','package_id');
+    }
+    
     public function countryName()
     {
         return $this->hasOne(Country::class,'id','country')->select('id','name','code');
