@@ -105,13 +105,7 @@
                                 </span>
                             @enderror
                         </div>
-                        <hr>
-                        <div class="form-group">
-                            <label class="container_check">Accept <a href="#0">Terms and conditions</a>
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
+                        
                         <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
                     </div>
                 </form>

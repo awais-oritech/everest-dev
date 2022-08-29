@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Khsing\World\World;
 use Khsing\World\Models\Continent;
 use Khsing\World\Models\Country;
+use Khsing\World\Models\City;
 class ResourceController extends Controller
 {
     
@@ -19,14 +20,14 @@ class ResourceController extends Controller
 
     public function countries(Request $request)
     {
-        $continent = Continent::getByCode($request->id);
-        $countries = $continent->countries()->get();
+        $countries = Country::where('continent_id',$request->id)->get();
+       // $countries = $continent->countries()->get();
         return $countries;
     }
     public function cities(Request $request)
     {
-        $country = Country::getByCode($request->id);
-        $cities = $country->children();
+        $cities = City::where('country_id',$request->id)->get();
+        //$cities = $country->children();
         return $cities;
     }
     
