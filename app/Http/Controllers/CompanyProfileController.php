@@ -32,14 +32,20 @@ class CompanyProfileController extends Controller
         $packs_id = '';
         $countries = '';
         $cities = '';
+        $profile = Company::where('user_id',Auth::user()->id)->first();
         if(!$id){
             //dd($id);
-            $profile = Company::where('user_id',Auth::user()->id)->first();
             if(!isset($profile->id)){
                 redirect('packages');
             }
             
         }
+       
+        if(!isset($profile->id)){
+            redirect('packages');
+        
+        }
+        
         if($id){
             $packs_id = Packages::where('id',$id)->first();
         }

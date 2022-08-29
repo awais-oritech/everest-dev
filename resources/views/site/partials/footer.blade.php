@@ -50,14 +50,18 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <h3 data-bs-target="#collapse_ft_4">Keep in touch</h3>
+               
                 <div class="collapse dont-collapse-sm" id="collapse_ft_4">
                     <div id="newsletter">
-                        <div id="message-newsletter"></div>
-                        <form method="post" action="#" name="newsletter_form" id="newsletter_form">
+                        <div class="alert alert-success alert-dismissible" role="alert" id="message-newsletter">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            Successfully Submitted
+                        </div>
+                        <form method="post" action="#" name="newsletter_formaa" id="newsletter_form">
                             <div class="form-group">
                                 <input type="email" name="email_newsletter" style="color:white" id="email_newsletter" class="form-control"
                                     placeholder="Your email">
-                               <button type="submit" class=" mt-2 btn-footer">Submit</button>
+                               <button id="newslettera" class=" mt-2 btn-footer">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -73,3 +77,28 @@
         </div>
     </div>
 </footer>
+
+@push('script')
+<script>
+    $('#newslettera').click(function () {
+        var email=$('#email_newsletter').val();
+        $.ajax({
+            type: 'POST',
+            url: "{{route('newsletter')}}",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                'email': email
+            },
+            success: function (data) {
+                $('#message-newsletter').show();
+                console.log(data)
+            }
+        });
+    });
+</script>
+<style>
+    #message-newsletter{
+        display: none;
+    }
+</style>
+@endpush

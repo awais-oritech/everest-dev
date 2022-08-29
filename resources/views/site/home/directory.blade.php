@@ -33,8 +33,8 @@
                     </tbody>
                   </table>
                   @else
-                  <div class="alert alert-danger text-center p-4" role="alert">
-                    <h4>No result found !</h4>
+                  <div class="alert alert-danger text-center" role="alert">
+                    <strong>No result found !</strong>
                   </div>
                   @endif
                   {{-- {!! $profiles->links() !!} --}}

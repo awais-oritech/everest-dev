@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NewsLetter;
 use Illuminate\Http\Request;
 use Khsing\World\World;
 use Khsing\World\Models\Continent;
@@ -29,6 +30,13 @@ class ResourceController extends Controller
         $cities = City::where('country_id',$request->id)->get();
         //$cities = $country->children();
         return $cities;
+    }
+    public function newsletter(Request $request)
+    {
+        $newsletter = new NewsLetter();
+        $newsletter->email=$request->email;
+        $newsletter->save();
+        return array('status'=>true);
     }
     
 }

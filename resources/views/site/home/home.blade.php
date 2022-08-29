@@ -130,7 +130,7 @@
                            <div class="col-3">
                                <div class="box">
                                <div class="content">
-                                   <img src="{{url('admin/',$abouts->image)}}">
+                                   <img src="{{url('admin',$abouts->image)}}">
                                </div>
                                </div>
                            </div>
@@ -392,7 +392,7 @@
                     <div class="post_info">
                         <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
                         <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
-                        <p>{!! substr($new->description,0,50)!!}</p>
+                        <p>{{substr(strip_tags($new->description),0,50)}}</p>
                         {{-- <ul>
                             <li>
                                 <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
@@ -587,4 +587,5 @@ $('#country').change(function () {
     });
 });
      </script>
+     
  @endpush

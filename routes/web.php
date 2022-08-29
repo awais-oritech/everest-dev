@@ -35,10 +35,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::prefix('/common')->group(function () {
     Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
     Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
-
+    Route::post('/newsletter', [ResourceController::class, 'newsletter'])->name('newsletter');
 });
 
 Route::get('about-us',[AboutController::class, 'index'])->name('about-us');

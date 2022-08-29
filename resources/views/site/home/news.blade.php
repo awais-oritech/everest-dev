@@ -17,7 +17,7 @@
                             <div class="post_info">
                                 <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
                                 <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
-                                <p>{!!$new->description !!}</p>
+                                <p>{{substr(strip_tags($new->description),0,50)}}</p>
                                 {{-- <ul>
                                     <li>
                                         <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
