@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Khsing\World\Models\City;
+use Khsing\World\Models\Continent;
+use Khsing\World\Models\Country;
 
 class Company extends Model
 {
@@ -58,6 +61,18 @@ class Company extends Model
     public function certificates()
     {
         return $this->hasMany(CompanyCertifications::class, 'company_id');
+    }
+    public function cityname()
+    {
+        return $this->hasOne(City::class,'id','city')->select('id','name','code');
+    }
+    public function countryName()
+    {
+        return $this->hasOne(Country::class,'id','country')->select('id','name','code');
+    }
+    public function continentName()
+    {
+        return $this->hasOne(Continent::class,'id','continent')->select('id','name','code');
     }
     public function services()
     {

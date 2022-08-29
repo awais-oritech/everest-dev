@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $continents=World::Continents();
+        $continents=Continent::all();
         $services = Services::all();
         $sponsers = Sponser::where('category_id', 1)->get();
         $benefits = Benefit::all();
