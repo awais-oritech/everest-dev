@@ -59,20 +59,20 @@
                                     <select id="continents" name="continent" class="form-control" style="border:none; border-bottom:1px solid #ccc">
                                         <option value="0" selected disabled>Continents</option>
                                         @foreach ($continents as $continent)
-                                            <option value="{{$continent->code}}">{{$continent->name}}</option>
+                                            <option value="{{$continent->id}}">{{$continent->id}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group col-xs-3">
                                     <label for="country"><img src="{{ asset('assets/img/address.gif') }}" width="30px" height="30px"> Country</label>
                                     <select id="country" name="country" class="form-control" style="border:none; border-bottom:1px solid #ccc">
-                                        <option value="0" selected disabled>Country</option>
+                                        <option value="0" selected disabled>All Countries</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-xs-3">
                                     <label for="city"><img src="{{ asset('assets/img/home.gif') }}" width="30px" height="30px"> City</label>
                                     <select id="city" name="city" class="form-control" style="border:none; border-bottom:1px solid #ccc">
-                                        <option value="0" selected disabled>City</option>
+                                        <option value="0" selected disabled>All Cities</option>
                                     </select>
                                 </div>
                                 <div class="buttonn">
@@ -594,7 +594,7 @@
             $country.empty();
             $('#city').empty();
             for (var i = 0; i < data.length; i++) {
-                $country.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
+                $country.append('<option id="'+data[i].id+'" value="'+ data[i].id+'">' + data[i].name + '</option>');
             }
 
             //manually trigger a change event for the contry so that the change handler will get triggered
