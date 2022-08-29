@@ -216,6 +216,10 @@
                                     <input type="radio" class="ml-4" name="member" value="no" {{$profile->member=='no'?'checked':''}} {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> No</label>
                                 </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>v)</b>Company Location<br>
+                                    <input type="text" class="form-control mt-4" value="{{$profile->company_location}}" name="company_location"required {{($profile->can_edit==1)?'':'disabled'}}>
+                                </div>
                             </div>
                             <br>
                             <hr>
@@ -452,6 +456,10 @@
                                     <label> Yes</label>
                                     <input type="radio" class="ml-4" name="member" value="no">
                                     <label> No</label>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <b>v)</b>Company Location<br>
+                                    <input type="text" class="form-control mt-4" name="company_location"required>
                                 </div>
                             </div>
                             <br>

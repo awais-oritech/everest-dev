@@ -22,6 +22,7 @@ class SearchController extends Controller
         $results=Company::with(['continentName','countryName','cityName','services'=> function($qr) use ($request){
             return $qr->where('service_id',$request->service_id);
         }]);
+        
         if($request->continent)
         {
             $results= $results->where('continent',$request->continent);
@@ -38,6 +39,7 @@ class SearchController extends Controller
         }
       
         $results= $results->get();
+        // dd($results);
         return view('site.home.search',['results'=>$results]);
     }
 }

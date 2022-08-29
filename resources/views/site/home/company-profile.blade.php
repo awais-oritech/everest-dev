@@ -1,16 +1,6 @@
 @extends('layouts.site')
 @section('content')
 <main>
-    {{-- <nav class="secondary_nav sticky_horizontal_2">
-        <div class="container">
-            <ul class="clearfix">
-                <li><a href="#" class="active">Description</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Booking</a></li>
-            </ul>
-        </div>
-    </nav> --}}
-
     <div class="container margin_60_35">
             <div class="row">
                 <div class="col-lg-8">
@@ -59,6 +49,9 @@
                             </div>
                         </div>
                         <!-- /row -->
+                        <hr>
+                        <h3>Location</h3>
+                        <iframe src="{{$profile->company_location}}" width="600" height="450" id="map_iframe" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <hr>
                         <h3>Information</h3>
                         <table class="table table-striped add_bottom_45">
