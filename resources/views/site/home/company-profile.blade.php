@@ -15,7 +15,7 @@
                         <div class="detail_title_1">
                             {{-- <div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div> --}}
                             <h1>{{$profile->companyname}}</h1>
-                            <a class="address" href="#">{{$profile->companyaddress}}</a>
+                            <a class="address" href="{{$profile->company_location}}" target="__blank">{{$profile->companyaddress}}</a>
                         </div>
                         <p>{{$profile->companyprofile}}</p>
                         <div class="row">
