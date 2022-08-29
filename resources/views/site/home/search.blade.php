@@ -25,8 +25,8 @@
                         <td>{{$result->companyemail}}</td>
                         <td>{{$result->companytelephone}}</td>
                         {{-- <td>{{$result->country}}</td> --}}
-                        <td>{{DB::table('companies')->where('country','=',$result->country)->join('world_countries','companies.country', '=','world_countries.code')->value('name')}}</td>
-                        <td>{{DB::table('companies')->where('city','=',$result->city)->join('world_cities','companies.city', '=','world_cities.code')->value('name')}}</td>
+                        <td>{{ $result->countryName->name }}</td>
+                        <td>{{$result->cityName->name}}</td>
                         {{-- <td>{{$result->city}}</td> --}}
                         <td><a href="{{route('company-profile',[$result->id])}}" class="fa fa-eye"></a></td>
                       </tr>

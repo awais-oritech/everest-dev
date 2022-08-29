@@ -14,33 +14,51 @@ use Khsing\World\World;
 use Khsing\World\Models\Continent;
 use Khsing\World\Models\Country;
 use Illuminate\Support\Facades\DB;
+use Khsing\World\Models\City;
+
 class CompanyProfileController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-    public function index($id)
+    public function index($id=0)
     {
+       
         $services = Services::all();
         $company_services ='';
-        $continents=World::Continents();
-        $profile = Company::where('user_id', Auth::user()->id)->first();
-        $packs_id = Packages::where('id','=',$id)->first();
+        $continents=Continent::all();
+        $profile = '';
+        $packs_id = '';
         $countries = '';
-        $countries = World::Countries();
         $cities = '';
+        if(!$id){
+            //dd($id);
+            $profile = Company::where('user_id',Auth::user()->id)->first();
+            if(!isset($profile->id)){
+                redirect('packages');
+            }
+            
+        }
+        if($id){
+            $packs_id = Packages::where('id',$id)->first();
+        }
+
+
+        
+        
         $certifications='';
         if(isset($profile->id))
         {
-            $country = Country::getByCode($profile->country);
-            $cities = $country->children();
+            $countries = Country::where('continent_id',$profile->continent)->get();
+            $cities = City::where('country_id',$profile->country)->get();
             $certifications= DB::table('company_certifications')->where('company_id',$profile->id)->pluck('certification_name')->toArray();
             $company_services= DB::table('company_services')->where('company_id',$profile->id)->pluck('service_id')->toArray();
 
         }
+        //dd($profile);
         $compact =[
-            'services'=>$services ,
+            'services'=>$services,
              'packs_id'=> $packs_id,
              'continents'=>$continents,
              'profile'=>$profile,
@@ -106,14 +124,7 @@ class CompanyProfileController extends Controller
         'clientmanager'=> $request->clientmanager,
         'gmceo'=> $request->gmceo,
         ]);
-        //dd($company->id);
-        // for($i=0; $i < count($request->service_name); $i++)
-        // {
-        //     $service_name[]=[
-        //         'company_id' => $company->id,
-        //         'service_id' => $request->service_name[$i],
-        //     ];
-        // }
+        
         $service_name=[];
         foreach($request->service_name as $service){
             $service_name[]=[
@@ -134,6 +145,6 @@ class CompanyProfileController extends Controller
 
         
 
-        return back()->with('status','Company Registered Please Wait For Admin Approval');
+        return redirect('profile-process')->with('status','Company Registered Please Wait For Admin Approval');
     }
 }

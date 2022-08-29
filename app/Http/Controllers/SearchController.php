@@ -18,7 +18,8 @@ class SearchController extends Controller
         //     $results= DB::table('company_services')
         //     ->join('services', 'company_services.service_id')
         // }
-        $results=Company::with(['services'=> function($qr) use ($request){
+        $d=Company::with(['continentName','countryName','cityName','services'])->get();
+        $results=Company::with(['continentName','countryName','cityName','services'=> function($qr) use ($request){
             return $qr->where('service_id',$request->service_id);
         }]);
         if($request->continent)
@@ -29,16 +30,14 @@ class SearchController extends Controller
                 $results= $results->where('country',$request->country);
                 if($request->city)
                 {
-                    $city=DB::table('world_cities')->where('id',$request->city)->first();
-                    dd($city);
+                    
                     $results= $results->where('city',$request->city);
                 }
             }
 
         }
-        // if(){}
+      
         $results= $results->get();
-        // dd($results);
         return view('site.home.search',['results'=>$results]);
     }
 }

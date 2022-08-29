@@ -12,6 +12,7 @@ use App\Models\Benefit;
 use App\Models\Page;
 use App\Models\Blogs;
 use App\Models\GlobalCoverage;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -33,7 +34,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $continents=World::Continents();
+        //dd(Auth::user()->id);
+        $continents=Continent::all();
         $services = Services::all();
         $sponsers = Sponser::where('category_id', 1)->get();
         $benefits = Benefit::all();

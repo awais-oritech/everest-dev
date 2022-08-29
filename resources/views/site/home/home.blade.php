@@ -59,7 +59,7 @@
                                     <select id="continents" name="continent" class="form-control" style="border:none; border-bottom:1px solid #ccc">
                                         <option value="0" selected disabled>Continents</option>
                                         @foreach ($continents as $continent)
-                                            <option value="{{$continent->id}}">{{$continent->id}}</option>
+                                            <option value="{{$continent->id}}">{{$continent->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -552,6 +552,7 @@
             var $country = $('#country');
             $country.empty();
             $('#city').empty();
+            $country.append('<option value="0" selected>All Countries</option>');
             for (var i = 0; i < data.length; i++) {
                 $country.append('<option id="'+data[i].id+'" value="'+ data[i].id+'">' + data[i].name + '</option>');
             }
@@ -578,6 +579,7 @@ $('#country').change(function () {
             var $city = $('#city');
             $city.empty();
             console.log(data);
+            $city.append('<option value="0" selected>All Cities</option>');
             for (var i = 0; i < data.length; i++) {
                 $city.append('<option id="'+ data[i].id +'" value="' + data[i].id +'"">' + data[i].name + '</option>');
             }

@@ -8,24 +8,40 @@ use App\Models\Packages;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 class ProfileProcessController extends Controller
 {
     public function index()
     {
-        $profiles = DB::table('companies')
-        ->leftjoin('packages','packages.id','=','companies.package_id')->value('package_id');
+        $profile = Company::with('package')->where('user_id', Auth::user()->id)->first();
+        //dd($profile);
+        if(!isset($profile->id)){
+            return redirect('packages');
+        }
+       
         $user_id = Auth::user()->id;
-        $comments = Comment::where('company_id','=',$user_id,)->get();
-        return view('site.home.profile-process',compact('profiles','comments','user_id'));
+        $comments = Comment::where('company_id',$profile->id)->get();
+        return view('site.home.profile-process',compact('profile','comments','user_id'));
     }
 
     public function store(Request $request)
     {
         $comment = new Comment();
+        $profile = Company::with('package')->where('user_id', Auth::user()->id)->first();
+        $validate['comment'] = 'required|min:2|max:256';
+        $validator = Validator::make(
+            $request->all(), $validate
+        );
+
+        if($validator->fails())
+        {
+            return redirect()->back()->with('status', $validator->errors()->first());
+        }
         $comment->create([
-            'user_id'=>$request->user_id,
-            'company_id'=>$request->company_id,
+            'user_id'=>Auth::user()->id,
+            'company_id'=>$profile->id,
             'comment'=>$request->comment,
+            'user_type'=>'agency',
         ]);
         return back()->with('status','Commented Successfuly');
     }

@@ -19,7 +19,7 @@
                         </div>
                         @endif
                         @if(isset($profile->id) && !empty($profile->id) )
-                        <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{url('profile-registration')}}" enctype="multipart/form-data">
                             @csrf
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
                             <div class="row">
@@ -85,7 +85,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
                                     <select id="continents" name="continent" class="form-control"  value="{{$profile->continent}}" {{($profile->can_edit==1)?'':'disabled'}}>
                                         @foreach ($continents as $continent)
-                                        <option value="{{$continent->code}}" {{ $profile->continent==$continent->code?'selected':'' }}>{{$continent->name}}</option>
+                                        <option value="{{$continent->id}}" {{ $profile->continent==$continent->id?'selected':'' }}>{{$continent->name}}</option>
                                     @endforeach
                                     </select>
                                 </div>
@@ -93,14 +93,14 @@
                                     <select id="country" name="country" class="form-control" value="{{$profile->country}}" {{($profile->can_edit==1)?'':'disabled'}}>
 
                                         @foreach($countries as $country)
-                                            <option value="{{$country->code}}" {{ $profile->country==$country->code?'selected':'' }}>{{$country->name}}</option>
+                                            <option value="{{$country->id}}" {{ $profile->country==$country->id?'selected':'' }}>{{$country->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
-                                    <select id="city" name="city" class="form-control"  value="{{$profile->city}}" {{($profile->can_edit==1)?'':'disabled'}}>
+                                    <select id="city" name="city" class="form-control"  value="{{$profile->id}}" {{($profile->can_edit==1)?'':'disabled'}}>
                                         @foreach($cities as $city)
-                                        <option value="{{$city->code}}" {{ $profile->city==$city->code?'selected':'' }}>{{$city->name}}</option>
+                                        <option value="{{$city->id}}" {{ $profile->city==$city->id?'selected':'' }}>{{$city->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -271,13 +271,15 @@
                             @endif
                         </form>
                         @else
-                        <form method="POST" action="{{url('profile-registration/'.$packs_id->id)}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{url('profile-registration')}}" enctype="multipart/form-data">
                             @csrf
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                                   @if(isset($packs_id->id))
                                     <input type="hidden" name="package_id" value="{{$packs_id->id}}">
+                                    @endif
                                     {{-- <input type="hidden" name="company_id" value="{{$company_id->id}}"> --}}
                                     <input type="text" class="form-control" name="companyname" placeholder="Company Name*" required>
                                 </div>
@@ -341,7 +343,7 @@
                                     <select id="continents" name="continent" class="form-control" required>
                                         <option  selected disabled>Continents</option>
                                         @foreach ($continents as $continent)
-                                            <option value="{{$continent->code}}">{{$continent->name}}</option>
+                                            <option value="{{$continent->id}}">{{$continent->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -528,7 +530,7 @@
             $country.empty();
             $('#city').empty();
             for (var i = 0; i < data.length; i++) {
-                $country.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
+                $country.append('<option id=' + data[i].id + ' value="' + data[i].id + '">' + data[i].name + '</option>');
             }
 
             //manually trigger a change event for the contry so that the change handler will get triggered
@@ -553,7 +555,7 @@ $('#country').change(function () {
             var $city = $('#city');
             $city.empty();
             for (var i = 0; i < data.length; i++) {
-                $city.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
+                $city.append('<option id=' + data[i].id + ' value=' + data[i].id + '>' + data[i].name + '</option>');
             }
         }
     });
