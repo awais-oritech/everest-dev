@@ -130,7 +130,7 @@
                            <div class="col-3">
                                <div class="box">
                                <div class="content">
-                                   <img src="{{url('assets/img/',$abouts->image)}}">
+                                   <img src="{{url('admin/',$abouts->image)}}">
                                </div>
                                </div>
                            </div>
@@ -141,7 +141,7 @@
                        </div>
                    </div>
                 <div class="col-lg-6 col-md-6 col-sm-12" >
-                <p>{{$abouts->description}}</p>
+                <p>{!!$abouts->description!!}</p>
                     {{-- <p><em>CEO Marc Schumaker</em></p> --}}
                 </div>
             </div>
@@ -385,7 +385,7 @@
             <div class="col-md-4">
                 <article class="blog">
                     <figure>
-                        <a href="{{route('news-info',[$new->id])}}"><img src="admin/{{$new->image}}" alt="">
+                        <a href="{{route('news-info',[$new->id])}}"><img src="admin/{{$new->image}}" class="img-fluid" alt="">
                             <div class="preview"><span>Read more</span></div>
                         </a>
                     </figure>

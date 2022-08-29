@@ -6,9 +6,9 @@
         <div class="col-xl-6 col-lg-6 col-md-8">
             <div class="box_account">
                 <h3 class="client">Already Member</h3>
-                <form method="POST" action="login">
+                <form method="POST" action="login" onsubmit="return formvalidation()" >
                     @csrf
-                    <div class="form_container">
+                    {{-- <div class="form_container">
                         <div class="form-group">
                             @if(session()->has('message'))
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -18,15 +18,15 @@
                                       </button>
                                 </div>
                             @endif
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" name="email" id="email" placeholder="Email*">
-                            @error('email')
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"  placeholder="Email*">
+                            @error('login_email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password"  placeholder="Password*">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="Password*">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -45,7 +45,6 @@
                                         <div class="float-end"><p  id="forgot">{{ __('Forgot Your Password?') }}</p></div>
                                     </a>
                                 @endif
-                            {{-- <div class="float-end"><a id="forgot" href="javascript:void(0);">Lost Password?</a></div> --}}
                         </div>
                         <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
                         <div id="forgot_pw">
@@ -55,6 +54,43 @@
                             <p>A new password will be sent shortly.</p>
                             <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
                         </div>
+                    </div> --}}
+                    <div class="form_container">
+                        <div class="form-group">
+                            @if(session()->has('message'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session()->get('message') }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                </div>
+                            @endif
+                            <input type="email" class="form-control" id="useremail" name="email"  placeholder="Email*">
+                            <span>
+                                <small class="text-danger" id="emailError"></small>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="userpassword" name="password"  placeholder="Password*">
+                            <span>
+                                <small class="text-danger" id="passwordError"></small>
+                            </span>
+                        </div>
+                        <div class="clearfix add_bottom_15">
+                            <div class="checkboxes float-start">
+                                <label class="container_check">Remember me
+                                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            @if (Route::has('password.request'))
+                                    <a class="" href="{{ route('password.request') }}">
+                                        <div class="float-end"><p  id="forgot">{{ __('Forgot Your Password?') }}</p></div>
+                                    </a>
+                                @endif
+                        </div>
+                        <div class="text-center"><button type="submit" class="btn_1 full-width">Log In</button></div>
+                       
                     </div>
                 </form>
             </div>
@@ -74,38 +110,37 @@
                     @csrf
                     <div class="form_container">
                         <div class="form-group">
-                            <input type="text" class="form-control @error('register_name') is-invalid @enderror" name="name" value="{{ old('register_name') }}" placeholder="Name*">
-                            @error('register_name')
+                            <input  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Name*">
+                            @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control @error('register_email') is-invalid @enderror" name="email" value="{{ old('register_email') }}" placeholder="Email*">
-                            @error('register_email')
+                            <input  type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email*">
+                            @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control @error('register_password') is-invalid @enderror" name="password"  placeholder="Password*">
-                            @error('register_password')
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="Password*" required autocomplete="new-password">
+                            @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input id="password-confirm" name="password_confirmation" type="password" class="form-control @error('register_password') is-invalid @enderror" name="password"  placeholder="Confirm Password*">
+                            <input id="password-confirm" name="password_confirmation" type="password" class="form-control @error('register_password') is-invalid @enderror" name="password"  placeholder="Confirm Password*" required autocomplete="new-password">
                             @error('register_password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-                        
                         <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
                     </div>
                 </form>

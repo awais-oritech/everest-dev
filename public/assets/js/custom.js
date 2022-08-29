@@ -5,9 +5,9 @@
  $(document).ready(function() {
   $(function() {
     var header = $(".header-navbar");
-    $(window).scroll(function() {    
+    $(window).scroll(function() {
         var scroll = $(window).scrollTop();
-    
+
         if (scroll >= 200) {
             header.removeClass('header-navbar').addClass("header-alt");
         } else {
@@ -40,4 +40,18 @@
   }
 });
 
-  
+
+function formvalidation()
+{
+    var email =document.getElementById("useremail").value;
+    var password =document.getElementById("userpassword").value;
+    if (email == "") {
+        document.getElementById("emailError").innerHTML = " **Email is Required";
+        return false;
+    }
+    if (password == "") {
+        document.getElementById("passwordError").innerHTML = " **Password is Required";
+        return false;
+    }
+
+}
