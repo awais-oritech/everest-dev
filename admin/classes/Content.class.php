@@ -127,7 +127,7 @@
 					FROM ".$table."
 					WHERE  ".$where."
 					ORDER BY id DESC";
-			
+            //return $sql;
 			$objData=$DB->Select($sql);
 			if($objData){
 			
@@ -646,6 +646,71 @@ static function companies(){
         ON companies.package_id=package.id
         ORDER BY
         companies.id
+        DESC";
+    $objData=$DB->Select($sql);
+    if($objData){
+        return $objData;
+    }else{
+        return false;
+    }
+}
+//======================================================== Companies ============================================
+static function company($id){
+    global $DB;
+    
+    $sql="SELECT
+    companies.*,
+    package.package_name As package_name
+        FROM companies
+        LEFT JOIN packages AS package
+        ON companies.package_id=package.id
+        where companies.id='".$id."'
+        ORDER BY companies.id
+        DESC";
+    $objData=$DB->Select($sql);
+    if($objData){
+        return $objData[0];
+    }else{
+        return false;
+    }
+}
+//======================================================== Companies ============================================
+static function branches($id){
+    global $DB;
+    
+    $sql="SELECT
+    branches.*,
+    world_continents.name AS continentName,
+    world_countries.name AS countryName,
+    world_cities.name AS cityName
+        FROM
+            branches
+            LEFT JOIN world_continents 
+        ON branches.continent=world_continents.id
+        LEFT JOIN world_countries 
+        ON branches.country=world_countries.id
+        LEFT JOIN world_cities 
+        ON branches.city=world_cities.id
+        where branches.company_id='".$id."'
+        ORDER BY
+        branches.id
+        DESC";
+    $objData=$DB->Select($sql);
+    if($objData){
+        return $objData;
+    }else{
+        return false;
+    }
+}
+//======================================================== Companies ============================================
+static function companyComments($id){
+    global $DB;
+    
+    $sql="SELECT *
+    
+        FROM comments
+        where company_id='".$id."'
+        ORDER BY id
         DESC";
     $objData=$DB->Select($sql);
     if($objData){

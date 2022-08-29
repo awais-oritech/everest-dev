@@ -91,7 +91,7 @@
                            <div class="col-3">
                                <div class="box">
                                <div class="content">
-                                   <img src="{{url('assets/img/',$abouts->image)}}">
+                                   <img src="{{url('assets/img',$abouts->image)}}">
                                </div>
                                </div>
                            </div>
@@ -102,7 +102,7 @@
                        </div>
                    </div>
                 <div class="col-lg-6 col-md-6 col-sm-12" >
-                <p>{{$abouts->description}}</p>
+                <p>{!!$abouts->description !!}</p>
                     {{-- <p><em>CEO Marc Schumaker</em></p> --}}
                 </div>
             </div>

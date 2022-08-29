@@ -10,7 +10,7 @@
                     <!-- /post meta -->
                     <div class="post-content">
                         <div class="">
-                            <p>{{$pages->description}}</p>
+                            <p>{!!$pages->description!!}</p>
                         </div>
                     </div>
                     <!-- /post -->

@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-7 align-self-center text-right">
                 <div class="d-flex justify-content-end align-items-center">
-                    <a href="<?php echo Request::$BASE_PATH.$md['con'].'/new'?>"
+                    <a href="<?php echo Request::$BASE_PATH.$md['con'].'/'.$company_id.'/new'?>"
                         class="btn btn-info d-none d-lg-block m-l-15">
                         <i class="fa fa-plus-circle"></i> New
                     </a>
@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title"><?php echo ucfirst($md['text']) ;?></h4>
+                        <h4 class="card-title"><?php echo ucfirst($company->companyname) ;?> <?php echo ucfirst($md['text']) ;?></h4>
                         <h6 class="card-title pull-right">
 
                         </h6>
@@ -52,23 +52,23 @@
                                                 style="width: 169px;" aria-sort="ascending">
                                                 Name
                                             </th>
-                                            <th class="" tabindex="0" aria-controls="example23" rowspan="1" colspan="1"
-                                                aria-label="Name: activate to sort column descending"
-                                                style="width: 169px;" aria-sort="ascending">
-                                                Package
+                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 50px;">
+                                                Continent
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
                                                 colspan="1" aria-label="Position: activate to sort column ascending"
                                                 style="width: 50px;">
-                                                Logo
+                                                Country
                                             </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 50px;">
+                                                City
+                                            </th>
+                                           
                                             
-
-                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
-                                                colspan="1" aria-label="Position: activate to sort column ascending"
-                                                style="width: 50px;">
-                                                Status
-                                            </th>
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
                                                 colspan="1" aria-label="Position: activate to sort column ascending"
                                                 style="width: 100px;">
@@ -83,30 +83,15 @@
 										    foreach ($Data as $d){
 										    ?>
                                         <tr role="row" class="odd">
-                                            <td class=""><?php echo $d->companyname?></td>
-                                            <td class=""><?php echo $d->package_name?></td>
-                                            <td><img height="40" width="auto" src="<?php echo Request::$BASE_PATH.'../public/uploads/'.$d->companylogo?>" /></td>
+                                            <td class=""><?php echo $d->name?></td>
+                                            <td class=""><?php echo $d->continentName?></td>
+                                            <td class=""><?php echo $d->countryName?></td>
+                                            <td class=""><?php echo $d->cityName?></td>
+                                           
                                             
                                             <td>
-                                            <?php if($d->status=='1') { ?>
-                                                <span class="label label-warning">Submited Profile</span>
-                                            <?php }elseif($d->status=='2') { ?>
-                                                <span class="label label-danger">Waiting For Payment</span>
-                                                <?php }elseif($d->status=='3') { ?>
-                                                    <span class="label label-success">Approved</span>
-                                                <?php } ?>
-
-
-                                            </td>
-                                            <td>
-                                            
-                                            <a href="<?php echo Request::$BASE_PATH.$md['con'].'/action/'.$d->id?>"
-                                                    class="btn btn-primary btn-rounded"><i class="fa fa-indent"></i></a>
-                                            <a href="<?php echo Request::$BASE_PATH.'branches/'.$d->id?>"
-                                                    class="btn btn-purple btn-rounded"><i class="fa fa-sitemap"></i></a>
-                                                <a href="<?php echo Request::$BASE_PATH.$md['con'].'/edit/'.$d->id?>"
+                                                <a href="<?php echo Request::$BASE_PATH.$md['con'].'/'.$company_id.'/edit/'.$d->id?>"
                                                     class="btn btn-warning btn-rounded"><i class="fa fa-edit"></i></a>
-                                                    
                                                 <a href="javascript:void(0);" id="row<?php echo $d->id?>"
                                                     data-rec="<?php echo $d->id?>"
                                                     class="del btn btn-danger btn-rounded"><i
@@ -180,7 +165,7 @@ $(document).ready(function() {
         table = $("#table").attr('value');
         $.ajax({
             type: 'POST',
-            url: '<?php echo Request::$BASE_PATH."delete"?>',
+            url: '<?php echo Request::$BASE_PATH."opendelete"?>',
             data: {
                 id: row,
                 table: table,

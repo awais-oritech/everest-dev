@@ -49,6 +49,37 @@ class Gateway
                         }
                         exit;
                         break;
+                    case 'countries':
+                        if (Session::isUserOnline()) {
+                            $objData = Request::getPostVariables();
+                            if (Request::hasPostVariables()) {
+                                $objData = Request::getPostVariables();
+                                    $where="continent_id='".$objData->id."'";
+                                    $data=Content::SelectWhere('world_countries',$where);
+                                    echo json_encode(array("status" => 1, "data" => $data));
+
+                                    //print_r();
+                            } 
+                        } else {
+                            header("Location: " . Request::$BASE_PATH);
+                        }
+                        exit;
+                        break; 
+                    case 'cities':
+                        if (Session::isUserOnline()) {
+                            $objData = Request::getPostVariables();
+                            if (Request::hasPostVariables()) {
+                                $objData = Request::getPostVariables();
+                                    $where="country_id='".$objData->id."'";
+                                    $data=Content::SelectWhere('world_cities',$where);
+                                    echo json_encode(array("status" => 1, "data" => $data));
+                            } 
+                        } else {
+                            header("Location: " . Request::$BASE_PATH);
+                        }
+                        exit;
+                        break;    
+                        
                     case 'sort-update':
                         if (Session::isUserOnline()) {
                             if (Request::hasPostVariables()) {
@@ -120,6 +151,28 @@ class Gateway
 
                 exit();
                 break;
+                case 'opendelete':
+                    if (Session::isUserOnline()) {
+                        if (Request::hasPostVariables()) {
+                            $objData = Request::getPostVariables();
+                            if (Content::validate($objData->con, 'delete')|| 1) {
+                                if ($d = Content::delete_by_id($objData->id, $objData->table)) {
+    
+                                    echo 'Success';
+                                } else {
+                                    echo 'Fail';
+                                }
+                            } else {
+                                echo 'Fail';
+                            }
+                            exit();
+                        }
+                    } else {
+                        header("Location: " . Request::$BASE_PATH);
+                    }
+    
+                    exit();
+                    break;    
                 // ======================================= PDF ================================
             case 'pdf':
                 if (Session::isUserOnline()) {
@@ -130,7 +183,7 @@ class Gateway
                     $objPresenter->AddParameter('md', $md);
                     if (!isset($parameters[1]) || empty($parameters[1])) {
                         if (Content::validate($md['con'], 'view')) {
-                            $Data = Content::PDF();
+                            $Data = Content::All('pdf');
                             $objPresenter->AddParameter('Data', $Data);
                             $objPresenter->AddTemplate($md['con'] . '/all');
                         } else {
@@ -735,7 +788,7 @@ class Gateway
                 }
                 break;
              // ======================================= SLIDERS ================================
-             case 'abouts':
+            case 'abouts':
                 if (Session::isUserOnline()) {
                     $md['table'] = $parameters[0];
                     $md['con'] = $parameters[0];
@@ -1526,7 +1579,7 @@ class Gateway
                 break;
                 // ======================================= CATEGORIES ================================
 
-                // ======================================= SPONSERS ================================
+                // ======================================= Companies ================================
             case 'companies':
                 if (Session::isUserOnline()) {
                     $md['table'] = $parameters[0];
@@ -1549,35 +1602,79 @@ class Gateway
                                     if (Request::hasPostVariables()) {
                                         $objData = Request::getPostVariables();
 
-                                        $objData->created = date('Y-m-d H:i:s');
-                                        if (isset($objData->active) && $objData->active == 'on') {
-                                            $objData->is_active = '1';
-                                        } else {
-                                            $objData->is_active = '0';
+                                        $objData->created_at = date('Y-m-d H:i:s');
+                                        $objData->is_public = 1;
+                                        $objData->status = 3;
+                                        $objData->can_edit = 0;
+                                        
+                                        $where="id='".$objData->continent."'";
+                                        $data=Content::getWhere('code','world_continents',$where);
+                                       
+                                        $objData->continent=$data->code;
+                                        $where="id='".$objData->country."'";
+                                        $data=Content::getWhere('code','world_countries',$where);
+                                        $objData->country=$data->code;
+                                        $where="id='".$objData->city."'";
+                                        $data=Content::getWhere('code','world_cities',$where);
+                                        if(isset($data->code) && !empty($data->code)){
+                                            $objData->city=$data->code;
+                                        }else{
+                                            $where="id='".$objData->city."'";
+                                        $data=Content::getWhere('name','world_cities',$where);
+                                        $objData->city=$data->name;
                                         }
-                                        if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
+                                        
+                                        $objData->user_id=0;
+                                        // echo '<pre>';
+                                        // print_r($objData);
+                                        // exit;
+                                        if (isset($_FILES['companylogo']['name']) && $_FILES['companylogo']['name'] != '') {
 
-                                            $file = 'post-' . uniqid();
-                                            $file_ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                                            $file = 'logo-' . uniqid();
+                                            $file_ext = pathinfo($_FILES['companylogo']['name'], PATHINFO_EXTENSION);
                                             if ($file_ext == 'png' || $file_ext == 'jpg' || $file_ext == 'gif' || $file_ext == 'jpeg') {
-                                                $target_path = 'uploads/' . $md['con'] . '/';
-                                                $target_path = $target_path . $file . '.' . $file_ext;
+                                                $target_path = '../public/uploads/';
+                                                $logo=$file . '.' . $file_ext;
+                                                $target_path = $target_path . $logo;
 
-                                                if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
-                                                    $objData->image = $target_path;
+                                                if (move_uploaded_file($_FILES['companylogo']['tmp_name'], $target_path)) {
+                                                    $objData->companylogo = $logo;
                                                 }
                                             }
                                         }
+                                        // echo '<pre>';
+                                        // print_r($objData);
+                                        // exit;
+                                        
                                         global $DB;
-                                        $DB->Save($md['table'], $objData);
+                                       $id= $DB->Save($md['table'], $objData);
+                                        
+                                       if(isset($objData->certification_name) && is_array($objData->certification_name) && !empty($objData->certification_name)){
+                                            foreach($objData->certification_name as $certificate){
+                                                $obj=new StdClass();
+                                                $obj->company_id=$id;
+                                                $obj->certification_name=$certificate;
+                                                $d= $DB->Save('company_certifications', $obj);
+                                            }
+                                        }
+                                        if(isset($objData->service_name) && is_array($objData->service_name) && !empty($objData->service_name)){
+                                            foreach($objData->service_name as $service){
+                                                $obj=new StdClass();
+                                                $obj->company_id=$id;
+                                                $obj->service_id=$service;
+                                                $d= $DB->Save('company_services', $obj);
+                                            }
+                                        }
+                                       
                                         header("Location: " . Request::$BASE_PATH . $md['con']);
                                     }
                                 } else {
                                     header("Location: " . Request::$BASE_PATH);
                                 }
+                                $packages=Content::All('packages');
                                 $continents=Content::All('world_continents');
                                 $services=Content::All('services');
-                               
+                                $objPresenter->AddParameter('packages', $packages);
                                 $objPresenter->AddParameter('continents', $continents);
                                 $objPresenter->AddParameter('services', $services);
                                 $objPresenter->AddTemplate($md['con'] . '/new');
@@ -1587,36 +1684,95 @@ class Gateway
                                     if ($parameters[2] != '' && isset($parameters[2])) {
                                         if (Request::hasPostVariables()) {
                                             $objData = Request::getPostVariables();
-                                            if (isset($objData->active) && $objData->active == 'on') {
-                                                $objData->is_active = '1';
-                                            } else {
-                                                $objData->is_active = '0';
+                                            $objData->updated_at = date('Y-m-d H:i:s');
+                                            $objData->is_public = 1;
+                                            $objData->status = 3;
+                                            $objData->can_edit = 0;
+                                            
+                                            $where="id='".$objData->continent."'";
+                                            $data=Content::getWhere('code','world_continents',$where);
+                                           
+                                            $objData->continent=$data->code;
+                                            $where="id='".$objData->country."'";
+                                            $data=Content::getWhere('code','world_countries',$where);
+                                            $objData->country=$data->code;
+                                            $where="id='".$objData->city."'";
+                                            $data=Content::getWhere('code','world_cities',$where);
+                                            $where="id='".$objData->city."'";
+                                            $data=Content::getWhere('code','world_cities',$where);
+                                            if(isset($data->code) && !empty($data->code)){
+                                                $objData->city=$data->code;
+                                            }else{
+                                                $where="id='".$objData->city."'";
+                                            $data=Content::getWhere('name','world_cities',$where);
+                                            $objData->city=$data->name;
                                             }
+                                            $objData->user_id=0;
+                                           
 
-                                            if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
-                                                $file = 'post-' . uniqid();
-                                                $file_ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                                            if (isset($_FILES['newlogo']['name']) && $_FILES['newlogo']['name'] != '') {
+                                                $file = 'logo-' . uniqid();
+                                                $file_ext = pathinfo($_FILES['newlogo']['name'], PATHINFO_EXTENSION);
                                                 if ($file_ext == 'png' || $file_ext == 'jpg' || $file_ext == 'gif' || $file_ext == 'jpeg') {
-                                                    $target_path = 'uploads/' . $md['con'] . '/';
-                                                    $target_path = $target_path . $file . '.' . $file_ext;
-                                                    if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
-                                                        if (!empty($objData->file_name)) {
-                                                            @unlink($objData->file_name);
+                                                    $target_path = '../public/uploads/';
+                                                    $path=$target_path;
+                                                    $logo=$file . '.' . $file_ext;
+                                                    $target_path = $target_path . $logo;
+                                                    if (move_uploaded_file($_FILES['newlogo']['tmp_name'], $target_path)) {
+                                                        if (!empty($objData->companylogo)) {
+                                                            @unlink($path.$objData->companylogo);
                                                         }
-                                                        $objData->file_name = $target_path;
+                                                        $objData->companylogo = $logo;
                                                     }
                                                 }
                                             }
-                                            $objData->image = $objData->file_name;
+                                        //    echo '<pre>';
+                                        //    print_r($objData);
+                                        //    exit;
                                             global $DB;
                                             $DB->Save($md['table'], $objData);
                                             header("Location: " . Request::$BASE_PATH . $md['con']);
                                         } else {
                                             $id = intval($parameters[2]);
                                             $Data = Content::find_by_id($id, $md['table']);
+                                            $packages=Content::All('packages');
+                                            $continents=Content::All('world_continents');
+                                            $services=Content::All('services');
+                                            $where="code='".$Data->continent."'";
+                                            $continent=Content::getWhere('id,code','world_continents',$where);
+                                            $where="continent_id='".$continent->id."'";
+                                            $countries=Content::getallWhere('code,name,id','world_countries',$where);
+                                            $where="code='".$Data->country."'";
+                                            $country=Content::getWhere('*','world_countries',$where);
+                                            $where="country_id='".$country->id."'";
+                                            $cities=Content::getWhere('code,name,id','world_cities',$where);
+                                            $where="company_id='".$id."'";
+                                            $certs=Content::getallWhere('certification_name','company_certifications',$where);
+                                            $certifications=[];
+                                            if(!empty($certs) & is_array($certs)){
+                                                foreach($certs as $cert){
+                                                    array_push($certifications,$cert->certification_name);
+                                                }
+                                            }
+                                            $where="company_id='".$id."'";
+                                            $servs=Content::getallWhere('service_id','company_services',$where);
+                                            $company_services=[];
+                                            if(!empty($servs) & is_array($servs)){
+                                                foreach($servs as $serv){
+                                                    array_push($company_services,$serv->service_id);
+                                                }
+                                            }
+                                           
+                                            //$certifications
+                                            $objPresenter->AddParameter('packages', $packages);
+                                            $objPresenter->AddParameter('continents', $continents);
+                                            $objPresenter->AddParameter('countries', $countries);
+                                            $objPresenter->AddParameter('cities', $cities);
+                                            $objPresenter->AddParameter('services', $services);
+                                            $objPresenter->AddParameter('certifications', $certifications);
+                                            $objPresenter->AddParameter('company_services', $company_services);
                                             $objPresenter->AddParameter('Data', $Data);
-                                            $categories = Content::AllActive('sponsorcategories');
-                                            $objPresenter->AddParameter('categories', $categories);
+                                           
                                         }
                                         $objPresenter->AddTemplate($md['con'] . '/edit');
                                     } else {
@@ -1626,13 +1782,150 @@ class Gateway
                                     header("Location: " . Request::$BASE_PATH);
                                 }
                                 break;
+                            case 'action':
+                                if (Content::validate($md['con'], 'edit')) {
+                                    if ($parameters[2] != '' && isset($parameters[2])) {
+                                        if (Request::hasPostVariables()) {
+                                            $id = intval($parameters[2]);
+                                            $objData = Request::getPostVariables();
+                                            global $DB;
+                                            if(isset($objData->status)){
+                                                 $DB->Save($md['table'], $objData);
+                                            }else if(isset($objData->comment)){
+                                                $objData->user_id=0;
+                                                $objData->user_type='admin';
+                                                $objData->company_id=$id;
+                                                $objData->created_at = date('Y-m-d H:i:s');
+                                                $d=$DB->Save('comments', $objData);
+                                                // echo '<pre>';
+                                                // print_r($d);
+                                                // exit;
+
+                                            }
+                                            
+                                            header("Location: " . Request::$BASE_PATH . $md['con'].'/action/'.$id);
+                                        } else {
+                                            $id = intval($parameters[2]);
+                                            $Data = Content::find_by_id($id, $md['table']);
+                                            $objPresenter->AddParameter('Data', $Data);
+                                            $comments=Content::companyComments($id);
+                                            $objPresenter->AddParameter('comments', $comments);
+                                            // echo '<pre>';
+                                            //     print_r($comments);
+                                            //     exit;
+                                        }
+                                        $objPresenter->AddTemplate($md['con'] . '/action');
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH . $md['con']);
+                                    }
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                                break;    
                         }
                     }
                 } else {
                     header("Location: " . Request::$BASE_PATH);
                 }
                 break;
+            // ======================================= Companies ================================
+            case 'branches':
+                if (Session::isUserOnline()) {
+                    if (isset($parameters[1]) || !empty($parameters[1])) {
+                        $md['table'] = $parameters[0];
+                        $md['con'] = $parameters[0];
+                        $md['text'] = 'Branches';
+                        $md['stext'] = 'Branch';
+                        $company_id=intval($parameters[1]);
+                        $objPresenter->AddParameter('company_id', $company_id);
+                        $objPresenter->AddParameter('md', $md);
+                        if (!isset($parameters[2]) || empty($parameters[2])) {
+                                if (Content::validate('companies', 'view')) {
+                                    $id=intval($parameters[1]);
+                                    $company=Content::company($id);
+                                    $Data = Content::branches($id);
+                                    $continents=Content::All('world_continents');
+                                    $objPresenter->AddParameter('continents', $continents);
+                                    $objPresenter->AddParameter('Data', $Data);
+                                    $objPresenter->AddParameter('company', $company);
+                                    //$company=Content::company($id);
+                                    $objPresenter->AddTemplate($md['con'] . '/all');
+                                } else {
+                                    header("Location: " . Request::$BASE_PATH);
+                                }
+                        
+                        } else {
+                            switch ($parameters[2]) {
+                                case 'new':
+                                    if (Content::validate('companies', 'add')) {
+                                        if (Request::hasPostVariables()) {
+                                            $objData = Request::getPostVariables();
+                                            
+                                            
+                                            $objData->company_id=$id=intval($parameters[1]);;
+                                            global $DB;
+                                            $DB->Save($md['table'], $objData);
+                                            
+                                        
+                                            header("Location: " . Request::$BASE_PATH . $md['con'].'/'.$company_id);
+                                        }
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH);
+                                    }
+                                    $packages=Content::All('packages');
+                                    $objPresenter->AddParameter('packages', $packages);
+                                    $continents=Content::All('world_continents');
+                                    $objPresenter->AddParameter('continents', $continents);
+                                    $services=Content::All('services');
+                                    $objPresenter->AddParameter('services', $services);
+                                    $objPresenter->AddTemplate($md['con'] . '/new');
+                                    break;
+                                case 'edit':
+                                    if (Content::validate('companies', 'edit')) {
+                                        if ($parameters[3] != '' && isset($parameters[3])) {
+                                            if (Request::hasPostVariables()) {
+                                                $objData = Request::getPostVariables();
+                                               
+                                                global $DB;
+                                                $DB->Save($md['table'], $objData);
+                                                header("Location: " . Request::$BASE_PATH .$md['con'].'/'.$company_id);
+                                            } else {
+                                                $id = intval($parameters[3]);
+                                                $Data = Content::find_by_id($id, $md['table']);
+                                                
+                                                $continents=Content::All('world_continents');
+                                                $objPresenter->AddParameter('continents', $continents);
+                                                $continents=Content::All('world_continents');
+                                                $objPresenter->AddParameter('continents', $continents);
+                                                $where="continent_id='".$Data->continent."'";
+                                                $countries=Content::getAllWhere('id,name,code','world_countries',$where);
+                                                $objPresenter->AddParameter('countries', $countries);
+                                                $where="country_id='".$Data->country."'";
+                                                $cities=Content::getallWhere('id,name,code','world_cities',$where);
+                                                $objPresenter->AddParameter('cities', $cities);
+                                            
+                                                //$certifications
+                                                $objPresenter->AddParameter('Data', $Data);
+                                            
+                                            }
+                                            $objPresenter->AddTemplate($md['con'] . '/edit');
+                                        } else {
+                                            header("Location: " . Request::$BASE_PATH . $md['con']);
+                                        }
+                                    } else {
+                                        header("Location: " . Request::$BASE_PATH);
+                                    }
+                                    break;
+                            }
+                        }
 
+                }else {
+                    header("Location: " . Request::$BASE_PATH.'companies');
+                }
+                } else {
+                    header("Location: " . Request::$BASE_PATH);
+                }
+                break;
 
                 // ======================================= Admin Sections ================================
 

@@ -205,7 +205,7 @@
                  <div class="sponsors-slider">
                     @foreach($sponsers as $sponser)
                      <div class="slide">
-                        <img src="http://localhost:8080/everest-dev/admin/{{$sponser->image}}" height="150px">
+                        <img src="admin/{{$sponser->image}}" height="150px">
                      </div>
                      @endforeach
                  </div>
@@ -389,7 +389,7 @@
                  <div class="diamond-slider">
                     @foreach($diamonds as $diamond)
                     <div class="slide">
-                        <img src="http://localhost:8080/everest-dev/admin/{{$diamond->image}}" height="150px">
+                        <img src="admin/{{$diamond->image}}" height="150px">
                     </div>
                     @endforeach
                      {{-- <div class="slide"><img
@@ -426,14 +426,14 @@
             <div class="col-md-4">
                 <article class="blog">
                     <figure>
-                        <a href="{{route('news-info',[$new->id])}}"><img src="http://localhost:8080/everest-dev/admin/{{$new->image}}" alt="">
+                        <a href="{{route('news-info',[$new->id])}}"><img src="admin/{{$new->image}}" alt="">
                             <div class="preview"><span>Read more</span></div>
                         </a>
                     </figure>
                     <div class="post_info">
                         <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
                         <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
-                        <p>{{$new->description}}</p>
+                        <p>{!! substr($new->description,0,50)!!}</p>
                         {{-- <ul>
                             <li>
                                 <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin
@@ -618,8 +618,9 @@ $('#country').change(function () {
             // the next thing you want to do
             var $city = $('#city');
             $city.empty();
+            console.log(data);
             for (var i = 0; i < data.length; i++) {
-                $city.append('<option id=' + data[i].code + ' value=' + data[i].code + '>' + data[i].name + '</option>');
+                $city.append('<option id="'+ data[i].id +'" value="' + data[i].id +'"">' + data[i].name + '</option>');
             }
         }
     });

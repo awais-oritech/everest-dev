@@ -29,11 +29,14 @@ class SearchController extends Controller
                 $results= $results->where('country',$request->country);
                 if($request->city)
                 {
+                    $city=DB::table('world_cities')->where('id',$request->city)->first();
+                    dd($city);
                     $results= $results->where('city',$request->city);
                 }
             }
 
         }
+        // if(){}
         $results= $results->get();
         // dd($results);
         return view('site.home.search',['results'=>$results]);

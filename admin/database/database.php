@@ -5,9 +5,9 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'pionerln_user',
-		'password' => 'G#lL2%S7k*6}',
-		'database' => 'pionerln_db',
+		'login' => 'oritech_pionerln_user',
+		'password' => '74r-,qFI4Z9E',
+		'database' => 'oritech_pioneers',
 	);
 }
 ?>

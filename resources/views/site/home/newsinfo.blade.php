@@ -11,7 +11,7 @@
             @foreach($news_info as $new_info)
             <div class="col-lg-9">
                 <div class="singlepost">
-                    <figure><img alt="" class="img-fluid" src="http://localhost:8080/everest-dev/admin/{{$new_info->image}}" style="margin-left: auto;margin-right: auto;display: block;margin-top: 50px;"></figure>
+                    <figure><img alt="" class="img-fluid" src="https://pioneers.oritech.co/admin/{{$new_info->image}}" style="margin-left: auto;margin-right: auto;display: block;margin-top: 50px;"></figure>
                     <h1>{{$new_info->name}}</h1>
                     <div class="postmeta">
                         <ul>
@@ -24,7 +24,7 @@
                     <!-- /post meta -->
                     <div class="post-content">
                         <div>
-                            <p>{{$new_info->description}}</p>
+                            <p>{!! $new_info->description !!}</p>
                         </div>
                     </div>
                     <!-- /post -->
@@ -41,7 +41,7 @@
                         @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
-                                <a href="#0"><img src="admin/{{$latest_blog->image}}" alt=""></a>
+                                <a href="#0"><img src="https://pioneers.oritech.co/admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
                             <small>{{\Carbon\Carbon::parse($latest_blog->created)->format('d-m-Y')}}</small>
                             <h3><a href="{{url('news-info',$latest_blog->id)}}" title="">{{$latest_blog->name}}</a></h3>

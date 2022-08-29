@@ -10,14 +10,14 @@
                         <article class="blog">
                             <figure>
                                 {{-- <a href="#"><img src="assets/spark-img/blog-1.jpg" alt=""> --}}
-                                <a href="{{route('news-info',[$new->id])}}"><img src="http://localhost:8080/everest-dev/admin/{{$new->image}}" alt="">
+                                <a href="{{route('news-info',[$new->id])}}"><img src="admin/{{$new->image}}" alt="">
                                     <div class="preview"><span>Read more</span></div>
                                 </a>
                             </figure>
                             <div class="post_info">
                                 <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
                                 <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
-                                <p>{{$new->description}}</p>
+                                <p>{!!$new->description !!}</p>
                                 {{-- <ul>
                                     <li>
                                         <div class="thumb"><img src="assets/spark-img/avatar.jpg" alt=""></div> Admin

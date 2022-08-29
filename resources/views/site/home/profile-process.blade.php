@@ -43,9 +43,9 @@
                                 </a>
                             </div> --}}
                             <div class="comment_right clearfix">
-                                {{-- <div class="comment_info">
-                                    {{$comment->created_at}}
-                                </div> --}}
+                                <div class="comment_info">
+                                    {{$comment->user_type}}
+                                </div>
                                 <p>{{$comment->comment}}</p>
                             </div>
                         </li>
