@@ -11,28 +11,29 @@
                   <div class="collapse  navbar-right  navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav ml-auto ">
                             <li class="nav-item active">
-                              <a class="nav-link" style="color:#1c75BA;" href="/"><i
+                              <a class="nav-link" style="color:#00a8df;" href="/"><i
                                       class="fa-solid fa-house"></i> Home <span
                                       class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " style="color:#1c75BA;" href="{{route('about-us')}}"><i class="icon-info-circled"></i> About</a>
+                                <a class="nav-link " style="color:#00a8df;" href="{{route('about-us')}}"><i class="icon-info-circled"></i> About</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" style="color:#1c75BA;" href="{{route('directory')}}"><i class="fa-solid fa-book"></i> Directory</a>
+                              <a class="nav-link " style="color:#00a8df;" href="{{route('directory')}}"><i class="fa-solid fa-book"></i> Directory</a>
+
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color:#1c75BA;" href="{{route('packages')}}"><i class="fas fa-shopping-basket"></i> Packages</a>
+                                <a class="nav-link" style="color:#00a8df;" href="{{route('packages')}}"><i class="fas fa-shopping-basket"></i> Packages</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " style="color:#1c75BA;" href="{{route('news')}}"><i class="fas fa-newspaper"></i> News</a>
+                                <a class="nav-link " style="color:#00a8df;" href="{{route('news')}}"><i class="fas fa-newspaper"></i> News</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" style="color:#1c75BA;" href="{{route('events')}}"><i class="fas fa-flag"></i>
+                              <a class="nav-link" style="color:#00a8df;" href="{{route('events')}}"><i class="fas fa-flag"></i>
                                   Events</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " style="color:#1c75BA;" href="{{route('contact-us')}}"><i class="fas fa-phone"></i> Contact</a>
+                                <a class="nav-link " style="color:#00a8df;" href="{{route('contact-us')}}"><i class="fas fa-phone"></i> Contact</a>
                             </li>
 
                             @if(!Auth::user())

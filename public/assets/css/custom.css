@@ -517,7 +517,7 @@ border-bottom-right-radius: 12px;
   background-color: #1c75BA;
 }
 .btn-footer:hover{
-  background-color: #fbb900;
+  background-color: #00a8df;
   transition: 500ms;
 }
 .formbox-header{
@@ -968,3 +968,4 @@ ul.share-buttons{
 /* h1, h2, h3, h4, h5, h6 {
   color: #1c75BA!important;
 } */
+
