@@ -92,6 +92,7 @@ class CompanyProfileController extends Controller
         $company=Company::create([
         'user_id'=>request()->user()->id,
         'package_id' =>$request->package_id,
+        'company_location'=>$request->company_location,
         'companyname'=> $request ->companyname,
         'ownername'=> $request->ownername,
         'companyaddress'=> $request->companyaddress,

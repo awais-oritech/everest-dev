@@ -64,7 +64,7 @@ class Company extends Model
     {
         return $this->hasMany(CompanyCertifications::class, 'company_id');
     }
-    public function cityname()
+    public function cityName()
     {
         return $this->hasOne(City::class,'id','city')->select('id','name','code');
     }
