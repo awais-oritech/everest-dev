@@ -35,6 +35,34 @@
                                 </div>
                             </div>
                             <div class="form-group mt-5 row">
+                                <label for="example-text-input" class="col-2 col-form-label">Contact Person</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" name="contact_person"
+                                        id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group mt-5 row">
+                                <label for="example-text-input" class="col-2 col-form-label">Postion</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" name="position"
+                                        id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group mt-5 row">
+                                <label for="example-text-input" class="col-2 col-form-label">Email</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" name="email"
+                                        id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group mt-5 row">
+                                <label for="example-text-input" class="col-2 col-form-label">Phone</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" name="phone"
+                                        id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group mt-5 row">
                                 <label for="example-text-input" class="col-2 col-form-label">Continent</label>
                                 <div class="col-10">
                                     <select id="continents" name="continent" class="custom-select col-12" required>
@@ -123,9 +151,9 @@ $.ajax({
         $('#city').empty();
          data=JSON.parse(data);
          data=data.data;
-       
+         $country.append('<option value="0" disabled selected value="">Select Country</option>');
         for (var i = 0; i < data.length; i++) {
-            $country.append('<option id=' + data[i].id + ' value=' + data[i].id + '>' + data[i].name + '</option>');
+            $country.append('<option id="'+data[i].id+'" value="'+data[i].id+'">' + data[i].name + '</option>');
         }
 
         //manually trigger a change event for the contry so that the change handler will get triggered

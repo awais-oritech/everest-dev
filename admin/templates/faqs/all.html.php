@@ -75,7 +75,7 @@
                                         <tr role="row" class="odd">
                                             <td class=""><?php echo $d->question?></td>
                                            
-                                            <td class=""><?php echo $d->answer?></td>
+                                            <td class=""> <?php echo substr(strip_tags($d->answer),0,50)?></td>
                                             
                                             <td>
                                                 <a href="<?php echo Request::$BASE_PATH.$md['con'].'/edit/'.$d->id?>"

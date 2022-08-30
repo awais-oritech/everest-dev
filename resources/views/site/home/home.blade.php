@@ -130,7 +130,7 @@
                            <div class="col-3">
                                <div class="box">
                                <div class="content">
-                                   <img src="{{url('admin',$abouts->image)}}">
+                                   <img src="admin/{{$abouts->image}}">
                                </div>
                                </div>
                            </div>

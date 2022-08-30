@@ -55,7 +55,7 @@ class Gateway
                             if (Request::hasPostVariables()) {
                                 $objData = Request::getPostVariables();
                                     $where="continent_id='".$objData->id."'";
-                                    $data=Content::SelectWhere('world_countries',$where);
+                                    $data=Content::getallWhere('id,name,code','world_countries',$where);
                                     echo json_encode(array("status" => 1, "data" => $data));
 
                                     //print_r();
@@ -71,7 +71,7 @@ class Gateway
                             if (Request::hasPostVariables()) {
                                 $objData = Request::getPostVariables();
                                     $where="country_id='".$objData->id."'";
-                                    $data=Content::SelectWhere('world_cities',$where);
+                                    $data=Content::getallWhere('code,name,id','world_cities',$where);
                                     echo json_encode(array("status" => 1, "data" => $data));
                             } 
                         } else {
@@ -1688,25 +1688,6 @@ class Gateway
                                             $objData->is_public = 1;
                                             $objData->status = 3;
                                             $objData->can_edit = 0;
-                                            
-                                            $where="id='".$objData->continent."'";
-                                            $data=Content::getWhere('code','world_continents',$where);
-                                           
-                                            $objData->continent=$data->code;
-                                            $where="id='".$objData->country."'";
-                                            $data=Content::getWhere('code','world_countries',$where);
-                                            $objData->country=$data->code;
-                                            $where="id='".$objData->city."'";
-                                            $data=Content::getWhere('code','world_cities',$where);
-                                            $where="id='".$objData->city."'";
-                                            $data=Content::getWhere('code','world_cities',$where);
-                                            if(isset($data->code) && !empty($data->code)){
-                                                $objData->city=$data->code;
-                                            }else{
-                                                $where="id='".$objData->city."'";
-                                            $data=Content::getWhere('name','world_cities',$where);
-                                            $objData->city=$data->name;
-                                            }
                                             $objData->user_id=0;
                                            
 
@@ -1738,14 +1719,10 @@ class Gateway
                                             $packages=Content::All('packages');
                                             $continents=Content::All('world_continents');
                                             $services=Content::All('services');
-                                            $where="code='".$Data->continent."'";
-                                            $continent=Content::getWhere('id,code','world_continents',$where);
-                                            $where="continent_id='".$continent->id."'";
+                                            $where="continent_id='".$Data->continent."'";
                                             $countries=Content::getallWhere('code,name,id','world_countries',$where);
-                                            $where="code='".$Data->country."'";
-                                            $country=Content::getWhere('*','world_countries',$where);
-                                            $where="country_id='".$country->id."'";
-                                            $cities=Content::getWhere('code,name,id','world_cities',$where);
+                                            $where="country_id='".$Data->country."'";
+                                            $cities=Content::getallWhere('code,name,id','world_cities',$where);
                                             $where="company_id='".$id."'";
                                             $certs=Content::getallWhere('certification_name','company_certifications',$where);
                                             $certifications=[];
@@ -1797,9 +1774,7 @@ class Gateway
                                                 $objData->company_id=$id;
                                                 $objData->created_at = date('Y-m-d H:i:s');
                                                 $d=$DB->Save('comments', $objData);
-                                                // echo '<pre>';
-                                                // print_r($d);
-                                                // exit;
+                                                
 
                                             }
                                             
@@ -1810,9 +1785,7 @@ class Gateway
                                             $objPresenter->AddParameter('Data', $Data);
                                             $comments=Content::companyComments($id);
                                             $objPresenter->AddParameter('comments', $comments);
-                                            // echo '<pre>';
-                                            //     print_r($comments);
-                                            //     exit;
+                                           
                                         }
                                         $objPresenter->AddTemplate($md['con'] . '/action');
                                     } else {
@@ -1876,8 +1849,7 @@ class Gateway
                                     $objPresenter->AddParameter('packages', $packages);
                                     $continents=Content::All('world_continents');
                                     $objPresenter->AddParameter('continents', $continents);
-                                    $services=Content::All('services');
-                                    $objPresenter->AddParameter('services', $services);
+                                    
                                     $objPresenter->AddTemplate($md['con'] . '/new');
                                     break;
                                 case 'edit':
@@ -1885,23 +1857,19 @@ class Gateway
                                         if ($parameters[3] != '' && isset($parameters[3])) {
                                             if (Request::hasPostVariables()) {
                                                 $objData = Request::getPostVariables();
-                                               
                                                 global $DB;
                                                 $DB->Save($md['table'], $objData);
                                                 header("Location: " . Request::$BASE_PATH .$md['con'].'/'.$company_id);
                                             } else {
                                                 $id = intval($parameters[3]);
                                                 $Data = Content::find_by_id($id, $md['table']);
-                                                
                                                 $continents=Content::All('world_continents');
-                                                $objPresenter->AddParameter('continents', $continents);
-                                                $continents=Content::All('world_continents');
-                                                $objPresenter->AddParameter('continents', $continents);
                                                 $where="continent_id='".$Data->continent."'";
-                                                $countries=Content::getAllWhere('id,name,code','world_countries',$where);
-                                                $objPresenter->AddParameter('countries', $countries);
+                                                $countries=Content::getallWhere('code,name,id','world_countries',$where);
                                                 $where="country_id='".$Data->country."'";
-                                                $cities=Content::getallWhere('id,name,code','world_cities',$where);
+                                                $cities=Content::getallWhere('code,name,id','world_cities',$where);
+                                                $objPresenter->AddParameter('continents', $continents);
+                                                $objPresenter->AddParameter('countries', $countries);
                                                 $objPresenter->AddParameter('cities', $cities);
                                             
                                                 //$certifications

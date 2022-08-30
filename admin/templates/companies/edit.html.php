@@ -120,7 +120,7 @@
                                     <select id="continents" name="continent" class="form-control" required>
                                         <option  selected disabled value="">Select Continents</option>
                                         <?php foreach ($continents as $continent){?>
-                                            <option <?php echo ($continent->code==$Data->continent)?'Selected':''?> value="<?php echo $continent->id ?>"><?php echo $continent->name ?></option>
+                                            <option <?php echo ($continent->id==$Data->continent)?'Selected':''?> value="<?php echo $continent->id ?>"><?php echo $continent->name ?></option>
                                        <?php } ?>
                                     </select>
                                 </div>
@@ -128,7 +128,7 @@
                                     <select id="country" name="country" class="form-control" required>
                                         <option  selected disabled value="">Select Country</option>
                                         <?php foreach ($countries as $country){?>
-                                            <option <?php echo ($country->code==$Data->country)?'Selected':''?> value="<?php echo $country->id ?>"><?php echo $country->name ?></option>
+                                            <option <?php echo ($country->id==$Data->country)?'Selected':''?> value="<?php echo $country->id ?>"><?php echo $country->name ?></option>
                                        <?php } ?>
                                         
                                     </select>
@@ -137,7 +137,7 @@
                                     <select id="city" name="city" class="form-control" required>
                                         <option  selected disabled value="">Select City</option>
                                         <?php foreach ($cities as $city){?>
-                                            <option <?php echo ($city->code==$Data->city ||$city->name==$Data->city)?'Selected':''?> value="<?php echo $city->id ?>"><?php echo $city->name ?></option>
+                                            <option <?php echo ($city->id==$Data->city)?'Selected':''?> value="<?php echo $city->id ?>"><?php echo $city->name ?></option>
                                        <?php } ?>
                                     </select>
                                 </div>
@@ -347,7 +347,7 @@ $.ajax({
          data=data.data;
        
         for (var i = 0; i < data.length; i++) {
-            $country.append('<option id=' + data[i].id + ' value=' + data[i].id + '>' + data[i].name + '</option>');
+            $country.append('<option id="'+data[i].id+'" value="'+data[i].id+'">' + data[i].name + '</option>');
         }
 
         //manually trigger a change event for the contry so that the change handler will get triggered
@@ -373,7 +373,6 @@ $.ajax({
         data=JSON.parse(data);
          data=data.data;
          console.log(data);
-        $city.append('<option value="0" disabled selected value="">Select City</option>');
         for (var i = 0; i < data.length; i++) {
             $city.append('<option id=' + data[i].id + ' value=' + data[i].id + '>' + data[i].name + '</option>');
         }

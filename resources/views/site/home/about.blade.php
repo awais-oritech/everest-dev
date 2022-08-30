@@ -91,7 +91,7 @@
                            <div class="col-3">
                                <div class="box">
                                <div class="content">
-                                   <img src="{{url('assets/img',$abouts->image)}}">
+                                   <img src="admin/{{$abouts->image}}">
                                </div>
                                </div>
                            </div>

@@ -329,7 +329,7 @@ $.ajax({
          data=data.data;
        
         for (var i = 0; i < data.length; i++) {
-            $country.append('<option id=' + data[i].id + ' value=' + data[i].id + '>' + data[i].name + '</option>');
+            $country.append('<option id="'+data[i].id+'" value="'+data[i].id+'">' + data[i].name + '</option>');
         }
 
         //manually trigger a change event for the contry so that the change handler will get triggered
@@ -355,7 +355,6 @@ $.ajax({
         data=JSON.parse(data);
          data=data.data;
          console.log(data);
-        $city.append('<option value="0" disabled selected value="">Select City</option>');
         for (var i = 0; i < data.length; i++) {
             $city.append('<option id="' + data[i].id + '" value="' + data[i].id + '">' + data[i].name + '</option>');
         }

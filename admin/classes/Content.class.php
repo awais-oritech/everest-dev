@@ -639,11 +639,20 @@ static function companies(){
     
     $sql="SELECT
     companies.*,
+    continent.name AS continentName,
+    country.name AS countryName,
+    city.name AS cityName,
     package.package_name As package_name
         FROM
             `companies`
         LEFT JOIN packages AS package
         ON companies.package_id=package.id
+        LEFT JOIN world_continents AS continent
+        ON companies.continent=continent.id
+        LEFT JOIN world_countries AS country
+        ON companies.country=country.id
+        LEFT JOIN world_cities AS city
+        ON companies.city=city.id
         ORDER BY
         companies.id
         DESC";

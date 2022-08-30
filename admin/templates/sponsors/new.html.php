@@ -38,12 +38,8 @@
                                 <label for="example-text-input" class="col-2 col-form-label">Category</label>
                                 <div class="col-10">
                                     <select class="custom-select col-12" required name="category_id">
-                                        <?php
-											if ($categories)
-											foreach ($categories as $category) {
-												?>
-                                        <option value="<?php echo $category->id?>"><?php echo $category->name?></option>
-                                        <?php }?>
+                                    <option value="1">Platinium</option>
+                                    <option value="2">Diamond</option>
                                     </select>
                                 </div>
                             </div>

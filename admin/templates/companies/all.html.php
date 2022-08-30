@@ -62,6 +62,21 @@
                                                 style="width: 50px;">
                                                 Logo
                                             </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 50px;">
+                                                Continent
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 50px;">
+                                                Country
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 50px;">
+                                                City
+                                            </th>
                                             
 
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
@@ -87,6 +102,10 @@
                                             <td class=""><?php echo $d->package_name?></td>
                                             <td><img height="40" width="auto" src="<?php echo Request::$BASE_PATH.'../public/uploads/'.$d->companylogo?>" /></td>
                                             
+                                           
+                                            <td class=""><?php echo $d->continentName?></td>
+                                            <td class=""><?php echo $d->countryName?></td>
+                                            <td class=""><?php echo $d->cityName?></td>
                                             <td>
                                             <?php if($d->status=='1') { ?>
                                                 <span class="label label-warning">Submited Profile</span>

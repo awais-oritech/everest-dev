@@ -7,10 +7,10 @@
                 <h4 class="nomargin_top">Faq</h4>
                 <div role="tablist" class="add_bottom_45 accordion_2" id="payment">
                     @foreach($faqs as $faq)
-                    <div class="card">
-                        <div class="card-header" role="tab">
+                    <div class="card m-4">
+                        <div class="card-header" style="background-color: #1c75BA;color:#fff" role="tab">
                             <h5 class="mb-0">
-                                <a data-bs-toggle="collapse" href="#collapse{{$faq->id}}" aria-expanded="true"><i class="indicator ti-minus"></i>{{$faq->question}}</a>
+                                <a style="color:#fff!important" data-bs-toggle="collapse" href="#collapse{{$faq->id}}" aria-expanded="true"><i style="color:#fff!important" class="indicator ti-minus"></i>{{$faq->question}}</a>
                             </h5>
                         </div>
 
