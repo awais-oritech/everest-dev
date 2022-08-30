@@ -43,7 +43,7 @@
                             
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="hidden" name="user_id" value="0">
+                                    <!-- <input type="hidden" name="user_id" value="0"> -->
                                     
                                     <input class="form-control" type="hidden" value="<?php echo $Data->id?>" name="id"
                                          required id="example-text-input">
@@ -54,6 +54,9 @@
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companyaddress" value="<?php echo $Data->companyaddress?>"  placeholder="Head office address*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control" value="<?php echo $Data->company_location?>"  placeholder="Google map link" name="company_location" required >
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companypostal" value="<?php echo $Data->companypostal?>" placeholder="Postal Code Country*" required>

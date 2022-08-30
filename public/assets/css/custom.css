@@ -936,6 +936,7 @@ ul.share-buttons{
     list-style: none;
     margin: 0 0 25px 0;
 }
+ul.share-buttons li{display:inline-block;margin:0 0 0 0 !important;}
 
 /* ul.share-button-custom li a{
     background: #fff;

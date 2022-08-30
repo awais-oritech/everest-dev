@@ -37,6 +37,7 @@ class SearchController extends Controller
             }
 
         }
+         $results=$results->where('status',3);
       
         $results= $results->get();
         // dd($results);

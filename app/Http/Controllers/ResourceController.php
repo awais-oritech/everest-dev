@@ -8,6 +8,7 @@ use Khsing\World\World;
 use Khsing\World\Models\Continent;
 use Khsing\World\Models\Country;
 use Khsing\World\Models\City;
+use Illuminate\Support\Facades\Artisan;
 class ResourceController extends Controller
 {
     
@@ -37,6 +38,11 @@ class ResourceController extends Controller
         $newsletter->email=$request->email;
         $newsletter->save();
         return array('status'=>true);
+    }
+    public function optimize()
+    {
+       $d= 1; //$this->call('optimize:cache');
+        return array('status'=>$d);
     }
     
 }

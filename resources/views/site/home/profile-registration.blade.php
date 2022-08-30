@@ -33,6 +33,10 @@
                                     <input type="text" class="form-control" name="companyaddress" value="{{$profile->companyaddress}}" placeholder="Head office address*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    
+                                    <input type="text" class="form-control" value="{{$profile->company_location}}"  placeholder="Google map link" name="company_location" required {{($profile->can_edit==1)?'':'disabled'}}>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companypostal" value="{{$profile->companypostal}}" placeholder="Postal Code Country*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
@@ -216,10 +220,7 @@
                                     <input type="radio" class="ml-4" name="member" value="no" {{$profile->member=='no'?'checked':''}} {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> No</label>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                    <b>v)</b>Company Location<br>
-                                    <input type="text" class="form-control mt-4" value="{{$profile->company_location}}" name="company_location"required {{($profile->can_edit==1)?'':'disabled'}}>
-                                </div>
+                                
                             </div>
                             <br>
                             <hr>
@@ -292,6 +293,10 @@
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companyaddress"  placeholder="Head office address*" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    
+                                    <input type="text" class="form-control"  placeholder="Google map link" name="company_location" required >
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companypostal" placeholder="Postal Code Country*" required>
@@ -457,10 +462,7 @@
                                     <input type="radio" class="ml-4" name="member" value="no">
                                     <label> No</label>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 form-group">
-                                    <b>v)</b>Company Location<br>
-                                    <input type="text" class="form-control mt-4" name="company_location"required>
-                                </div>
+                                
                             </div>
                             <br>
                             <hr>

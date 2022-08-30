@@ -11,7 +11,7 @@
     <title>Pioneer Network</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/png">
     <link rel="apple-touch-icon" type="image/x-icon"
         href="{{ asset('assets/img/apple-touch-icon-57x57-precomposed.png') }}">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
@@ -52,7 +52,8 @@
     {{-- Css --}}
     @stack('css')
     {{-- Css --}}
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <!-- ALTERNATIVE COLORS CSS -->
     {{-- <link href="{{ asset('assets/css/color.css') }}" id="colors" rel="stylesheet"> --}}
 
@@ -144,7 +145,7 @@
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     <script src="{{ asset('assets/validate.js') }}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -177,7 +178,11 @@
     <!-- Scripts --->
     @stack('script')
     <!-- Scripts --->
-   
+   {{-- @if (Session::has('sweet_alert.alert'))
+<script>
+  swal({!! Session::get('sweet_alert.alert') !!});
+</script> --}}
+{{-- @endif --}}
 
 </body>
 

@@ -100,22 +100,54 @@
                                 </tbody>
                             </tbody>
                         </table>
+
+                       @if(isset($profile->branches) && count($profile->branches)>0)
+                       <h3>Branches</h3>
+                       <table class="table table-striped add_bottom_45">
+                           <tbody>
+                               <thead style="background-color:#1c75ba!important; color:white;">
+                                   <tr>
+                                       <th scope="col">Branch Name</th>
+                                       <th scope="col">Contact Person</th>
+                                        <th scope="col">Position</th>
+                                       <th scope="col">Email</th>
+                                       <th scope="col">Mobile</th>
+                                       <th scope="col">Location</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                @foreach($profile->branches as $branch)
+                                   <tr>
+                                       <td>{{$branch->name}}</td>
+                                       <td>{{$branch->contact_person}}</td>
+                                       <td>{{$branch->position}}</td>
+                                       <td>{{$branch->email}}</td>
+                                       <td>{{$branch->phone}}</td>
+                                       <td><a class="address" href="{{$branch->location}}" target="__blank">
+                                        {{$branch->cityName->name.', '.$branch->countryName->name.', '.$branch->continentName->name}}</a>
+                                        </td>
+                                   </tr>
+                                   @endforeach
+                               </tbody>
+                           </tbody>
+                       </table>
+                       @endif
                     </section>
                     @endif
                     <!-- /section -->
                 </div>
                 <!-- /col -->
                 <aside class="col-lg-4" id="sidebar">
-                    <div class="box_detail booking" style="padding: 0% !important;">
-                        <img src="{{asset('uploads/'.$profile->companylogo)}}" alt="profile">
+                    <div class="booking" style="padding: 0% !important; margin-bottom: 30px!important;">
+                        <img  style="max-width:370px;max-height:370px" src="{{asset('uploads/'.$profile->companylogo)}}" alt="profile">
                     </div>
                     <ul class="share-buttons">
-                        <li><a class="fb-share" href="#"><i class="social_facebook"></i> {{$profile->companyfacebook}}</a></li>
-                        <li><a class="instagram-share" href="#"><i class="social_instagram"></i> {{$profile->companyinstagram}}</a></li>
-                        <li><a class="skype-share" href="#"><i class="social_skype"></i> {{$profile->companyskype}}</a></li>
-                        <li><a class="youtube-share" href="#"><i class="social_youtube"></i> {{$profile->companyyoutube}}</a></li>
-                        <li><a class="gplus-share" href="#"><i class="social_googleplus"></i> {{$profile->companyemail}}</a></li>
-                        <li><a class="web-share" href="#"><i class="fa fa-earth"></i>{{$profile->companywebsite}}</a></li>
+                        <li><a class="fb-share" href="{{$profile->companyfacebook}}"><i class="social_facebook"></i></a></li>
+                        <li><a class="instagram-share" href="{{$profile->companyinstagram}}"><i class="social_instagram"></i></a></li>
+                        <li><a class="skype-share" href="{{$profile->companyskype}}"><i class="social_skype"></i></a></li>
+                        <li><a class="youtube-share" href="{{$profile->companyyoutube}}"><i class="social_youtube"></i></a></li>
+                        <li><a class="gplus-share" href="{{$profile->companyemail}}"><i class="social_googleplus"></i></a></li>
+                        <li><a class="web-share" href="{{$profile->companywebsite}}"><i class="fa fa-earth"></i></a></li>
                     </ul>
                 </aside>
             </div>

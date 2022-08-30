@@ -19,6 +19,7 @@ class Company extends Model
         'package_id',
         'companyname',
         'ownername',
+        'company_location',
         'companyaddress',
         'companypostal',
         'companytelephone',
@@ -60,26 +61,32 @@ class Company extends Model
     {
         return $this->hasMany(CompanyServices::class, 'company_id');
     }
+    public function branches()
+    {
+        return $this->hasMany(Branch::class, 'company_id');
+    }
     public function certificates()
     {
         return $this->hasMany(CompanyCertifications::class, 'company_id');
     }
-    public function cityName()
-    {
-        return $this->hasOne(City::class,'id','city')->select('id','name','code');
-    }
+    
     public function package()
     {
         return $this->hasOne(Packages::class,'id','package_id');
     }
     
+    
+    public function continentName()
+    {
+        return $this->hasOne(Continent::class,'id','continent')->select('id','name','code');
+    }
     public function countryName()
     {
         return $this->hasOne(Country::class,'id','country')->select('id','name','code');
     }
-    public function continentName()
+    public function cityName()
     {
-        return $this->hasOne(Continent::class,'id','continent')->select('id','name','code');
+        return $this->hasOne(City::class,'id','city')->select('id','name','code');
     }
     public function services()
     {

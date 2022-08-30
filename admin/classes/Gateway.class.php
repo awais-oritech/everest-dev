@@ -1686,9 +1686,7 @@ class Gateway
                                             $objData = Request::getPostVariables();
                                             $objData->updated_at = date('Y-m-d H:i:s');
                                             $objData->is_public = 1;
-                                            $objData->status = 3;
                                             $objData->can_edit = 0;
-                                            $objData->user_id=0;
                                            
 
                                             if (isset($_FILES['newlogo']['name']) && $_FILES['newlogo']['name'] != '') {

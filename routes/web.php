@@ -31,16 +31,18 @@ use App\Http\Controllers\ProfileProcessController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('/common')->group(function () {
+    Route::get('/clearme', [ResourceController::class, 'optimize'])->name('optimize');
     Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
     Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
     Route::post('/newsletter', [ResourceController::class, 'newsletter'])->name('newsletter');
 });
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('about-us',[AboutController::class, 'index'])->name('about-us');
 Route::get('/page/{slug}',[PageController::class, 'index'])->name('page');
@@ -53,7 +55,7 @@ Route::get('/news',[NewsController::class, 'index'])->name('news');
 Route::get('/events',[EventsController::class, 'index'])->name('events');
 Route::get('/member',[MemberController::class,'index'])->name('member');
 // Route::post('/login',[LoginController::class,'customLogin']);
-Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+//Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 // Route::post('/register-member',[RegisterController::class,'customRegistration'])->name('register-member');
 Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
 Route::get('/packages',[PricingController::class,'index'])->name('packages');

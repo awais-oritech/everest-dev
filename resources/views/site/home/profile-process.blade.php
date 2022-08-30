@@ -26,9 +26,9 @@
                     </div>
                     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading">Profile Processing!</h4>
-                        @if($profile->status=1)
+                        @if($profile->status==1)
                         <p class="mt-4">Your Profile has been Registered Successfully, please wait for profile verification this may takes few moment for approval.</p>
-                        @elseif($profile->status=2)
+                        @elseif($profile->status===2)
                         <p class="mb-0">Please Submit your Payment for approval Thank You!</p>
                         @else
                         <p class="mb-0">Your profile has been approved Thank You!</p>

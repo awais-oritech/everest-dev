@@ -56,6 +56,9 @@
                                     <input type="text" class="form-control" name="companyaddress"  placeholder="Head office address*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
+                                    <input type="text" class="form-control"  placeholder="Google map link" name="company_location" required >
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companypostal" placeholder="Postal Code Country*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
