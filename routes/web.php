@@ -36,7 +36,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 Route::prefix('/common')->group(function () {
-    Route::get('/clearme', [ResourceController::class, 'optimize'])->name('optimize');
+   
     Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
     Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
     Route::post('/newsletter', [ResourceController::class, 'newsletter'])->name('newsletter');

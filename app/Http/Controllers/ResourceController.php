@@ -39,10 +39,6 @@ class ResourceController extends Controller
         $newsletter->save();
         return array('status'=>true);
     }
-    public function optimize()
-    {
-       $d= 1; //$this->call('optimize:cache');
-        return array('status'=>$d);
-    }
+    
     
 }
