@@ -47,26 +47,27 @@
                                     <thead>
                                         <tr role="row">
 
-                                            <th class="sorting_asc" tabindex="0" aria-controls="example23" rowspan="1"
-                                                colspan="1" aria-label="Name: activate to sort column descending"
+                                            <th class="" tabindex="0" aria-controls="example23" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column descending"
                                                 style="width: 169px;" aria-sort="ascending">
                                                 Name
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
                                                 colspan="1" aria-label="Position: activate to sort column ascending"
                                                 style="width: 50px;">
-                                                YouTube Link
+                                                Image
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
-                                                colspan="1" aria-label="Position: activate to sort column ascending"
-                                                style="width: 50px;">
+                                            <th class="" tabindex="0" aria-controls="example23" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 169px;" aria-sort="ascending">
                                                 Album
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
-                                                colspan="1" aria-label="Position: activate to sort column ascending"
-                                                style="width: 50px;">
+                                            <th class="" tabindex="0" aria-controls="example23" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 169px;" aria-sort="ascending">
                                                 Album Cover
                                             </th>
+                                           
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
                                                 colspan="1" aria-label="Position: activate to sort column ascending"
                                                 style="width: 100px;">
@@ -81,13 +82,10 @@
 										    foreach ($Data as $d){
 										    ?>
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1"><?php echo $d->name?></td>
-                                            <td><?php echo $d->link?></td>
-
+                                            <td class=""><?php echo $d->name?></td>
+                                            <td><img height="40" width="auto" src="<?php echo $d->image?>" /></td>
                                             <td class=""><?php echo $d->albumName?></td>
                                             <td><img height="40" width="auto" src="<?php echo $d->albumImage?>" /></td>
-                                           
-                                            
                                             <td>
                                                 <a href="<?php echo Request::$BASE_PATH.$md['con'].'/edit/'.$d->id?>"
                                                     class="btn btn-warning btn-rounded"><i class="fa fa-edit"></i></a>
@@ -184,7 +182,18 @@ $(document).ready(function() {
 
 
     });
-
+    $('#example23').DataTable({
+        "order": [
+            [3, 'desc']
+        ],
+        "displayLength": 50,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass(
+        'btn btn-primary mr-1');
 });
 </script>
 <!-- end - This is for export functionality only -->
@@ -230,13 +239,6 @@ $(function() {
     $('#config-table').DataTable({
         responsive: true
     });
-    $('#example23').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    });
-    $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass(
-        'btn btn-primary mr-1');
+
 });
 </script>

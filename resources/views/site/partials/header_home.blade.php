@@ -3,7 +3,7 @@
           <div class="col-12">
               <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
                   <a class="navbar-brand" href="/"> <img src="{{ asset('assets/img/pioneer-01.png') }}" width="auto"
-                          height="35" alt="" class="logo_normal"></a>
+                          height="50" alt="" class="logo_normal"></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>

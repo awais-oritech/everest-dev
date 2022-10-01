@@ -52,21 +52,13 @@
                                                 style="width: 169px;" aria-sort="ascending">
                                                 Name
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
-                                                colspan="1" aria-label="Position: activate to sort column ascending"
-                                                style="width: 50px;">
-                                                YouTube Link
+                                            
+                                            <th class="sorting" aria-controls="example23" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 50px;" aria-sort="">
+                                                value
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
-                                                colspan="1" aria-label="Position: activate to sort column ascending"
-                                                style="width: 50px;">
-                                                Album
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
-                                                colspan="1" aria-label="Position: activate to sort column ascending"
-                                                style="width: 50px;">
-                                                Album Cover
-                                            </th>
+                                           
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
                                                 colspan="1" aria-label="Position: activate to sort column ascending"
                                                 style="width: 100px;">
@@ -81,12 +73,9 @@
 										    foreach ($Data as $d){
 										    ?>
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1"><?php echo $d->name?></td>
-                                            <td><?php echo $d->link?></td>
-
-                                            <td class=""><?php echo $d->albumName?></td>
-                                            <td><img height="40" width="auto" src="<?php echo $d->albumImage?>" /></td>
+                                            <td class=""><?php echo $d->name?></td>
                                            
+                                            <td class=""><?php echo $d->value?></td>
                                             
                                             <td>
                                                 <a href="<?php echo Request::$BASE_PATH.$md['con'].'/edit/'.$d->id?>"

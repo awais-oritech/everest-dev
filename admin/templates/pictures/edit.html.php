@@ -33,9 +33,10 @@
                                      <input class="form-control" type="hidden" value="<?php echo $Data->id?>" name="id"
                                          required id="example-text-input">
                                      <input class="form-control" type="text" value="<?php echo $Data->name?>"
-                                         name="name" required id="example-text-input">
+                                         name="name" id="example-text-input">
                                  </div>
                              </div>
+                             
                              <div class="form-group mt-5 row">
                                 <label for="example-text-input" class="col-2 col-form-label">Album</label>
                                 <div class="col-10">
@@ -48,34 +49,25 @@
                                 </div>
                             </div>
                              <div class="form-group mt-5 row">
-                                 <label for="example-text-input" class="col-2 col-form-label">Link</label>
+                                 <label for="example-text-input" class="col-2 col-form-label">Image</label>
                                  <div class="col-10">
-
-                                     <input class="form-control" type="text" value="<?php echo $Data->link?>"
-                                         name="link" required id="example-text-input">
+                                     <img width="auto" height="200" alt="200x200"
+                                         src="<?php echo Request::$BASE_PATH.$Data->image ;?>">
                                  </div>
-
                              </div>
                              <div class="form-group mt-5 row">
-                                 <label for="example-text-input" class="col-2 col-form-label">Note:</label>
+                                 <label for="example-text-input" class="col-2 col-form-label">New Image</label>
                                  <div class="col-10">
-                                     Please add only highlighted part of Youtube Video
-                                     <br>
-                                     <br>
-                                     <span>https://youtu.be/<span class="label label-info">ljX7kyS5R7M</span></span>
-                                     <br>
-                                     <span>https://www.youtube.com/watch?v=<span
-                                             class="label label-info">ljX7kyS5R7M&t</span></span>
+                                     <input type="file" class="form-control" name="file"
+                                         accept="image/png, image/gif, image/jpeg, image/jpg" id="inputInfo"
+                                         class="width-100" />
+                                     <input type="hidden" id="file_name" name="file_name"
+                                         value="<?php echo $Data->image;?>" id="inputInfo" class="width-100" />
                                  </div>
-
                              </div>
-
-
-                             <div class="custom-control custom-switch">
-                                 <input type="checkbox" name="active" <?php echo ($Data->is_active)?'checked':''?>
-                                     class="custom-control-input" id="customSwitch1">
-                                 <label class="custom-control-label" for="customSwitch1">Active</label>
-                             </div>
+                            
+                             
+                            
                              <div class="form-group mt-5 row">
                                  <label for="example-text-input" class="col-2 col-form-label"></label>
                                  <div class="col-10">
@@ -97,3 +89,11 @@
 
 
  </div>
+ <script>
+$(document).ready(function() {
+
+    $('.textarea_editor').wysihtml5();
+
+
+});
+</script>

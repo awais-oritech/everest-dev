@@ -73,6 +73,11 @@
                                                 style="width: 50px;" aria-sort="">
                                                 Message
                                             </th>
+                                            <th class="sorting" aria-controls="example23" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 50px;" aria-sort="">
+                                                Date
+                                            </th>
                                            
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
                                                 colspan="1" aria-label="Position: activate to sort column ascending"
@@ -93,7 +98,8 @@
                                             <td class=""><?php echo $d->lastname?></td>
                                             <td class=""><?php echo $d->email?></td>
                                             <td class=""><?php echo $d->phone?></td>
-                                            <td class=""><?php echo $d->message?></td>
+                                            <td class=""><?php echo substr(strip_tags($d->message),0,50) .'...' ?></td>
+                                            <td class=""><?php echo $d->created_at?></td>
                                             
                                             
                                             <td>

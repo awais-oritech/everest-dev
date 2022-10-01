@@ -18,8 +18,8 @@ class SearchController extends Controller
         //     $results= DB::table('company_services')
         //     ->join('services', 'company_services.service_id')
         // }
-        $d=Company::with(['continentName','countryName','cityName','services'])->get();
-        $results=Company::with(['continentName','countryName','cityName','services'=> function($qr) use ($request){
+      //  $d=Company::with(['branches','continentName','countryName','cityName','services'])->get();
+        $results=Company::with(['branches','continentName','countryName','cityName','services'=> function($qr) use ($request){
             return $qr->where('service_id',$request->service_id);
         }]);
         
@@ -40,7 +40,7 @@ class SearchController extends Controller
          $results=$results->where('status',3);
       
         $results= $results->get();
-        // dd($results);
+       //  dd($results);
         return view('site.home.search',['results'=>$results]);
     }
 }

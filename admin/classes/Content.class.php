@@ -615,6 +615,49 @@
             }
         }
         //======================================================== Sponsors ============================================
+        static function pictures(){
+            global $DB;
+            
+            $sql="SELECT  
+                    	pictures.*,
+                    	album.name AS albumName,
+                        album.id AS albumId,
+                        album.image AS albumImage
+                    	
+                    FROM `pictures` 
+                    LEFT JOIN albums AS album ON pictures.album_id=album.id 
+                    ORDER BY pictures.id DESC";
+            
+            $objData=$DB->Select($sql);
+            if($objData){
+                return $objData;
+            }else{
+                return false;
+            }
+        }
+        //======================================================== Sponsors ============================================
+
+        static function videos(){
+            global $DB;
+            
+            $sql="SELECT  
+                    	videos.*,
+                    	album.name AS albumName,
+                        album.id AS albumId,
+                        album.image AS albumImage
+                    	
+                    FROM `videos` 
+                    LEFT JOIN albums AS album ON videos.album_id=album.id 
+                    ORDER BY videos.id DESC";
+            
+            $objData=$DB->Select($sql);
+            if($objData){
+                return $objData;
+            }else{
+                return false;
+            }
+        }
+        //======================================================== Sponsors ============================================
         static function sponsors(){
             global $DB;
             
@@ -819,5 +862,23 @@ static function companyComments($id){
             }else{
                 return false;
             }
-        }         
+        }   
+        
+        //======================================================== Contact Data ============================================
+		static function contacts(){
+			global $DB;
+			
+			$sql="SELECT *
+					FROM contacts
+                    
+                    ORDER BY created_at DESC";
+			
+			$objData=$DB->Select($sql);
+			if($objData){
+			
+				return $objData;
+			}else{
+				return false;
+			}
+		}
 }

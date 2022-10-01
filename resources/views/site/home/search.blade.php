@@ -20,6 +20,19 @@
                     </thead>
                     <tbody>
                         @foreach($results as $result)
+                        @php
+                          $cities=[];
+                          $cities[]=$result->cityName->name;
+                          if(isset($result->branches[0])){
+                          foreach($result->branches as $branches){
+                            if(!in_array($branches->cityName->name, $cities)){
+                              $cities[]=$branches->cityName->name;
+                            }
+                          }
+                            
+                        }
+                        $cities=implode(',',$cities); 
+                        @endphp
                       <tr>
                         <td>{{$result->companyname}}</td>
                         <td>{{$result->ownername}}</td>
@@ -27,7 +40,7 @@
                         <td>{{$result->companytelephone}}</td>
                         {{-- <td>{{$result->country}}</td> --}}
                         <td>{{ $result->countryName->name }}</td>
-                        <td>{{$result->cityName->name}}</td>
+                        <td>{{$cities}} </td>
                         {{-- <td>{{$result->city}}</td> --}}
                         @if(Auth::check())
                         <td><a href="{{route('company-profile',[$result->id])}}" class="fa fa-eye"></a></td>

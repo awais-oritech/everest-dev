@@ -523,13 +523,13 @@
                  slidesToShow: 6,
                  slidesToScroll: 1,
                  autoplay: true,
-                 autoplaySpeed: 2000,
+                 autoplaySpeed: 3000,
              });
              $('.sponsors-slider').slick({
                  slidesToShow: 6,
                  slidesToScroll: 1,
                  autoplay: true,
-                 autoplaySpeed: 2000,
+                 autoplaySpeed: 3000,
              });
          });
      </script>
