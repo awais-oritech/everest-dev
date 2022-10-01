@@ -46,7 +46,28 @@
                             @endif
                       </ul>
                       @if(Auth::user())
-                      <a class="nav-link" href="{{route('profile-process')}}"><i class="fas fa-user"></i></a>
+
+                        {{-- <a class="nav-link my-dropdown" href="{{route('profile-process')}}">
+                            <i class="fas fa-user my-dropbtn"></i>
+                            <div class="my-dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </a> --}}
+                        <div class="my-dropdown">
+                            <i class="fas fa-user my-dropbtn"></i>
+                            <div class="my-dropdown-content">
+                                @php
+                                    $user_profile = App\Models\User::getuser_profile();
+                                @endphp
+                                @if(isset($user_profile->id) && ($user_profile->status==3))
+                                <a href="{{route('company-profile',$user_profile->id)}}"><i class="fas fa-user-check"></i> Company</a>
+                                @endif
+                              <a href="{{route('profile-process')}}"><i class="fas fa-user-check"></i> Process</a>
+                              <a href="{{route('profile-settings')}}"><i class="fas fa-gear"></i> Settings</a>
+                            </div>
+                          </div>
                       <a class="nav-link" href="{{route('logout')}}"><i class="fas fa-sign-out"></i></a>
                       @endif
                   </div>

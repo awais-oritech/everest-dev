@@ -10,7 +10,7 @@
                         <article class="blog">
                             <figure>
                                 {{-- <a href="#"><img src="assets/spark-img/blog-1.jpg" alt=""> --}}
-                                <a href="{{route('news-info',[$new->id])}}"><img src="admin/{{$new->image}}" alt="">
+                                <a href="{{route('news-info',[$new->id])}}"><img src="http://localhost:8080/everest-dev/admin/{{$new->image}}" alt="" style="height: 100%; width:100%;">
                                     <div class="preview"><span>Read more</span></div>
                                 </a>
                             </figure>
@@ -60,7 +60,7 @@
                         @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
-                                <a href="#0"><img src="admin/{{$latest_blog->image}}" alt=""></a>
+                                <a href="#0"><img src="http://localhost:8080/everest-dev/admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
                             <small>{{\Carbon\Carbon::parse($latest_blog->created)->format('d-m-Y')}}</small>
                             <h3><a href="news-info/{{$latest_blog->id}}" title="">{{$latest_blog->name}}</a></h3>
@@ -69,7 +69,7 @@
                     </ul>
                 </div>
                 <!-- /widget -->
-                {{-- <div class="widget">
+                <div class="widget">
                     <div class="widget-title">
                         <h4>Categories</h4>
                     </div>
@@ -77,12 +77,12 @@
                         @foreach($categories as $category)
                         <li><a href="#">{{$category->name}}<span>({{$category->level}})</span></a></li>
                         @endforeach
-                        <li><a href="#">Food <span>(12)</span></a></li>
+                        {{-- <li><a href="#">Food <span>(12)</span></a></li>
                         <li><a href="#">Places to visit <span>(21)</span></a></li>
                         <li><a href="#">New Places <span>(44)</span></a></li>
-                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li> 
+                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li> --}}
                     </ul>
-                </div> --}}
+                </div>
             </aside>
             <!-- /aside -->
         </div>
