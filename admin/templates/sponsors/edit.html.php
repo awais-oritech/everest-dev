@@ -40,7 +40,7 @@
                                  <label for="example-text-input" class="col-2 col-form-label">Category</label>
                                  <div class="col-10">
                                      <select class="custom-select col-12" required name="category_id">
-                                     <option value="1"<?php echo (1==$Data->category_id)?'Selected':''?>>Platinium</option>
+                                     <option value="1" <?php echo (1==$Data->category_id)?'Selected':''?>>Platinium</option>
                                     <option value="2"<?php echo (2==$Data->category_id)?'Selected':''?>>Diamond</option>
                                      
                                      </select>

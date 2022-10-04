@@ -42,7 +42,7 @@
                                     <option value="2">Diamond</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="form-group mt-5 row">
                                 <label for="example-text-input" class="col-2 col-form-label">Image</label>
                                 <div class="col-10">
