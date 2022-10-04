@@ -59,18 +59,17 @@
                 <div class="box_contacts">
                     <i class="ti-support"></i>
                     <h2>Need Help?</h2>
-                    <a href="#0">+66 66 123456</a> - <a href="#0">help@pioneerln.com</a>
+                    <a href="#">{{ App\Models\Utility::getValByName('company_phone_primary')}}</a> - <a href="#">{{ App\Models\Utility::getValByName('company_email_primary')}}</a>
                 </div>
                 <div class="box_contacts">
                     <i class="ti-help-alt"></i>
                     <h2>Questions?</h2>
-                    <a href="#0">+66 66 123456</a> - <a href="#0">info@pioneerln.com</a>
+                    <a href="#0">{{ App\Models\Utility::getValByName('company_phone_secondary')}}</a> - <a href="#">{{ App\Models\Utility::getValByName('company_email_secondary')}}</a>
                 </div>
                 <div class="box_contacts">
                     <i class="ti-home"></i>
                     <h2>Address</h2>
-                    <a href="#0">World Tower St. 567
-                        <br>Riyad Saudia - SA</a>
+                    <a href="#">{{ App\Models\Utility::getValByName('company_address')}}<br>{{ App\Models\Utility::getValByName('company_city').' - '. App\Models\Utility::getValByName('company_country')}}</a>
                 </div>
             </div>
         </div>

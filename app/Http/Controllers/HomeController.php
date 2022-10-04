@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Khsing\World\World;
 use Khsing\World\Models\Continent;
@@ -43,7 +44,9 @@ class HomeController extends Controller
         $diamonds = Sponser::where('category_id',2)->get();
         $abouts = About::get()->first();
         $globals = GlobalCoverage::all();
-        return view('site.home.home',compact('continents','services','sponsers','benefits','news','diamonds','abouts','globals'));
+        $banners=Banner::where('type',0)->where('is_active',1)->orderBy('id', 'DESC')->get();
+        $section1=Banner::where('type',1)->where('is_active',1)->orderBy('id', 'DESC')->first();
+        return view('site.home.home',compact('continents','services','sponsers','benefits','news','diamonds','abouts','globals','banners','section1'));
     }
 
 }

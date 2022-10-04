@@ -26,11 +26,10 @@ class Utility extends Model
             "company_name" => "",
             "company_address" => "",
             "company_city" => "",
-            "company_state" => "",
-            "company_zipcode" => "",
             "company_country" => "",
-            "company_telephone" => "",
-            "company_email" => "",
+            "company_phone_primary" => "",
+            "company_phone_secondary" => "",
+            "company_email_primary" => "",
             "company_email_secondary" => "",
             
            

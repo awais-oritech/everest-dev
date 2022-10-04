@@ -4,11 +4,11 @@
         <div class="row ">
 
             <div class="col-lg-12  icons" style="text-align:center">
-              <a href=""><img src="{{ asset('assets/img/insta.gif') }}" width="50px" height="50px"></a>
-              <a href=""><img src="{{ asset('assets/img/twitter.gif') }}" width="50px" height="50px"></a>
-              <a href=""><img src="{{ asset('assets/img/linkedin.gif') }}" width="50px" height="50px"></a>
-              <a href=""><img src="{{ asset('assets/img/whtsapp.gif') }}" width="50px" height="50px"></a>
-              <a href=""><img src="{{ asset('assets/img/facebook.gif') }}" width="50px" height="50px"></a>
+              <a href="{{ App\Models\Utility::getValByName('instagram')}}"><img src="{{ asset('assets/img/insta.gif') }}" width="50px" height="50px"></a>
+              <a href="{{ App\Models\Utility::getValByName('twitter')}}"><img src="{{ asset('assets/img/twitter.gif') }}" width="50px" height="50px"></a>
+              <a href="{{ App\Models\Utility::getValByName('linkdin')}}"><img src="{{ asset('assets/img/linkedin.gif') }}" width="50px" height="50px"></a>
+              <a href="{{ App\Models\Utility::getValByName('whatsapp')}}"><img src="{{ asset('assets/img/whtsapp.gif') }}" width="50px" height="50px"></a>
+              <a href="{{ App\Models\Utility::getValByName('facebook')}}"><img src="{{ asset('assets/img/facebook.gif') }}" width="50px" height="50px"></a>
 
             </div>
 
@@ -42,9 +42,9 @@
                 <h3 data-bs-target="#collapse_ft_3">Contacts</h3>
                 <div class="collapse dont-collapse-sm" id="collapse_ft_3">
                     <ul class="contacts">
-                        <li><i class="ti-home"></i>World Tower St. 567<br>Riyad Saudia - SA</li>
-                        <li><i class="ti-headphone-alt"></i>+66 66 123456</li>
-                        <li><i class="ti-email"></i><a href="#0">info@pioneer.com</a></li>
+                        <li><i class="ti-home"></i>{{ App\Models\Utility::getValByName('company_address')}}<br>{{ App\Models\Utility::getValByName('company_city').' - '. App\Models\Utility::getValByName('company_country')}}</li>
+                        <li><i class="ti-headphone-alt"></i>{{ App\Models\Utility::getValByName('company_phone_primary')}}</li>
+                        <li><i class="ti-email"></i><a href="#0">{{ App\Models\Utility::getValByName('company_email_primary')}}</a></li>
                     </ul>
                 </div>
             </div>

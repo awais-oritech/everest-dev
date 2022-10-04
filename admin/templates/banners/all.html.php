@@ -48,7 +48,30 @@
 									<thead>
 										<tr role="row">
 											
-											
+										<th class="sorting" tabindex="0" aria-controls="example23"
+												rowspan="1" colspan="1"
+												aria-label="Position: activate to sort column ascending"
+												style="width: 100px;">
+												Text 1
+											</th>
+											<th class="sorting" tabindex="0" aria-controls="example23"
+												rowspan="1" colspan="1"
+												aria-label="Position: activate to sort column ascending"
+												style="width: 100px;">
+												Text 2
+											</th>
+											<th class="sorting" tabindex="0" aria-controls="example23"
+												rowspan="1" colspan="1"
+												aria-label="Position: activate to sort column ascending"
+												style="width: 100px;">
+												Button Text
+											</th>
+											<th class="sorting" tabindex="0" aria-controls="example23"
+												rowspan="1" colspan="1"
+												aria-label="Position: activate to sort column ascending"
+												style="width: 100px;">
+												Type
+											</th>
 											<th class="sorting" tabindex="0" aria-controls="example23"
 												rowspan="1" colspan="1"
 												aria-label="Position: activate to sort column ascending"
@@ -77,6 +100,10 @@
 										    foreach ($Data as $d){
 										    ?>
 										<tr role="row" class="odd">
+											<td ><?php echo $d->text1?></td>
+											<td ><?php echo $d->text2?></td>
+											<td ><?php echo $d->button?></td>
+											<td><?php echo ($d->type==0)?'Home Banner':'Section 1 Banner';?></td>
 											<td ><img height="40" width="auto" src="<?php echo $d->image?>"/></td>
 											<td>
 												<span class="label <?php echo($d->is_active=='1')?'label-success':'label-danger';?>"><?php echo ($d->is_active=='1')?'Yes':'No' ;?></span>

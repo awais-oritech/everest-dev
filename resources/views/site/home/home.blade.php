@@ -5,22 +5,25 @@
              <div class="container">
                  <div class="row">
                      <div class="col-lg-6 col-md-12 col-sm-12" >
-                                <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                             <div  class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol> -->
+                            </ol> 
                             <div class="carousel-inner">
-                            <div class="carousel-item active">
-
+                                @if(isset($banners[0]))
+                                @foreach($banners as $banner)
+                                <div class="carousel-item active">
                                     <div class="carousel-caption ">
-                                        <h5 class="animated bounceInRight" style="animation-delay: 1s">INTERNATIONAL NETWORK <br> BUILD ON FOUNDATION OF <br>SAFETY AND TRUST</h5>
-                                        <p class="animated bounceInLeft" style="animation-delay: 2s">Find what you need!</p>
-                                        <a href="{{route('member')}}" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
+                                        <h5 class="animated bounceInRight" style="animation-delay: 1s">{{$banner->text1}}</h5>
+                                        <p class="animated bounceInLeft" style="animation-delay: 2s">{{$banner->text2}}</p>
+                                        <a href="{{$banner->link}}" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">{{$banner->button}}</a>
                                     </div>
                                 </div>
-                                <div class="carousel-item ">
+                                @endforeach
+                                @endif
+                                {{-- <div class="carousel-item ">
 
                                     <div class="carousel-caption">
                                         <h5 class="animated bounceInRight" style="animation-delay: 1s">Beating all other mobile figures previously covered by Oftel.</h5>
@@ -35,8 +38,9 @@
                                         <p  class="animated bounceInLeft" style="animation-delay: 2s">Waiting for you </p>
                                         <a href="" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
+                        </div>
                      </div>
                      <div class="col-lg-6 d-none d-lg-block" >
                         <div class="formbox-header animated bounceInUp" style="animation-delay:3s">
