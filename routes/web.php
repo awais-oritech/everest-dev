@@ -21,6 +21,8 @@ use App\Http\Controllers\BenefitsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\ProfileProcessController;
+use App\Http\Controllers\ProfileSettingsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +38,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 Route::prefix('/common')->group(function () {
-   
+
     Route::post('/countries-list', [ResourceController::class, 'countries'])->name('countries-list');
     Route::post('/cities-list', [ResourceController::class, 'cities'])->name('cities-list');
     Route::post('/newsletter', [ResourceController::class, 'newsletter'])->name('newsletter');
@@ -55,7 +57,7 @@ Route::get('/news',[NewsController::class, 'index'])->name('news');
 Route::get('/events',[EventsController::class, 'index'])->name('events');
 Route::get('/member',[MemberController::class,'index'])->name('member');
 // Route::post('/login',[LoginController::class,'customLogin']);
-//Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 // Route::post('/register-member',[RegisterController::class,'customRegistration'])->name('register-member');
 Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
 Route::get('/packages',[PricingController::class,'index'])->name('packages');
@@ -67,6 +69,8 @@ Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(fun
     Route::post('/profile-registration', [CompanyProfileController::class, 'store']);
     Route::get('/search',[SearchController::class, 'index'])->name('search');
     Route::get('/company-profile/{id}',[CompanyProfileViewController::class, 'index'])->name('company-profile');
+    Route::get('profile-settings',[ProfileSettingsController::class, 'index'])->name('profile-settings');
+    Route::post('update_password/{id}',[ProfileSettingsController::class, 'update_password']);
 });
 
 Auth::routes();

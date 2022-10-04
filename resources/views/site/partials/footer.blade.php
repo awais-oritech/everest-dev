@@ -1,8 +1,8 @@
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
 <footer class="plus_border footer">
     <div class="container margin_60_35">
 
         <div class="row ">
-
             <div class="col-lg-12  icons" style="text-align:center">
               <a href="{{ App\Models\Utility::getValByName('instagram')}}"><img src="{{ asset('assets/img/insta.gif') }}" width="50px" height="50px"></a>
               <a href="{{ App\Models\Utility::getValByName('twitter')}}"><img src="{{ asset('assets/img/twitter.gif') }}" width="50px" height="50px"></a>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <h3 data-bs-target="#collapse_ft_4">Keep in touch</h3>
-               
+
                 <div class="collapse dont-collapse-sm" id="collapse_ft_4">
                     <div id="newsletter">
                         <div class="alert alert-success alert-dismissible" role="alert" id="message-newsletter">
@@ -61,7 +61,7 @@
                             <div class="form-group">
                                 <input type="email" name="email_newsletter" style="color:white" id="email_newsletter" class="form-control"
                                     placeholder="Your email">
-                               <button id="newslettera" class=" mt-2 btn-footer">Submit</button>
+                               <button id="newslettera" class=" mt-2  hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -69,10 +69,11 @@
             </div>
         </div>
         <!-- /row-->
+        <p class="text-white text-center"><small>© 2022. All Rights Reserved.Pioneerln</small></p>
         <hr>
         <div class="row justify-content-center">
             <div class="col-lg-2">
-                <a href="{{route('member')}}" class="btn btn-sm btn_add">Become Member</a>
+                <a href="{{route('member')}}" class="btn btn-sm  hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
             </div>
         </div>
     </div>
@@ -95,10 +96,51 @@
             }
         });
     });
+
 </script>
+<script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
 <style>
     #message-newsletter{
         display: none;
     }
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: black;
+  opacity: 0.75;
+  color: white;
+  font-weight: bold;
+  margin-left: 20px;
+  cursor: pointer;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
 </style>
 @endpush

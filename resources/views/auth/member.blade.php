@@ -67,13 +67,13 @@
                             @endif
                             <input type="email" class="form-control" id="useremail" name="email"  placeholder="Email*">
                             <span>
-                                <small class="text-danger" id="emailError"></small>
+                                <strong class="text-danger" id="emailError"></strong>
                             </span>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" id="userpassword" name="password"  placeholder="Password*">
                             <span>
-                                <small class="text-danger" id="passwordError"></small>
+                                <strong class="text-danger" id="passwordError"></strong>
                             </span>
                         </div>
                         <div class="clearfix add_bottom_15">
@@ -89,8 +89,8 @@
                                     </a>
                                 @endif
                         </div>
-                        <div class="text-center"><button type="submit" class="btn_1 full-width">Log In</button></div>
-                       
+                        <div class="text-center"><button type="submit" class="btn_1 full-width hvr-sweep-to-right" >Log In</button></div>
+
                     </div>
                 </form>
             </div>
@@ -118,8 +118,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input  type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email*">
-                            @error('email')
+                            <input  type="email" class="form-control @error('register_email') is-invalid @enderror" name="email" value="{{ old('register_email') }}" placeholder="Email*">
+                            @error('register_email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -141,7 +141,7 @@
                                 </span>
                             @enderror
                         </div>
-                        <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
+                        <div class="text-center"><button type="submit" value="Register" class="btn_1 full-width hvr-sweep-to-right">Register</button></div>
                     </div>
                 </form>
             </div>

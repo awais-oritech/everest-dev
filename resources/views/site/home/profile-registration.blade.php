@@ -33,7 +33,7 @@
                                     <input type="text" class="form-control" name="companyaddress" value="{{$profile->companyaddress}}" placeholder="Head office address*" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    
+
                                     <input type="text" class="form-control" value="{{$profile->company_location}}"  placeholder="Google map link" name="company_location" required {{($profile->can_edit==1)?'':'disabled'}}>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
@@ -220,7 +220,7 @@
                                     <input type="radio" class="ml-4" name="member" value="no" {{$profile->member=='no'?'checked':''}} {{($profile->can_edit==1)?'':'disabled'}}>
                                     <label> No</label>
                                 </div>
-                                
+
                             </div>
                             <br>
                             <hr>
@@ -295,7 +295,7 @@
                                     <input type="text" class="form-control" name="companyaddress"  placeholder="Head office address*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    
+
                                     <input type="text" class="form-control"  placeholder="Google map link" name="company_location" required >
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
@@ -311,16 +311,16 @@
                                     <input type="text" class="form-control" name="companywebsite"  placeholder="Website*">
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyskype" id="email" placeholder="Skype*">
+                                    <input type="text" class="form-control" name="companyskype" id="email" placeholder="Skype">
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyfacebook" placeholder="Facebook*">
+                                    <input type="text" class="form-control" name="companyfacebook" placeholder="Facebook">
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyinstagram" placeholder="Instagram*">
+                                    <input type="text" class="form-control" name="companyinstagram" placeholder="Instagram">
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" name="companyyoutube" placeholder="YouTube*">
+                                    <input type="text" class="form-control" name="companyyoutube" placeholder="YouTube">
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="file" class="form-control" name="companylogo" required>
@@ -462,7 +462,7 @@
                                     <input type="radio" class="ml-4" name="member" value="no">
                                     <label> No</label>
                                 </div>
-                                
+
                             </div>
                             <br>
                             <hr>

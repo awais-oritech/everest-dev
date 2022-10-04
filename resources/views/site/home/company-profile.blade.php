@@ -4,17 +4,12 @@
     <div class="container margin_60_35">
             <div class="row">
                 <div class="col-lg-8">
-                    {{-- <div id="carousel_in" class="owl-carousel owl-theme add_bottom_30">
-                      <div class="item"><img src="img/carousel_detail_1.jpg" alt=""></div>
-                      <div class="item"><img src="img/carousel_detail_2.jpg" alt=""></div>
-                      <div class="item"><img src="img/carousel_detail_3.jpg" alt=""></div>
-                      <div class="item"><img src="img/carousel_detail_4.jpg" alt=""></div>
-                    </div> --}}
                     @if(isset($profile->id))
                     <section id="description" style="border: none!important;">
                         <div class="detail_title_1">
                             {{-- <div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div> --}}
-                            <h1>{{$profile->companyname}}</h1>
+                            <h1>{{$profile->companyname}}</h1><small align="right"><strong>Member Since : </strong>{{$profile->created_at->format('d-m-yy')}}</small>
+                            <br>
                             <a class="address" href="{{$profile->company_location}}" target="__blank">{{$profile->companyaddress}}</a>
                         </div>
                         <p>{{$profile->companyprofile}}</p>

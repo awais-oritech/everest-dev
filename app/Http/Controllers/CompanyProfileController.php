@@ -24,7 +24,7 @@ class CompanyProfileController extends Controller
     }
     public function index($id=0)
     {
-       
+
         $services = Services::all();
         $company_services ='';
         $continents=Continent::all();
@@ -38,21 +38,21 @@ class CompanyProfileController extends Controller
             if(!isset($profile->id)){
                 redirect('packages');
             }
-            
+
         }
-       
+
         if(!isset($profile->id)){
             redirect('packages');
-        
+
         }
-        
+
         if($id){
             $packs_id = Packages::where('id',$id)->first();
         }
 
 
-        
-        
+
+
         $certifications='';
         if(isset($profile->id))
         {
@@ -79,7 +79,6 @@ class CompanyProfileController extends Controller
 
     public function store(Request $request)
     {
-       // dd($request);
         if($file=$request->hasfile('companylogo'))
         {
             $file=$request->file('companylogo');
@@ -131,7 +130,7 @@ class CompanyProfileController extends Controller
         'clientmanager'=> $request->clientmanager,
         'gmceo'=> $request->gmceo,
         ]);
-        
+
         $service_name=[];
         foreach($request->service_name as $service){
             $service_name[]=[
@@ -150,7 +149,7 @@ class CompanyProfileController extends Controller
         }
         CompanyCertifications::insert($certification_name);
 
-        
+
 
         return redirect('profile-process')->with('status','Company Registered Please Wait For Admin Approval');
     }
