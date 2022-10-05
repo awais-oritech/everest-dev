@@ -1812,9 +1812,7 @@ class Gateway
                                                 }
                                             }
                                         }
-                                        // echo '<pre>';
-                                        // print_r($objData);
-                                        // exit;
+                                        $objData->created = date('Y-m-d');
                                         
                                         global $DB;
                                        $id= $DB->Save($md['table'], $objData);
@@ -1935,6 +1933,17 @@ class Gateway
                                             $objData = Request::getPostVariables();
                                             global $DB;
                                             if(isset($objData->status)){
+                                                if($objData->status==3){
+                                                    $Data = Content::find_by_id($objData->id, $md['table']);
+                                                    $objData->expire_at = date('Y-m-d',strtotime('+1 years'));
+                                                    if(is_null($Data->created)){
+                                                        $objData->created = date('Y-m-d');
+                                                        $objData->expire_at = date('Y-m-d',strtotime('+1 years'));
+
+                                                    }
+                                                    
+                                                }
+                                                
                                                  $DB->Save($md['table'], $objData);
                                             }else if(isset($objData->comment)){
                                                 $objData->user_id=0;
@@ -2515,10 +2524,13 @@ class Gateway
                     $start=date('Y-m-01');
                     $end=date('Y-m-t');
                     $data=[];
-                    $data['totalNewUsers']=Content::totalNewUsers($start,$end);
                     $data['totalUsers']=Content::totalUsers();
-                    $data['totalPaidusers']=Content::totalUsersBystatus($start,$end,3);
-                    $data['totalUnPaidusers']=Content::totalUsersBystatus($start,$end,2);
+                    //$data['totalPaidusers']=Content::totalUsersBystatus(3);
+                    //$data['totalUnPaidusers']=Content::totalUsersBystatus(2);
+                    $data['totalNewUsers']=Content::totalNewUsers($start,$end);
+                    
+                    $data['totalPaidusers']=Content::totalUsersBystatus(3,$start,$end);
+                    $data['totalUnPaidusers']=Content::totalUsersBystatus(2,$start,$end);
                     $objPresenter->AddParameter('data', $data);
                     $objPresenter->AddTemplate('default/dashboard');
                 } else {

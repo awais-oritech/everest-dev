@@ -5,3 +5,6 @@ CREATE TABLE `pictures` ( `id` INT NOT NULL AUTO_INCREMENT , `album_id` INT NOT 
 
 ALTER TABLE `banners` ADD `link` TEXT NOT NULL AFTER `id`, ADD `text1` VARCHAR(256) NULL DEFAULT NULL AFTER `link`, ADD `text2` VARCHAR(256) NULL DEFAULT NULL AFTER `text1`, ADD `type` TINYINT NOT NULL DEFAULT '1' AFTER `text2`;
 ALTER TABLE `banners` ADD `button` VARCHAR(20) NULL DEFAULT NULL AFTER `text2`;
+
+# == Update 2
+ALTER TABLE `companies` ADD `created` DATE NULL DEFAULT NULL AFTER `updated_at`, ADD `expire_at` DATE NULL DEFAULT NULL AFTER `created`;

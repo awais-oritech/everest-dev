@@ -816,7 +816,7 @@ static function companyComments($id){
             
             $sql="SELECT  
                     	count(companies.id) AS total
-                    FROM `companies`
+                    FROM `companies` Where updated_at NOT NULL
                     ";
             
             $objData=$DB->Select($sql);
@@ -846,13 +846,16 @@ static function companyComments($id){
             }
         }   
         //======================================================== Section ============================================
-        static function totalUsersBystatus($start,$end,$status){
+        static function totalUsersBystatus($status,$start=0,$end=0){
             global $DB;
-            
+            $date="";
+            if($start){
+                $date="where created_at Between '".$start."' AND '".$end."'";
+            }
             $sql="SELECT  
                     	count(companies.id) AS total
                     FROM `companies`
-                    where created_at Between '".$start."' AND '".$end."'
+                   ".$date."
                     And status='".$status."'
                     ";
             
@@ -862,7 +865,8 @@ static function companyComments($id){
             }else{
                 return false;
             }
-        }   
+        }
+
         
         //======================================================== Contact Data ============================================
 		static function contacts(){

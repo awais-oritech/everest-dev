@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-       <?php  if(count($comments)>0){ 
+       <?php  if(isset($comments) && $comments){ 
         ?>
         <div class="row">
             <div class="col-sm-6">
@@ -95,18 +95,30 @@
                     <div id="comments">
                     <h2 class="text-themecolor">Comments</h2>
                     <ul>
-                       <?php foreach($comments as $comment){ ?>
-                        <li>
+                       <?php 
+                       
+                    //    if($comments){
+                       foreach($comments as $comment){ 
+                        ?>
+                        <li id="row-<?php echo $comment->id?>" >
                             
-                            <div class="comment_right clearfix">
+                            <div  class="comment_right clearfix">
                             <div class="comment_info">
                             <?php echo $comment->user_type ?>
+                            <a href="javascript:void(0);" id="row<?php echo $comment->id?>"
+                                                    data-rec="<?php echo $comment->id?>"
+                                                    class="del btn btn-danger btn-rounded"><i
+                                                        class="fa fa-trash"></i></a>
                                 </div>
+                              
+                               
                                 <h4 class="text-themecolor"> <?php echo $comment->comment ?></h4>
                             </div>
                             
+                            
                         </li>
-                    <?php } ?>    
+                    <?php  // }
+                            } ?>    
                     </ul>
                 </div>
                     </div>
@@ -121,6 +133,85 @@
 
 
 </div>
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel1">Delete</h4>
+                <button type="button" class="close mdclose" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <h4>Are You sure you want Delete this ?</h4>
+                <div id="deleteform">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default mdclose" data-dismiss="modal">cancle</button>
+                <button type="button" class="btn btn-primary" id="delete">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+
+    //DOM manipulation code
+    $(".del").click(function() {
+        var self = $(this);
+        var id = $(this).attr('data-rec');
+        var data =
+            '<input type="hidden" name="table" id="table" value="comments"><input type="hidden" name="id" class="rowid" value="' +
+            id + '">';
+        $("#deleteform").empty();
+        $("#deleteform").html(data);
+        $("#exampleModal").toggle();
+
+    });
+    $(".mdclose").click(function() {
+
+        $("#exampleModal").toggle();
+
+    });
+    $("#delete").click(function() {
+        row = $(".rowid").attr('value');
+        table = $("#table").attr('value');
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo Request::$BASE_PATH."opendelete"?>',
+            data: {
+                id: row,
+                table: table,
+
+            },
+            success: function(data) {
+                console.log(data);
+                $("#exampleModal").toggle();
+                $("#row-" + row).remove();
+
+            },
+            error: function(data) {
+                console.log("error");
+                console.log(data);
+            }
+        });
+
+
+    });
+    $('#example23').DataTable({
+        "order": [
+            [3, 'desc']
+        ],
+        "displayLength": 50,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass(
+        'btn btn-primary mr-1');
+});
+</script>
 <style>
 
 #comments {
