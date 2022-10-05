@@ -10,7 +10,7 @@
                         <article class="blog">
                             <figure>
                                 {{-- <a href="#"><img src="assets/spark-img/blog-1.jpg" alt=""> --}}
-                                <a href="{{route('news-info',[$new->id])}}"><img src="http://localhost:8080/everest-dev/admin/{{$new->image}}" alt="" style="height: 100%; width:100%;">
+                                <a href="{{route('news-info',[$new->id])}}"><img src="https://pioneers.oritech.co/admin/{{$new->image}}" alt="" style="height: 100%; width:100%;">
                                     <div class="preview"><span>Read more</span></div>
                                 </a>
                             </figure>

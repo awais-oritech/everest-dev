@@ -295,11 +295,10 @@ to{border-right-color: transparent;}
     ),url('/assets/img/ships.jpg');
     background-position: center;
     background-size: cover;
-
-  height: 100%;
-width: 100%;
-overflow: hidden;
-color:white;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+    color:white;
 }
 .submit-button{
   text-decoration: none;

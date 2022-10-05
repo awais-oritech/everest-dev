@@ -6,7 +6,7 @@
             <div class="col-lg-12  icons" style="text-align:center">
               <a href="{{ App\Models\Utility::getValByName('instagram')}}"><img src="{{ asset('assets/img/insta.gif') }}" width="50px" height="50px"></a>
               <a href="{{ App\Models\Utility::getValByName('twitter')}}"><img src="{{ asset('assets/img/twitter.gif') }}" width="50px" height="50px"></a>
-              <a href="{{ App\Models\Utility::getValByName('linkdin')}}"><img src="{{ asset('assets/img/linkedin.gif') }}" width="50px" height="50px"></a>
+              <a href="{{ App\Models\Utility::getValByName('linkedin')}}"><img src="{{ asset('assets/img/linkedin.gif') }}" width="50px" height="50px"></a>
               <a href="{{ App\Models\Utility::getValByName('whatsapp')}}"><img src="{{ asset('assets/img/whtsapp.gif') }}" width="50px" height="50px"></a>
               <a href="{{ App\Models\Utility::getValByName('facebook')}}"><img src="{{ asset('assets/img/facebook.gif') }}" width="50px" height="50px"></a>
 

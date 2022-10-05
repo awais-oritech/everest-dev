@@ -31,7 +31,7 @@
                                 <div class="col-10">
                                     <input class="form-control" type="text" value="<?php echo $Data->text1?>" name="text1" 
                                         id="example-text-input">
-										<span><p>use &lt;br&gt; to break the line</p></span>
+										<!-- <span><p>use &lt;br&gt; to break the line</p></span> -->
                                 </div>
 								
                             </div>
@@ -40,7 +40,7 @@
                                 <div class="col-10">
                                     <input class="form-control" type="text" value="<?php echo $Data->text2?>" name="text2" 
                                         id="example-text-input">
-										<span><p>use &lt;br&gt; to break the line</p></span>
+										<!-- <span><p>use &lt;br&gt; to break the line</p></span> -->
                                 </div>
 								
                             </div>

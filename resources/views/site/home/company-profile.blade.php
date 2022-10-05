@@ -8,7 +8,7 @@
                     <section id="description" style="border: none!important;">
                         <div class="detail_title_1">
                             {{-- <div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div> --}}
-                            <h1>{{$profile->companyname}}</h1><small align="right"><strong>Member Since : </strong>{{$profile->created_at->format('d-m-yy')}}</small>
+                            <h1>{{$profile->companyname}}</h1><small align="right"><strong>Member Since : </strong>{{ date("d-m-Y", strtotime($profile->created_at))}}</small>
                             <br>
                             <a class="address" href="{{$profile->company_location}}" target="__blank">{{$profile->companyaddress}}</a>
                         </div>
@@ -88,9 +88,10 @@
                                     <tr>
                                         <td>{{$profile->clientmanager}}</td>
                                         <td>{{$profile->clientposition}}</td>
-                                        <td>{{$profile->companylicense}}</td>
                                         <td>{{$profile->clientemail}}</td>
                                         <td>{{$profile->clientmobile}}</td>
+                                        <td>{{$profile->clientskype}}</td>
+                                        
                                     </tr>
                                 </tbody>
                             </tbody>
@@ -137,12 +138,24 @@
                         <img  style="max-width:370px;max-height:370px" src="{{asset('uploads/'.$profile->companylogo)}}" alt="profile">
                     </div>
                     <ul class="share-buttons">
+                        @if(!is_null($profile->companyfacebook) && !empty($profile->companyfacebook))
                         <li><a class="fb-share" href="{{$profile->companyfacebook}}"><i class="social_facebook"></i></a></li>
+                        @endif
+                        @if(!is_null($profile->companyinstagram) && !empty($profile->companyinstagram))
                         <li><a class="instagram-share" href="{{$profile->companyinstagram}}"><i class="social_instagram"></i></a></li>
+                        @endif
+                        @if(!is_null($profile->companyskype) && !empty($profile->companyskype))
                         <li><a class="skype-share" href="{{$profile->companyskype}}"><i class="social_skype"></i></a></li>
+                        @endif
+                        @if(!is_null($profile->companyyoutube) && !empty($profile->companyyoutube))
                         <li><a class="youtube-share" href="{{$profile->companyyoutube}}"><i class="social_youtube"></i></a></li>
+                        @endif
+                        @if(!is_null($profile->companyemail) && !empty($profile->companyemail))
                         <li><a class="gplus-share" href="{{$profile->companyemail}}"><i class="social_googleplus"></i></a></li>
+                        @endif
+                        @if(!is_null($profile->companywebsite) && !empty($profile->companywebsite))
                         <li><a class="web-share" href="{{$profile->companywebsite}}"><i class="fa fa-earth"></i></a></li>
+                        @endif
                     </ul>
                 </aside>
             </div>
