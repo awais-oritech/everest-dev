@@ -1628,6 +1628,26 @@ class Gateway
                     header("Location: " . Request::$BASE_PATH);
                 }
                 break;
+                case 'newsletters':
+                    if (Session::isUserOnline()) {
+                        $md['table'] = $parameters[0];
+                        $md['con'] = $parameters[0];
+                        $md['text'] = "News letters";
+                        $md['stext'] = "news letter";
+                        $objPresenter->AddParameter('md', $md);
+                        if (!isset($parameters[1]) || empty($parameters[1])) {
+                            if (Content::validate($md['con'], 'view')) {
+                                $Data = Content::All($md['table']);
+                                $objPresenter->AddParameter('Data', $Data);
+                                $objPresenter->AddTemplate($md['con'] . '/all');
+                            } else {
+                                header("Location: " . Request::$BASE_PATH);
+                            }
+                        }
+                    } else {
+                        header("Location: " . Request::$BASE_PATH);
+                    }
+                    break;    
                 // ======================================= Services ================================
             case 'services':
                 if (Session::isUserOnline()) {

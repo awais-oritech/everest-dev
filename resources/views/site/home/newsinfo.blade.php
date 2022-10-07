@@ -5,6 +5,15 @@
         <h1>Sparker Blog</h1>
     </div>
 </div> --}}
+<style>
+    .post-content img{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 50px;
+        max-width: -webkit-fill-available;
+    }
+</style>
 <main>
     <div class="container margin_60_35">
         <div class="row">
@@ -41,7 +50,7 @@
                         @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
-                                <a href="#0"><img src="https://pioneers.oritech.co/admin/{{$latest_blog->image}}" alt=""></a>
+                                <a href="#"><img src="https://pioneers.oritech.co/admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
                             <small>{{\Carbon\Carbon::parse($latest_blog->created)->format('d-m-Y')}}</small>
                             <h3><a href="{{url('news-info',$latest_blog->id)}}" title="">{{$latest_blog->name}}</a></h3>
@@ -60,6 +69,18 @@
                         @endforeach
                     </ul>
                 </div> --}}
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Categories</h4>
+                    </div>
+                    <div class="tags">
+                        @foreach($categories as $category)
+                        <a href="{{ url('news-category',$category->id) }}">{{$category->name}}</a>
+
+                        @endforeach
+                        
+                    </div>
+                </div>
             </aside>
             <!-- /aside -->
         </div>
