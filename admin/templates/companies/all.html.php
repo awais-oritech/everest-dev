@@ -57,6 +57,16 @@
                                                 style="width: 169px;" aria-sort="ascending">
                                                 Package
                                             </th>
+                                            <th class="" tabindex="0" aria-controls="example23" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 169px;" aria-sort="ascending">
+                                                Member Since
+                                            </th>
+                                            <th class="" tabindex="0" aria-controls="example23" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 169px;" aria-sort="ascending">
+                                                Expires at
+                                            </th>
                                             <th class="sorting" tabindex="0" aria-controls="example23" rowspan="1"
                                                 colspan="1" aria-label="Position: activate to sort column ascending"
                                                 style="width: 50px;">
@@ -100,6 +110,8 @@
                                         <tr role="row" class="odd">
                                             <td class=""><?php echo $d->companyname?></td>
                                             <td class=""><?php echo $d->package_name?></td>
+                                            <td class=""><?php echo $d->created?></td>
+                                            <td class=""><?php echo $d->expire_at?></td>
                                             <td><img height="40" width="auto" src="<?php echo Request::$BASE_PATH.'../public/uploads/'.$d->companylogo?>" /></td>
                                             
                                            

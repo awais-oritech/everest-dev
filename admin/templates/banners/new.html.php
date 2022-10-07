@@ -32,7 +32,7 @@
                                 <div class="col-10">
                                     <input class="form-control" type="text" name="text1" 
                                         id="example-text-input">
-										<span><p>use &lt;br&gt; to break the line</p></span>
+										<!-- <span><p>use &lt;br&gt; to break the line</p></span> -->
                                 </div>
 								
                             </div>
@@ -41,7 +41,7 @@
                                 <div class="col-10">
                                     <input class="form-control" type="text" name="text2" 
                                         id="example-text-input">
-										<span><p>use &lt;br&gt; to break the line</p></span>
+										<!-- <span><p>use &lt;br&gt; to break the line</p></span> -->
                                 </div>
 								
                             </div>

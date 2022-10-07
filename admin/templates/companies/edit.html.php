@@ -30,13 +30,19 @@
                          <form class="form" method="POST" enctype='multipart/form-data'
                              action="<?php echo Request::$BASE_PATH.$md['con'].'/edit/'.$Data->id?>">
                             <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
                                     <select class="form-control" required="required" id="package_id" name="package_id" >
                                         <option  selected disabled value="">Select Package</option>
                                         <?php foreach ($packages as $package){?>
                                             <option value="<?php echo $package->id ?>"  <?php echo ($package->id==$Data->package_id)?'Selected':''?>><?php echo $package->package_name ?></option>
                                        <?php } ?>
                                     </select>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                <input type="date" class="form-control" name="created" value="<?php echo $Data->created?>"  placeholder="Member Since" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 form-group">
+                                <input type="date" class="form-control" name="expire_at" value="<?php echo $Data->expire_at?>"  placeholder="Package Expires On">
                                 </div>
                             </div>
                             <h6 class="mb-4"><b>1) </b> Company Contact Details</h6>
@@ -56,7 +62,7 @@
                                     <input type="text" class="form-control" name="companyaddress" value="<?php echo $Data->companyaddress?>"  placeholder="Head office address*" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
-                                    <input type="text" class="form-control" value="<?php echo $Data->company_location?>"  placeholder="Google map link" name="company_location" required >
+                                    <input type="text" class="form-control" value="<?php echo $Data->company_location?>"  placeholder="Google map link" name="company_location"  >
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 form-group">
                                     <input type="text" class="form-control" name="companypostal" value="<?php echo $Data->companypostal?>" placeholder="Postal Code Country*" required>
