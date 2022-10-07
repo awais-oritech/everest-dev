@@ -10,7 +10,7 @@ class MemberController extends Controller
     {
         if(Auth::check())
         {
-            return back()->with('errormessage','You are already logged in your Account');
+            return back()->with('error','You are already logged in your Account');
         }
         else
         {

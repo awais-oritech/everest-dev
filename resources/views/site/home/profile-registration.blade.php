@@ -7,17 +7,6 @@
                 <div class="box_account">
                     <h3 class="new_client">Company Profile</h3> <small class="float-end pt-2">* Required Fields</small>
                     <div class="form_container">
-                        @if(session('status'))
-                        <div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{session('status')}}
-                        </div>
-                        @elseif(session('errormessage'))
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{session('errormessage')}}
-                        </div>
-                        @endif
                         @if(isset($profile->id) && !empty($profile->id) )
                         <form method="POST" action="{{url('profile-registration')}}" enctype="multipart/form-data">
                             @csrf

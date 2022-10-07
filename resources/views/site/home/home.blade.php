@@ -10,7 +10,7 @@
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol> 
+                            </ol>
                             <div class="carousel-inner">
                                 @if(isset($banners[0]))
                                 @foreach($banners as $banner)
@@ -80,6 +80,7 @@
                                     </select>
                                 </div>
                                 <div class="buttonn">
+                                @if(Auth::user())
                                 <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
                                 @else
                                 <a href="{{route('member')}}" type="button"
@@ -280,6 +281,9 @@
             <!-- /article -->
         </div>
         @endforeach
+    </div>
+    <div class="col-md-12 mb-4">
+        <a href="{{route('news')}}" class="hvr-sweep-to-right p-1" style="float: right;">Read More <i class="fa fa-angle-right"></i></a>
     </div>
 </div>
 <!--/News and Events-->

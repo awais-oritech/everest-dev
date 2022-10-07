@@ -8,7 +8,7 @@
                     <section id="description" style="border: none!important;">
                         <div class="detail_title_1">
                             {{-- <div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div> --}}
-                            <h1>{{$profile->companyname}}</h1><small align="right"><strong>Member Since : </strong>{{$profile->created_at->format('d-m-yy')}}</small>
+                            <h1>{{$profile->companyname}}</h1><small align="right"><strong>Member Since : </strong>{{$profile->created_at->format('d-m-Y')}}</small>
                             <br>
                             <a class="address" href="{{$profile->company_location}}" target="__blank">{{$profile->companyaddress}}</a>
                         </div>

@@ -8,7 +8,7 @@ class EventsController extends Controller
 {
     public function index()
     {
-        $events = Events::paginate(2);
+        $events = Events::paginate(5);
         return view('site.home.events',['events'=>$events]);
     }
 }

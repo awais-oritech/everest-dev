@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Pioneer Network</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/png">
     <link rel="apple-touch-icon" type="image/x-icon"
@@ -56,7 +56,15 @@
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <!-- ALTERNATIVE COLORS CSS -->
     {{-- <link href="{{ asset('assets/css/color.css') }}" id="colors" rel="stylesheet"> --}}
+<style>
+    .toast-error {
+    background-color: #e54040 !important;
+}
 
+.toast-success {
+    background-color: #2bd92b !important;
+}
+</style>
 </head>
 
 <body>
@@ -131,6 +139,7 @@
 
     <div id="toTop"></div><!-- Back to top button -->
 
+
     <!-- COMMON SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -174,7 +183,7 @@
         // });
     </script>
     <!-- COLOR SWITCHER  -->
-  
+
     <!-- Scripts --->
     @stack('script')
     <!-- Scripts --->

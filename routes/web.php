@@ -45,7 +45,7 @@ Route::prefix('/common')->group(function () {
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+// Route::post('postLogin',[LoginController::class,'postLogin'])->name('postLogin');
 Route::get('about-us',[AboutController::class, 'index'])->name('about-us');
 Route::get('/page/{slug}',[PageController::class, 'index'])->name('page');
 Route::get('/directory',[DirectoryController::class, 'index'])->name('directory');

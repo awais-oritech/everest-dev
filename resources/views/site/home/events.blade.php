@@ -16,12 +16,12 @@
                     <div class="wrapper">
                         {{-- <a href="#0" class="wish_bt"></a> --}}
                         <h3><a href="#">{{$event->name}}</a></h3>
-                        {{-- <small>{{$event->date}}</small> --}}
+                        <small>{{\Carbon\Carbon::parse($event->date)->format('d-m-Y')}}</small>
                         <p>{!! $event->description !!}</p>
-                        <a class="address" href="#">Get directions</a>
+                        {{-- <a class="address" href="#">Get directions</a> --}}
                     </div>
                     <ul>
-                        <li><span class="loc_open">{{$event->date}}</span></li>
+                        <li><span class="loc_open">{{\Carbon\Carbon::parse($event->date)->format('d-m-Y')}}</span></li>
                         {{-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> --}}
                     </ul>
                 </div>
