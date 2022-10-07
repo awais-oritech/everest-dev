@@ -6,7 +6,9 @@
         <div class="col-xl-6 col-lg-6 col-md-8">
             <div class="box_account">
                 <h3 class="client">Already Member</h3>
-                <form method="POST" action="login" onsubmit="return formvalidation()" >
+                {{-- <form method="POST" action="{{route('login')}}" onsubmit="return formvalidation()" > --}}
+                <form method="POST" action="{{route('login')}}">
+
                     @csrf
                     {{-- <div class="form_container">
                         <div class="form-group">
@@ -57,16 +59,8 @@
                     </div> --}}
                     <div class="form_container">
                         <div class="form-group">
-                            @if(session()->has('message'))
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ session()->get('message') }}
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                </div>
-                            @endif
-                            <input type="email" class="form-control" id="useremail" name="email"  placeholder="Email*">
-                            <span>
+                            <input type="email" class="form-control" id="useremail" name="email" value="{{ old('email') }}"  placeholder="Email*">
+                            <span >
                                 <strong class="text-danger" id="emailError"></strong>
                             </span>
                         </div>
@@ -110,36 +104,36 @@
                     @csrf
                     <div class="form_container">
                         <div class="form-group">
-                            <input  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Name*">
-                            @error('name')
+                            <input  type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name*">
+                            {{-- @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                            @enderror
+                            @enderror --}}
                         </div>
                         <div class="form-group">
-                            <input  type="email" class="form-control @error('register_email') is-invalid @enderror" name="email" value="{{ old('register_email') }}" placeholder="Email*">
-                            @error('register_email')
+                            <input  type="email" class="form-control" name="email"  placeholder="Email*" >
+                            {{-- @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                            @enderror
+                            @enderror --}}
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="Password*" required autocomplete="new-password">
-                            @error('password')
+                            <input type="password" class="form-control " name="password"  placeholder="Password*" autocomplete="new-password">
+                            {{-- @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror
+                            @enderror --}}
                         </div>
                         <div class="form-group">
-                            <input id="password-confirm" name="password_confirmation" type="password" class="form-control @error('register_password') is-invalid @enderror" name="password"  placeholder="Confirm Password*" required autocomplete="new-password">
-                            @error('register_password')
+                            <input id="password-confirm" name="password_confirmation" type="password" class="form-control"  placeholder="Confirm Password*"  autocomplete="new-password">
+                            {{-- @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror
+                            @enderror --}}
                         </div>
                         <div class="text-center"><button type="submit" value="Register" class="btn_1 full-width hvr-sweep-to-right">Register</button></div>
                     </div>

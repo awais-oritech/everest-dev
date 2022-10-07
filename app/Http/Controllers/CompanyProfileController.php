@@ -151,6 +151,6 @@ class CompanyProfileController extends Controller
 
 
 
-        return redirect('profile-process')->with('status','Company Registered Please Wait For Admin Approval');
+        return redirect('profile-process')->with('success','Company Registered Please Wait For Admin Approval');
     }
 }

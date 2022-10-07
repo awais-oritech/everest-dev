@@ -18,7 +18,7 @@ class ProfileProcessController extends Controller
         if(!isset($profile->id)){
             return redirect('packages');
         }
-       
+
         $user_id = Auth::user()->id;
         $comments = Comment::where('company_id',$profile->id)->get();
         return view('site.home.profile-process',compact('profile','comments','user_id'));
@@ -35,7 +35,7 @@ class ProfileProcessController extends Controller
 
         if($validator->fails())
         {
-            return redirect()->back()->with('status', $validator->errors()->first());
+            return redirect()->back()->with('error', $validator->errors()->first());
         }
         $comment->create([
             'user_id'=>Auth::user()->id,
@@ -43,6 +43,6 @@ class ProfileProcessController extends Controller
             'comment'=>$request->comment,
             'user_type'=>'agency',
         ]);
-        return back()->with('status','Commented Successfuly');
+        return back()->with('success','Commented Successfuly');
     }
 }

@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\DB;
 class CompanyProfileViewController extends Controller
 {
     public function index($id)
-    {   
+    {
 
-        
+
         $usercompany=Company::where('user_id',Auth::user()->id)->first();
         if(!isset($usercompany->id)){
             return redirect('/packages');
@@ -23,11 +23,11 @@ class CompanyProfileViewController extends Controller
                 if($profile->status==3){
                     return view('site.home.company-profile',['profile'=>$profile]);
                 }
-                back()->with('status','Profile Not found');
+                back()->with('error','Profile Not found');
             }else{
                 return redirect('/profile-process');
             }
         }
-       
+
     }
 }

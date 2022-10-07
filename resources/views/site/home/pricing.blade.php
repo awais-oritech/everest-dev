@@ -4,7 +4,7 @@
     <div class="container margin_60_35">
         <div class="pricing-container cd-has-margins">
             <div class="membership__table">
-                <div class="membership__table-header membership__table-row">
+                <div class="membership__table-header membership__table-row" style="background: linear-gradient(to right, #27c3eb , #176e84); color:#fff;">
                     <div><span>Benifits</span></div>
 
                     <div><span>{{$packages[0]->package_name}}</span></div>
@@ -331,7 +331,7 @@
                     <div><span><a href="{{route('profile-registration',[$packages[2]->id])}}"><button class="btn_1 full-width">SELECT</button></a></span></div>
                 </div>
                 @else
-                <div class="d-flex-center"> <a href="/member"><button type="button"  class="btn_1 full-width mt-2 ">Become Member</button></a></div>
+                <div class="d-flex-center"> <a href="/member"><button type="button"  class="btn_1 full-width mt-2 hvr-sweep-to-right ">Become Member</button></a></div>
                 @endif
                 <div class="membership__table-row membership__table-footer">
                     <div></div>

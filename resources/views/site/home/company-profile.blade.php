@@ -91,7 +91,7 @@
                                         <td>{{$profile->clientemail}}</td>
                                         <td>{{$profile->clientmobile}}</td>
                                         <td>{{$profile->clientskype}}</td>
-                                        
+
                                     </tr>
                                 </tbody>
                             </tbody>

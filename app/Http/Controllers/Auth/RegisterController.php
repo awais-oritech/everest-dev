@@ -36,7 +36,7 @@ class RegisterController extends Controller
     protected function redirectTo()
     {
         Auth::logout();
-        session()->flash('signupmessage', 'You are registered Successfuly');
+        session()->flash('success', 'You are registered Successfuly');
         return '/member';
     }
     /**
@@ -57,11 +57,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return  Validator::make($data, [
+        // dd($data);
+        $validator = Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'register_email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+
+        return $validator;
 
     }
 

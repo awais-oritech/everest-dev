@@ -4,17 +4,6 @@
     <div class="container ">
          <div class="row justify-content-center">
             <div class="col-md-10">
-                @if(session('errormessage'))
-                <div class="alert alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                {{session('errormessage')}}
-                </div>
-                @elseif(session('status'))
-                <div class="alert alert-success alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                {{session('status')}}
-                </div>
-                @endif
                 <div id="confirm">
                     <div class="icon icon--order-success svg add_bottom_15">
                         <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">
@@ -71,7 +60,7 @@
                         <textarea class="form-control" name="comment" id="comments2"   placeholder="Comment"></textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" id="submit2" class="btn_1 add_bottom_15">Submit</button>
+                        <button type="submit" id="submit2" class="btn_1 add_bottom_15 hvr-sweep-to-right">Submit</button>
                     </div>
                 </form>
             </div>

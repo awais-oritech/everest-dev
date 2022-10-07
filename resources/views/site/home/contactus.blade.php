@@ -6,12 +6,6 @@
         <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 pr-xl-5">
                 <div class="main_title_3">
-                    @if(session('status'))
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    {{session('status')}}
-                    </div>
-                    @endif
                     <h2>Send us a message</h2>
                     <p>For any Query you can freely contact us.</p>
                 </div>
@@ -52,7 +46,7 @@
                             <label>Message</label>
                             <textarea class="form-control" id="message_contact" name="message" style="height:150px;" required></textarea>
                         </div>
-                        <button type="submit" class="btn_1 rounded">Submit</button>
+                        <button type="submit" class="btn_1  hvr-sweep-to-right">Submit</button>
                     </form>
             </div>
             <div class="col-xl-5 col-lg-6 pl-xl-5">

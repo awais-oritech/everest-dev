@@ -7,17 +7,6 @@
                 <div class="box_account">
                     <h3 class="new_client">Change Password</h3> <small class="float-end pt-2">* Required Fields</small>
                     <div class="form_container">
-                        @if(session('success'))
-                        <div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{session('success')}}
-                        </div>
-                        @elseif(session('error'))
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{session('error')}}
-                        </div>
-                        @endif
                         <form method="POST" action="{{url('update_password',Auth::user()->id)}}" autocomplete="off">
                             @csrf
                             <div class="row">

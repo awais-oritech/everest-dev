@@ -22,6 +22,6 @@ class ContactUsController extends Controller
             'message' => $request->message,
         ]);
 
-        return back()->with('status','Thank you! We have received your message and will get back to you as soon as possible');
+        return back()->with('success','Thank you! We have received your message and will get back to you as soon as possible');
     }
 }

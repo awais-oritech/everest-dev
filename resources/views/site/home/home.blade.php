@@ -1,6 +1,6 @@
  @extends('layouts.site')
  @section('content')
- 
+
      <section class="hero_single version_2">
          <div class="wrapper">
              <div class="container">
@@ -93,7 +93,7 @@
                                      </select>
                                  </div>
                                  <div class="buttonn">
-                                   
+
                                      <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
                                     {{-- @else
                                      <a href="{{ route('member') }}" type="button"
@@ -274,68 +274,46 @@
 
      <!--/ Sponsors -->
 
-     <!--News and Events-->
-     <div class="container margin_60_35">
-         <div class="row">
-             @foreach ($news as $new)
-                 <div class="col-md-4">
-                     <article class="blog">
-                         <figure>
-                             <a href="{{ route('news-info', [$new->id]) }}"><img src="admin/{{ $new->image }}"
-                                     class="img-fluid" alt="">
-                                 <div class="preview"><span>Read more</span></div>
-                             </a>
-                         </figure>
-                         <div class="post_info">
-                             <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y') }}</small>
-                             <h2><a href="{{ route('news-info', [$new->id]) }}">{{ $new->name }}</a></h2>
-                             <p style="max-height: 20px;">{{ substr(strip_tags($new->description), 0, 50) }}</p>
-                         </div>
-                     </article>
-                     <!-- /article -->
-                 </div>
-             @endforeach
-         </div>
-     </div>
-     <!--/News and Events-->
-     @if (isset($section1->image))
-     @push('css')
-         <style>
-            .public-listing{
-            background:linear-gradient(
-                rgba(33, 158, 188,0.7),
-                rgba(33, 158, 188,0.7)
-                ),url('admin/{{$section1->image}}')!important;
-                background-position: center;
-                background-size: cover;
-                height: 100%;
-                width: 100%;
-                overflow: hidden;
-                color:white;
-            }
-            .hero_single.version_2{
-                height:620px;
-                background:#222 url('admin/{{$banners[0]->image}}') center center no-repeat;
-                -webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover
-            }
-         </style>
-    @endpush
-         
-     @endif
- @endsection
- @push('css')
-     <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick-theme.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick.css') }}">
-     <style>
-               
-        .counter-box {
-             display: block;
-             background: #00a8df;
-             color: #222;
-             text-align: center;
-             padding: 19px 30px 5px;
-             margin-top: -12px
-         }
+<!--News and Events-->
+<div class="container margin_60_35">
+    <div class="row">
+        @foreach($news as $new)
+        <div class="col-md-4">
+            <article class="blog">
+                <figure>
+                    <a href="{{route('news-info',[$new->id])}}"><img src="admin/{{$new->image}}" class="img-fluid"
+                            alt="">
+                        <div class="preview"><span>Read more</span></div>
+                    </a>
+                </figure>
+                <div class="post_info">
+                    <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
+                    <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
+                    <p style="max-height: 20px;">{{substr(strip_tags($new->description),0,50)}}</p>
+                </div>
+            </article>
+            <!-- /article -->
+        </div>
+        @endforeach
+    </div>
+    <div class="col-md-12 mb-4">
+        <a href="{{route('news')}}" class="hvr-sweep-to-right p-1" style="float: right;">Read More <i class="fa fa-angle-right"></i></a>
+    </div>
+</div>
+<!--/News and Events-->
+@endsection
+@push('css')
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick-theme.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick.css') }}">
+<style>
+    .counter-box {
+        display: block;
+        background: #00a8df;
+        color: #222;
+        text-align: center;
+        padding: 19px 30px 5px;
+        margin-top: -12px
+    }
 
          .counter-box p {
              margin: 5px 0 0;
