@@ -67,7 +67,7 @@
 </style>
 </head>
 
-<body>
+<body style="margin: 0; padding:0;">
 
     <div id="page">
 
@@ -167,31 +167,7 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <!--End of Tawk.to Script-->
-      {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
-    <!-- SPECIFIC SCRIPTS -->
-    {{-- <script src="{{ asset('assets/js/animated_canvas_min.js') }}"></script> --}}
-    <script type="text/javascript">
-        // jQuery(document).ready(function($) {
-        //     $(function() {
-        //         AOS.init({
-        //             offset: 320,
-        //             duration: 1000,
-
-        //         });
-        //     });
-        // });
-    </script>
-    <!-- COLOR SWITCHER  -->
-
-    <!-- Scripts --->
     @stack('script')
-    <!-- Scripts --->
-   {{-- @if (Session::has('sweet_alert.alert'))
-<script>
-  swal({!! Session::get('sweet_alert.alert') !!});
-</script> --}}
-{{-- @endif --}}
 
 </body>
 

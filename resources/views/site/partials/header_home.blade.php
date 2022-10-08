@@ -37,24 +37,12 @@
                             </li>
 
                             @if(!Auth::user())
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" style="color:#1c75BA;" href="/packages"><i class="fas fa-phone"></i>Packages</a>
-                            </li> --}}
                             <li>
                                 <a href="{{route('member')}}"><button type="button"  class="hvr-sweep-to-right buttons mt-2 ">Become Member</button></a>
                             </li>
                             @endif
                       </ul>
                       @if(Auth::user())
-
-                        {{-- <a class="nav-link my-dropdown" href="{{route('profile-process')}}">
-                            <i class="fas fa-user my-dropbtn"></i>
-                            <div class="my-dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                        </a> --}}
                         <div class="my-dropdown">
                             <i class="fas fa-user my-dropbtn"></i>
                             <div class="my-dropdown-content">
@@ -72,11 +60,6 @@
                       @endif
                   </div>
               </nav>
-
           </div>
       </div>
-
-  </div>
-  </div>
-
   </div>
