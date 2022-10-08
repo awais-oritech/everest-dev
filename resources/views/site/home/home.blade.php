@@ -2,17 +2,12 @@
  @section('content')
 
      <section class="hero_single version_2">
-         <div class="wrapper">
+        <div class="wrapper">
              <div class="container">
                  <div class="row">
                      <div class="col-lg-6 col-md-12 col-sm-12">
                          <div class="carousel slide" data-ride="carousel">
-                             {{-- <ol class="carousel-indicators">
-                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                             </ol> --}}
-                             <div class="carousel-inner">
+                            <div class="carousel-inner">
                                  @if (isset($banners[0]))
                                      @foreach ($banners as $banner)
                                          <div class="carousel-item active">
@@ -28,22 +23,6 @@
                                          </div>
                                      @endforeach
                                  @endif
-                                 {{-- <div class="carousel-item ">
-
-                                    <div class="carousel-caption">
-                                        <h5 class="animated bounceInRight" style="animation-delay: 1s">Beating all other mobile figures previously covered by Oftel.</h5>
-                                        <p  class="animated bounceInLeft" style="animation-delay: 2s">Just do it</p>
-                                        <a href="" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
-                </div>
-                                </div>
-                                <div class="carousel-item ">
-
-                                    <div class="carousel-caption ">
-                                    <h5 class="animated bounceInRight" style="animation-delay: 1s">The people you need are only a touch away.</h5>
-                                        <p  class="animated bounceInLeft" style="animation-delay: 2s">Waiting for you </p>
-                                        <a href="" class="hvr-sweep-to-right buttons animated bounceInRight" style="animation-delay: 3s">Become Member</a>
-                                    </div>
-                                </div> --}}
                              </div>
                          </div>
                      </div>
@@ -95,7 +74,7 @@
                                  <div class="buttonn">
 
                                      <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
-                                    {{-- @else
+                                     {{-- @else
                                      <a href="{{ route('member') }}" type="button"
                                          class="hvr-sweep-to-right buttons">Search</a>
                                      @endif --}}
@@ -105,215 +84,215 @@
                      </div>
                  </div>
              </div>
-
-     </section>
-     <div class="container public-form mb-4">
-         <div class="row">
-             <div class="col-12">
-                 <div class="formbox-header shadow-form animated bounceInUp" style="animation-delay:1s">
-                     <form method="GET">
-                         <div class="form-group col-xs-3">
-                             <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}"
-                                     width="30px" height="30px"> Keyword</label>
-                             <input type="text" class="form-control input-sm" id="exampleInputEmail1"
-                                 aria-describedby="emailHelp" placeholder="keyword">
-                         </div>
-                         <div class="form-group col-xs-3">
-                             <label for="exampleInputPassword11"><img src="{{ asset('assets/img/home.gif') }}"
-                                     width="30px" height="30px"> Address</label>
-                             <input type="text" class="form-control" id="exampleInputPassword11" placeholder="Address">
-                         </div>
-                         <div class="form-group col-xs-3">
-                             <label for="exampleInputPassword1121"><img src="{{ asset('assets/img/country.gif') }}"
-                                     width="30px" height="30px"> Country</label>
-                             <input type="text" class="form-control" id="exampleInputPassword1121"
-                                 placeholder="Country">
-                         </div>
-                         <div class="form-group col-xs-3">
-                             <label for="exampleInputPassword12"><img src="{{ asset('assets/img/address.gif') }}"
-                                     width="30px" height="30px"> City</label>
-                             <input type="text" class="form-control" id="exampleInputPassword12" placeholder="City">
-                         </div>
-                         <div class="buttonn">
-                             <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div>
-     </div>
-
-     <!-- About US -->
-     <div class="bg_color_1 ">
-         <div class="container margin_80_55">
-             <div class="main_title_2">
-                 <span><em></em></span>
-                 <h2>{{ $abouts->title }}</h2>
-             </div>
-             <div class="row" style="justify-content: center;">
-                 <div class="col-lg-6 col-md-6 col-sm-12 ">
-                     <div class="row">
-                         <div class="col-3">
-                         </div>
-                         <div class="col-3">
-                             <div class="box">
-                                 <div class="content">
-                                     <img src="admin/{{ $abouts->image }}">
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-3">
-
-                         </div>
-
-                     </div>
-                 </div>
-                 <div class="col-lg-6 col-md-6 col-sm-12">
-                     <p>{!! $abouts->description !!}</p>
-                     {{-- <p><em>CEO Marc Schumaker</em></p> --}}
-                 </div>
-             </div>
-
-             <!--/row-->
-
-         </div>
-         <!--/container-->
-     </div>
-     <!--/About US-->
-
-     <!-- Sponsors -->
-     <div class="bg_color_1">
-         <div class="container margin_80_55">
-             <div class="main_title_2">
-                 <span><em></em></span>
-                 <h2>Our Sponsor</h2>
-             </div>
-             <div class="row justify-content-between">
-                 <div class="sponsors-slider">
-                     @foreach ($sponsers as $sponser)
-                         <div class="slide">
-                             <img src="https://pioneers.oritech.co/admin/{{ $sponser->image }}" height="150px">
-                         </div>
-                     @endforeach
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!--/ Sponsors -->
-
-     <!-- Globals -->
-     <div class="mt-4" style="background-color: #f8f8f8">
-         <div class="container" style="padding-top:5%">
-             <div class="row">
-                 <div class="col-md-2" style="text-align: left">
-                     <span><em></em></span>
-                     <h2>GLOBAL <br> COVERAGE</h2>
-                 </div>
-                 @foreach ($globals as $global)
-                     <div class="four col-md-2" style="text-align: center">
-                         <span class="counter ">{{ $global->value }}</span>
-                         <div class="counter-box colored">
-                             <p>{{ $global->name }}</p>
-                         </div>
-                     </div>
-                 @endforeach
-                 <div class="col-md-8">
-                     <div id="regions_div" class="global_map" style="width: fit-content; height:fit-content;"></div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- / Globals -->
-
-     <!-- Public Listing -->
-
-     <div class="public-listing mt-4">
-         <!-- <video autoplay loop muted>
-                 <source src="{{ asset('assets/videos/pricelistingvideo.mp4') }}">
-             </video> -->
-         <div class="">
-             <div class="container margin_80_55">
-                 <div class="main_title_2">
-                     <span><em></em></span>
-                     <h2 style="color:white">Pioneer Benefits</h2>
-                 </div>
-                 <div class="row ">
-                     @foreach ($benefits as $benefit)
-                         <div class="col-lg-3">
-                             <div class="benefit text-center ">
-                                 <span>{{ $benefit->name }}</span>
-                             </div>
-                         </div>
-                     @endforeach
-                 </div>
-             </div>
-         </div>
-     </div>
-
-     <!-- Public Listing -->
-
-     <!-- Sponsors -->
-
-     <div class="bg_color_1">
-         <div class="container margin_80_55">
-             <div class="main_title_2">
-                 <span><em></em></span>
-                 <h2>Our Diamond Partners</h2>
-             </div>
-             <div class="row justify-content-between">
-                 <div class="diamond-slider">
-                     @foreach ($diamonds as $diamond)
-                         <div class="slide ">
-                             <img src="admin/{{ $diamond->image }}" height="150px">
-                         </div>
-                     @endforeach
-                 </div>
-             </div>
-         </div>
-     </div>
-
-     <!--/ Sponsors -->
-
-<!--News and Events-->
-<div class="container margin_60_35">
-    <div class="row">
-        @foreach($news as $new)
-        <div class="col-md-4">
-            <article class="blog">
-                <figure>
-                    <a href="{{route('news-info',[$new->id])}}"><img src="admin/{{$new->image}}" class="img-fluid"
-                            alt="">
-                        <div class="preview"><span>Read more</span></div>
-                    </a>
-                </figure>
-                <div class="post_info">
-                    <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
-                    <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
-                    <p style="max-height: 20px;">{{substr(strip_tags($new->description),0,50)}}</p>
-                </div>
-            </article>
-            <!-- /article -->
         </div>
-        @endforeach
+     </section>
+    <div class="container public-form mb-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="formbox-header shadow-form animated bounceInUp" style="animation-delay:1s">
+                    <form method="GET">
+                    <div class="form-group col-xs-3">
+                        <label for="exampleInputEmail1"><img src="{{ asset('assets/img/keyword.gif') }}"
+                                    width="30px" height="30px"> Keyword</label>
+                        <input type="text" class="form-control input-sm" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="keyword">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <label for="exampleInputPassword11"><img src="{{ asset('assets/img/home.gif') }}"
+                                width="30px" height="30px"> Address</label>
+                        <input type="text" class="form-control" id="exampleInputPassword11" placeholder="Address">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <label for="exampleInputPassword1121"><img src="{{ asset('assets/img/country.gif') }}"
+                                width="30px" height="30px"> Country</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1121" placeholder="Country">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <label for="exampleInputPassword12"><img src="{{ asset('assets/img/address.gif') }}"
+                                width="30px" height="30px"> City</label>
+                        <input type="text" class="form-control" id="exampleInputPassword12" placeholder="City">
+                    </div>
+                    <div class="buttonn">
+                        <button type="submit" class="hvr-sweep-to-right buttons">Search</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-12 mb-4">
-        <a href="{{route('news')}}" class="hvr-sweep-to-right p-1" style="float: right;">Read More <i class="fa fa-angle-right"></i></a>
+
+    <!-- About US -->
+    <div class="bg_color_1 ">
+        <div class="container margin_80_55">
+            <div class="main_title_2">
+                <span><em></em></span>
+                <h2>{{ $abouts->title }}</h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col-3">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="admin/{{ $abouts->image }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <p>{!! $abouts->description !!}</p>
+                    {{-- <p><em>CEO Marc Schumaker</em></p> --}}
+                </div>
+            </div>
+
+            <!--/row-->
+
+        </div>
+        <!--/container-->
     </div>
-</div>
-<!--/News and Events-->
-@endsection
-@push('css')
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick-theme.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick.css') }}">
-<style>
-    .counter-box {
-        display: block;
-        background: #00a8df;
-        color: #222;
-        text-align: center;
-        padding: 19px 30px 5px;
-        margin-top: -12px
-    }
+    <!--/About US-->
+
+    <!-- Sponsors -->
+    <div class="bg_color_1">
+        <div class="container margin_80_55">
+            <div class="main_title_2">
+                <span><em></em></span>
+                <h2>Our Sponsor</h2>
+            </div>
+            <div class="row justify-content-between">
+                <div class="sponsors-slider">
+                    @foreach ($sponsers as $sponser)
+                        <div class="slide">
+                            <img src="https://pioneers.oritech.co/admin/{{ $sponser->image }}" height="150px">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Sponsors -->
+
+    <!-- Globals -->
+    <div class="mt-4" style="background-color: #f8f8f8">
+        <div class="container" style="padding-top:5%">
+            <div class="row">
+                <div class="col-md-2" style="text-align: left">
+                    <span><em></em></span>
+                    <h2>GLOBAL <br> COVERAGE</h2>
+                </div>
+                @foreach ($globals as $global)
+                    <div class="four col-md-2" style="text-align: center">
+                        <span class="counter ">{{ $global->value }}</span>
+                        <div class="counter-box colored">
+                            <p>{{ $global->name }}</p>
+                        </div>
+                    </div>
+                @endforeach
+                <div class="col-md-12">
+                    <div id="regions_div" class="global_map" style="width: fit-content; height:fit-content;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Globals -->
+
+     <!-- Public Listing -->
+
+    <div class="public-listing mt-4">
+        {{-- <video autoplay loop muted>
+                    <source src="{{ asset('assets/videos/pricelistingvideo.mp4') }}"> 
+                </video> --}}
+        <div class="">
+            <div class="container margin_80_55">
+                <div class="main_title_2">
+                    <span><em></em></span>
+                    <h2 style="color:white">Pioneer Benefits</h2>
+                </div>
+                <div class="row">
+                    @foreach ($benefits as $benefit)
+                        <div class="col-lg-3">
+                            <div class="benefit text-center ">
+                                <span>{{ $benefit->name }}</span>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Public Listing -->
+
+     <!-- Sponsors -->
+
+    <div class="bg_color_1">
+        <div class="container margin_80_55">
+            <div class="main_title_2">
+                <span><em></em></span>
+                <h2>Our Diamond Partners</h2>
+            </div>
+        <div class="row justify-content-between">
+            <div class="diamond-slider">
+                @foreach ($diamonds as $diamond)
+                    <div class="slide ">
+                        <img src="admin/{{ $diamond->image }}" height="150px">
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        </div>
+    </div>
+
+     <!--/ Sponsors -->
+
+     <!--News and Events-->
+    <div class="container margin_60_35">
+        <div class="row">
+            @foreach ($news as $new)
+                <div class="col-md-4">
+                    <article class="blog">
+                        <figure>
+                            <a href="{{ route('news-info', [$new->id]) }}"><img src="admin/{{ $new->image }}"
+                                    class="img-fluid" alt="">
+                                <div class="preview"><span>Read more</span></div>
+                            </a>
+                        </figure>
+                        <div class="post_info">
+                            <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y') }}</small>
+                            <h2><a href="{{ route('news-info', [$new->id]) }}">{{ $new->name }}</a></h2>
+                            <p style="max-height: 20px;">{{ substr(strip_tags($new->description), 0, 50) }}</p>
+                        </div>
+                    </article>
+                    <!-- /article -->
+                </div>
+            @endforeach
+        </div>
+        <div class="col-md-12 mb-4">
+            <a href="{{ route('news') }}" class="hvr-sweep-to-right p-1" style="float: right;">Read More <i
+                    class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+     <!--/News and Events-->
+ @endsection
+ @push('css')
+     <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick-theme.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick.css') }}">
+     <style>
+         .counter-box {
+             display: block;
+             background: #00a8df;
+             color: #222;
+             text-align: center;
+             padding: 19px 30px 5px;
+             margin-top: -12px
+         }
 
          .counter-box p {
              margin: 5px 0 0;
