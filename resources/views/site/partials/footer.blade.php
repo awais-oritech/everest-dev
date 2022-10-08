@@ -14,7 +14,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 quicklinks">
                 <h3 data-bs-target="#collapse_ft_1" >Quick Links</h3>
-                <div class="collapse dont-collapse-sm" id="collapse_ft_1">
+                <div class=" dont-collapse-sm" id="collapse_ft_1">
                     <ul class="links">
                         <li><a href="{{route('about-us')}}">About us</a></li>
                         <li><a href="{{route('faq')}}">Faq</a></li>
@@ -27,7 +27,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <h3 data-bs-target="#collapse_ft_2">Explore More</h3>
-                <div class="collapse dont-collapse-sm" id="collapse_ft_2">
+                <div class=" dont-collapse-sm" id="collapse_ft_2">
                     <ul class="links">
                         @php
                             $pages=App\Models\Page::all();
@@ -40,7 +40,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <h3 data-bs-target="#collapse_ft_3">Contacts</h3>
-                <div class="collapse dont-collapse-sm" id="collapse_ft_3">
+                <div class=" dont-collapse-sm" id="collapse_ft_3">
                     <ul class="contacts">
                         <li><i class="ti-home"></i>{{ App\Models\Utility::getValByName('company_address')}}<br>{{ App\Models\Utility::getValByName('company_city').' - '. App\Models\Utility::getValByName('company_country')}}</li>
                         <li><i class="ti-headphone-alt"></i>{{ App\Models\Utility::getValByName('company_phone_primary')}}</li>
@@ -51,7 +51,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <h3 data-bs-target="#collapse_ft_4">Keep in touch</h3>
 
-                <div class="collapse dont-collapse-sm" id="collapse_ft_4">
+                <div class=" dont-collapse-sm" id="collapse_ft_4">
                     <div id="newsletter">
                         <div class="alert alert-success alert-dismissible" role="alert" id="message-newsletter">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
