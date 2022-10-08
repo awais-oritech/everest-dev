@@ -6,6 +6,8 @@ use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 use App\Models\Blogs;
 use App\Models\Categories;
+use App\Models\Album;
+use App\Models\Picture;
 use Illuminate\Support\Facades\DB;
 class NewsController extends Controller
 {
@@ -24,5 +26,16 @@ class NewsController extends Controller
         $latest_blogs = Blogs::orderBy('id','DESC')->get();
         $categories = BlogCategory::where('is_active',1)->get();
         return view('site.home.news',['category'=>$category,'news'=>$news,'categories'=>$categories,'latest_blogs'=>$latest_blogs]);
+    }
+
+    public function gallery_index()
+    {
+        $albums = Album::paginate(12);
+        return view('site.home.gallery',compact('albums'));
+    }
+    public function pictures_index($id)
+    {
+        $pictures = Picture::where('album_id',$id)->paginate(12);
+        return view('site.home.pictures',compact('pictures'));
     }
 }

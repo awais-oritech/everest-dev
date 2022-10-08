@@ -43,7 +43,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function getuser_profile()
+    public static function getuser_profile()
     {
         $profile = Company::where('user_id',Auth::user()->id)->first();
         if(isset($profile->id))

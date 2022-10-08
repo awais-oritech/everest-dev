@@ -3,23 +3,23 @@
 <main>
     <div class="container margin_60_35">
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <div class="row">
                     @foreach($news as $new)
-                    <div class="col-md-6">
-                        @if($category)
+                    <div class="col-md-4">
+                        {{-- @if(i$category)
                         <h3>{{$category->name}}</h3>
-                        @endif
+                        @endif --}}
                         <article class="blog">
                             <figure>
                                 {{-- <a href="#"><img src="assets/spark-img/blog-1.jpg" alt=""> --}}
-                                <a href="{{route('news-info',[$new->id])}}"><img src="https://pioneers.oritech.co/admin/{{$new->image}}" alt="" style="height: 100%; width:100%;">
+                                <a href="{{url('news-info',[$new->id])}}"><img src="https://pioneers.oritech.co/admin/{{$new->image}}" alt="" style="height: 100%; width:100%;">
                                     <div class="preview"><span>Read more</span></div>
                                 </a>
                             </figure>
                             <div class="post_info">
                                 <small>{{ \Carbon\Carbon::parse($new->created)->format('d-m-Y')}}</small>
-                                <h2><a href="{{route('news-info',[$new->id])}}">{{$new->name}}</a></h2>
+                                <h2><a href="{{url('news-info',[$new->id])}}">{{$new->name}}</a></h2>
                                 <p>{{substr(strip_tags($new->description),0,50)}}</p>
                                 {{-- <ul>
                                     <li>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="tags">
                         @foreach($categories as $category)
-                        <a href="{{ url('news-category',$category->id) }}">{{$category->name}}</a>
+                        <a href="{{ url('news/category',$category->id) }}">{{$category->name}}</a>
 
                         @endforeach
                         

@@ -54,6 +54,8 @@ Route::get('/faq',[FaqController::class, 'index'])->name('faq');
 Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact-us');
 Route::post('/contact-us',[ContactUsController::class, 'store']);
 Route::get('/news',[NewsController::class, 'index'])->name('news');
+Route::get('/gallery',[NewsController::class, 'gallery_index'])->name('gallery');
+Route::get('/pictures/{id}',[NewsController::class, 'pictures_index'])->name('pictures');
 Route::get('/news/category/{id}',[NewsController::class, 'bycat'])->name('news-category');
 Route::get('/events',[EventsController::class, 'index'])->name('events');
 Route::get('/member',[MemberController::class,'index'])->name('member');

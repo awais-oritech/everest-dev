@@ -23,7 +23,7 @@
                                     <input type="password" class="form-control" name="new_password_confirmation" placeholder="Enter your Confirm Password*">
                                 </div>
                             </div>
-                            <div class="text-right"><input type="submit" value="Submit" class="btn_1 "></div>
+                            <div class="text-right "><button type="submit" class="btn_1  hvr-sweep-to-right">Save Changes</button></div>
                         </form>
                     </div>
                 </div>
