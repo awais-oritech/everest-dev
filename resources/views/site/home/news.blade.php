@@ -3,7 +3,7 @@
 <main>
     <div class="container margin_60_35">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-9">
                 <div class="row">
                     @foreach($news as $new)
                     <div class="col-md-4">
@@ -63,7 +63,7 @@
                         @foreach($latest_blogs as $latest_blog)
                         <li>
                             <div class="alignleft">
-                                <a href=""><img src="https://pioneers.oritech.co/{{$latest_blog->image}}" alt=""></a>
+                                <a href=""><img src="https://pioneers.oritech.co/admin/{{$latest_blog->image}}" alt=""></a>
                             </div>
                             <small>{{\Carbon\Carbon::parse($latest_blog->created)->format('d-m-Y')}}</small>
                             <h3><a href="{{ url('news-info',$latest_blog->id) }}" title="">{{$latest_blog->name}}</a></h3>

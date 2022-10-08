@@ -75,7 +75,7 @@
                     </div>
                     <div class="tags">
                         @foreach($categories as $category)
-                        <a href="{{ url('news/category/',$category->id) }}">{{$category->name}}</a>
+                        <a href="{{ url('news/category',$category->id) }}">{{$category->name}}</a>
 
                         @endforeach
                         
