@@ -29,8 +29,15 @@
                                 <a class="nav-link " style="color:#00a8df;" href="{{route('news')}}"><i class="fas fa-newspaper"></i> News</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" style="color:#00a8df;" href="{{route('events')}}"><i class="fas fa-flag"></i>
-                                  Events</a>
+                                <div class="my-dropdown2">
+                                   <a class="nav-link" style="color:#00a8df;" href="{{route('events')}}"><i class="fas fa-flag my-dropbtn2"></i>Events</a>
+                                    <div class="my-dropdown2-content">
+                                      <a href="{{route('gallery')}}"><i class="fas fa-image"> </i> Picture Gallery</a>
+                                      <a href="{{route('video-gallery')}}"><i class="fas fa-video"> </i> Video Gallery</a>
+                                    </div>
+                                  </div>
+                              {{-- <a class="nav-link" style="color:#00a8df;" href="{{route('events')}}"><i class="fas fa-flag"></i>
+                                  Events</a> --}}
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link " style="color:#00a8df;" href="{{route('contact-us')}}"><i class="fas fa-phone"></i> Contact</a>

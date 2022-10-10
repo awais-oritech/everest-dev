@@ -56,16 +56,18 @@ Route::post('/contact-us',[ContactUsController::class, 'store']);
 Route::get('/news',[NewsController::class, 'index'])->name('news');
 Route::get('/gallery',[NewsController::class, 'gallery_index'])->name('gallery');
 Route::get('/pictures/{id}',[NewsController::class, 'pictures_index'])->name('pictures');
+Route::get('/video-gallery',[NewsController::class, 'video_gallery_index'])->name('video-gallery');
+Route::get('/videos/{id}',[NewsController::class,'gallery_videos'])->name('videos');
+
 Route::get('/news/category/{id}',[NewsController::class, 'bycat'])->name('news-category');
 Route::get('/events',[EventsController::class, 'index'])->name('events');
 Route::get('/member',[MemberController::class,'index'])->name('member');
-// Route::post('/login',[LoginController::class,'customLogin']);
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
-// Route::post('/register-member',[RegisterController::class,'customRegistration'])->name('register-member');
 Route::get('/news-info/{id}',[NewsInfoController::class,'index'])->name('news-info');
-Route::get('/packages',[PricingController::class,'index'])->name('packages');
-Auth::routes();
+Route::get('events-info/{id}',[EventsController::class,'evens_info_index'])->name('events-info');
+// Route::get('/packages',[PricingController::class,'index'])->name('packages');
 Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(function () {
+    Route::get('/packages',[PricingController::class,'index'])->name('packages')->middleware('verified');
     Route::get('/profile-process', [ProfileProcessController::class, 'index'])->name('profile-process');
     Route::post('/profile-process', [ProfileProcessController::class, 'store']);
     Route::get('/profile-registration/{id?}',[CompanyProfileController::class,'index'])->name('profile-registration');
@@ -75,6 +77,6 @@ Route::middleware(['prevent-back-history'],['companycheck'],['auth'])->group(fun
     Route::get('profile-settings',[ProfileSettingsController::class, 'index'])->name('profile-settings');
     Route::post('update_password/{id}',[ProfileSettingsController::class, 'update_password']);
 });
-
-Auth::routes();
+Auth::routes(['verify' => true]);
+// Auth::routes();
 

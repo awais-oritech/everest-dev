@@ -8,6 +8,7 @@ use App\Models\Blogs;
 use App\Models\Categories;
 use App\Models\Album;
 use App\Models\Picture;
+use App\Models\Video;
 use Illuminate\Support\Facades\DB;
 class NewsController extends Controller
 {
@@ -30,12 +31,23 @@ class NewsController extends Controller
 
     public function gallery_index()
     {
-        $albums = Album::paginate(12);
+        $albums = Album::where('type',1)->paginate(12);
         return view('site.home.gallery',compact('albums'));
     }
     public function pictures_index($id)
     {
         $pictures = Picture::where('album_id',$id)->paginate(12);
         return view('site.home.pictures',compact('pictures'));
+    }
+
+    public function video_gallery_index()
+    {
+        $videos = Album::where('type',2)->paginate(6);
+        return view('site.home.video-gallery',compact('videos'));
+    }
+    public function gallery_videos($id)
+    {
+        $videos = Video::where('album_id',$id)->paginate(6);
+        return view('site.home.video-gallery',compact('videos'));
     }
 }

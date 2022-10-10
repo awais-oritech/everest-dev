@@ -102,8 +102,7 @@
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12">
-				<p>{!! $abouts->description !!}</p> {{--
-				<p><em>CEO Marc Schumaker</em></p> --}} </div>
+				<p>{!! $abouts->description !!}</p>  </div>
 		</div>
 		<!--/row-->
 	</div>
